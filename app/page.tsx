@@ -252,23 +252,23 @@ export default function HomePage() {
           </div>
 
           {/* Key Statistics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-80 mb-12 max-w-4xl w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-60 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-4">
             <div className="text-center">
-              <TrendingUp className="w-20 h-20 mx-auto mb-8 drop-shadow-lg" style={{color: '#f0f2ff'}} />
-              <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg" style={{color: '#f0f2ff'}}>{annualizedIRR}</h3>
-              <p className="text-lg font-semibold tracking-wide" style={{color: '#ebeff2'}}>{content.annualizedIRR}</p>
+              <TrendingUp className="w-12 h-12 md:w-20 md:h-20 mx-auto mb-4 md:mb-8 drop-shadow-lg" style={{color: '#f0f2ff'}} />
+              <h3 className="text-4xl md:text-6xl lg:text-8xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg" style={{color: '#f0f2ff'}}>{annualizedIRR}</h3>
+              <p className="text-sm md:text-base lg:text-lg font-semibold tracking-wide" style={{color: '#ebeff2'}}>{content.annualizedIRR}</p>
             </div>
 
             <div className="text-center">
-              <Users className="w-20 h-20 mx-auto mb-8 drop-shadow-lg" style={{color: '#ebeff2'}} />
-              <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg" style={{color: '#ebeff2'}}>{portfolioCompanies}</h3>
-              <p className="text-lg font-semibold tracking-wide" style={{color: '#f2f2f2'}}>{content.portfolioCompanies}</p>
+              <Users className="w-12 h-12 md:w-20 md:h-20 mx-auto mb-4 md:mb-8 drop-shadow-lg" style={{color: '#ebeff2'}} />
+              <h3 className="text-4xl md:text-6xl lg:text-8xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg" style={{color: '#ebeff2'}}>{portfolioCompanies}</h3>
+              <p className="text-sm md:text-base lg:text-lg font-semibold tracking-wide" style={{color: '#f2f2f2'}}>{content.portfolioCompanies}</p>
             </div>
 
             <div className="text-center">
-              <Shield className="w-20 h-20 mx-auto mb-8 drop-shadow-lg" style={{color: '#f2f2f2'}} />
-              <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg" style={{color: '#f2f2f2'}}>{investors}</h3>
-              <p className="text-lg font-semibold tracking-wide" style={{color: '#ffffff'}}>{content.investors}</p>
+              <Shield className="w-12 h-12 md:w-20 md:h-20 mx-auto mb-4 md:mb-8 drop-shadow-lg" style={{color: '#f2f2f2'}} />
+              <h3 className="text-4xl md:text-6xl lg:text-8xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg" style={{color: '#f2f2f2'}}>{investors}</h3>
+              <p className="text-sm md:text-base lg:text-lg font-semibold tracking-wide" style={{color: '#ffffff'}}>{content.investors}</p>
             </div>
           </div>
         </div>
