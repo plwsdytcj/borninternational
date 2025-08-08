@@ -245,11 +245,16 @@ export default function PortfolioPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-50 to-gray-100">
+      <section 
+        className="py-16 bg-cover bg-center bg-no-repeat relative"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-210Z92040591c-AQL5YitVBwqKZKgTdSidtYiJsPDuyf.png')"
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-light text-slate-900 mb-4">{content.portfolioTitle}</h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <h1 className="text-5xl font-light text-white mb-4">{content.portfolioTitle}</h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               {content.portfolioDescription}
             </p>
           </div>
