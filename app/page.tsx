@@ -306,10 +306,12 @@ export default function HomePage() {
                   <span className="text-slate-700">30+ Investors</span>
                 </div>
               </div>
-              <Button variant="outline" className="mt-8">
-                {content.learnMoreInvestments}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <Link href="/portfolio">
+                <Button variant="outline" className="mt-8">
+                  {content.learnMoreInvestments}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
             </div>
             <div className="relative h-96">
               <Image
@@ -363,10 +365,12 @@ export default function HomePage() {
                   <span className="text-slate-700">Asia-Pacific presence</span>
                 </div>
               </div>
-              <Button variant="outline" className="mt-8">
-                {content.ourGlobalNetwork}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <Link href="/global">
+                <Button variant="outline" className="mt-8">
+                  {content.ourGlobalNetwork}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
