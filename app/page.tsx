@@ -178,14 +178,13 @@ export default function HomePage() {
       <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="w-8 h-8 bg-slate-800 mr-3 flex items-center justify-center">
-            <div className="text-white font-bold text-lg">B</div>
-          </div>
-          <div className="text-slate-800">
-            <div className="text-sm font-medium leading-tight">Born International</div>
-            
-            <div className="text-sm font-medium leading-tight">Global Investment Platform</div>
-          </div>
+          <Image
+            src="/born-logo.png"
+            alt="BORN International Logo"
+            width={180}
+            height={60}
+            className="h-12 w-auto"
+          />
         </div>
 
         {/* Navigation */}
@@ -229,8 +228,8 @@ export default function HomePage() {
       <main className="relative h-screen">
         <div className="absolute inset-0">
           <Image
-            src="/placeholder-xy3zz.png"
-            alt="Silhouettes of adult and child on mountain overlooking fjord at sunset"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f4d3d2fe-c5fa-43f9-99d5-11dea92fd8a7.jpg-B4uyIHVBHdX8sq8HAQOl86H9PY0EdQ.jpeg"
+            alt="Mountain landscape with BORN text overlay"
             fill
             className="object-cover"
             priority
@@ -240,61 +239,53 @@ export default function HomePage() {
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
           <div className="flex items-center space-x-2 mb-8">
-            <span className="text-slate-700 text-sm font-medium tracking-wide uppercase">
-              {content.fundValueLabel}
-            </span>
+            
             <div className="w-2 h-2 bg-blue-600 rounded-full" />
           </div>
 
           <div className="mb-8">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-slate-900 tracking-tight">
-              {fundValue}
-              <span className="text-3xl md:text-4xl lg:text-5xl ml-2 font-normal">
-                {content.millionUSD}
-              </span>
-            </h1>
+            
           </div>
 
           <div className="mb-12 max-w-2xl">
-            <p className="text-xl md:text-2xl text-slate-800 font-light leading-relaxed">
-              {content.heroDescription}
-            </p>
+            
           </div>
 
           {/* Key Statistics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-80 mb-12 max-w-4xl w-full">
             <div className="text-center">
-              <TrendingUp className="w-12 h-12 text-white mx-auto mb-4 drop-shadow-lg" />
-              <h3 className="text-3xl font-light text-white mb-2 drop-shadow-lg">{annualizedIRR}</h3>
-              <p className="text-white/80 text-sm drop-shadow-md">{content.annualizedIRR}</p>
+              <TrendingUp className="w-20 h-20 mx-auto mb-8 drop-shadow-lg" style={{color: '#f0f2ff'}} />
+              <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg" style={{color: '#f0f2ff'}}>{annualizedIRR}</h3>
+              <p className="text-lg font-semibold tracking-wide" style={{color: '#ebeff2'}}>{content.annualizedIRR}</p>
             </div>
 
             <div className="text-center">
-              <Users className="w-12 h-12 text-white mx-auto mb-4 drop-shadow-lg" />
-              <h3 className="text-3xl font-light text-white mb-2 drop-shadow-lg">{portfolioCompanies}</h3>
-              <p className="text-white/80 text-sm drop-shadow-md">{content.portfolioCompanies}</p>
+              <Users className="w-20 h-20 mx-auto mb-8 drop-shadow-lg" style={{color: '#ebeff2'}} />
+              <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg" style={{color: '#ebeff2'}}>{portfolioCompanies}</h3>
+              <p className="text-lg font-semibold tracking-wide" style={{color: '#f2f2f2'}}>{content.portfolioCompanies}</p>
             </div>
 
             <div className="text-center">
-              <Shield className="w-12 h-12 text-white mx-auto mb-4 drop-shadow-lg" />
-              <h3 className="text-3xl font-light text-white mb-2 drop-shadow-lg">{investors}</h3>
-              <p className="text-white/80 text-sm drop-shadow-md">{content.investors}</p>
+              <Shield className="w-20 h-20 mx-auto mb-8 drop-shadow-lg" style={{color: '#f2f2f2'}} />
+              <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg" style={{color: '#f2f2f2'}}>{investors}</h3>
+              <p className="text-lg font-semibold tracking-wide" style={{color: '#ffffff'}}>{content.investors}</p>
             </div>
           </div>
-
-          <Button 
-            variant="outline" 
-            className="bg-white/90 hover:bg-white border-slate-300 text-slate-800 px-6 py-3 rounded-full font-medium"
-          >
-            {content.valueDevelopment}
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
         </div>
       </main>
 
       {/* Investment Strategy Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-project-1.jpg-tV09kNqFLM1dZKM96BCVwuCWLZAO9y.jpeg"
+            alt="Investment landscape"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-light text-slate-900 mb-6">{content.investmentInChina}</h2>
@@ -333,12 +324,21 @@ export default function HomePage() {
       </section>
 
       {/* Responsible Investment Section - Text on Right */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-team.jpg-OoZveCWDeOjHeN6l2Np9ve51u4sqN7.jpeg"
+            alt="Rock climbing adventure landscape"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
-                src="/sustainable-energy-wind.png"
+                src="/global-connections-map.png"
                 alt="Sustainable energy and environmental responsibility"
                 fill
                 className="object-cover rounded-lg"
@@ -373,8 +373,17 @@ export default function HomePage() {
       </section>
 
       {/* Global Reach Section - Text on Left */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-l5ngZiDwXZS3hRRKK6BsoyGNdyegyL.jpeg"
+            alt="Modern urban architecture"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-light text-slate-900 mb-6">{content.globalReach}</h2>
@@ -413,12 +422,21 @@ export default function HomePage() {
       </section>
 
       {/* Risk Management Section - Text on Right */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-case.jpg-TBjEPgDXpPqKT9TJkQB0HxDlyTfFdp.jpeg"
+            alt="Serene mountain landscape for strategic planning"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
-                src="/risk-analysis-charts.png"
+                src="/financial-charts-graphs.png"
                 alt="Risk management and analysis"
                 fill
                 className="object-cover rounded-lg"
@@ -453,8 +471,17 @@ export default function HomePage() {
       </section>
 
       {/* News & Updates Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-about.jpg-ytx0bPGlCecDLJktCv9FlH9G7g4wlz.jpeg"
+            alt="Expansive mountain news background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-4xl font-light text-slate-900">{content.latestNews}</h2>
             <Link href="/news">
@@ -465,92 +492,89 @@ export default function HomePage() {
             </Link>
           </div>
           
-          {/* Fixed Top News Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <div className="relative h-48">
-                  <Image
-                    src="/financial-charts-graphs.png"
-                    alt="Financial charts"
-                    fill
-                    className="object-cover rounded-t-lg"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-sm text-slate-500 mb-2">January 15, 2024</p>
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {content.fourthQuarterResults}
-                  </h3>
-                  <p className="text-slate-600 mb-4">
-                    {content.fourthQuarterResultsDescription}
-                  </p>
-                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
-                    {content.readMore}
-                    <ExternalLink className="ml-1 w-4 h-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <div className="relative h-48">
-                  <Image
-                    src="/placeholder-9ab4c.png"
-                    alt="Sustainable energy"
-                    fill
-                    className="object-cover rounded-t-lg"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-sm text-slate-500 mb-2">January 10, 2024</p>
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {content.climateTransitionInvestments}
-                  </h3>
-                  <p className="text-slate-600 mb-4">
-                    {content.climateTransitionInvestmentsDescription}
-                  </p>
-                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
-                    {content.readMore}
-                    <ExternalLink className="ml-1 w-4 h-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <div className="relative h-48">
-                  <Image
-                    src="/global-connections-map.png"
-                    alt="Global investments"
-                    fill
-                    className="object-cover rounded-t-lg"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-sm text-slate-500 mb-2">January 5, 2024</p>
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {content.globalMarketOutlook}
-                  </h3>
-                  <p className="text-slate-600 mb-4">
-                    {content.globalMarketOutlookDescription}
-                  </p>
-                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
-                    {content.readMore}
-                    <ExternalLink className="ml-1 w-4 h-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          {/* Fixed Top News Row - Horizontal Alternating Layout */}
+          <div className="space-y-12 mb-12">
+            {/* First News Item - Left Image, Right Content */}
+            <div className="flex flex-col lg:flex-row gap-8 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="relative w-full lg:w-1/2 h-64">
+                <Image
+                  src="/financial-charts-graphs.png"
+                  alt="Financial charts"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-full lg:w-1/2 p-8">
+                <p className="text-sm text-slate-500 mb-2">January 15, 2024</p>
+                <h3 className="text-2xl font-medium text-slate-900 mb-4">
+                  {content.fourthQuarterResults}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {content.fourthQuarterResultsDescription}
+                </p>
+                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+                  {content.readMore}
+                  <ExternalLink className="ml-1 w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Second News Item - Right Image, Left Content */}
+            <div className="flex flex-col lg:flex-row-reverse gap-8 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="relative w-full lg:w-1/2 h-64">
+                <Image
+                  src="/modern-financial-office.png"
+                  alt="Sustainable energy"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-full lg:w-1/2 p-8">
+                <p className="text-sm text-slate-500 mb-2">January 10, 2024</p>
+                <h3 className="text-2xl font-medium text-slate-900 mb-4">
+                  {content.climateTransitionInvestments}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {content.climateTransitionInvestmentsDescription}
+                </p>
+                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+                  {content.readMore}
+                  <ExternalLink className="ml-1 w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Third News Item - Left Image, Right Content */}
+            <div className="flex flex-col lg:flex-row gap-8 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="relative w-full lg:w-1/2 h-64">
+                <Image
+                  src="/global-connections-map.png"
+                  alt="Global investments"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-full lg:w-1/2 p-8">
+                <p className="text-sm text-slate-500 mb-2">January 5, 2024</p>
+                <h3 className="text-2xl font-medium text-slate-900 mb-4">
+                  {content.globalMarketOutlook}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {content.globalMarketOutlookDescription}
+                </p>
+                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+                  {content.readMore}
+                  <ExternalLink className="ml-1 w-4 h-4" />
+                </Button>
+              </div>
+            </div>
           </div>
 
           {/* Scrolling News Carousel */}
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll space-x-6">
               {/* First set of scrolling news */}
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
@@ -572,11 +596,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
               
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
-                      src="/placeholder-xy3zz.png"
+                      src="/global-connections-map.png"
                       alt="Technology breakthrough"
                       fill
                       className="object-cover rounded-t-lg"
@@ -594,7 +618,7 @@ export default function HomePage() {
                 </CardContent>
               </Card>
               
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
@@ -616,7 +640,7 @@ export default function HomePage() {
                 </CardContent>
               </Card>
               
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
@@ -638,11 +662,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
               
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
-                      src="/placeholder-9ab4c.png"
+                      src="/modern-financial-office.png"
                       alt="Sustainability report"
                       fill
                       className="object-cover rounded-t-lg"
@@ -661,7 +685,7 @@ export default function HomePage() {
               </Card>
               
               {/* Duplicate set for seamless loop */}
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
@@ -683,11 +707,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
               
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-32">
                     <Image
-                      src="/placeholder-xy3zz.png"
+                      src="/global-connections-map.png"
                       alt="Technology breakthrough"
                       fill
                       className="object-cover rounded-t-lg"
@@ -734,14 +758,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-6">
-                <div className="w-8 h-8 bg-white mr-3 flex items-center justify-center">
-                  <div className="text-slate-900 font-bold text-lg">B</div>
-                </div>
-                <div className="text-white">
-                  <div className="text-sm font-medium leading-tight">Born International</div>
-                  
-                  <div className="text-sm font-medium leading-tight">Global Investment Platform</div>
-                </div>
+                <Image
+                  src="/born-logo.png"
+                  alt="BORN International Logo"
+                  width={180}
+                  height={60}
+                  className="h-12 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-slate-400 text-sm">
                 A global investment platform focusing on early-stage high-tech startups.

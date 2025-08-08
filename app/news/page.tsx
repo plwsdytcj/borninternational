@@ -85,7 +85,7 @@ export default function NewsPage() {
       title_en: "Annual investor conference highlights",
       title_ru: "Основные моменты ежегодной конференции инвесторов",
       excerpt_en: "Key insights from our annual investor conference, featuring presentations from portfolio companies and market outlook discussions.",
-      excerpt_ru: "Основные выводы нашей ежегодной конференции инвесторов, включающие презентации портфельных компаний и обсуждения перспектив рынка.",
+      excerpt_ru: "Основные выводы нашей ежегодной конференции инвесторов, включающие презентаци�� портфельных компаний и обсуждения перспектив рынка.",
       image: "/financial-charts-graphs.png",
       category_en: "Events",
       category_ru: "События",
