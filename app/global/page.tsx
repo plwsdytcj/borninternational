@@ -18,128 +18,128 @@ export default function GlobalPage() {
 
   const languageContent = {
     en: {
-      globalNetwork: "Global Network",
-      globalNetworkDescription:
-        "Our worldwide presence enables us to identify opportunities and manage investments across diverse markets and sectors",
+      technologyGlobalization: "Technology Globalization",
+      technologyGlobalizationDescription:
+        "We drive technology globalization through strategic investments across multiple global markets, fostering cross-border innovation and technology transfer to accelerate global digital transformation",
       backToHome: "Back to Home",
       founderSection: "Leadership",
       founderName: "Dr. Li Wencheng",
       founderTitle: "PhD/Founding Partner",
       founderDescription:
         "Dr. Li Wencheng graduated from East China University of Science and Technology, obtained a master's degree from Tsinghua University, and a doctorate degree from Zhejiang University. He then taught at Hohai University. He has many years of experience in the investment field.",
-      eurasianRegion: "Eurasian Region",
+      eurasianRegion: "Eurasian Technology Hub",
       eurasianDescription:
-        "Strategic partnerships across Russia, Central Asia, and the Shanghai Cooperation Organization (SCO) member states, with a focus on technology transfer and cross-border innovation.",
+        "Strategic technology partnerships across Russia, Central Asia, and the Shanghai Cooperation Organization (SCO) member states, with a focus on AI, quantum computing, and blockchain technology transfer.",
       regionalLeader: "Regional Leader",
-      keyProjects: "Key Projects",
-      skolkovoPartnership: "Skolkovo Innovation Center Partnership",
-      scoTechInitiative: "SCO Technology Initiative",
-      crossBorderInnovation: "Cross-border Innovation Fund",
-      euRegion: "European Union",
+      keyProjects: "Key Technology Projects",
+      skolkovoPartnership: "Skolkovo AI Innovation Center",
+      scoTechInitiative: "SCO Quantum Technology Initiative",
+      crossBorderInnovation: "Cross-border Blockchain Fund",
+      euRegion: "European Technology Corridor",
       euDescription:
-        "Comprehensive coverage across EU markets with focus on deep tech, sustainability, and digital transformation initiatives.",
+        "Comprehensive technology coverage across EU markets with focus on deep tech, AI research, and digital transformation initiatives connecting Silicon Valley to European innovation hubs.",
       euLeader: "Dr. Maria Schmidt",
-      euTitle: "EU Regional Director",
-      euProject1: "Berlin Tech Hub",
-      euProject2: "Green Energy Initiative",
+      euTitle: "EU Technology Director",
+      euProject1: "Berlin AI Research Hub",
+      euProject2: "Green Tech Innovation",
       euProject3: "Digital Health Platform",
-      middleEastRegion: "Middle East",
+      middleEastRegion: "Middle East Tech Bridge",
       middleEastDescription:
-        "Strategic presence in UAE, Saudi Arabia, and Israel, focusing on fintech, energy transition, and smart city technologies.",
+        "Strategic technology presence in UAE, Saudi Arabia, and Israel, focusing on fintech innovation, smart city technologies, and connecting Middle Eastern tech ecosystems with global markets.",
       meLeader: "Ahmed Al-Rashid",
-      meTitle: "MENA Regional Director",
-      meProject1: "Dubai Fintech Accelerator",
-      meProject2: "Saudi Vision 2030 Fund",
-      meProject3: "Israeli Deep Tech",
-      southAfricaRegion: "South Africa",
+      meTitle: "MENA Technology Director",
+      meProject1: "Dubai Fintech Innovation Lab",
+      meProject2: "Saudi Smart City Initiative",
+      meProject3: "Israeli Deep Tech Accelerator",
+      southAfricaRegion: "African Technology Gateway",
       southAfricaDescription:
-        "Gateway to African markets with emphasis on mobile technology, renewable energy, and financial inclusion solutions.",
+        "Gateway to African tech markets with emphasis on mobile technology innovation, fintech solutions, and connecting African startups with global technology networks.",
       saLeader: "Dr. Nomsa Mbeki",
-      saTitle: "Africa Regional Director",
-      saProject1: "Cape Town Innovation Hub",
-      saProject2: "Mobile Banking Solutions",
-      saProject3: "Solar Energy Projects",
-      investmentSectors: "Investment Sectors",
+      saTitle: "Africa Technology Director",
+      saProject1: "Cape Town Tech Innovation Hub",
+      saProject2: "Mobile Fintech Solutions",
+      saProject3: "African AI Research Center",
+      investmentSectors: "Technology Investment Sectors",
       sectorsDescription:
-        "Our diversified portfolio spans multiple high-growth sectors, each managed by specialized teams with deep domain expertise.",
-      medicalSector: "Medical & Healthcare",
-      medicalDescription: "Biotechnology, medical devices, digital health",
-      newEnergySector: "New Energy",
-      newEnergyDescription: "Solar, wind, battery technology, smart grid",
-      aiSector: "Artificial Intelligence",
-      aiDescription: "Machine learning, computer vision, NLP",
-      fintechSector: "FinTech",
-      fintechDescription: "Digital payments, blockchain, insurtech",
-      spaceSector: "Space Technology",
-      spaceDescription: "Satellites, space exploration, aerospace",
-      quantumSector: "Quantum Computing",
-      quantumDescription: "Quantum algorithms, hardware, cryptography",
-      roboticsSector: "Robotics",
-      roboticsDescription: "Industrial automation, service robots",
-      bioSector: "Biotechnology",
-      bioDescription: "Gene therapy, synthetic biology, pharmaceuticals",
+        "Our technology-focused portfolio spans multiple high-growth sectors, each managed by specialized teams with deep domain expertise in emerging technologies.",
+      medicalSector: "Medical Technology & Digital Health",
+      medicalDescription: "AI-powered diagnostics, telemedicine, digital therapeutics",
+      newEnergySector: "Clean Energy Technology",
+      newEnergyDescription: "Smart grid, energy storage, renewable tech innovation",
+      aiSector: "Artificial Intelligence & Machine Learning",
+      aiDescription: "Deep learning, computer vision, natural language processing",
+      fintechSector: "Financial Technology",
+      fintechDescription: "Blockchain, digital payments, decentralized finance",
+      spaceSector: "Space Technology & Aerospace",
+      spaceDescription: "Satellite technology, space exploration, aerospace innovation",
+      quantumSector: "Quantum Computing & Cryptography",
+      quantumDescription: "Quantum algorithms, quantum hardware, quantum security",
+      roboticsSector: "Robotics & Automation",
+      roboticsDescription: "Industrial automation, AI robotics, autonomous systems",
+      bioSector: "Biotechnology & Life Sciences",
+      bioDescription: "Gene editing, synthetic biology, precision medicine",
     },
     ru: {
-      globalNetwork: "Глобальная сеть",
-      globalNetworkDescription:
-        "Наше всемирное присутствие позволяет нам выявлять возможности и управлять инвестициями на различных рынках и в различных секторах",
+      technologyGlobalization: "Технологическая глобализация",
+      technologyGlobalizationDescription:
+        "Мы способствуем технологической глобализации через стратегические инвестиции на множественных мировых рынках, поощряя трансграничные инновации и передачу технологий для ускорения глобальной цифровой трансформации",
       backToHome: "Вернуться на главную",
       founderSection: "Руководство",
       founderName: "Доктор Ли Вэньчэн",
       founderTitle: "博士/创始合伙人",
       founderDescription:
         "Доктор Ли Вэньчэн окончил Восточно-Китайский научно-технологический университет, получил степень магистра в Университете Цинхуа и докторскую степень в Чжэцзянском университете. Затем он преподавал в Университете Хохай. Имеет многолетний опыт работы в сфере инвестиций.",
-      eurasianRegion: "Евразийский регион",
+      eurasianRegion: "Евразийский технологический хаб",
       eurasianDescription:
-        "Стратегические партнерства в России, Центральной Азии и государствах-членах Шанхайской организации сотрудничества (ШОС) с акцентом на передачу технологий и трансграничные инновации.",
+        "Стратегические технологические партнерства в России, Центральной Азии и государствах-членах ШОС с акцентом на ИИ, квантовые вычисления и передачу блокчейн-технологий.",
       regionalLeader: "Региональный руководитель",
-      keyProjects: "Ключевые проекты",
-      skolkovoPartnership: "Партнерство с инновационным центром Сколково",
-      scoTechInitiative: "Технологическая инициатива ШОС",
-      crossBorderInnovation: "Трансграничный инновационный фонд",
-      euRegion: "Европейский Союз",
+      keyProjects: "Ключевые технологические проекты",
+      skolkovoPartnership: "Инновационный центр ИИ Сколково",
+      scoTechInitiative: "Квантовая технологическая инициатива ШОС",
+      crossBorderInnovation: "Трансграничный блокчейн-фонд",
+      euRegion: "Европейский технологический коридор",
       euDescription:
-        "Комплексное покрытие рынков ЕС с акцентом на глубокие технологии, устойчивость и инициативы цифровой трансформации.",
+        "Комплексное технологическое покрытие рынков ЕС с акцентом на глубокие технологии, исследования ИИ и инициативы цифровой трансформации, соединяющие Силиконовую долину с европейскими инновационными хабами.",
       euLeader: "Доктор Мария Шмидт",
-      euTitle: "Региональный директор ЕС",
-      euProject1: "Берлинский технологический хаб",
-      euProject2: "Инициатива зеленой энергии",
+      euTitle: "Директор по технологиям ЕС",
+      euProject1: "Берлинский исследовательский хаб ИИ",
+      euProject2: "Инновации зеленых технологий",
       euProject3: "Платформа цифрового здравоохранения",
-      middleEastRegion: "Ближний Восток",
+      middleEastRegion: "Технологический мост Ближнего Востока",
       middleEastDescription:
-        "Стратегическое присутствие в ОАЭ, Саудовской Аравии и Израиле с акцентом на финтех, энергетический переход и технологии умных городов.",
+        "Стратегическое технологическое присутствие в ОАЭ, Саудовской Аравии и Израиле с акцентом на финтех-инновации, технологии умных городов и соединение ближневосточных технологических экосистем с мировыми рынками.",
       meLeader: "Ахмед Аль-Рашид",
-      meTitle: "Региональный директор MENA",
-      meProject1: "Дубайский финтех-акселератор",
-      meProject2: "Фонд Saudi Vision 2030",
-      meProject3: "Израильские глубокие технологии",
-      southAfricaRegion: "Южная Африка",
+      meTitle: "Директор по технологиям MENA",
+      meProject1: "Дубайская лаборатория финтех-инноваций",
+      meProject2: "Саудовская инициатива умных городов",
+      meProject3: "Израильский акселератор глубоких технологий",
+      southAfricaRegion: "Африканские технологические ворота",
       southAfricaDescription:
-        "Ворота на африканские рынки с акцентом на мобильные технологии, возобновляемую энергию и решения финансовой инклюзии.",
+        "Ворота на африканские технологические рынки с акцентом на инновации мобильных технологий, финтех-решения и соединение африканских стартапов с глобальными технологическими сетями.",
       saLeader: "Доктор Номса Мбеки",
-      saTitle: "Региональный директор Африки",
-      saProject1: "Инновационный хаб Кейптауна",
-      saProject2: "Решения мобильного банкинга",
-      saProject3: "Проекты солнечной энергии",
-      investmentSectors: "Инвестиционные секторы",
+      saTitle: "Директор по технологиям Африки",
+      saProject1: "Технологический инновационный хаб Кейптауна",
+      saProject2: "Мобильные финтех-решения",
+      saProject3: "Африканский исследовательский центр ИИ",
+      investmentSectors: "Технологические инвестиционные секторы",
       sectorsDescription:
-        "Наш диверсифицированный портфель охватывает множество быстрорастущих секторов, каждый из которых управляется специализированными командами с глубокой экспертизой в предметной области.",
-      medicalSector: "Медицина и здравоохранение",
-      medicalDescription: "Биотехнологии, медицинские устройства, цифровое здравоохранение",
-      newEnergySector: "Новая энергетика",
-      newEnergyDescription: "Солнечная, ветровая, аккумуляторные технологии, умные сети",
-      aiSector: "Искусственный интеллект",
-      aiDescription: "Машинное обучение, компьютерное зрение, NLP",
-      fintechSector: "ФинТех",
-      fintechDescription: "Цифровые платежи, блокчейн, иншуртех",
-      spaceSector: "Космические технологии",
-      spaceDescription: "Спутники, освоение космоса, аэрокосмическая отрасль",
-      quantumSector: "Квантовые вычисления",
-      quantumDescription: "Квантовые алгоритмы, аппаратное обеспечение, криптография",
-      roboticsSector: "Робототехника",
-      roboticsDescription: "Промышленная автоматизация, сервисные роботы",
-      bioSector: "Биотехнологии",
-      bioDescription: "Генная терапия, синтетическая биология, фармацевтика",
+        "Наш технологически ориентированный портфель охватывает множество быстрорастущих секторов, каждый из которых управляется специализированными командами с глубокой экспертизой в новых технологиях.",
+      medicalSector: "Медицинские технологии и цифровое здравоохранение",
+      medicalDescription: "ИИ-диагностика, телемедицина, цифровая терапия",
+      newEnergySector: "Технологии чистой энергии",
+      newEnergyDescription: "Умные сети, накопление энергии, инновации возобновляемых технологий",
+      aiSector: "Искусственный интеллект и машинное обучение",
+      aiDescription: "Глубокое обучение, компьютерное зрение, обработка естественного языка",
+      fintechSector: "Финансовые технологии",
+      fintechDescription: "Блокчейн, цифровые платежи, децентрализованные финансы",
+      spaceSector: "Космические технологии и аэрокосмическая отрасль",
+      spaceDescription: "Спутниковые технологии, освоение космоса, аэрокосмические инновации",
+      quantumSector: "Квантовые вычисления и криптография",
+      quantumDescription: "Квантовые алгоритмы, квантовое оборудование, квантовая безопасность",
+      roboticsSector: "Робототехника и автоматизация",
+      roboticsDescription: "Промышленная автоматизация, ИИ-робототехника, автономные системы",
+      bioSector: "Биотехнологии и науки о жизни",
+      bioDescription: "Редактирование генов, синтетическая биология, точная медицина",
     },
   }
 
@@ -196,8 +196,8 @@ export default function GlobalPage() {
       <section className="py-16 bg-gradient-to-r from-slate-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-light text-slate-900 mb-4">{content.globalNetwork}</h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.globalNetworkDescription}</p>
+            <h1 className="text-5xl font-light text-slate-900 mb-4">{content.technologyGlobalization}</h1>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.technologyGlobalizationDescription}</p>
           </div>
         </div>
       </section>
@@ -233,12 +233,12 @@ export default function GlobalPage() {
         </div>
       </section>
 
-      {/* Eurasian Region Section */}
+      {/* Eurasian Technology Hub Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-project-1.jpg-5pKSekMyOcL9dgqTYiKvt87dgPjdfE.jpeg"
-            alt="Eurasian region background"
+            alt="Eurasian technology background"
             fill
             className="object-cover"
           />
@@ -270,7 +270,7 @@ export default function GlobalPage() {
             <div className="relative h-96">
               <Image
                 src="/global-connections-map.png"
-                alt="Eurasian region map"
+                alt="Technology network map"
                 fill
                 className="object-cover rounded-lg"
               />
@@ -279,12 +279,12 @@ export default function GlobalPage() {
         </div>
       </section>
 
-      {/* Three Regions Section */}
+      {/* Three Technology Regions Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-team.jpg-FFtzNndblQESuAOG6YmZfud8aifb3C.jpeg"
-            alt="Global regions background"
+            alt="Global technology regions background"
             fill
             className="object-cover"
           />
@@ -292,7 +292,7 @@ export default function GlobalPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* EU Region */}
+            {/* EU Technology Corridor */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
@@ -319,7 +319,7 @@ export default function GlobalPage() {
               </CardContent>
             </Card>
 
-            {/* Middle East Region */}
+            {/* Middle East Tech Bridge */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
@@ -346,7 +346,7 @@ export default function GlobalPage() {
               </CardContent>
             </Card>
 
-            {/* South Africa Region */}
+            {/* African Technology Gateway */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
@@ -376,12 +376,12 @@ export default function GlobalPage() {
         </div>
       </section>
 
-      {/* Investment Sectors - Puzzle Layout */}
+      {/* Technology Investment Sectors - Puzzle Layout */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-ON5Qw1v7OOmi2Dh0yvecBVt1bqQ1iK.jpeg"
-            alt="Investment sectors background"
+            alt="Technology sectors background"
             fill
             className="object-cover"
           />
@@ -393,14 +393,14 @@ export default function GlobalPage() {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.sectorsDescription}</p>
           </div>
 
-          {/* Puzzle Grid Layout */}
+          {/* Technology Puzzle Grid Layout */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {/* Row 1 - Medical & Healthcare */}
+            {/* Row 1 - Medical Technology */}
             <Card className="col-span-2 relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105">
               <div className="absolute inset-0">
                 <Image
                   src="/medical-healthcare-background.png"
-                  alt="Medical healthcare background"
+                  alt="Medical technology background"
                   fill
                   className="object-cover"
                 />
@@ -412,10 +412,10 @@ export default function GlobalPage() {
               </CardContent>
             </Card>
 
-            {/* New Energy */}
+            {/* Clean Energy Technology */}
             <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105">
               <div className="absolute inset-0">
-                <Image src="/new-energy-background.png" alt="New energy background" fill className="object-cover" />
+                <Image src="/new-energy-background.png" alt="Clean energy background" fill className="object-cover" />
                 <div className="absolute inset-0 bg-green-500/80" />
               </div>
               <CardContent className="relative z-10 p-6 h-32 flex flex-col justify-center text-white">
@@ -436,7 +436,7 @@ export default function GlobalPage() {
               </CardContent>
             </Card>
 
-            {/* Row 2 - FinTech */}
+            {/* Row 2 - Financial Technology */}
             <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105">
               <div className="absolute inset-0">
                 <Image src="/fintech-background.png" alt="FinTech background" fill className="object-cover" />

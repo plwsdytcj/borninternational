@@ -33,7 +33,8 @@ function useCountUp(end: number, duration = 2000, suffix = "") {
     }
   }, [end, duration])
 
-  return count + suffix
+  // Return just the count number, don't concatenate suffix here
+  return { count, suffix }
 }
 
 function formatNumber(num: number): string {
@@ -69,13 +70,13 @@ export default function HomePage() {
       investmentInChinaDescription:
         "Born Capital is a well-known early-stage investment institution in Chinese Mainland with management of 10 RMB VC funds. We have invested directly or indirectly in more than 100 enterprises, most of which are high-tech startups.",
       learnMoreInvestments: "Learn more about our investments",
-      globalInvestment: "Global Investment",
+      globalInvestment: "Technology Globalization",
       globalInvestmentDescription:
-        "We have established investment presence across multiple global markets including Hong Kong, Singapore, Dubai, Saudi Arabia, London, Oxford, Germany, Japan, Russia, Israel, and the United States.",
+        "We drive technology globalization through strategic investments across multiple global markets including Hong Kong, Singapore, Dubai, Saudi Arabia, London, Oxford, Germany, Japan, Russia, Israel, and the United States, fostering cross-border innovation and technology transfer.",
       ourGlobalNetwork: "Our global network",
-      globalReach: "Global reach",
+      globalReach: "Global Network",
       globalReachDescription:
-        "With investments across 70 countries and over 9,000 companies, we have a truly global investment footprint. Our international presence allows us to identify opportunities and manage risks worldwide.",
+        "Our worldwide presence enables us to identify opportunities and manage investments across diverse markets and sectors",
       exploreOurHoldings: "Explore our holdings",
       riskManagement: "Risk management",
       riskManagementDescription:
@@ -123,7 +124,7 @@ export default function HomePage() {
       accessibility: "Accessibility",
       portfolio: "Portfolio",
       fundScale: "Fund Scale",
-      techGlobalization: "Tech Globalization",
+      techGlobalization: "Technology Globalization",
     },
     ru: {
       fundValueLabel: "СТОИМОСТЬ ФОНДА",
@@ -137,13 +138,13 @@ export default function HomePage() {
       investmentInChinaDescription:
         "Born Capital — известное инвестиционное учреждение на ранней стадии в материковом Китае, управляющее 10 фондами венчурного капитала в юанях. Мы инвестировали напрямую или косвенно в более чем 100 предприятий, большинство из которых являются высокотехнологичными стартапами.",
       learnMoreInvestments: "Узнайте больше о наших инвестициях",
-      globalInvestment: "Глобальные инвестиции",
+      globalInvestment: "Технологическая глобализация",
       globalInvestmentDescription:
-        "Мы создали инвестиционное присутствие на многих мировых рынках, включая Гонконг, Сингапур, Дубай, Саудовскую Аравию, Лондон, Оксфорд, Германию, Японию, Россию, Израиль и США.",
+        "Мы способствуем технологической глобализации через стратегические инвестиции на многих мировых рынках, включая Гонконг, Сингапур, Дубай, Саудовскую Аравию, Лондон, Оксфорд, Германию, Японию, Россию, Израиль и США, способствуя трансграничным инновациям и передаче технологий.",
       ourGlobalNetwork: "Наша глобальная сеть",
-      globalReach: "Глобальный охват",
+      globalReach: "Глобальная сеть",
       globalReachDescription:
-        "Имея инвестиции в 70 странах и более чем в 9000 компаний, мы имеем поистине глобальный инвестиционный след. Наше международное присутствие позволяет нам выявлять возможности и управлять рисками во всем мире.",
+        "Наше всемирное присутствие позволяет нам выявлять возможности и управлять инвестициями на различных рынках и в различных секторах",
       exploreOurHoldings: "Изучите наши активы",
       riskManagement: "Управление рисками",
       riskManagementDescription:
@@ -237,7 +238,8 @@ export default function HomePage() {
                   className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
                   style={{ color: "#f0f2ff" }}
                 >
-                  {portfolioCount}
+                  {portfolioCount.count}
+                  {portfolioCount.suffix}
                 </h3>
                 <p
                   className="text-sm md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-yellow-100 group-hover:scale-105"
@@ -254,7 +256,7 @@ export default function HomePage() {
                     className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-blue-200 group-hover:scale-105"
                     style={{ color: "#ebeff2" }}
                   >
-                    {formatNumber(fundScale)}
+                    {formatNumber(fundScale.count)}
                   </h3>
                   <span
                     className="text-base md:text-lg lg:text-xl font-semibold tracking-wide transition-all duration-500 group-hover:text-blue-100 group-hover:scale-105"
@@ -277,7 +279,8 @@ export default function HomePage() {
                   className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-green-200 group-hover:scale-105"
                   style={{ color: "#f2f2f2" }}
                 >
-                  {techGlobalization}
+                  {techGlobalization.count}
+                  {techGlobalization.suffix}
                 </h3>
                 <p
                   className="text-sm md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-green-100 group-hover:scale-105"
