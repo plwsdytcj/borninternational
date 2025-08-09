@@ -13,8 +13,8 @@ export default function MotherFundPage() {
   const [selectedMember, setSelectedMember] = useState<number | null>(null)
 
   const languages = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "ru", name: "Русский", flag: "🇷🇺" },
+    { code: "en", name: "English" },
+    { code: "ru", name: "Русский" },
   ]
 
   const languageContent = {
@@ -221,11 +221,8 @@ export default function MotherFundPage() {
                 <DropdownMenuItem
                   key={lang.code}
                   onClick={() => setLanguage(lang.code as "en" | "ru")}
-                  className={`flex items-center space-x-2 cursor-pointer ${
-                    language === lang.code ? "bg-blue-50 text-blue-600" : ""
-                  }`}
+                  className={`cursor-pointer ${language === lang.code ? "bg-blue-50 text-blue-600" : ""}`}
                 >
-                  <span>{lang.flag}</span>
                   <span>{lang.name}</span>
                 </DropdownMenuItem>
               ))}

@@ -323,10 +323,14 @@ export default function HomePage() {
                 </div>
               </div>
               <Link href="/portfolio">
-                <Button variant="outline" className="mt-8 bg-transparent">
-                  {content.learnMoreInvestments}
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                    {content.learnMoreInvestments}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  </span>
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-blue-600" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+                </button>
               </Link>
             </div>
             <div className="relative h-96">
@@ -380,10 +384,14 @@ export default function HomePage() {
                 </div>
               </div>
               <Link href="/global">
-                <Button variant="outline" className="mt-8 bg-transparent">
-                  {content.ourGlobalNetwork}
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                    {content.ourGlobalNetwork}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  </span>
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-green-600" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+                </button>
               </Link>
             </div>
           </div>
@@ -420,10 +428,14 @@ export default function HomePage() {
                   <span className="text-slate-700">Asia-Pacific: 25%</span>
                 </div>
               </div>
-              <Button variant="outline" className="mt-8 bg-transparent">
-                {content.exploreOurHoldings}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                  {content.exploreOurHoldings}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                </span>
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-yellow-600" />
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+              </button>
             </div>
             <div className="relative h-96">
               <Image
@@ -475,10 +487,14 @@ export default function HomePage() {
                   <span className="text-slate-700">Operational risk controls</span>
                 </div>
               </div>
-              <Button variant="outline" className="mt-8 bg-transparent">
-                {content.riskFrameworkDetails}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                  {content.riskFrameworkDetails}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                </span>
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-red-600" />
+                <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+              </button>
             </div>
           </div>
         </div>
@@ -499,10 +515,14 @@ export default function HomePage() {
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-4xl font-light text-slate-900">{content.latestNews}</h2>
             <Link href="/news">
-              <Button variant="outline">
-                {content.viewAllNews}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <button className="group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                  {content.viewAllNews}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                </span>
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-purple-600" />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+              </button>
             </Link>
           </div>
 

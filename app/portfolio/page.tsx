@@ -15,8 +15,8 @@ export default function PortfolioPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const languages = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "ru", name: "Русский", flag: "🇷🇺" },
+    { code: "en", name: "English" },
+    { code: "ru", name: "Русский" },
   ]
 
   const languageContent = {
@@ -358,11 +358,8 @@ export default function PortfolioPage() {
                 <DropdownMenuItem
                   key={lang.code}
                   onClick={() => setLanguage(lang.code as "en" | "ru")}
-                  className={`flex items-center space-x-2 cursor-pointer ${
-                    language === lang.code ? "bg-blue-50 text-blue-600" : ""
-                  }`}
+                  className={`cursor-pointer ${language === lang.code ? "bg-blue-50 text-blue-600" : ""}`}
                 >
-                  <span>{lang.flag}</span>
                   <span>{lang.name}</span>
                 </DropdownMenuItem>
               ))}
@@ -615,13 +612,13 @@ export default function PortfolioPage() {
                   language === "en"
                     ? "Innovative technology solutions provider focusing on digital transformation"
                     : "创新技术解决方案提供商，专注于数字化转型",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.jpeg",
+                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-ooyL0a0NSC1Vqo2iF0I8eiC0PjL7Uu.jpeg",
                 logoStyle: "object-contain",
               },
             ].map((company, index) => (
               <Card
                 key={index}
-                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] hover:-translate-y-3 bg-white overflow-hidden relative cursor-pointer"
+                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.005] hover:-translate-y-0.5 bg-white overflow-hidden relative cursor-pointer"
               >
                 {/* Subtle background overlay */}
                 <div className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
@@ -637,18 +634,18 @@ export default function PortfolioPage() {
                 <CardContent className="p-4 sm:p-6 relative z-10">
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
                     <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full">
-                      {/* Enhanced logo container with grayscale effects */}
-                      <div className="relative w-48 h-48 sm:w-96 sm:h-96 flex-shrink-0 group-hover:scale-110 transition-transform duration-700 ease-out">
+                      {/* Enhanced logo container with smaller size */}
+                      <div className="relative w-32 h-32 sm:w-64 sm:h-64 flex-shrink-0 group-hover:scale-105 transition-transform duration-700 ease-out">
                         {/* Subtle shadow effect */}
                         <div className="absolute inset-0 rounded-lg bg-gray-300 opacity-0 group-hover:opacity-1 blur-xl transition-all duration-700 transform group-hover:scale-125" />
 
                         {/* Image container with enhanced effects */}
-                        <div className="relative w-full h-full overflow-hidden rounded-lg bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500">
+                        <div className="relative w-full h-full overflow-hidden rounded-lg bg-transparent transition-colors duration-500">
                           <Image
                             src={company.logo || "/placeholder.svg"}
                             alt={company.name}
                             fill
-                            className={`${company.logoStyle || "object-contain"} transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 filter group-hover:brightness-110 group-hover:contrast-110`}
+                            className={`${company.logoStyle || "object-contain"} transition-all duration-700 group-hover:scale-105 group-hover:rotate-1 filter group-hover:brightness-110 group-hover:contrast-110`}
                           />
 
                           {/* Subtle overlay on hover */}
@@ -681,14 +678,14 @@ export default function PortfolioPage() {
                       </div>
                     </div>
 
-                    {/* Enhanced button with grayscale effects */}
+                    {/* Enhanced button with smaller effects */}
                     <div className="flex-shrink-0 relative">
                       {/* Button glow effect - grayscale */}
-                      <div className="absolute inset-0 bg-gray-300 rounded-lg opacity-0 group-hover:opacity-10 blur-lg transition-all duration-500 transform group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gray-300 rounded-lg opacity-0 group-hover:opacity-10 blur-lg transition-all duration-500 transform group-hover:scale-105" />
 
                       <Button
                         variant="ghost"
-                        className="relative text-slate-600 hover:text-slate-900 text-sm sm:text-base px-6 py-3 rounded-lg border-2 border-gray-300 hover:border-gray-500 hover:bg-gray-100 transition-all duration-500 transform group-hover:scale-110 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden"
+                        className="relative text-slate-600 hover:text-slate-900 text-sm sm:text-base px-6 py-3 rounded-lg border-2 border-gray-300 hover:border-gray-500 hover:bg-gray-100 transition-all duration-500 transform group-hover:scale-105 group-hover:shadow-xl group-hover:-translate-y-0.5 overflow-hidden"
                         onClick={() => {
                           const companySlug = company.nameEn.toLowerCase().replace(/\s+/g, "-")
                           router.push(`/portfolio/${companySlug}`)
@@ -709,7 +706,7 @@ export default function PortfolioPage() {
                   </div>
 
                   {/* Bottom progress bar animation - grayscale */}
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gray-400 group-hover:w-full transition-all duration-1000 ease-out" />
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 group-hover:w-full transition-all duration-1000 ease-out" />
                 </CardContent>
               </Card>
             ))}

@@ -11,8 +11,8 @@ export default function BosonQuantumPage() {
   const [language, setLanguage] = useState<"en" | "zh">("en")
 
   const languages = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "zh", name: "中文", flag: "🇨🇳" },
+    { code: "en", name: "English" },
+    { code: "zh", name: "中文" },
   ]
 
   const languageContent = {
@@ -83,9 +83,7 @@ export default function BosonQuantumPage() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center space-x-2 text-slate-700 hover:text-slate-900">
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">
-                  {currentLanguage?.flag} {currentLanguage?.name}
-                </span>
+                <span className="text-sm">{currentLanguage?.name}</span>
                 <ChevronDown className="w-3 h-3" />
               </button>
             </DropdownMenuTrigger>
@@ -94,11 +92,8 @@ export default function BosonQuantumPage() {
                 <DropdownMenuItem
                   key={lang.code}
                   onClick={() => setLanguage(lang.code as "en" | "zh")}
-                  className={`flex items-center space-x-2 cursor-pointer ${
-                    language === lang.code ? "bg-blue-50 text-blue-600" : ""
-                  }`}
+                  className={`cursor-pointer ${language === lang.code ? "bg-blue-50 text-blue-600" : ""}`}
                 >
-                  <span>{lang.flag}</span>
                   <span>{lang.name}</span>
                 </DropdownMenuItem>
               ))}
@@ -133,7 +128,7 @@ export default function BosonQuantumPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left Side - Company Logo */}
-            <div className="bg-gray-100 rounded-lg p-12 flex items-center justify-center relative h-96">
+            <div className="bg-transparent rounded-lg p-12 flex items-center justify-center relative h-96">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E7%8E%BB%E8%89%B2%E9%87%8F%E5%AD%90.jpg-KBizpMiU68tipjUfgHZV8OOEZcsK8k.jpeg"
                 alt="BOSON Quantum Logo"
