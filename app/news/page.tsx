@@ -85,7 +85,7 @@ export default function NewsPage() {
       title_en: "Annual investor conference highlights",
       title_ru: "Основные моменты ежегодной конференции инвесторов",
       excerpt_en: "Key insights from our annual investor conference, featuring presentations from portfolio companies and market outlook discussions.",
-      excerpt_ru: "Основные выводы нашей ежегодной конференции инвесторов, включающие презентаци�� портфельных компаний и обсуждения перспектив рынка.",
+      excerpt_ru: "Основные выводы нашей ежегодной конференции инвесторов, включающие презентаци портфельных компаний и обсуждения перспектив рынка.",
       image: "/financial-charts-graphs.png",
       category_en: "Events",
       category_ru: "События",
@@ -236,8 +236,17 @@ export default function NewsPage() {
       </section>
 
       {/* News Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-ON5Qw1v7OOmi2Dh0yvecBVt1bqQ1iK.jpeg"
+            alt="News background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/90" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsArticles.map((article) => (
               <Card key={article.id} className="border-0 shadow-sm hover:shadow-lg transition-all duration-300 group">
@@ -290,8 +299,17 @@ export default function NewsPage() {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-16 bg-slate-900 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-16 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-case.jpg-sDp0ZsoqnHDyCcs8AvZT75q1R9Tpnn.jpeg"
+            alt="Newsletter background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-900/85" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-light mb-4">{languageContent[language].stayInformed}</h2>
           <p className="text-slate-300 mb-8">
             {languageContent[language].newsletterDescription}

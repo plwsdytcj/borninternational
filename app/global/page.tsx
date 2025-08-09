@@ -201,8 +201,17 @@ export default function GlobalPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-about.jpg-2hyE8NdGkxzIQSS4VEkbg8kOLVCHLc.jpeg"
+            alt="Leadership background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
@@ -225,8 +234,17 @@ export default function GlobalPage() {
       </section>
 
       {/* Eurasian Region Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-project-1.jpg-5pKSekMyOcL9dgqTYiKvt87dgPjdfE.jpeg"
+            alt="Eurasian region background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/80" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-light text-slate-900 mb-6">{content.eurasianRegion}</h2>
@@ -264,8 +282,17 @@ export default function GlobalPage() {
       </section>
 
       {/* Three Regions Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-team.jpg-FFtzNndblQESuAOG6YmZfud8aifb3C.jpeg"
+            alt="Global regions background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* EU Region */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
@@ -358,8 +385,17 @@ export default function GlobalPage() {
       </section>
 
       {/* Investment Sectors - Puzzle Layout */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-ON5Qw1v7OOmi2Dh0yvecBVt1bqQ1iK.jpeg"
+            alt="Investment sectors background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-white/75" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light text-slate-900 mb-4">{content.investmentSectors}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
