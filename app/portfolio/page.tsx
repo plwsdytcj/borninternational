@@ -527,12 +527,12 @@ export default function PortfolioPage() {
           />
           <div className="absolute inset-0 bg-white/85" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-4">
               {language === "en" ? "Portfolio Companies" : "投资组合公司"}
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
               {language === "en"
                 ? "Discover the innovative companies we have invested in across various sectors and stages"
                 : "探索我们在各个行业和阶段投资的创新公司"}
@@ -540,7 +540,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* Additional Portfolio Companies List */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {[
               {
                 name: language === "en" ? "Zhongkang Dacheng" : "中康大成",
@@ -575,7 +575,7 @@ export default function PortfolioPage() {
                   language === "en"
                     ? "Specialized in chip design and manufacturing with focus on optoelectronic solutions"
                     : "主要从事芯片式防护马达的设计及制造。易迅光电是国内唯一一拥有自...",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E8%BF%85%E5%85%89%E7%94%B5.jpg-CBEgNrvuvphRtTR4gUWvNhbWZvu7u0.jpeg",
+                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E8%BF%85%E5%85%89%E7%94%B5.jpg-CBEgNrvhttps://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E8%BF%85%E5%85%89%E7%94%B5.jpg-CBEgNrvuvphRtTR4gUWvNhbWZvu7u0.jpeg",
                 logoStyle: "object-contain",
               },
               {
@@ -691,10 +691,10 @@ export default function PortfolioPage() {
                 key={index}
                 className="border-0 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] bg-white"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-6">
-                      <div className="relative w-96 h-96">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+                    <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full">
+                      <div className="relative w-48 h-48 sm:w-96 sm:h-96 flex-shrink-0">
                         <Image
                           src={company.logo || "/placeholder.svg"}
                           alt={company.name}
@@ -702,14 +702,14 @@ export default function PortfolioPage() {
                           className={company.logoStyle || "object-contain"}
                         />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-slate-900 mb-1">{company.name}</h3>
+                      <div className="flex-1 text-center sm:text-left">
+                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-1">{company.name}</h3>
                         <p className="text-blue-600 font-medium mb-2">{company.sector}</p>
-                        <p className="text-slate-600 leading-relaxed">{company.description}</p>
+                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{company.description}</p>
                       </div>
                     </div>
-                    <div>
-                      <Button variant="ghost" className="text-blue-600 hover:text-blue-700">
+                    <div className="flex-shrink-0">
+                      <Button variant="ghost" className="text-blue-600 hover:text-blue-700 text-sm sm:text-base">
                         {language === "en" ? "View Details" : "查看详情"}
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
