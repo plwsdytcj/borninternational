@@ -144,20 +144,6 @@ export default function PortfolioPage() {
       hasModal: true,
     },
     {
-      name: "Hao Chu",
-      title: language === "en" ? "Founding Partner" : "创始合伙人",
-      description:
-        language === "en"
-          ? "Founding Partner of Boen Capital and Dianke Boen Partners, with extensive investment experience in Internet, education, consumer upgrades, and IoT sectors"
-          : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。",
-      image: "/team/褚浩_personal_page.jpg",
-      fullBio:
-        language === "en"
-          ? "Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors including Internet, education, consumer upgrades, and IoT. Has a proven track record in identifying and nurturing high-growth technology companies."
-          : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。在识别和培育高增长科技公司方面拥有丰富的成功经验。",
-      hasModal: true,
-    },
-    {
       name: "Chong Li",
       title: language === "en" ? "PPTV Co-founder & Angel Investor" : "PPTV联合创始人",
       description:
@@ -186,20 +172,6 @@ export default function PortfolioPage() {
       hasModal: true,
     },
     {
-      name: "Weixin Lao",
-      title: language === "en" ? "Dr./Professor - Investment Partner" : "博士/教授",
-      description:
-        language === "en"
-          ? "Partner at Dianliang Borun Capital and Professor at Hong Kong Chinese University, with 25 years of experience in high-tech industries and risk investment"
-          : "点亮伯恩资本合伙人。香港中文大学兼任教授。具25年中、港、美地区高科技行业及风险投资的经验。",
-      image: "/team/劳维信_personal_page.jpg",
-      fullBio:
-        language === "en"
-          ? "Dr. Lao Weixin is a distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University. With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, he brings invaluable expertise in cross-border investments and technology sector analysis."
-          : "劳维信博士是点亮伯恩资本的杰出投资合伙人，同时担任香港中文大学兼任教授。他在中国、香港和美国地区拥有25年高科技行业及风险投资的丰富经验，在跨境投资和技术行业分析方面具有宝贵的专业知识。",
-      hasModal: true,
-    },
-    {
       name: "Dongmin Chen",
       title: language === "en" ? "Dr./Professor - Thousand Talents Program Scholar" : "博士/教授",
       description:
@@ -211,6 +183,20 @@ export default function PortfolioPage() {
         language === "en"
           ? "Dr. Chen Dongmin is a distinguished national 'Thousand Talents Program' scholar with extensive experience in academia and technology development. He previously served as a professor at Peking University's School of International Studies and held key leadership positions including deputy director of the Science and Technology Development Department and director of the Industrial Technology Research Institute. His expertise spans international collaboration, technology transfer, and strategic research development."
           : '陈东敏博士是杰出的国家"千人计划"学者，在学术界和技术发展方面拥有丰富经验。他曾担任北京大学前沿交叉学科研究院教授，并担任科技开发部部长、产业技术研究院院长等重要领导职务。他的专业领域涵盖国际合作、技术转移和战略研究发展。',
+      hasModal: true,
+    },
+    {
+      name: "Hao Chu",
+      title: language === "en" ? "Founding Partner" : "创始合伙人",
+      description:
+        language === "en"
+          ? "Founding Partner of Boen Capital and Dianke Boen Partners, with extensive investment experience in Internet, education, consumer upgrades, and IoT sectors"
+          : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。",
+      image: "/team/褚浩_personal_page.jpg",
+      fullBio:
+        language === "en"
+          ? "Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors including Internet, education, consumer upgrades, and IoT. Has a proven track record in identifying and nurturing high-growth technology companies."
+          : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。在识别和培育高增长科技公司方面拥有丰富的成功经验。",
       hasModal: true,
     },
     {
@@ -228,18 +214,28 @@ export default function PortfolioPage() {
       hasModal: true,
     },
     {
-      name: "Chi Zhang",
-      title: language === "en" ? "Dr./Dual Carbon Expert" : "博士/双碳专家",
+      name: "Weixin Lao",
+      title: language === "en" ? "Dr./Professor - Investment Partner" : "博士/教授",
       description:
         language === "en"
-          ? "Visiting scholar at University of Marburg, Germany. Nanjing's first batch '321' entrepreneurial talent, dual doctor from Jiangsu Province, expert in intelligent manufacturing and environmental protection"
-          : '德国马普学会访问学者，南京市首批"321"创业人才企业入选者，江苏省双创博士。负责过多套大型化工/医药/生物环保设备的全流程开发及产业化工作。关注智能制造、节能环保以及双碳领域。',
-      image: "/team/张弛_personal_page.jpg",
+          ? "Partner at Dianliang Borun Capital and Professor at Hong Kong Chinese University, with 25 years of experience in high-tech industries and risk investment"
+          : "点亮伯恩资本合伙人。香港中文大学兼任教授。具25年中、港、美地区高科技行业及风险投资的经验。",
+      image: "/team/劳维信_personal_page.jpg",
       fullBio:
         language === "en"
-          ? "Dr. Zhang Chi is a distinguished visiting scholar at the University of Marburg in Germany and was selected as one of Nanjing's first batch of '321' entrepreneurial talents. As a dual doctor from Jiangsu Province, he has extensive experience in the full-process development and industrialization of multiple sets of large-scale chemical, pharmaceutical, and biological environmental protection equipment. His expertise focuses on intelligent manufacturing, energy conservation and environmental protection, and dual-carbon (carbon neutrality) technologies. Dr. Zhang Chi brings valuable technical knowledge and industrial experience to investment decisions in the environmental and manufacturing sectors."
-          : '张弛博士是德国马普学会的杰出访问学者，入选南京市首批"321"创业人才企业。作为江苏省双创博士，他在多套大型化工/医药/生物环保设备的全流程开发及产业化工作方面拥有丰富经验。他的专业领域专注于智能制造、节能环保以及双碳领域。张弛博士为环保和制造业领域的投资决策带来了宝贵的技术知识和产业经验。',
+          ? "Dr. Lao Weixin is a distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University. With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, he brings invaluable expertise in cross-border investments and technology sector analysis."
+          : "劳维信博士是点亮伯恩资本的杰出投资合伙人，同时担任香港中文大学兼任教授。他在中国、香港和美国地区拥有25年高科技行业及风险投资的丰富经验，在跨境投资和技术行业分析方面具有宝贵的专业知识。",
       hasModal: true,
+    },
+    {
+      name: language === "en" ? "More Team Members" : "更多团队成员",
+      title: language === "en" ? "View All" : "查看全部",
+      description:
+        language === "en"
+          ? "Discover more talented professionals in our investment team"
+          : "了解我们投资团队中更多优秀的专业人士",
+      image: "/placeholder-user.jpg",
+      isMoreButton: true,
     },
     {
       name: content.teamMember5,
@@ -300,8 +296,17 @@ export default function PortfolioPage() {
   }
 
   const handleMemberClick = (memberIndex: number) => {
-    // Find the index in modalEnabledMembers array
-    const modalIndex = modalEnabledMembers.findIndex((member) => teamMembers[memberIndex] === member)
+    const member = teamMembers[memberIndex]
+
+    // Handle "More" button click
+    if (member.isMoreButton) {
+      // You can add navigation to a full team page or show more members
+      console.log("Show more team members")
+      return
+    }
+
+    // Find the index in modalEnabledMembers array for regular members
+    const modalIndex = modalEnabledMembers.findIndex((modalMember) => teamMembers[memberIndex] === modalMember)
     if (modalIndex !== -1) {
       setSelectedMemberIndex(modalIndex)
       setIsModalOpen(true)
@@ -414,21 +419,35 @@ export default function PortfolioPage() {
             {teamMembers.slice(0, 4).map((member, index) => (
               <Card
                 key={index}
-                className={`border-0 shadow-lg hover:shadow-xl transition-shadow ${member.hasModal ? "cursor-pointer" : ""}`}
+                className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+                  member.hasModal ? "cursor-pointer" : ""
+                } group relative overflow-hidden`}
                 onClick={() => member.hasModal && handleMemberClick(index)}
               >
-                <CardContent className="p-8 text-center">
-                  <div className="relative w-40 h-40 mx-auto mb-6">
+                <CardContent className="p-8 text-center relative z-10">
+                  <div className="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full group-hover:shadow-xl transition-shadow duration-500">
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
-                      className="object-cover rounded-full"
+                      className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3">{member.title}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{member.description}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2 transition-colors duration-300">
+                    {member.name}
+                  </h3>
+                  <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">{member.title}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed transition-colors duration-300">
+                    {member.description}
+                  </p>
+                  {member.hasModal && (
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                      <span className="text-xs text-slate-600 font-medium bg-gray-100 px-3 py-1 rounded-full">
+                        Click to learn more
+                      </span>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -438,21 +457,44 @@ export default function PortfolioPage() {
             {teamMembers.slice(4, 8).map((member, index) => (
               <Card
                 key={index + 4}
-                className={`border-0 shadow-lg hover:shadow-xl transition-shadow ${member.hasModal ? "cursor-pointer" : ""}`}
-                onClick={() => member.hasModal && handleMemberClick(index + 4)}
+                className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+                  member.hasModal ? "cursor-pointer" : ""
+                } ${
+                  member.isMoreButton
+                    ? "cursor-pointer border-2 border-dashed border-gray-300 bg-gray-50 hover:border-gray-400 hover:bg-gray-100"
+                    : ""
+                } group relative overflow-hidden`}
+                onClick={() => handleMemberClick(index + 4)}
               >
-                <CardContent className="p-8 text-center">
-                  <div className="relative w-40 h-40 mx-auto mb-6">
+                <CardContent className="p-8 text-center relative z-10">
+                  <div className="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full group-hover:shadow-xl transition-shadow duration-500">
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
-                      className="object-cover rounded-full"
+                      className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                    {member.isMoreButton && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full">
+                        <ArrowRight className="w-8 h-8 text-slate-600 transform group-hover:scale-125 transition-transform duration-300" />
+                      </div>
+                    )}
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3">{member.title}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{member.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 text-slate-900">
+                    {member.name}
+                  </h3>
+                  <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">{member.title}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed transition-colors duration-300">
+                    {member.description}
+                  </p>
+                  {(member.hasModal || member.isMoreButton) && (
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                      <span className="text-xs text-slate-600 font-medium bg-gray-100 px-3 py-1 rounded-full">
+                        {member.isMoreButton ? "View all members" : "Click to learn more"}
+                      </span>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -543,75 +585,15 @@ export default function PortfolioPage() {
           <div className="space-y-4 sm:space-y-6">
             {[
               {
-                name: language === "en" ? "Zhongkang Dacheng" : "中康大成",
-                nameEn: "Zhongkang Dacheng",
-                nameCn: "中康大成",
-                sector: language === "en" ? "Urban Tobacco Control" : "城市控烟",
+                name: language === "en" ? "BOSON Quantum" : "玻色量子",
+                nameEn: "BOSON Quantum",
+                nameCn: "玻色量子",
+                sector: language === "en" ? "Quantum Computing" : "量子计算",
                 description:
                   language === "en"
-                    ? "China's leading overall solution provider for urban tobacco control with comprehensive services"
-                    : "中国领先的城市控烟整体解决方案服务商，提供全面的控烟解决方案",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E4%B8%AD%E5%BA%B7%E5%A4%A7%E6%88%90.jpg-B6SwB3EgLXUU2lItdgIprbg0mVwUO9.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Carbon Zero Technology" : "中碳国科",
-                nameEn: "Carbon Zero Technology",
-                nameCn: "中碳国科",
-                sector: language === "en" ? "Green Technology" : "绿色科技",
-                description:
-                  language === "en"
-                    ? "Leading carbon neutrality and green technology solutions for zero-emission future"
-                    : '中碳国科创始团队深耕绿色碳减排产业十年，一直秉持着"零碳价值..."',
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sC3u5OD0TOQgDsIzetbrVNGHxsJdVH.png",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Yixun Optoelectronics" : "易迅光电",
-                nameEn: "Yixun Optoelectronics",
-                nameCn: "易迅光电",
-                sector: language === "en" ? "Semiconductor" : "半导体",
-                description:
-                  language === "en"
-                    ? "Specialized in chip design and manufacturing with focus on optoelectronic solutions"
-                    : "主要从事芯片式防护马达的设计及制造。易迅光电是国内唯一一拥有自...",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E8%BF%85%E5%85%89%E7%94%B5.jpg-CBEgNrvhttps://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E8%BF%85%E5%85%89%E7%94%B5.jpg-CBEgNrvuvphRtTR4gUWvNhbWZvu7u0.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "EnergyCoo Technology" : "亿凌捷科技",
-                nameEn: "EnergyCoo Technology",
-                nameCn: "亿凌捷科技",
-                sector: language === "en" ? "Energy Technology" : "能源科技",
-                description:
-                  language === "en"
-                    ? "Advanced energy technology solutions and smart energy management systems"
-                    : "先进的能源技术解决方案和智能能源管理系统",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E4%BA%BF%E5%87%8C%E6%8D%B7%E7%A7%91%E6%8A%80.jpg-DimJNWrxUUwrRJYg9z2CZaQT04MigZ.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Kunwei Technology" : "坤维科技",
-                nameEn: "Kunwei Technology",
-                nameCn: "坤维科技",
-                sector: language === "en" ? "Technology Solutions" : "技术解决方案",
-                description:
-                  language === "en"
-                    ? "Innovative technology solutions provider focusing on digital transformation"
-                    : "创新技术解决方案提供商，专注于数字化转型",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "EAPII Technology" : "易瞳科技",
-                nameEn: "EAPII Technology",
-                nameCn: "易瞳科技",
-                sector: language === "en" ? "Computer Vision" : "计算机视觉",
-                description:
-                  language === "en"
-                    ? "Advanced computer vision and AI technology solutions"
-                    : "先进的计算机视觉和人工智能技术解决方案",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E7%9E%B3%E7%A7%91%E6%8A%80.jpg-eewtzrklwWbebI9g7zU2h6jjfpNxIV.jpeg",
+                    ? "Leading quantum computing technology company specializing in quantum algorithms and hardware solutions"
+                    : "领先的量子计算技术公司，专注于量子算法和硬件解决方案",
+                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E7%8E%BB%E8%89%B2%E9%87%8F%E5%AD%90.jpg-KBizpMiU68tipjUfgHZV8OOEZcsK8k.jpeg",
                 logoStyle: "object-contain",
               },
               {
@@ -627,63 +609,15 @@ export default function PortfolioPage() {
                 logoStyle: "object-contain",
               },
               {
-                name: language === "en" ? "Huazhi Intelligence" : "华制智能",
-                nameEn: "Huazhi Intelligence",
-                nameCn: "华制智能",
-                sector: language === "en" ? "Smart Manufacturing" : "智能制造",
+                name: language === "en" ? "Kunwei Technology" : "坤维科技",
+                nameEn: "Kunwei Technology",
+                nameCn: "坤维科技",
+                sector: language === "en" ? "Technology Solutions" : "技术解决方案",
                 description:
                   language === "en"
-                    ? "Intelligent manufacturing solutions and industrial automation systems"
-                    : "智能制造解决方案和工业自动化系统",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%8D%8E%E5%88%B6%E6%99%BA%E8%83%BD.jpg-ovvYBRmt9ZMDy6LbZ3Auxny9lAgdT9.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Token Cloud" : "令牌云",
-                nameEn: "Token Cloud",
-                nameCn: "令牌云",
-                sector: language === "en" ? "Digital Identity" : "数字身份",
-                description:
-                  language === "en"
-                    ? "Digital identity service provider offering secure authentication solutions"
-                    : "令牌云的愿景是成为身份服务领域的领先科技公司，致力于用户的身...",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E4%BB%A4%E7%89%8C%E4%BA%91.jpg-eBaIhpSKhDHWgOY5xt44bb6DUOxS6y.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "CD Digital Analog" : "数模码科技",
-                nameEn: "CD Digital Analog",
-                nameCn: "数模码科技",
-                sector: language === "en" ? "Automotive Technology" : "汽车科技",
-                description:
-                  language === "en"
-                    ? "Digital analog technology solutions for automotive industry"
-                    : "面向汽车行业的数字模拟技术解决方案",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%95%B0%E6%A8%A1%E7%A0%81%E7%A7%91%E6%8A%80.jpg-3IKeaymcyoqqH3TY3e1qmnygsqw8jl.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "EasyMFG Technology" : "易制科技",
-                nameEn: "EasyMFG Technology",
-                nameCn: "易制科技",
-                sector: language === "en" ? "Manufacturing Technology" : "制造技术",
-                description:
-                  language === "en"
-                    ? "Advanced manufacturing technology and production optimization solutions"
-                    : "先进制造技术和生产优化解决方案",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%98%93%E5%88%B6%E7%A7%91%E6%8A%80.jpg-lbHXWRdLQjXmRheObdanQhv5pJSrew.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Sandi Jianke" : "三迪建科",
-                nameEn: "Sandi Jianke",
-                nameCn: "三迪建科",
-                sector: language === "en" ? "Construction Tech" : "建筑科技",
-                description:
-                  language === "en"
-                    ? "Smart construction and building technology solutions for modern infrastructure"
-                    : "智能建筑和建造技术解决方案，专注于现代基础设施建设",
-                logo: "/placeholder-logo.png",
+                    ? "Innovative technology solutions provider focusing on digital transformation"
+                    : "创新技术解决方案提供商，专注于数字化转型",
+                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.jpeg",
                 logoStyle: "object-contain",
               },
             ].map((company, index) => (
@@ -709,7 +643,14 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                     <div className="flex-shrink-0">
-                      <Button variant="ghost" className="text-blue-600 hover:text-blue-700 text-sm sm:text-base">
+                      <Button
+                        variant="ghost"
+                        className="text-blue-600 hover:text-blue-700 text-sm sm:text-base"
+                        onClick={() => {
+                          const companySlug = company.nameEn.toLowerCase().replace(/\s+/g, "-")
+                          router.push(`/portfolio/${companySlug}`)
+                        }}
+                      >
                         {language === "en" ? "View Details" : "查看详情"}
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
