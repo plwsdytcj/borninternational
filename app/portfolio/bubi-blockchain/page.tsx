@@ -61,6 +61,17 @@ export default function BubiBlockchainPage() {
     router.push("/portfolio/kunwei-technology")
   }
 
+  const handleReturnToList = () => {
+    router.push("/portfolio")
+    // Use setTimeout to ensure the page has loaded before scrolling
+    setTimeout(() => {
+      const element = document.getElementById("portfolio-companies")
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+    }, 100)
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -156,7 +167,7 @@ export default function BubiBlockchainPage() {
                 <Button
                   variant="outline"
                   className="bg-amber-600 hover:bg-amber-700 text-white border-amber-600 px-8 py-3"
-                  onClick={() => router.push("/portfolio")}
+                  onClick={handleReturnToList}
                 >
                   {language === "zh" ? "返回列表" : "Return to List"}
                 </Button>

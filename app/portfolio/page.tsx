@@ -349,9 +349,7 @@ export default function PortfolioPage() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center space-x-2 text-slate-700 hover:text-slate-900">
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">
-                  {currentLanguage?.flag} {currentLanguage?.name}
-                </span>
+                <span className="text-sm">{currentLanguage?.name}</span>
                 <ChevronDown className="w-3 h-3" />
               </button>
             </DropdownMenuTrigger>
@@ -582,7 +580,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* Additional Portfolio Companies List */}
-          <div className="space-y-4 sm:space-y-6">
+          <div id="portfolio-companies" className="space-y-4 sm:space-y-6">
             {[
               {
                 name: language === "en" ? "BOSON Quantum" : "玻色量子",
@@ -623,39 +621,95 @@ export default function PortfolioPage() {
             ].map((company, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] bg-white"
+                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] hover:-translate-y-3 bg-white overflow-hidden relative cursor-pointer"
               >
-                <CardContent className="p-4 sm:p-6">
+                {/* Subtle background overlay */}
+                <div className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
+
+                {/* Animated border effect */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gray-300 rounded-lg transition-all duration-500" />
+
+                {/* Floating particles effect - grayscale */}
+                <div className="absolute top-4 right-4 w-2 h-2 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500 delay-100" />
+                <div className="absolute top-8 right-8 w-1 h-1 bg-gray-500 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200" />
+                <div className="absolute top-6 right-12 w-1.5 h-1.5 bg-gray-600 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500 delay-300" />
+
+                <CardContent className="p-4 sm:p-6 relative z-10">
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
                     <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full">
-                      <div className="relative w-48 h-48 sm:w-96 sm:h-96 flex-shrink-0">
-                        <Image
-                          src={company.logo || "/placeholder.svg"}
-                          alt={company.name}
-                          fill
-                          className={company.logoStyle || "object-contain"}
-                        />
+                      {/* Enhanced logo container with grayscale effects */}
+                      <div className="relative w-48 h-48 sm:w-96 sm:h-96 flex-shrink-0 group-hover:scale-110 transition-transform duration-700 ease-out">
+                        {/* Subtle shadow effect */}
+                        <div className="absolute inset-0 rounded-lg bg-gray-300 opacity-0 group-hover:opacity-1 blur-xl transition-all duration-700 transform group-hover:scale-125" />
+
+                        {/* Image container with enhanced effects */}
+                        <div className="relative w-full h-full overflow-hidden rounded-lg bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500">
+                          <Image
+                            src={company.logo || "/placeholder.svg"}
+                            alt={company.name}
+                            fill
+                            className={`${company.logoStyle || "object-contain"} transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 filter group-hover:brightness-110 group-hover:contrast-110`}
+                          />
+
+                          {/* Subtle overlay on hover */}
+                          <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+
+                          {/* Shimmer effect */}
+                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
+                        </div>
                       </div>
-                      <div className="flex-1 text-center sm:text-left">
-                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-1">{company.name}</h3>
-                        <p className="text-blue-600 font-medium mb-2">{company.sector}</p>
-                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{company.description}</p>
+
+                      {/* Enhanced text content */}
+                      <div className="flex-1 text-center sm:text-left space-y-3">
+                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-1 group-hover:text-slate-700 transition-all duration-500 transform group-hover:translate-x-2">
+                          {company.name}
+                        </h3>
+
+                        {/* Animated sector badge - grayscale */}
+                        <div className="inline-block">
+                          <p className="text-slate-600 font-medium mb-2 px-3 py-1 rounded-full bg-gray-100 group-hover:bg-gray-200 group-hover:text-slate-700 group-hover:scale-105 transition-all duration-500 transform group-hover:shadow-md">
+                            {company.sector}
+                          </p>
+                        </div>
+
+                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base group-hover:text-slate-700 transition-colors duration-500 transform group-hover:translate-x-1">
+                          {company.description}
+                        </p>
+
+                        {/* Animated underline - grayscale */}
+                        <div className="w-0 h-0.5 bg-gray-400 group-hover:w-full transition-all duration-700 ease-out" />
                       </div>
                     </div>
-                    <div className="flex-shrink-0">
+
+                    {/* Enhanced button with grayscale effects */}
+                    <div className="flex-shrink-0 relative">
+                      {/* Button glow effect - grayscale */}
+                      <div className="absolute inset-0 bg-gray-300 rounded-lg opacity-0 group-hover:opacity-10 blur-lg transition-all duration-500 transform group-hover:scale-110" />
+
                       <Button
                         variant="ghost"
-                        className="text-blue-600 hover:text-blue-700 text-sm sm:text-base"
+                        className="relative text-slate-600 hover:text-slate-900 text-sm sm:text-base px-6 py-3 rounded-lg border-2 border-gray-300 hover:border-gray-500 hover:bg-gray-100 transition-all duration-500 transform group-hover:scale-110 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden"
                         onClick={() => {
                           const companySlug = company.nameEn.toLowerCase().replace(/\s+/g, "-")
                           router.push(`/portfolio/${companySlug}`)
                         }}
                       >
-                        {language === "en" ? "View Details" : "查看详情"}
-                        <ArrowRight className="ml-2 w-4 h-4" />
+                        {/* Button background animation - grayscale */}
+                        <div className="absolute inset-0 bg-gray-200 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+
+                        <span className="relative z-10 flex items-center">
+                          {language === "en" ? "View Details" : "查看详情"}
+                          <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 group-hover:scale-125 transition-all duration-500" />
+                        </span>
+
+                        {/* Button shine effect */}
+                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
                       </Button>
                     </div>
                   </div>
+
+                  {/* Bottom progress bar animation - grayscale */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gray-400 group-hover:w-full transition-all duration-1000 ease-out" />
                 </CardContent>
               </Card>
             ))}
