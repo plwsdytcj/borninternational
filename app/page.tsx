@@ -114,7 +114,7 @@ export default function HomePage() {
       climate: "Climate",
       ownership: "Ownership",
       exclusions: "Exclusions",
-      aboutNbim: "About NBIM",
+      aboutNbim: "About Born International",
       organization: "Organization",
       careers: "Careers",
       contact: "Contact",
@@ -182,7 +182,7 @@ export default function HomePage() {
       climate: "Климат",
       ownership: "Собственность",
       exclusions: "Исключения",
-      aboutNbim: "О NBIM",
+      aboutNbim: "О Born International",
       organization: "Организация",
       careers: "Карьера",
       contact: "Контакт",
@@ -833,7 +833,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Norges Bank Investment Management. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2024 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm">
                 {content.privacyPolicy}
