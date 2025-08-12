@@ -218,8 +218,8 @@ export default function HomePage() {
           {/* Top-left corner content */}
           <div className="absolute top-8 left-8">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8551754747881_.pic.jpg-uNLCbah3uwPAH43QqTIS3bZIVItnbK.png"
-              alt="Company logo"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-24061R04040P1-WBqINdwaKn97yhsgNwo0aK3epgI9VP.png"
+              alt="BORN International logo"
               width={200}
               height={80}
               className="h-16 w-auto"
@@ -363,8 +363,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
-                src="/global-connections-map.png"
-                alt="Sustainable energy and environmental responsibility"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/worldmap.jpg-MLpAjtteFWsfx1UFAXo9pFZSQYqNYI.jpeg"
+                alt="Global technology network connections world map"
                 fill
                 className="object-cover rounded-lg"
               />
@@ -442,8 +442,8 @@ export default function HomePage() {
             </div>
             <div className="relative h-96">
               <Image
-                src="/global-connections-map.png"
-                alt="Global investment network"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Digital-thumb.jpg-dBDj7hHgQ8efZNKI44qpRNjWYbsQJy.jpeg"
+                alt="3D globe with digital network icons and global connectivity visualization"
                 fill
                 className="object-cover rounded-lg"
               />
@@ -741,11 +741,11 @@ export default function HomePage() {
             <div>
               <div className="flex items-center mb-6">
                 <Image
-                  src="/born-logo.png"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-24061R04040P1-WBqINdwaKn97yhsgNwo0aK3epgI9VP.png"
                   alt="BORN International Logo"
                   width={180}
                   height={60}
-                  className="h-12 w-auto brightness-0 invert"
+                  className="h-12 w-auto"
                 />
               </div>
               <p className="text-slate-400 text-sm">
