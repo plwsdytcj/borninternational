@@ -455,12 +455,28 @@ export default function HomePage() {
         }
         
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 30s linear infinite;
           width: max-content;
+          display: flex;
         }
         
         .animate-scroll:hover {
           animation-play-state: paused;
+        }
+        
+        /* Line clamp utilities */
+        .line-clamp-1 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+        
+        .line-clamp-2 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
         }
       `}</style>
       {/* Hero Section */}
@@ -695,17 +711,22 @@ export default function HomePage() {
             </Link>
           </div>
 
-                    {/* Fixed Top News Row - Horizontal Alternating Layout */}
+                    {/* Fixed Top News Row - Alternating Layout */}
           <div className="space-y-4 mb-6">
             {/* First News Item - Left Image, Right Content */}
-            <div className="flex flex-col lg:flex-row gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full lg:w-1/2 h-32">
-                <Image src="/news/20250815/1.jpg" alt="Financial charts" fill className="object-cover" />
+            <div className="flex gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
+              <div className="relative w-28 h-28 flex-shrink-0">
+                <Image 
+                  src="/news/20250815/1.jpg" 
+                  alt="Financial charts" 
+                  fill 
+                  className="object-cover rounded-lg" 
+                />
               </div>
-              <div className="w-full lg:w-1/2 p-4">
+              <div className="flex-1 min-w-0">
                 <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
-                <h3 className="text-base font-medium text-slate-900 mb-1">{content.fourthQuarterResults}</h3>
-                <p className="text-xs text-slate-600 mb-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
+                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.fourthQuarterResults}</h3>
+                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
                 <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                   {content.readMore}
                   <ExternalLink className="ml-1 w-3 h-3" />
@@ -714,22 +735,25 @@ export default function HomePage() {
             </div>
 
             {/* Second News Item - Right Image, Left Content */}
-            <div className="flex flex-col lg:flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full lg:w-1/2 h-32">
-                <Image src="/biotechnology-background.png" alt="Sustainable energy" fill className="object-cover" />
+            <div className="flex flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
+              <div className="relative w-28 h-28 flex-shrink-0">
+                <Image 
+                  src="/biotechnology-background.png" 
+                  alt="Sustainable energy" 
+                  fill 
+                  className="object-cover rounded-lg" 
+                />
               </div>
-              <div className="w-full lg:w-1/2 p-4">
+              <div className="flex-1 min-w-0">
                 <p className="text-xs text-slate-500 mb-1">January 10, 2024</p>
-                <h3 className="text-base font-medium text-slate-900 mb-1">{content.climateTransitionInvestments}</h3>
-                <p className="text-xs text-slate-600 mb-2 leading-relaxed">{content.climateTransitionInvestmentsDescription}</p>
+                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.climateTransitionInvestments}</h3>
+                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.climateTransitionInvestmentsDescription}</p>
                 <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                   {content.readMore}
                   <ExternalLink className="ml-1 w-3 h-3" />
                 </Button>
               </div>
             </div>
-
- 
           </div>
 
           {/* Scrolling News Carousel */}
@@ -877,6 +901,43 @@ export default function HomePage() {
                     <p className="text-xs text-slate-500 mb-1">December 10, 2023</p>
                     <h4 className="text-xs font-medium text-slate-900 mb-1">{content.annualInvestorConference}</h4>
                     <p className="text-xs text-slate-600 mb-1">{content.annualInvestorConferenceDescription}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Additional duplicate for better infinite loop */}
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+                <CardContent className="p-0">
+                  <div className="relative h-20">
+                    <Image
+                      src="/news/20250815/3.jpg"
+                      alt="Market analysis"
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <p className="text-xs text-slate-500 mb-1">January 5, 2024</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.globalMarketOutlook}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.globalMarketOutlookDescription}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+                <CardContent className="p-0">
+                  <div className="relative h-20">
+                    <Image
+                      src="/modern-financial-office.png"
+                      alt="Company expansion"
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <p className="text-xs text-slate-500 mb-1">December 20, 2023</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.bornInternationalExpands}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.bornInternationalExpandsDescription}</p>
                   </div>
                 </CardContent>
               </Card>
