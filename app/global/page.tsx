@@ -176,11 +176,20 @@ export default function GlobalPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-light text-slate-900 mb-4">{content.technologyGlobalization}</h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.technologyGlobalizationDescription}</p>
+      <section className="py-12 sm:py-16 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="/backgrounds/global_technology_background.jpg"
+            alt="Global technology background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-3 sm:mb-4">{content.technologyGlobalization}</h1>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">{content.technologyGlobalizationDescription}</p>
           </div>
         </div>
       </section>

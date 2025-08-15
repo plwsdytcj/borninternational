@@ -279,21 +279,30 @@ export default function NewsPage() {
       </header>
 
       {/* Hero Section */}
-      <section id="news-top" className="py-16 bg-gradient-to-r from-slate-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-light text-slate-900 mb-4">{languageContent[language].latestNews}</h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">{languageContent[language].newsDescription}</p>
+      <section id="news-top" className="py-12 sm:py-16 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="/backgrounds/news_background.jpg"
+            alt="News background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-3 sm:mb-4">{languageContent[language].latestNews}</h1>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">{languageContent[language].newsDescription}</p>
           </div>
 
           {/* Search and Sort Controls */}
           <div className="max-w-4xl mx-auto space-y-4">
             {/* Search Bar */}
             <div className="max-w-md mx-auto relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70 w-4 h-4 sm:w-5 sm:h-5" />
               <Input 
                 placeholder={languageContent[language].searchPlaceholder} 
-                className="pl-10 py-3 text-lg"
+                className="pl-10 py-2 sm:py-3 text-sm sm:text-lg bg-white/95 border-white/20 text-slate-900 placeholder-slate-600"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
