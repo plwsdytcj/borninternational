@@ -9,6 +9,16 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
+// Function to map article IDs to their page paths
+function getArticlePathFromId(id: number): string {
+  const articlePathMap: Record<number, string> = {
+    1: "/news/fourth-quarter-results",
+    3: "/news/global-market-outlook",
+    // Add more mappings as new articles are created
+  }
+  return articlePathMap[id] || "/news/template"
+}
+
 const newsArticles = [
   {
     id: 1,
@@ -401,10 +411,12 @@ export default function NewsPage() {
                     <p className="text-slate-600 mb-4 line-clamp-3">
                       {language === "en" ? article.excerpt_en : article.excerpt_ru}
                     </p>
-                    <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 group">
-                      {languageContent[language].readFullArticle}
-                      <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link href={getArticlePathFromId(article.id)}>
+                      <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 group">
+                        {languageContent[language].readFullArticle}
+                        <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

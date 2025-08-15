@@ -727,10 +727,12 @@ export default function HomePage() {
                 <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
                 <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.fourthQuarterResults}</h3>
                 <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
-                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
-                  {content.readMore}
-                  <ExternalLink className="ml-1 w-3 h-3" />
-                </Button>
+                <Link href="/news/fourth-quarter-results">
+                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
+                    {content.readMore}
+                    <ExternalLink className="ml-1 w-3 h-3" />
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -748,10 +750,12 @@ export default function HomePage() {
                 <p className="text-xs text-slate-500 mb-1">January 10, 2024</p>
                 <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.climateTransitionInvestments}</h3>
                 <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.climateTransitionInvestmentsDescription}</p>
-                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
-                  {content.readMore}
-                  <ExternalLink className="ml-1 w-3 h-3" />
-                </Button>
+                <Link href="/news/template">
+                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
+                    {content.readMore}
+                    <ExternalLink className="ml-1 w-3 h-3" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
