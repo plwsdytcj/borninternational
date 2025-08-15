@@ -115,7 +115,7 @@ export default function KunweiTechnologyPage() {
         className="py-16 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/business-man-using-smart-phone-office-space-background-copy-space_7191-391.jpg-A5i82ZFdQFjn9Bjtt6sBh9gEngCXJk.jpeg')",
+                            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/office-background.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -130,7 +130,7 @@ export default function KunweiTechnologyPage() {
             {/* Left Side - Company Logo */}
             <div className="bg-transparent rounded-lg p-12 flex items-center justify-center">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-POgKz4qkcQhuC71piNfzSlHQb4ta9n.jpeg"
+                src="/company-logos/kunwei-technology-logo.jpg"
                 alt="Kunwei Technology Logo"
                 width={400}
                 height={300}

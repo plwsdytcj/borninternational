@@ -136,7 +136,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "Over 30 years of experience in enterprise management and equity investment"
           : "深耕知名企业运营管理30余年，在股权投资方面有着丰富的成功经验",
-      image: "/team/唐学书_profile.jpg",
+              image: "/investment-team/唐学书_profile.jpg",
       fullBio:
         language === "en"
           ? "Over 30 years of experience in well-known enterprise operation and management, with rich successful experience in equity investment. Also serves as the first chairman of the Low Power Wireless Communication Committee of China Communications Industry Association, vice president of Sichuan Enterprise Federation and Entrepreneurs Association, vice president of Sichuan Rural Development Federation and many other social positions."
@@ -150,7 +150,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "Well-known investor and PPTV co-founder with successful investments in multiple unicorn companies"
           : "知名投资人，PPTV联合创始人；天使轮领投波奇网，现市值已超过4亿美金；A轮投资友加，现市值已超过2亿美金。",
-      image: "/team/李翀_personal_page.jpg",
+              image: "/investment-team/李翀_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Well-known investor and PPTV co-founder with extensive experience in early-stage investments. Led angel round investment in Boqii.com (current market value exceeds $400 million) and Series A investment in YouJia (current market value exceeds $200 million). Has a proven track record in identifying and nurturing high-growth technology companies."
@@ -164,7 +164,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "Focused on Internet and IoT domain investments, early blockchain technology researcher in China, Professor at Xi'an University of Electronic Science and Technology"
           : "专注于互联网及物联网领域投资，国内早期区块链技术研究者；曾任西安电子科技大学教授。",
-      image: "/team/郭峰_personal_page.jpg",
+              image: "/investment-team/郭峰_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. Guo Feng is a distinguished academic and investor focused on Internet and IoT domain investments. As one of China's early blockchain technology researchers, he brings deep technical expertise to investment decisions. He previously served as a Professor at Xi'an University of Electronic Science and Technology, combining academic rigor with practical investment experience."
@@ -178,7 +178,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "National 'Thousand Talents Program' scholar, former professor at Peking University's School of International Studies, former deputy director of Science and Technology Development Department"
           : '国家"千人计划"学者，北京大学前沿交叉学科研究院教授、科技开发部部长、产业技术研究院院长。',
-      image: "/team/陈东敏_personal_page.jpg",
+              image: "/investment-team/陈东敏_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. Chen Dongmin is a distinguished national 'Thousand Talents Program' scholar with extensive experience in academia and technology development. He previously served as a professor at Peking University's School of International Studies and held key leadership positions including deputy director of the Science and Technology Development Department and director of the Industrial Technology Research Institute. His expertise spans international collaboration, technology transfer, and strategic research development."
@@ -192,7 +192,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "Founding Partner of Boen Capital and Dianke Boen Partners, with extensive investment experience in Internet, education, consumer upgrades, and IoT sectors"
           : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。",
-      image: "/team/褚浩_personal_page.jpg",
+              image: "/investment-team/褚浩_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors including Internet, education, consumer upgrades, and IoT. Has a proven track record in identifying and nurturing high-growth technology companies."
@@ -206,7 +206,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "PhD in Engineering from East China University of Science and Technology, adjunct professor at Hohai University Business School, founding partner of Born Capital with rich experience in early-stage technology investments"
           : "在华东理工大学获得工科博士学位，同时也是清华大学五道口金融学院和浙江大学管理学院的校友。目前在河海大学商学院担任兼职教授。",
-      image: "/team/李文成_personal_page.jpg",
+              image: "/investment-team/李文成_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. Li Wencheng obtained his PhD in Engineering from East China University of Science and Technology, and is also an alumnus of Tsinghua University PBC School of Finance and Zhejiang University School of Management. He currently serves as an adjunct professor at Hohai University Business School. As a founding partner of Born Capital, he has participated in the formation and management of all funds under the company, has rich experience in early-stage investment in technology projects, and has been responsible for investments in Sandi Jianke, Yixun Optoelectronics, Token Cloud, Bubi Blockchain, Bose Quantum, and Zhongtan Guoke. He has also published multiple papers in international journals, participated in various domestic and international academic cooperation projects, serves as an innovation and entrepreneurship mentor at various universities, and was selected as one of the '35U35 Young Investors' by the Young Investor Club in 2021."
@@ -220,7 +220,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "Partner at Dianliang Borun Capital and Professor at Hong Kong Chinese University, with 25 years of experience in high-tech industries and risk investment"
           : "点亮伯恩资本合伙人。香港中文大学兼任教授。具25年中、港、美地区高科技行业及风险投资的经验。",
-      image: "/team/劳维信_personal_page.jpg",
+              image: "/investment-team/劳维信_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. Lao Weixin is a distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University. With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, he brings invaluable expertise in cross-border investments and technology sector analysis."
@@ -381,7 +381,7 @@ export default function PortfolioPage() {
         className="py-16 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-210Z92040591c-AQL5YitVBwqKZKgTdSidtYiJsPDuyf.png')",
+                            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/backgrounds/portfolio-background.png')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6">
@@ -396,7 +396,7 @@ export default function PortfolioPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-team.jpg-FFtzNndblQESuAOG6YmZfud8aifb3C.jpeg"
+                          src="/backgrounds/bg-team.jpg"
             alt="Team background"
             fill
             className="object-cover"
@@ -557,7 +557,7 @@ export default function PortfolioPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-project-1.jpg-5pKSekMyOcL9dgqTYiKvt87dgPjdfE.jpeg"
+                          src="/backgrounds/bg-project-1.jpg"
             alt="Portfolio background"
             fill
             className="object-cover"
@@ -588,7 +588,7 @@ export default function PortfolioPage() {
                   language === "en"
                     ? "Leading quantum computing technology company specializing in quantum algorithms and hardware solutions"
                     : "领先的量子计算技术公司，专注于量子算法和硬件解决方案",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E7%8E%BB%E8%89%B2%E9%87%8F%E5%AD%90.jpg-KBizpMiU68tipjUfgHZV8OOEZcsK8k.jpeg",
+                logo: "/company-logos/boson-quantum-logo.jpg",
                 logoStyle: "object-contain",
               },
               {
@@ -600,7 +600,7 @@ export default function PortfolioPage() {
                   language === "en"
                     ? "Leading blockchain technology platform and solutions provider"
                     : "领先的区块链技术平台和解决方案提供商",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%B8%83%E6%AF%94%E5%8C%BA%E5%9D%97%E9%93%BE-stMcd6T9tPwvoyOxK0DyTM6nxUIYk5.png",
+                logo: "/company-logos/bubi-blockchain-logo.png",
                 logoStyle: "object-contain",
               },
               {
@@ -612,7 +612,7 @@ export default function PortfolioPage() {
                   language === "en"
                     ? "Innovative technology solutions provider focusing on digital transformation"
                     : "创新技术解决方案提供商，专注于数字化转型",
-                logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%9D%A4%E7%BB%B4%E7%A7%91%E6%8A%80.jpg-ooyL0a0NSC1Vqo2iF0I8eiC0PjL7Uu.jpeg",
+                logo: "/company-logos/kunwei-technology-logo.jpg",
                 logoStyle: "object-contain",
               },
             ].map((company, index) => (

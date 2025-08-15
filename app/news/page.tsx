@@ -245,7 +245,7 @@ export default function NewsPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-ON5Qw1v7OOmi2Dh0yvecBVt1bqQ1iK.jpeg"
+                          src="/backgrounds/bg-news.jpg"
             alt="News background"
             fill
             className="object-cover"
@@ -308,7 +308,7 @@ export default function NewsPage() {
       <section className="py-16 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-case.jpg-sDp0ZsoqnHDyCcs8AvZT75q1R9Tpnn.jpeg"
+                          src="/backgrounds/bg-case.jpg"
             alt="Newsletter background"
             fill
             className="object-cover"

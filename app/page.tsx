@@ -205,7 +205,7 @@ export default function HomePage() {
       <main className="relative h-screen">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1e7bf0ca-be1d-4e74-b8ef-e0974969b114.jpg-qAVXbwgwgITOqZMjAl9bh2n5kKbUnf.jpeg"
+            src="/backgrounds/hero-mountain-landscape.jpg"
             alt="BORN Capital mountain landscape with snow-capped peaks and blue sky"
             fill
             className="object-cover"
@@ -299,7 +299,7 @@ export default function HomePage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-project-1.jpg-tV09kNqFLM1dZKM96BCVwuCWLZAO9y.jpeg"
+            src="/backgrounds/bg-project-1.jpg"
             alt="Investment landscape"
             fill
             className="object-cover"
@@ -352,7 +352,7 @@ export default function HomePage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-team.jpg-OoZveCWDeOjHeN6l2Np9ve51u4sqN7.jpeg"
+            src="/backgrounds/bg-team.jpg"
             alt="Rock climbing adventure landscape"
             fill
             className="object-cover"
@@ -363,7 +363,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/worldmap.jpg-MLpAjtteFWsfx1UFAXo9pFZSQYqNYI.jpeg"
+                src="/backgrounds/worldmap.jpg"
                 alt="Global technology network connections world map"
                 fill
                 className="object-cover rounded-lg"
@@ -405,7 +405,7 @@ export default function HomePage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-l5ngZiDwXZS3hRRKK6BsoyGNdyegyL.jpeg"
+            src="/backgrounds/bg-news.jpg"
             alt="Modern urban architecture"
             fill
             className="object-cover"
@@ -442,7 +442,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-96">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Digital-thumb.jpg-dBDj7hHgQ8efZNKI44qpRNjWYbsQJy.jpeg"
+                src="/backgrounds/digital-thumb.jpg"
                 alt="3D globe with digital network icons and global connectivity visualization"
                 fill
                 className="object-cover rounded-lg"
@@ -456,7 +456,7 @@ export default function HomePage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-case.jpg-TBjEPgDXpPqKT9TJkQB0HxDlyTfFdp.jpeg"
+            src="/backgrounds/bg-case.jpg"
             alt="Serene mountain landscape for strategic planning"
             fill
             className="object-cover"
@@ -507,7 +507,7 @@ export default function HomePage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-about.jpg-ytx0bPGlCecDLJktCv9FlH9G7g4wlz.jpeg"
+            src="/backgrounds/bg-about.jpg"
             alt="Expansive mountain news background"
             fill
             className="object-cover"

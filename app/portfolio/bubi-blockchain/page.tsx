@@ -117,7 +117,7 @@ export default function BubiBlockchainPage() {
         className="py-16 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/business-man-using-smart-phone-office-space-background-copy-space_7191-391.jpg-A5i82ZFdQFjn9Bjtt6sBh9gEngCXJk.jpeg')",
+                            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/office-background.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -132,7 +132,7 @@ export default function BubiBlockchainPage() {
             {/* Left Side - Company Logo */}
             <div className="bg-transparent rounded-lg p-12 flex items-center justify-center">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%B8%83%E6%AF%94%E5%8C%BA%E5%9D%97%E9%93%BE-stMcd6T9tPwvoyOxK0DyTM6nxUIYk5.png"
+                src="/company-logos/bubi-blockchain-logo.png"
                 alt="Bubi Blockchain Logo"
                 width={400}
                 height={300}

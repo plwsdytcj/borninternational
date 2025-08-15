@@ -115,7 +115,7 @@ export default function BosonQuantumPage() {
         className="py-16 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/business-man-using-smart-phone-office-space-background-copy-space_7191-391.jpg-A5i82ZFdQFjn9Bjtt6sBh9gEngCXJk.jpeg')",
+                            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/office-background.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -130,7 +130,7 @@ export default function BosonQuantumPage() {
             {/* Left Side - Company Logo */}
             <div className="bg-transparent rounded-lg p-12 flex items-center justify-center relative h-96">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E7%8E%BB%E8%89%B2%E9%87%8F%E5%AD%90.jpg-KBizpMiU68tipjUfgHZV8OOEZcsK8k.jpeg"
+                src="/company-logos/boson-quantum-logo.jpg"
                 alt="BOSON Quantum Logo"
                 fill
                 className="object-contain"

@@ -244,7 +244,7 @@ export default function MotherFundPage() {
         className="py-24 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-210914110R4c6_X-Design.jpg-RF2OJ0PUCCp2Liuytq7PXBppZcO22F.jpeg')",
+                            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/design-background.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center text-white">

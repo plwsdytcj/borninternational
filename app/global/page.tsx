@@ -206,7 +206,7 @@ export default function GlobalPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-about.jpg-2hyE8NdGkxzIQSS4VEkbg8kOLVCHLc.jpeg"
+                          src="/backgrounds/bg-about.jpg"
             alt="Leadership background"
             fill
             className="object-cover"
@@ -217,7 +217,7 @@ export default function GlobalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%9D%8E%E6%96%87%E6%88%90_personal_page.jpg-xnjsolH3mlT6TbQOp4Uj6JmxaocRLb.jpeg"
+                src="/investment-team/李文成_personal_page.jpg"
                 alt="Dr. Li Wencheng"
                 fill
                 className="object-cover rounded-lg"
@@ -237,7 +237,7 @@ export default function GlobalPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-project-1.jpg-5pKSekMyOcL9dgqTYiKvt87dgPjdfE.jpeg"
+                          src="/backgrounds/bg-project-1.jpg"
             alt="Eurasian technology background"
             fill
             className="object-cover"
@@ -283,7 +283,7 @@ export default function GlobalPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-team.jpg-FFtzNndblQESuAOG6YmZfud8aifb3C.jpeg"
+                          src="/backgrounds/bg-team.jpg"
             alt="Global technology regions background"
             fill
             className="object-cover"
@@ -380,7 +380,7 @@ export default function GlobalPage() {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-news.jpg-ON5Qw1v7OOmi2Dh0yvecBVt1bqQ1iK.jpeg"
+                          src="/backgrounds/bg-news.jpg"
             alt="Technology sectors background"
             fill
             className="object-cover"
