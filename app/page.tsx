@@ -43,6 +43,7 @@ function formatNumber(num: number): string {
 
 export default function HomePage() {
   const [language, setLanguage] = useState<"en" | "ru">("en")
+  const [enableInertialScroll, setEnableInertialScroll] = useState<boolean>(true) // 控制惯性滑动效果，默认开启
 
   const portfolioCount = useCountUp(125, 5000, "+")
   const fundScale = useCountUp(280000000, 5000)
@@ -184,6 +185,11 @@ export default function HomePage() {
   const currentLanguage = languages.find((lang) => lang.code === language)
 
   useEffect(() => {
+    // 如果惯性滑动效果被禁用，直接返回
+    if (!enableInertialScroll) {
+      return
+    }
+    
     // 增强惯性滚动效果
     let isScrolling = false
     let scrollTimeout: NodeJS.Timeout
@@ -213,22 +219,89 @@ export default function HomePage() {
             section.classList.remove('scrolling')
           })
         
-        // 根据滚动速度决定吸附行为
-        const sections = document.querySelectorAll('.snap-section, section')
-        const scrollPosition = window.scrollY + window.innerHeight / 2
-        let targetSection: Element | null = null
-        let minDistance = Infinity
+        // 检测是否为移动设备
+        const isMobile = window.innerWidth <= 768
         
-        sections.forEach((section) => {
+        // 根据滚动方向决定吸附行为
+        const sections = Array.from(document.querySelectorAll('.snap-section, section')).filter(section => section.tagName !== 'FOOTER')
+        const currentScrollY = window.scrollY
+        const viewportCenter = window.innerHeight / 2
+        
+        // 检查是否在footer区域
+        const footer = document.querySelector('footer')
+        let isInFooterArea = false
+        if (footer) {
+          const footerRect = footer.getBoundingClientRect()
+          const footerTop = footerRect.top + currentScrollY
+          // 如果视口中心已经接近footer，就不进行吸附
+          if (currentScrollY + viewportCenter > footerTop - 200) {
+            isInFooterArea = true
+          }
+        }
+        
+        // 如果在footer区域，不进行吸附
+        if (isInFooterArea) {
+          return
+        }
+        
+        // 重新计算滚动速度（基于最后一次滚动）
+        const finalScrollVelocity = scrollVelocity
+        
+        // 找到所有section的位置信息
+        const sectionPositions = sections.map((section, index) => {
           const rect = section.getBoundingClientRect()
-          const sectionCenter = rect.top + window.scrollY + rect.height / 2
-          const distance = Math.abs(scrollPosition - sectionCenter)
-          
-          if (distance < minDistance) {
-            minDistance = distance
-            targetSection = section
+          return {
+            element: section,
+            index: index,
+            top: rect.top + currentScrollY,
+            bottom: rect.top + currentScrollY + rect.height,
+            center: rect.top + currentScrollY + rect.height / 2
           }
         })
+        
+        // 根据滚动方向决定目标section
+        let targetSection: Element | null = null
+        
+        // 移动端使用更高的滚动速度阈值
+        const velocityThreshold = isMobile ? 15 : 5
+        
+        if (finalScrollVelocity > velocityThreshold) {
+          // 向下滚动，找到下一个section
+          for (let i = 0; i < sectionPositions.length; i++) {
+            const section = sectionPositions[i]
+            if (currentScrollY + viewportCenter < section.center) {
+              targetSection = section.element
+              break
+            }
+          }
+          // 如果没找到下一个，就不进行吸附（让用户可以滚动到footer）
+          if (!targetSection) {
+            return
+          }
+        } else if (finalScrollVelocity < -velocityThreshold) {
+          // 向上滚动，找到上一个section
+          for (let i = sectionPositions.length - 1; i >= 0; i--) {
+            const section = sectionPositions[i]
+            if (currentScrollY + viewportCenter > section.center) {
+              targetSection = section.element
+              break
+            }
+          }
+          // 如果没找到上一个，就选择第一个section
+          if (!targetSection && sectionPositions.length > 0) {
+            targetSection = sectionPositions[0].element
+          }
+        } else {
+          // 滚动速度不够，找到最近的section
+          let minDistance = Infinity
+          for (const section of sectionPositions) {
+            const distance = Math.abs(currentScrollY + viewportCenter - section.center)
+            if (distance < minDistance) {
+              minDistance = distance
+              targetSection = section.element
+            }
+          }
+        }
         
         if (targetSection) {
           // 平滑滚动到目标 section
@@ -237,7 +310,7 @@ export default function HomePage() {
             block: 'start'
           })
         }
-      }, 300) // 增加延迟时间，让惯性更明显
+      }, 150) // 减少延迟时间，让响应更快
     }
     
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -246,7 +319,7 @@ export default function HomePage() {
       window.removeEventListener('scroll', handleScroll)
       clearTimeout(scrollTimeout)
     }
-  }, [])
+  }, [enableInertialScroll]) // 当控制变量改变时重新设置
 
   return (
     <div className="min-h-screen bg-white scroll-smooth snap-container">
@@ -260,13 +333,10 @@ export default function HomePage() {
         }
         
         .snap-container {
-          scroll-snap-type: y proximity;
           scroll-behavior: smooth;
         }
         
         .snap-section {
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
           transition: none;
           min-height: 100vh;
         }
@@ -275,11 +345,18 @@ export default function HomePage() {
         @media (max-width: 768px) {
           .snap-section {
             min-height: 100vh;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
           }
           
+          /* 移动端触摸滚动优化 */
           .snap-container {
-            scroll-snap-type: y proximity;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: auto;
+          }
+          
+          /* 移动端禁用hover效果 */
+          .snap-section:hover {
+            transform: none;
           }
         }
         
@@ -377,6 +454,8 @@ export default function HomePage() {
               className="h-10 w-auto"
             />
           </div>
+          
+
 
           {/* Centered statistics cards */}
           <div className="flex flex-col items-center justify-center h-full text-center">
