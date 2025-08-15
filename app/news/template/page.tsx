@@ -173,23 +173,24 @@ export default function NewsTemplatePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
+      <header className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-gray-100">
         <div className="flex items-center">
           <Image
             src="/logo/born_logo_white.png"
             alt="BORN International logo"
             width={120}
             height={48}
-            className="h-12 w-auto"
+            className="h-8 sm:h-12 w-auto"
           />
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center">
           <button
             onClick={() => router.push("/news")}
-            className="flex items-center space-x-2 text-slate-700 hover:text-slate-900"
+            className="flex items-center space-x-1 sm:space-x-2 text-slate-700 hover:text-slate-900 text-xs sm:text-sm"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">Back to News</span>
+            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden sm:inline">Back to News</span>
+            <span className="sm:hidden">Back</span>
           </button>
         </div>
       </header>
@@ -209,43 +210,43 @@ export default function NewsTemplatePage() {
         </div>
         
         {/* Article Info Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-4">
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+              <span className="bg-blue-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">
                 {templateData.category}
               </span>
-              <div className="flex items-center space-x-2 text-white/80">
-                <Calendar className="w-4 h-4" />
-                <span className="text-sm">{templateData.date}</span>
+              <div className="flex items-center space-x-1 sm:space-x-2 text-white/80">
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{templateData.date}</span>
               </div>
-              <div className="flex items-center space-x-2 text-white/80">
-                <Eye className="w-4 h-4" />
-                <span className="text-sm">{templateData.readTime}</span>
+              <div className="flex items-center space-x-1 sm:space-x-2 text-white/80">
+                <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{templateData.readTime}</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-3 sm:mb-4 leading-tight">
               {templateData.title}
             </h1>
             {templateData.subtitle && (
-              <p className="text-xl text-white/90 mb-4 max-w-3xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-3 sm:mb-4 max-w-3xl">
                 {templateData.subtitle}
               </p>
             )}
-            <div className="flex items-center space-x-4 text-white/80">
-              <span className="text-sm">By {templateData.author}</span>
+            <div className="flex items-center text-white/80">
+              <span className="text-xs sm:text-sm">By {templateData.author}</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <section className="py-8 sm:py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Main Content */}
             <div className="lg:col-span-3">
-              <article className="prose prose-lg max-w-none">
+              <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
                 <div 
                   dangerouslySetInnerHTML={{ __html: templateData.content }}
                   className="text-slate-700 leading-relaxed"

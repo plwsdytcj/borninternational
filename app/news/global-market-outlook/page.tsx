@@ -207,23 +207,24 @@ export default function GlobalMarketOutlookPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
+      <header className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-gray-100">
         <div className="flex items-center">
           <Image
             src="/logo/born_logo_white.png"
             alt="BORN International logo"
             width={120}
             height={48}
-            className="h-12 w-auto"
+            className="h-8 sm:h-12 w-auto"
           />
         </div>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center">
           <button
             onClick={() => router.push("/news")}
-            className="flex items-center space-x-2 text-slate-700 hover:text-slate-900"
+            className="flex items-center space-x-1 sm:space-x-2 text-slate-700 hover:text-slate-900 text-xs sm:text-sm"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">Back to News</span>
+            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden sm:inline">Back to News</span>
+            <span className="sm:hidden">Back</span>
           </button>
         </div>
       </header>
@@ -238,33 +239,33 @@ export default function GlobalMarketOutlookPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-4xl mx-auto px-6 text-white">
-            <div className="flex items-center space-x-4 mb-4 text-sm">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 text-white">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm">
               <div className="flex items-center space-x-1">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>{articleData.date}</span>
               </div>
-              <span>•</span>
+              <span className="hidden sm:inline">•</span>
               <span>{articleData.readTime}</span>
-              <span>•</span>
+              <span className="hidden sm:inline">•</span>
               <span className="bg-blue-600 px-2 py-1 rounded-full text-xs">
                 {articleData.category}
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-light mb-4 leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-4 leading-tight">
               {articleData.title}
             </h1>
-            <p className="text-xl text-blue-200 max-w-3xl">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-200 max-w-3xl">
               {articleData.subtitle}
             </p>
-            <div className="flex items-center space-x-4 mt-6">
+            <div className="flex items-center mt-4 sm:mt-6">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs sm:text-sm font-medium">
                     {articleData.author?.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
-                <span className="text-sm">{articleData.author}</span>
+                <span className="text-xs sm:text-sm">{articleData.author}</span>
               </div>
             </div>
           </div>
@@ -272,12 +273,12 @@ export default function GlobalMarketOutlookPage() {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {/* Article Content */}
           <div className="lg:col-span-2">
             <div 
-              className="prose prose-lg max-w-none"
+              className="prose prose-sm sm:prose-base lg:prose-lg max-w-none"
               dangerouslySetInnerHTML={{ __html: articleData.content }}
             />
             

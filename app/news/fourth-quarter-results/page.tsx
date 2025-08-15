@@ -183,23 +183,24 @@ export default function FourthQuarterResultsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
+      <header className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-gray-100">
         <div className="flex items-center">
           <Image
             src="/logo/born_logo_white.png"
             alt="BORN International logo"
             width={120}
             height={48}
-            className="h-12 w-auto"
+            className="h-8 sm:h-12 w-auto"
           />
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center">
           <button
             onClick={() => router.push("/news")}
-            className="flex items-center space-x-2 text-slate-700 hover:text-slate-900"
+            className="flex items-center space-x-1 sm:space-x-2 text-slate-700 hover:text-slate-900 text-xs sm:text-sm"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">Back to News</span>
+            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden sm:inline">Back to News</span>
+            <span className="sm:hidden">Back</span>
           </button>
         </div>
       </header>
@@ -219,46 +220,46 @@ export default function FourthQuarterResultsPage() {
         </div>
         
         {/* Article Info Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-4">
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+              <span className="bg-blue-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">
                 {articleData.category}
               </span>
-              <div className="flex items-center space-x-2 text-white/80">
-                <Calendar className="w-4 h-4" />
-                <span className="text-sm">{articleData.date}</span>
+              <div className="flex items-center space-x-1 sm:space-x-2 text-white/80">
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{articleData.date}</span>
               </div>
-              <div className="flex items-center space-x-2 text-white/80">
-                <Eye className="w-4 h-4" />
-                <span className="text-sm">{articleData.readTime}</span>
+              <div className="flex items-center space-x-1 sm:space-x-2 text-white/80">
+                <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{articleData.readTime}</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-3 sm:mb-4 leading-tight">
               {articleData.title}
             </h1>
             {articleData.subtitle && (
-              <p className="text-xl text-white/90 mb-4 max-w-3xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-3 sm:mb-4 max-w-3xl">
                 {articleData.subtitle}
               </p>
             )}
-            <div className="flex items-center space-x-4 text-white/80">
-              <span className="text-sm">By {articleData.author}</span>
+            <div className="flex items-center text-white/80">
+              <span className="text-xs sm:text-sm">By {articleData.author}</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <section className="py-8 sm:py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Main Content */}
             <div className="lg:col-span-3">
-              <article className="prose prose-lg max-w-none">
+              <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
                 <div 
                   dangerouslySetInnerHTML={{ __html: articleData.content }}
-                  className="text-slate-700 leading-relaxed"
+                  className="text-slate-700 leading-relaxed text-sm sm:text-base"
                 />
               </article>
 
@@ -278,19 +279,19 @@ export default function FourthQuarterResultsPage() {
               </div>
 
               {/* Share and Actions */}
-              <div className="mt-8 pt-8 border-t border-slate-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <Button variant="outline" size="sm" className="flex items-center space-x-2">
-                      <Share2 className="w-4 h-4" />
+              <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-slate-200">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0">
+                  <div className="flex items-center space-x-3 sm:space-x-4">
+                    <Button variant="outline" size="sm" className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
+                      <Share2 className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>Share</span>
                     </Button>
-                    <Button variant="outline" size="sm" className="flex items-center space-x-2">
-                      <Bookmark className="w-4 h-4" />
+                    <Button variant="outline" size="sm" className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
+                      <Bookmark className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>Bookmark</span>
                     </Button>
                   </div>
-                  <div className="text-sm text-slate-500">
+                  <div className="text-xs sm:text-sm text-slate-500">
                     Published on {articleData.date}
                   </div>
                 </div>
@@ -299,11 +300,11 @@ export default function FourthQuarterResultsPage() {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-8">
+              <div className="lg:sticky lg:top-8">
                 {/* Related Articles */}
-                <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="text-lg font-medium text-slate-900 mb-4">Related Articles</h3>
-                  <div className="space-y-4">
+                <div className="bg-slate-50 rounded-lg p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-medium text-slate-900 mb-3 sm:mb-4">Related Articles</h3>
+                  <div className="space-y-3 sm:space-y-4">
                     {relatedArticles.length > 0 ? (
                       relatedArticles.map((article) => (
                         <Link key={article.id} href={getArticlePath(article.id)}>
@@ -339,12 +340,12 @@ export default function FourthQuarterResultsPage() {
                 </div>
 
                 {/* Newsletter Signup */}
-                <div className="mt-6 bg-blue-50 rounded-lg p-6">
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Stay Updated</h3>
-                  <p className="text-sm text-slate-600 mb-4">
+                <div className="mt-4 sm:mt-6 bg-blue-50 rounded-lg p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-medium text-slate-900 mb-2">Stay Updated</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 mb-3 sm:mb-4">
                     Subscribe to our newsletter for the latest news and insights.
                   </p>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-xs sm:text-sm">
                     Subscribe
                   </Button>
                 </div>
