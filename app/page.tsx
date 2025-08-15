@@ -455,7 +455,8 @@ export default function HomePage() {
         }
         
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 40s linear infinite;
+          width: max-content;
         }
         
         .animate-scroll:hover {
@@ -699,7 +700,7 @@ export default function HomePage() {
             {/* First News Item - Left Image, Right Content */}
             <div className="flex flex-col lg:flex-row gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full lg:w-1/2 h-32">
-                <Image src="/financial-charts-graphs.png" alt="Financial charts" fill className="object-cover" />
+                <Image src="/news/20250815/1.jpg" alt="Financial charts" fill className="object-cover" />
               </div>
               <div className="w-full lg:w-1/2 p-4">
                 <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
@@ -715,7 +716,7 @@ export default function HomePage() {
             {/* Second News Item - Right Image, Left Content */}
             <div className="flex flex-col lg:flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full lg:w-1/2 h-32">
-                <Image src="/modern-financial-office.png" alt="Sustainable energy" fill className="object-cover" />
+                <Image src="/biotechnology-background.png" alt="Sustainable energy" fill className="object-cover" />
               </div>
               <div className="w-full lg:w-1/2 p-4">
                 <p className="text-xs text-slate-500 mb-1">January 10, 2024</p>
@@ -739,8 +740,26 @@ export default function HomePage() {
                 <CardContent className="p-0">
                   <div className="relative h-20">
                     <Image
+                      src="/news/20250815/3.jpg"
+                      alt="Market analysis"
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <p className="text-xs text-slate-500 mb-1">January 5, 2024</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.globalMarketOutlook}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.globalMarketOutlookDescription}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+                <CardContent className="p-0">
+                  <div className="relative h-20">
+                    <Image
                       src="/modern-financial-office.png"
-                      alt="Financial office"
+                      alt="Company expansion"
                       fill
                       className="object-cover rounded-t-lg"
                     />
@@ -757,8 +776,8 @@ export default function HomePage() {
                 <CardContent className="p-0">
                   <div className="relative h-20">
                     <Image
-                      src="/global-connections-map.png"
-                      alt="Technology breakthrough"
+                      src="/quantum-computing-background.png"
+                      alt="Quantum computing"
                       fill
                       className="object-cover rounded-t-lg"
                     />
@@ -789,20 +808,21 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
+              {/* Duplicate set for seamless infinite loop */}
               <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-20">
                     <Image
-                      src="/global-connections-map.png"
+                      src="/news/20250815/3.jpg"
                       alt="Market analysis"
                       fill
                       className="object-cover rounded-t-lg"
                     />
                   </div>
                   <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 5, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.aiInvestmentTrends}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.aiInvestmentTrendsDescription}</p>
+                    <p className="text-xs text-slate-500 mb-1">January 5, 2024</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.globalMarketOutlook}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.globalMarketOutlookDescription}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -812,26 +832,7 @@ export default function HomePage() {
                   <div className="relative h-20">
                     <Image
                       src="/modern-financial-office.png"
-                      alt="Sustainability report"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">November 30, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.sustainabilityImpactReport}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.sustainabilityImpactReportDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Duplicate set for seamless loop */}
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/modern-financial-office.png"
-                      alt="Financial office"
+                      alt="Company expansion"
                       fill
                       className="object-cover rounded-t-lg"
                     />
@@ -848,8 +849,8 @@ export default function HomePage() {
                 <CardContent className="p-0">
                   <div className="relative h-20">
                     <Image
-                      src="/global-connections-map.png"
-                      alt="Technology breakthrough"
+                      src="/quantum-computing-background.png"
+                      alt="Quantum computing"
                       fill
                       className="object-cover rounded-t-lg"
                     />
@@ -858,6 +859,24 @@ export default function HomePage() {
                     <p className="text-xs text-slate-500 mb-1">December 15, 2023</p>
                     <h4 className="text-xs font-medium text-slate-900 mb-1">{content.quantumComputingBreakthrough}</h4>
                     <p className="text-xs text-slate-600 mb-1">{content.quantumComputingBreakthroughDescription}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+                <CardContent className="p-0">
+                  <div className="relative h-20">
+                    <Image
+                      src="/financial-charts-graphs.png"
+                      alt="Conference highlights"
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <p className="text-xs text-slate-500 mb-1">December 10, 2023</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.annualInvestorConference}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.annualInvestorConferenceDescription}</p>
                   </div>
                 </CardContent>
               </Card>

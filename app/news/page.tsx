@@ -1,5 +1,5 @@
 "use client"
-import { ArrowLeft, Calendar, ExternalLink, Search, Globe, ChevronDown } from "lucide-react"
+import { ArrowLeft, Calendar, ExternalLink, Search, Globe, ChevronDown, ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,101 +9,156 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
+const newsArticles = [
+  {
+    id: 1,
+    date: "January 15, 2024",
+    title_en: "Fourth quarter 2023 results",
+    title_ru: "Результаты за четвертый квартал 2023 года",
+    excerpt_en:
+      "The fund returned 4.9% in the fourth quarter, corresponding to a gain of NOK 980 billion. This strong performance was driven by robust equity markets and strategic positioning.",
+    excerpt_ru:
+      "Фонд вернул 4,9% в четвертом квартале, что соответствует прибыли в 980 миллиардов норвежских крон. Этот сильный результат был обусловлен устойчивыми фондовыми рынками и стратегическим позиционированием.",
+    image: "/news/20250815/1.jpg",
+    category_en: "Financial Results",
+    category_ru: "Финансовые результаты",
+    readTime: "5 min read",
+  },
+  {
+    id: 2,
+    date: "January 10, 2024",
+    title_en: "Climate transition investments",
+    title_ru: "Инвестиции в переход к климатической нейтральности",
+    excerpt_en:
+      "New framework for investing in companies that contribute to the green transition. We are committed to supporting sustainable business practices and environmental responsibility.",
+    excerpt_ru:
+      "Новая основа для инвестирования в компании, которые вносят вклад в зеленый переход. Мы привержены поддержке устойчивых деловых практик и экологической ответственности.",
+    image: "/biotechnology-background.png",
+    category_en: "Sustainability",
+    category_ru: "Устойчивость",
+    readTime: "3 min read",
+  },
+  {
+    id: 3,
+    date: "January 5, 2024",
+    title_en: "Global market outlook 2024",
+    title_ru: "Обзор мирового рынка на 2024 год",
+    excerpt_en:
+      "Our expectations for global markets and investment opportunities in the year ahead. Key trends include technological innovation and emerging market growth.",
+    excerpt_ru:
+      "Наши ожидания относительно мировых рынков и инвестиционных возможностей в предстоящем году. Ключевые тенденции включают технологические инновации и рост развивающихся рынков.",
+    image: "/news/20250815/3.jpg",
+    category_en: "Market Analysis",
+    category_ru: "Анализ рынка",
+    readTime: "7 min read",
+  },
+  {
+    id: 4,
+    date: "December 20, 2023",
+    title_en: "Born International expands to Southeast Asia",
+    title_ru: "Born International расширяется в Юго-Восточную Азию",
+    excerpt_en:
+      "Strategic expansion into Singapore and Hong Kong markets, establishing new partnerships with local investment firms and technology companies.",
+    excerpt_ru:
+      "Стратегическое расширение на рынки Сингапура и Гонконга, установление новых партнерских отношений с местными инвестиционными фирмами и технологическими компаниями.",
+    image: "/modern-financial-office.png",
+    category_en: "Company News",
+    category_ru: "Новости компании",
+    readTime: "4 min read",
+  },
+  {
+    id: 5,
+    date: "December 15, 2023",
+    title_en: "Quantum computing investment breakthrough",
+    title_ru: "Прорыв в инвестициях в квантовые вычисления",
+    excerpt_en:
+      "Our portfolio company QBoson achieves major milestone with 1000+ qubit quantum computer, attracting global attention from tech giants.",
+    excerpt_ru:
+      "Наша портфельная компания QBoson достигает важной вехи с квантовым компьютером с более чем 1000 кубитами, привлекая глобальное внимание технологических гигантов.",
+    image: "/quantum-computing-background.png",
+    category_en: "Portfolio Updates",
+    category_ru: "Обновления портфеля",
+    readTime: "6 min read",
+  },
+  {
+    id: 6,
+    date: "December 10, 2023",
+    title_en: "Annual investor conference highlights",
+    title_ru: "Основные моменты ежегодной конференции инвесторов",
+    excerpt_en:
+      "Key insights from our annual investor conference, featuring presentations from portfolio companies and market outlook discussions.",
+    excerpt_ru:
+      "Основные выводы нашей ежегодной конференции инвесторов, включающие презентаци портфельных компаний и обсуждения перспектив рынка.",
+    image: "/financial-charts-graphs.png",
+    category_en: "Events",
+    category_ru: "События",
+    readTime: "8 min read",
+  },
+]
+
 export default function NewsPage() {
   const router = useRouter()
   const [language, setLanguage] = useState<"en" | "ru">("en")
+  const [searchQuery, setSearchQuery] = useState("")
+  const [sortBy, setSortBy] = useState<"date" | "title" | "category">("date")
+  const [filteredArticles, setFilteredArticles] = useState(newsArticles)
 
   const languages = [
     { code: "en", name: "English" },
     { code: "ru", name: "Русский" },
   ]
 
-  const newsArticles = [
-    {
-      id: 1,
-      date: "January 15, 2024",
-      title_en: "Fourth quarter 2023 results",
-      title_ru: "Результаты за четвертый квартал 2023 года",
-      excerpt_en:
-        "The fund returned 4.9% in the fourth quarter, corresponding to a gain of NOK 980 billion. This strong performance was driven by robust equity markets and strategic positioning.",
-      excerpt_ru:
-        "Фонд вернул 4,9% в четвертом квартале, что соответствует прибыли в 980 миллиардов норвежских крон. Этот сильный результат был обусловлен устойчивыми фондовыми рынками и стратегическим позиционированием.",
-      image: "/financial-charts-graphs.png",
-      category_en: "Financial Results",
-      category_ru: "Финансовые результаты",
-      readTime: "5 min read",
-    },
-    {
-      id: 2,
-      date: "January 10, 2024",
-      title_en: "Climate transition investments",
-      title_ru: "Инвестиции в переход к климатической нейтральности",
-      excerpt_en:
-        "New framework for investing in companies that contribute to the green transition. We are committed to supporting sustainable business practices and environmental responsibility.",
-      excerpt_ru:
-        "Новая основа для инвестирования в компании, которые вносят вклад в зеленый переход. Мы привержены поддержке устойчивых деловых практик и экологической ответственности.",
-      image: "/biotechnology-background.png",
-      category_en: "Sustainability",
-      category_ru: "Устойчивость",
-      readTime: "3 min read",
-    },
-    {
-      id: 3,
-      date: "January 5, 2024",
-      title_en: "Global market outlook 2024",
-      title_ru: "Обзор мирового рынка на 2024 год",
-      excerpt_en:
-        "Our expectations for global markets and investment opportunities in the year ahead. Key trends include technological innovation and emerging market growth.",
-      excerpt_ru:
-        "Наши ожидания относительно мировых рынков и инвестиционных возможностей в предстоящем году. Ключевые тенденции включают технологические инновации и рост развивающихся рынков.",
-      image: "/global-connections-map.png",
-      category_en: "Market Analysis",
-      category_ru: "Анализ рынка",
-      readTime: "7 min read",
-    },
-    {
-      id: 4,
-      date: "December 20, 2023",
-      title_en: "Born International expands to Southeast Asia",
-      title_ru: "Born International расширяется в Юго-Восточную Азию",
-      excerpt_en:
-        "Strategic expansion into Singapore and Hong Kong markets, establishing new partnerships with local investment firms and technology companies.",
-      excerpt_ru:
-        "Стратегическое расширение на рынки Сингапура и Гонконга, установление новых партнерских отношений с местными инвестиционными фирмами и технологическими компаниями.",
-      image: "/modern-financial-office.png",
-      category_en: "Company News",
-      category_ru: "Новости компании",
-      readTime: "4 min read",
-    },
-    {
-      id: 5,
-      date: "December 15, 2023",
-      title_en: "Quantum computing investment breakthrough",
-      title_ru: "Прорыв в инвестициях в квантовые вычисления",
-      excerpt_en:
-        "Our portfolio company QBoson achieves major milestone with 1000+ qubit quantum computer, attracting global attention from tech giants.",
-      excerpt_ru:
-        "Наша портфельная компания QBoson достигает важной вехи с квантовым компьютером с более чем 1000 кубитами, привлекая глобальное внимание технологических гигантов.",
-      image: "/quantum-computing-background.png",
-      category_en: "Portfolio Updates",
-      category_ru: "Обновления портфеля",
-      readTime: "6 min read",
-    },
-    {
-      id: 6,
-      date: "December 10, 2023",
-      title_en: "Annual investor conference highlights",
-      title_ru: "Основные моменты ежегодной конференции инвесторов",
-      excerpt_en:
-        "Key insights from our annual investor conference, featuring presentations from portfolio companies and market outlook discussions.",
-      excerpt_ru:
-        "Основные выводы нашей ежегодной конференции инвесторов, включающие презентаци портфельных компаний и обсуждения перспектив рынка.",
-      image: "/financial-charts-graphs.png",
-      category_en: "Events",
-      category_ru: "События",
-      readTime: "8 min read",
-    },
-  ]
+  // Search and sort functionality
+  useEffect(() => {
+    let filtered = newsArticles
+    
+    // Apply search filter
+    if (searchQuery.trim() !== "") {
+      filtered = newsArticles.filter((article) => {
+        const searchLower = searchQuery.toLowerCase()
+        const titleEn = article.title_en.toLowerCase()
+        const titleRu = article.title_ru.toLowerCase()
+        const excerptEn = article.excerpt_en.toLowerCase()
+        const excerptRu = article.excerpt_ru.toLowerCase()
+        const categoryEn = article.category_en.toLowerCase()
+        const categoryRu = article.category_ru.toLowerCase()
+        
+        return (
+          titleEn.includes(searchLower) ||
+          titleRu.includes(searchLower) ||
+          excerptEn.includes(searchLower) ||
+          excerptRu.includes(searchLower) ||
+          categoryEn.includes(searchLower) ||
+          categoryRu.includes(searchLower)
+        )
+      })
+    }
+    
+    // Separate pinned articles (first 2) from others
+    const pinnedArticles = filtered.slice(0, 2)
+    const otherArticles = filtered.slice(2)
+    
+    // Sort other articles based on sortBy
+    const sortedOtherArticles = [...otherArticles].sort((a, b) => {
+      switch (sortBy) {
+        case "date":
+          return new Date(b.date).getTime() - new Date(a.date).getTime()
+        case "title":
+          return (language === "en" ? a.title_en : a.title_ru).localeCompare(
+            language === "en" ? b.title_en : b.title_ru
+          )
+        case "category":
+          return (language === "en" ? a.category_en : a.category_ru).localeCompare(
+            language === "en" ? b.category_en : b.category_ru
+          )
+        default:
+          return 0
+      }
+    })
+    
+    // Combine pinned articles with sorted others
+    setFilteredArticles([...pinnedArticles, ...sortedOtherArticles])
+  }, [searchQuery, sortBy, language])
 
   const languageContent = {
     en: {
@@ -118,6 +173,10 @@ export default function NewsPage() {
       enterYourEmail: "Enter your email",
       subscribe: "Subscribe",
       backToHome: "Back to Home",
+      sortBy: "Sort by",
+      sortByDate: "Date",
+      sortByTitle: "Title", 
+      sortByCategory: "Category",
       theFund: "The Fund",
       aboutTheFund: "About the fund",
       investmentStrategy: "Investment strategy",
@@ -149,6 +208,10 @@ export default function NewsPage() {
       enterYourEmail: "Введите свой адрес электронной почты",
       subscribe: "Подписаться",
       backToHome: "Вернуться на главную",
+      sortBy: "Сортировать по",
+      sortByDate: "Дате",
+      sortByTitle: "Заголовку",
+      sortByCategory: "Категории",
       theFund: "Фонд",
       aboutTheFund: "О фонде",
       investmentStrategy: "Инвестиционная стратегия",
@@ -213,10 +276,18 @@ export default function NewsPage() {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">{languageContent[language].newsDescription}</p>
           </div>
 
-          {/* Search Bar */}
-          <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-            <Input placeholder={languageContent[language].searchPlaceholder} className="pl-10 py-3 text-lg" />
+          {/* Search and Sort Controls */}
+          <div className="max-w-4xl mx-auto space-y-4">
+            {/* Search Bar */}
+            <div className="max-w-md mx-auto relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Input 
+                placeholder={languageContent[language].searchPlaceholder} 
+                className="pl-10 py-3 text-lg"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -233,9 +304,69 @@ export default function NewsPage() {
           <div className="absolute inset-0 bg-white/90" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
+          {/* Search Results Info and Sort Controls */}
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex-1">
+              {/* Search Results Info */}
+              {searchQuery.trim() !== "" && (
+                <p className="text-slate-600">
+                  {filteredArticles.length === 0 
+                    ? `No articles found for "${searchQuery}"`
+                    : `Found ${filteredArticles.length} article${filteredArticles.length === 1 ? '' : 's'} for "${searchQuery}"`
+                  }
+                </p>
+              )}
+              
+
+            </div>
+            
+            {/* Sort Dropdown - Positioned in top right */}
+            <div className="flex items-center space-x-2">
+              <span className="text-sm text-slate-600">{languageContent[language].sortBy}:</span>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                    <ArrowUpDown className="w-4 h-4" />
+                    <span>
+                      {sortBy === "date" && languageContent[language].sortByDate}
+                      {sortBy === "title" && languageContent[language].sortByTitle}
+                      {sortBy === "category" && languageContent[language].sortByCategory}
+                    </span>
+                    <ChevronDown className="w-4 h-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem 
+                    onClick={() => setSortBy("date")}
+                    className={sortBy === "date" ? "bg-blue-50 text-blue-700" : ""}
+                  >
+                    {languageContent[language].sortByDate}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => setSortBy("title")}
+                    className={sortBy === "title" ? "bg-blue-50 text-blue-700" : ""}
+                  >
+                    {languageContent[language].sortByTitle}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => setSortBy("category")}
+                    className={sortBy === "category" ? "bg-blue-50 text-blue-700" : ""}
+                  >
+                    {languageContent[language].sortByCategory}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsArticles.map((article) => (
-              <Card key={article.id} className="border-0 shadow-sm hover:shadow-lg transition-all duration-300 group">
+            {filteredArticles.map((article, index) => (
+              <Card 
+                key={article.id} 
+                className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 group ${
+                  index < 2 ? 'ring-2 ring-blue-200 bg-blue-50/30' : ''
+                }`}
+              >
                 <CardContent className="p-0">
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -244,10 +375,15 @@ export default function NewsPage() {
                       fill
                       className="object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 flex flex-col space-y-2">
                       <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                         {language === "en" ? article.category_en : article.category_ru}
                       </span>
+                      {index < 2 && (
+                        <span className="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                          📌 Pinned
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="p-6">
