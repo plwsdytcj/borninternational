@@ -477,16 +477,18 @@ export default function PortfolioPage() {
                     )}
                   </div>
                   <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 text-slate-900">
-                    {member.name}
+                    {member.isMoreButton ? "+" : member.name}
                   </h3>
-                  <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">{member.title}</p>
+                  <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">
+                    {member.isMoreButton ? "" : member.title}
+                  </p>
                   <p className="text-slate-600 text-sm leading-relaxed transition-colors duration-300">
-                    {member.description}
+                    {member.isMoreButton ? "" : member.description}
                   </p>
                   {(member.hasModal || member.isMoreButton) && (
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
                       <span className="text-xs text-slate-600 font-medium bg-gray-100 px-3 py-1 rounded-full">
-                        {member.isMoreButton ? "View all members" : "Click to learn more"}
+                        {member.isMoreButton ? "More" : "Click to learn more"}
                       </span>
                     </div>
                   )}
