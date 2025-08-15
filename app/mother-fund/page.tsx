@@ -174,7 +174,9 @@ export default function MotherFundPage() {
   ]
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   const handleMemberClick = (index: number) => {

@@ -50,7 +50,9 @@ export default function BubiBlockchainPage() {
   const content = languageContent[language]
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   const handlePreviousClick = () => {
@@ -134,7 +136,11 @@ export default function BubiBlockchainPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3"
-                  onClick={() => window.open("https://www.bubi.cn", "_blank")}
+                  onClick={() => {
+                    if (typeof window !== 'undefined') {
+                      window.open("https://www.bubi.cn", "_blank")
+                    }
+                  }}
                 >
                   {content.visitWebsite}
                   <ExternalLink className="ml-2 w-4 h-4" />

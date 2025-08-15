@@ -286,7 +286,9 @@ export default function PortfolioPage() {
   ]
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   const handleViewDetails = (index: number) => {
@@ -444,27 +446,30 @@ export default function PortfolioPage() {
               >
                 <CardContent className="p-8 text-center relative z-10">
                   <div className="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full group-hover:shadow-xl transition-shadow duration-500">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      fill
-                      className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-                    {member.isMoreButton && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full">
-                        <ArrowRight className="w-8 h-8 text-slate-600 transform group-hover:scale-125 transition-transform duration-300" />
+                    {member.isMoreButton ? (
+                      <div className="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-full flex items-center justify-center group-hover:bg-gray-200 group-hover:border-gray-400 transition-all duration-300">
+                        <div className="text-6xl font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">+</div>
                       </div>
+                    ) : (
+                      <>
+                        <Image
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          fill
+                          className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                      </>
                     )}
                   </div>
                   <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 text-slate-900">
-                    {member.isMoreButton ? "+" : member.name}
+                    {member.name}
                   </h3>
                   <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">
-                    {member.isMoreButton ? "" : member.title}
+                    {member.title}
                   </p>
                   <p className="text-slate-600 text-sm leading-relaxed transition-colors duration-300">
-                    {member.isMoreButton ? "" : member.description}
+                    {member.description}
                   </p>
                   {(member.hasModal || member.isMoreButton) && (
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">

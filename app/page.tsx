@@ -6,10 +6,24 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 
+// 客户端检测hook
+function useIsClient() {
+  const [isClient, setIsClient] = useState(false)
+  
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+  
+  return isClient
+}
+
 function useCountUp(end: number, duration = 2000, suffix = "") {
   const [count, setCount] = useState(0)
+  const isClient = useIsClient()
 
   useEffect(() => {
+    if (!isClient) return
+    
     let startTime: number
     let animationFrame: number
 
@@ -31,19 +45,21 @@ function useCountUp(end: number, duration = 2000, suffix = "") {
         cancelAnimationFrame(animationFrame)
       }
     }
-  }, [end, duration])
+  }, [end, duration, isClient])
 
   // Return just the count number, don't concatenate suffix here
   return { count, suffix }
 }
 
 function formatNumber(num: number): string {
-  return num.toLocaleString("en-US")
+  // 避免hydration错误，使用简单的数字格式化
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
 export default function HomePage() {
   const [language, setLanguage] = useState<"en" | "ru">("en")
   const [enableInertialScroll, setEnableInertialScroll] = useState<boolean>(true) // 控制惯性滑动效果，默认开启
+  const isClient = useIsClient()
 
   const portfolioCount = useCountUp(125, 5000, "+")
   const fundScale = useCountUp(280000000, 5000)
@@ -185,6 +201,11 @@ export default function HomePage() {
   const currentLanguage = languages.find((lang) => lang.code === language)
 
   useEffect(() => {
+    // 只在客户端渲染时执行
+    if (!isClient) {
+      return
+    }
+    
     // 如果惯性滑动效果被禁用，直接返回
     if (!enableInertialScroll) {
       return
@@ -193,10 +214,17 @@ export default function HomePage() {
     // 增强惯性滚动效果
     let isScrolling = false
     let scrollTimeout: NodeJS.Timeout
-    let lastScrollY = window.scrollY
+    let lastScrollY = 0
     let scrollVelocity = 0
     
+    // 初始化lastScrollY
+    if (typeof window !== 'undefined') {
+      lastScrollY = window.scrollY
+    }
+    
           const handleScroll = () => {
+        if (typeof window === 'undefined') return
+        
         const currentScrollY = window.scrollY
         scrollVelocity = currentScrollY - lastScrollY
         lastScrollY = currentScrollY
@@ -220,12 +248,12 @@ export default function HomePage() {
           })
         
         // 检测是否为移动设备
-        const isMobile = window.innerWidth <= 768
+        const isMobile = isClient && typeof window !== 'undefined' ? window.innerWidth <= 768 : false
         
         // 根据滚动方向决定吸附行为
         const sections = Array.from(document.querySelectorAll('.snap-section, section')).filter(section => section.tagName !== 'FOOTER')
-        const currentScrollY = window.scrollY
-        const viewportCenter = window.innerHeight / 2
+        const currentScrollY = typeof window !== 'undefined' ? window.scrollY : 0
+        const viewportCenter = typeof window !== 'undefined' ? window.innerHeight / 2 : 0
         
         // 检查是否在footer区域
         const footer = document.querySelector('footer')
@@ -313,13 +341,17 @@ export default function HomePage() {
       }, 150) // 减少延迟时间，让响应更快
     }
     
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    }
     
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll)
+      }
       clearTimeout(scrollTimeout)
     }
-  }, [enableInertialScroll]) // 当控制变量改变时重新设置
+  }, [enableInertialScroll, isClient]) // 当控制变量或客户端状态改变时重新设置
 
   return (
     <div className="min-h-screen bg-white scroll-smooth snap-container">
@@ -463,17 +495,17 @@ export default function HomePage() {
             <div className="mb-12 max-w-2xl"></div>
 
             {/* Key Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 lg:gap-16 mt-20 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mt-8 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-6 md:px-4">
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <h3
-                  className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
+                  className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
                   style={{ color: "#f0f2ff" }}
                 >
                   {portfolioCount.count}
                   {portfolioCount.suffix}
                 </h3>
                 <p
-                  className="text-sm md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-yellow-100 group-hover:scale-105"
+                  className="text-base md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-yellow-100 group-hover:scale-105"
                   style={{ color: "#ebeff2" }}
                 >
                   {content.portfolio}
@@ -482,9 +514,9 @@ export default function HomePage() {
               </div>
 
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
-                <div className="flex items-baseline justify-center space-x-2 mb-2 md:mb-4">
+                <div className="flex items-baseline justify-center space-x-2 mb-3 md:mb-4">
                   <h3
-                    className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-blue-200 group-hover:scale-105"
+                    className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-blue-200 group-hover:scale-105"
                     style={{ color: "#ebeff2" }}
                   >
                     {formatNumber(fundScale.count)}
@@ -497,7 +529,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <p
-                  className="text-sm md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-blue-100 group-hover:scale-105"
+                  className="text-base md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-blue-100 group-hover:scale-105"
                   style={{ color: "#f2f2f2" }}
                 >
                   {content.fundScale}
@@ -507,14 +539,14 @@ export default function HomePage() {
 
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <h3
-                  className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-green-200 group-hover:scale-105"
+                  className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-green-200 group-hover:scale-105"
                   style={{ color: "#f2f2f2" }}
                 >
                   {techGlobalization.count}
                   {techGlobalization.suffix}
                 </h3>
                 <p
-                  className="text-sm md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-green-100 group-hover:scale-105"
+                  className="text-base md:text-base lg:text-lg font-semibold tracking-wide transition-all duration-500 group-hover:text-green-100 group-hover:scale-105"
                   style={{ color: "#ffffff" }}
                 >
                   {content.techGlobalization}
@@ -537,11 +569,11 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/50" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-light text-slate-900 mb-6">{content.investmentInChina}</h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
+              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6">{content.investmentInChina}</h2>
+              <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-3 h-3 bg-blue-600 rounded-full" />
@@ -557,7 +589,7 @@ export default function HomePage() {
                 </div>
               </div>
               <Link href="/portfolio">
-                <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
                     {content.learnMoreInvestments}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
@@ -567,7 +599,7 @@ export default function HomePage() {
                 </button>
               </Link>
             </div>
-            <div className="relative h-96">
+            <div className="relative h-64 md:h-96">
               <Image
                 src="/modern-financial-office.png"
                 alt="Modern financial district"
@@ -590,9 +622,9 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/50" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative h-96">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="relative h-64 md:h-96">
               <Image
                 src="/backgrounds/worldmap.jpg"
                 alt="Global technology network connections world map"
@@ -601,8 +633,8 @@ export default function HomePage() {
               />
             </div>
             <div>
-              <h2 className="text-4xl font-light text-slate-900 mb-6">{content.globalInvestment}</h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
+              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6">{content.globalInvestment}</h2>
+              <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-3 h-3 bg-green-600 rounded-full" />
@@ -618,7 +650,7 @@ export default function HomePage() {
                 </div>
               </div>
               <Link href="/global">
-                <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
                     Learn more about technology globalization
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-700 ease-out"></span>
@@ -637,7 +669,7 @@ export default function HomePage() {
 
 
       {/* News & Updates Section */}
-      <section className="py-20 relative">
+      <section className="py-12 md:py-20 relative">
         <div className="absolute inset-0">
           <Image
             src="/backgrounds/bg-about.jpg"
@@ -648,7 +680,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-white/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0">
             <h2 className="text-3xl font-light text-slate-900">{content.latestNews}</h2>
             <Link href="/news">
               <button className="group relative flex items-center text-base font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">

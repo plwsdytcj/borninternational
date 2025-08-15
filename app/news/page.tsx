@@ -173,7 +173,9 @@ export default function NewsPage() {
   const currentLanguage = languages.find((lang) => lang.code === language)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   return (
