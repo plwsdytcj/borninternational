@@ -73,15 +73,7 @@ export default function HomePage() {
       globalInvestment: "Technology Globalization",
       globalInvestmentDescription:
         "We drive technology globalization through strategic investments across multiple global markets including Hong Kong, Singapore, Dubai, Saudi Arabia, London, Oxford, Germany, Japan, Russia, Israel, and the United States, fostering cross-border innovation and technology transfer.",
-      ourGlobalNetwork: "Our global network",
-      globalReach: "Global Network",
-      globalReachDescription:
-        "Our worldwide presence enables us to identify opportunities and manage investments across diverse markets and sectors",
-      exploreOurHoldings: "Explore our holdings",
-      riskManagement: "Risk management",
-      riskManagementDescription:
-        "Our comprehensive risk management framework ensures we can navigate market volatility while protecting the fund's long-term value. We continuously monitor and assess various risk factors across our portfolio.",
-      riskFrameworkDetails: "Risk framework details",
+
       latestNews: "Latest news",
       viewAllNews: "View all news",
       fourthQuarterResults: "Fourth quarter 2023 results",
@@ -141,15 +133,7 @@ export default function HomePage() {
       globalInvestment: "Технологическая глобализация",
       globalInvestmentDescription:
         "Мы способствуем технологической глобализации через стратегические инвестиции на многих мировых рынках, включая Гонконг, Сингапур, Дубай, Саудовскую Аравию, Лондон, Оксфорд, Германию, Японию, Россию, Израиль и США, способствуя трансграничным инновациям и передаче технологий.",
-      ourGlobalNetwork: "Наша глобальная сеть",
-      globalReach: "Глобальная сеть",
-      globalReachDescription:
-        "Наше всемирное присутствие позволяет нам выявлять возможности и управлять инвестициями на различных рынках и в различных секторах",
-      exploreOurHoldings: "Изучите наши активы",
-      riskManagement: "Управление рисками",
-      riskManagementDescription:
-        "Наша комплексная система управления рисками гарантирует, что мы сможем справиться с волатильностью рынка, защищая при этом долгосрочную стоимость фонда. Мы постоянно отслеживаем и оцениваем различные факторы риска в нашем портфеле.",
-      riskFrameworkDetails: "Подробности структуры рисков",
+
       latestNews: "Последние новости",
       viewAllNews: "Посмотреть все новости",
       fourthQuarterResults: "Результаты за четвертый квартал 2023 г.",
@@ -205,7 +189,7 @@ export default function HomePage() {
       <main className="relative h-screen">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/hero-mountain-landscape.jpg"
+            src="/backgrounds/mount_watermarked_background.jpeg"
             alt="BORN Capital mountain landscape with snow-capped peaks and blue sky"
             fill
             className="object-cover"
@@ -389,7 +373,7 @@ export default function HomePage() {
               <Link href="/global">
                 <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                    {content.ourGlobalNetwork}
+                    Learn more about technology globalization
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                   </span>
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-green-600" />
@@ -401,107 +385,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Global Reach Section - Text on Left */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-            src="/backgrounds/bg-news.jpg"
-            alt="Modern urban architecture"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/50" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-light text-slate-900 mb-6">{content.globalReach}</h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">{content.globalReachDescription}</p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-red-600 rounded-full" />
-                  <span className="text-slate-700">North America: 45%</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full" />
-                  <span className="text-slate-700">Europe: 30%</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-yellow-600 rounded-full" />
-                  <span className="text-slate-700">Asia-Pacific: 25%</span>
-                </div>
-              </div>
-              <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                  {content.exploreOurHoldings}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </span>
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-yellow-600" />
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
-              </button>
-            </div>
-            <div className="relative h-96">
-              <Image
-                src="/backgrounds/digital-thumb.jpg"
-                alt="3D globe with digital network icons and global connectivity visualization"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Risk Management Section - Text on Right */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-            src="/backgrounds/bg-case.jpg"
-            alt="Serene mountain landscape for strategic planning"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/50" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative h-96">
-              <Image
-                src="/financial-charts-graphs.png"
-                alt="Risk management and analysis"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <div>
-              <h2 className="text-4xl font-light text-slate-900 mb-6">{content.riskManagement}</h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">{content.riskManagementDescription}</p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-orange-600 rounded-full" />
-                  <span className="text-slate-700">Market risk assessment</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-red-600 rounded-full" />
-                  <span className="text-slate-700">Credit risk monitoring</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-indigo-600 rounded-full" />
-                  <span className="text-slate-700">Operational risk controls</span>
-                </div>
-              </div>
-              <button className="mt-8 group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                  {content.riskFrameworkDetails}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </span>
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-red-600" />
-                <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* News & Updates Section */}
       <section className="py-20 relative">

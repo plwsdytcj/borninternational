@@ -42,7 +42,7 @@ export default function NewsPage() {
         "New framework for investing in companies that contribute to the green transition. We are committed to supporting sustainable business practices and environmental responsibility.",
       excerpt_ru:
         "Новая основа для инвестирования в компании, которые вносят вклад в зеленый переход. Мы привержены поддержке устойчивых деловых практик и экологической ответственности.",
-      image: "/placeholder-9ab4c.png",
+      image: "/biotechnology-background.png",
       category_en: "Sustainability",
       category_ru: "Устойчивость",
       readTime: "3 min read",
@@ -84,7 +84,7 @@ export default function NewsPage() {
         "Our portfolio company QBoson achieves major milestone with 1000+ qubit quantum computer, attracting global attention from tech giants.",
       excerpt_ru:
         "Наша портфельная компания QBoson достигает важной вехи с квантовым компьютером с более чем 1000 кубитами, привлекая глобальное внимание технологических гигантов.",
-      image: "/placeholder-xy3zz.png",
+      image: "/quantum-computing-background.png",
       category_en: "Portfolio Updates",
       category_ru: "Обновления портфеля",
       readTime: "6 min read",
@@ -182,14 +182,13 @@ export default function NewsPage() {
       <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="w-8 h-8 bg-slate-800 mr-3 flex items-center justify-center">
-            <div className="text-white font-bold text-lg">B</div>
-          </div>
-          <div className="text-slate-800">
-            <div className="text-sm font-medium leading-tight">Born International</div>
-            <div className="text-sm font-medium leading-tight">伯恩国际</div>
-            <div className="text-sm font-medium leading-tight">Global Investment Platform</div>
-          </div>
+          <Image
+            src="/logo/born_logo_white.png"
+            alt="BORN International logo"
+            width={120}
+            height={48}
+            className="h-12 w-auto"
+          />
         </div>
 
         {/* Navigation */}
@@ -331,14 +330,13 @@ export default function NewsPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-6">
-                <div className="w-8 h-8 bg-white mr-3 flex items-center justify-center">
-                  <div className="text-slate-900 font-bold text-lg">B</div>
-                </div>
-                <div className="text-white">
-                  <div className="text-sm font-medium leading-tight">Born International</div>
-                  <div className="text-sm font-medium leading-tight">伯恩国际</div>
-                  <div className="text-sm font-medium leading-tight">Global Investment Platform</div>
-                </div>
+                <Image
+                  src="/logo/born_logo_white.png"
+                  alt="BORN International logo"
+                  width={120}
+                  height={48}
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-slate-400 text-sm">
                 A global investment platform focusing on early-stage high-tech startups.
