@@ -79,26 +79,7 @@ export default function KunweiTechnologyPage() {
         </div>
 
         <div className="flex items-center space-x-6">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className="flex items-center space-x-2 text-slate-700 hover:text-slate-900">
-                <Globe className="w-4 h-4" />
-                <span className="text-sm">{currentLanguage?.name}</span>
-                <ChevronDown className="w-3 h-3" />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-40">
-              {languages.map((lang) => (
-                <DropdownMenuItem
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code as "en" | "zh")}
-                  className={`cursor-pointer ${language === lang.code ? "bg-blue-50 text-blue-600" : ""}`}
-                >
-                  <span>{lang.name}</span>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+
 
           <button
             onClick={() => router.push("/portfolio")}

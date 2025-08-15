@@ -183,10 +183,178 @@ export default function HomePage() {
   const content = languageContent[language]
   const currentLanguage = languages.find((lang) => lang.code === language)
 
+  useEffect(() => {
+    // 增强惯性滚动效果
+    let isScrolling = false
+    let scrollTimeout: NodeJS.Timeout
+    let lastScrollY = window.scrollY
+    let scrollVelocity = 0
+    
+          const handleScroll = () => {
+        const currentScrollY = window.scrollY
+        scrollVelocity = currentScrollY - lastScrollY
+        lastScrollY = currentScrollY
+        
+        if (!isScrolling) {
+          isScrolling = true
+          document.body.classList.add('scrolling')
+          // 为所有 section 添加 scrolling 类
+          document.querySelectorAll('.snap-section, section').forEach(section => {
+            section.classList.add('scrolling')
+          })
+        }
+        
+        clearTimeout(scrollTimeout)
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false
+          document.body.classList.remove('scrolling')
+          // 移除所有 section 的 scrolling 类
+          document.querySelectorAll('.snap-section, section').forEach(section => {
+            section.classList.remove('scrolling')
+          })
+        
+        // 根据滚动速度决定吸附行为
+        const sections = document.querySelectorAll('.snap-section, section')
+        const scrollPosition = window.scrollY + window.innerHeight / 2
+        let targetSection: Element | null = null
+        let minDistance = Infinity
+        
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect()
+          const sectionCenter = rect.top + window.scrollY + rect.height / 2
+          const distance = Math.abs(scrollPosition - sectionCenter)
+          
+          if (distance < minDistance) {
+            minDistance = distance
+            targetSection = section
+          }
+        })
+        
+        if (targetSection) {
+          // 平滑滚动到目标 section
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+      }, 300) // 增加延迟时间，让惯性更明显
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollTimeout)
+    }
+  }, [])
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white scroll-smooth snap-container">
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        body {
+          overflow-x: hidden;
+        }
+        
+        .snap-container {
+          scroll-snap-type: y proximity;
+          scroll-behavior: smooth;
+        }
+        
+        .snap-section {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          transition: none;
+          min-height: 100vh;
+        }
+        
+        /* 手机端优化 */
+        @media (max-width: 768px) {
+          .snap-section {
+            min-height: 100vh;
+            padding: 1rem 0;
+          }
+          
+          .snap-container {
+            scroll-snap-type: y proximity;
+          }
+        }
+        
+        /* 滚动时禁用交互 */
+        .snap-section.scrolling {
+          pointer-events: none;
+        }
+        
+
+        
+        /* 惯性滚动效果 */
+        .snap-container {
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        /* 滚动时的过渡效果 */
+        body.scrolling {
+          transition: all 0.2s ease-out;
+        }
+        
+        /* 平滑的滚动效果 */
+        .snap-section {
+          transition: none;
+        }
+        
+        /* 滚动时禁用 hover 效果 */
+        .snap-section.scrolling {
+          pointer-events: none;
+        }
+        
+
+        
+        /* 确保每个section之间有适当的间距 */
+        .snap-section:not(:last-child) {
+          margin-bottom: 0;
+        }
+        
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+        
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
       {/* Hero Section */}
-      <main className="relative h-screen">
+      <main className="relative h-screen snap-section">
         <div className="absolute inset-0">
           <Image
             src="/backgrounds/mount_watermarked_background.jpeg"
@@ -204,9 +372,9 @@ export default function HomePage() {
             <Image
               src="/logo/born_logo_white.png"
               alt="BORN International logo"
-              width={200}
-              height={80}
-              className="h-16 w-auto"
+              width={120}
+              height={48}
+              className="h-10 w-auto"
             />
           </div>
 
@@ -216,7 +384,7 @@ export default function HomePage() {
             <div className="mb-12 max-w-2xl"></div>
 
             {/* Key Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mt-60 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 lg:gap-16 mt-20 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-4">
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <h3
                   className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
@@ -280,7 +448,7 @@ export default function HomePage() {
       </main>
 
       {/* Investment Strategy Section */}
-      <section className="py-20 relative">
+      <section className="h-screen relative flex items-center snap-section">
         <div className="absolute inset-0">
           <Image
             src="/backgrounds/bg-project-1.jpg"
@@ -290,7 +458,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/50" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-light text-slate-900 mb-6">{content.investmentInChina}</h2>
@@ -333,7 +501,7 @@ export default function HomePage() {
       </section>
 
       {/* Responsible Investment Section - Text on Right */}
-      <section className="py-20 relative">
+      <section className="h-screen relative flex items-center snap-section">
         <div className="absolute inset-0">
           <Image
             src="/backgrounds/bg-team.jpg"
@@ -343,7 +511,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/50" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
@@ -401,78 +569,64 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-white/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl font-light text-slate-900">{content.latestNews}</h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-3xl font-light text-slate-900">{content.latestNews}</h2>
             <Link href="/news">
-              <button className="group relative flex items-center text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+              <button className="group relative flex items-center text-base font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                 <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
                   {content.viewAllNews}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                 </span>
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-purple-600" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-purple-600" />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
               </button>
             </Link>
           </div>
 
-          {/* Fixed Top News Row - Horizontal Alternating Layout */}
-          <div className="space-y-12 mb-12">
+                    {/* Fixed Top News Row - Horizontal Alternating Layout */}
+          <div className="space-y-4 mb-6">
             {/* First News Item - Left Image, Right Content */}
-            <div className="flex flex-col lg:flex-row gap-8 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full lg:w-1/2 h-64">
+            <div className="flex flex-col lg:flex-row gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="relative w-full lg:w-1/2 h-32">
                 <Image src="/financial-charts-graphs.png" alt="Financial charts" fill className="object-cover" />
               </div>
-              <div className="w-full lg:w-1/2 p-8">
-                <p className="text-sm text-slate-500 mb-2">January 15, 2024</p>
-                <h3 className="text-2xl font-medium text-slate-900 mb-4">{content.fourthQuarterResults}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
-                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+              <div className="w-full lg:w-1/2 p-4">
+                <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
+                <h3 className="text-base font-medium text-slate-900 mb-1">{content.fourthQuarterResults}</h3>
+                <p className="text-xs text-slate-600 mb-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
+                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                   {content.readMore}
-                  <ExternalLink className="ml-1 w-4 h-4" />
+                  <ExternalLink className="ml-1 w-3 h-3" />
                 </Button>
               </div>
             </div>
 
             {/* Second News Item - Right Image, Left Content */}
-            <div className="flex flex-col lg:flex-row-reverse gap-8 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full lg:w-1/2 h-64">
+            <div className="flex flex-col lg:flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="relative w-full lg:w-1/2 h-32">
                 <Image src="/modern-financial-office.png" alt="Sustainable energy" fill className="object-cover" />
               </div>
-              <div className="w-full lg:w-1/2 p-8">
-                <p className="text-sm text-slate-500 mb-2">January 10, 2024</p>
-                <h3 className="text-2xl font-medium text-slate-900 mb-4">{content.climateTransitionInvestments}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">{content.climateTransitionInvestmentsDescription}</p>
-                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+              <div className="w-full lg:w-1/2 p-4">
+                <p className="text-xs text-slate-500 mb-1">January 10, 2024</p>
+                <h3 className="text-base font-medium text-slate-900 mb-1">{content.climateTransitionInvestments}</h3>
+                <p className="text-xs text-slate-600 mb-2 leading-relaxed">{content.climateTransitionInvestmentsDescription}</p>
+                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                   {content.readMore}
-                  <ExternalLink className="ml-1 w-4 h-4" />
+                  <ExternalLink className="ml-1 w-3 h-3" />
                 </Button>
               </div>
             </div>
 
-            {/* Third News Item - Left Image, Right Content */}
-            <div className="flex flex-col lg:flex-row gap-8 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full lg:w-1/2 h-64">
-                <Image src="/global-connections-map.png" alt="Global investments" fill className="object-cover" />
-              </div>
-              <div className="w-full lg:w-1/2 p-8">
-                <p className="text-sm text-slate-500 mb-2">January 5, 2024</p>
-                <h3 className="text-2xl font-medium text-slate-900 mb-4">{content.globalMarketOutlook}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">{content.globalMarketOutlookDescription}</p>
-                <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700">
-                  {content.readMore}
-                  <ExternalLink className="ml-1 w-4 h-4" />
-                </Button>
-              </div>
-            </div>
+ 
           </div>
 
           {/* Scrolling News Carousel */}
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-6">
+            <div className="flex animate-scroll space-x-3">
               {/* First set of scrolling news */}
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/modern-financial-office.png"
                       alt="Financial office"
@@ -480,17 +634,17 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">December 20, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.bornInternationalExpands}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.bornInternationalExpandsDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.bornInternationalExpands}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.bornInternationalExpandsDescription}</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/global-connections-map.png"
                       alt="Technology breakthrough"
@@ -498,17 +652,17 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">December 15, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.quantumComputingBreakthrough}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.quantumComputingBreakthroughDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.quantumComputingBreakthrough}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.quantumComputingBreakthroughDescription}</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/financial-charts-graphs.png"
                       alt="Conference highlights"
@@ -516,17 +670,17 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">December 10, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.annualInvestorConference}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.annualInvestorConferenceDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.annualInvestorConference}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.annualInvestorConferenceDescription}</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/global-connections-map.png"
                       alt="Market analysis"
@@ -534,17 +688,17 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">December 5, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.aiInvestmentTrends}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.aiInvestmentTrendsDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.aiInvestmentTrends}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.aiInvestmentTrendsDescription}</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/modern-financial-office.png"
                       alt="Sustainability report"
@@ -552,18 +706,18 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">November 30, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.sustainabilityImpactReport}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.sustainabilityImpactReportDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.sustainabilityImpactReport}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.sustainabilityImpactReportDescription}</p>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Duplicate set for seamless loop */}
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/modern-financial-office.png"
                       alt="Financial office"
@@ -571,17 +725,17 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">December 20, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.bornInternationalExpands}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.bornInternationalExpandsDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.bornInternationalExpands}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.bornInternationalExpandsDescription}</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="flex-shrink-0 w-80 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
+              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
-                  <div className="relative h-32">
+                  <div className="relative h-20">
                     <Image
                       src="/global-connections-map.png"
                       alt="Technology breakthrough"
@@ -589,34 +743,17 @@ export default function HomePage() {
                       className="object-cover rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <p className="text-xs text-slate-500 mb-1">December 15, 2023</p>
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">{content.quantumComputingBreakthrough}</h4>
-                    <p className="text-xs text-slate-600 mb-2">{content.quantumComputingBreakthroughDescription}</p>
+                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.quantumComputingBreakthrough}</h4>
+                    <p className="text-xs text-slate-600 mb-1">{content.quantumComputingBreakthroughDescription}</p>
                   </div>
                 </CardContent>
               </Card>
             </div>
           </div>
 
-          <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
-          }
-          
-          .animate-scroll:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
+
         </div>
       </section>
 
