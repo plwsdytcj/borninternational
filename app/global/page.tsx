@@ -156,7 +156,7 @@ export default function GlobalPage() {
       <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
         {/* Logo */}
         <div className="flex items-center">
-          <Image src="/born-logo.png" alt="BORN International Logo" width={180} height={60} className="h-12 w-auto" />
+          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={180} height={60} className="h-12 w-auto" />
         </div>
 
         {/* Navigation */}
@@ -521,7 +521,7 @@ export default function GlobalPage() {
             <div>
               <div className="flex items-center mb-6">
                 <Image
-                  src="/born-logo.png"
+                  src="/logo/born_logo_white.png"
                   alt="BORN International Logo"
                   width={180}
                   height={60}

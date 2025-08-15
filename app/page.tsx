@@ -218,7 +218,7 @@ export default function HomePage() {
           {/* Top-left corner content */}
           <div className="absolute top-8 left-8">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-24061R04040P1-WBqINdwaKn97yhsgNwo0aK3epgI9VP.png"
+              src="/logo/born_logo_white.png"
               alt="BORN International logo"
               width={200}
               height={80}
@@ -741,7 +741,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center mb-6">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-24061R04040P1-WBqINdwaKn97yhsgNwo0aK3epgI9VP.png"
+                  src="/logo/born_logo_white.png"
                   alt="BORN International Logo"
                   width={180}
                   height={60}
