@@ -131,44 +131,44 @@ export default function PortfolioPage() {
   const teamMembers = [
     {
       name: "Xueshu Tang",
-      title: language === "en" ? "Party Secretary & Chairman" : "党委书记、董事长",
+      title: language === "en" ? "Chairman of Qingdao HYLIR Investment Group" : "青岛海利尔投资集团董事长",
       description:
         language === "en"
-          ? "Over 30 years of experience in enterprise management and equity investment"
-          : "深耕知名企业运营管理30余年，在股权投资方面有着丰富的成功经验",
-              image: "/investment-team/唐学书_profile.jpg",
+          ? "Chairman of Qingdao HYLIR Investment Group and HYLIR (Chengdu) Headquarters Base Development Co., Ltd. Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association."
+          : "青岛海利尔投资集团董事长、海利尔（成都）总部基地发展有限公司董事长。四川省企业联合会、企业家协会副会长。",
+      image: "/investment-team/唐学书_profile.jpg",
       fullBio:
         language === "en"
-          ? "Over 30 years of experience in well-known enterprise operation and management, with rich successful experience in equity investment. Also serves as the first chairman of the Low Power Wireless Communication Committee of China Communications Industry Association, vice president of Sichuan Enterprise Federation and Entrepreneurs Association, vice president of Sichuan Rural Development Federation and many other social positions."
-          : "深耕知名企业运营管理30余年，在股权投资方面，有着丰富的成功经验。兼任首届中国通信工业协会低功耗无线通信委员会主任，四川省企业联合会、企业家协会副会长，四川省乡村发展联合会副会长等诸多社会职务。",
+          ? "Tang Xueshu, female, Han nationality, was born in September 1952. She is a member of the Communist Party of China with a bachelor's degree. She currently serves as the Chairman of Qingdao HYLIR Investment Group and HYLIR (Chengdu) Headquarters Base Development Co., Ltd. She was the first Director of the Low-Power Wireless Communication Committee of China Communications Industry Association. Now, she also holds the positions of Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association, Vice President of Sichuan Provincial Rural Development Federation, Standing Director of China Enterprise Culture Research Association, and Vice President of Qingdao Economic Association."
+          : "唐学书，女，汉族，1952年9月出生，中共党员，本科学历。现任青岛海利尔投资集团董事长、海利尔（成都）总部基地发展有限公司董事长。曾任中国通信工业协会低功耗无线通信委员会首届主任。现任四川省企业联合会、企业家协会副会长，四川省乡村发展联合会副会长，中国企业文化建设协会常务理事，青岛市经济学会副会长等职务。",
       hasModal: true,
     },
     {
       name: "Chong Li",
-      title: language === "en" ? "PPTV Co-founder & Angel Investor" : "PPTV联合创始人",
+      title: language === "en" ? "Founder of Dianliang Capital" : "点亮资本创始人",
       description:
         language === "en"
-          ? "Well-known investor and PPTV co-founder with successful investments in multiple unicorn companies"
-          : "知名投资人，PPTV联合创始人；天使轮领投波奇网，现市值已超过4亿美金；A轮投资友加，现市值已超过2亿美金。",
+          ? "Technology entrepreneur and renowned investor in the tech innovation sector. Vice President of the Finance Association, Tsinghua University."
+          : "科技企业家，科技创新领域知名投资人。清华大学经济管理学院金融协会副会长。",
               image: "/investment-team/李翀_personal_page.jpg",
       fullBio:
         language === "en"
-          ? "Well-known investor and PPTV co-founder with extensive experience in early-stage investments. Led angel round investment in Boqii.com (current market value exceeds $400 million) and Series A investment in YouJia (current market value exceeds $200 million). Has a proven track record in identifying and nurturing high-growth technology companies."
-          : "知名投资人，PPTV联合创始人；天使轮领投波奇网；天使轮领投波奇网，现市值已超过4亿美金；A轮投资友加，现市值已超过2亿美金。在识别和培育高增长科技公司方面拥有丰富的成功经验。",
+          ? "Founder of Dianliang Capital | Technology Entrepreneur | Expert in Technological Innovation and Applications | Renowned Investor in the Tech Innovation Sector\n\nVice President of the Finance Association, School of Economics and Management, Tsinghua University.\n\nWith long-term experience in technology-focused investments, he excels in forward-looking research in hard technology, optoelectronics, data technologies, robotics, and artificial intelligence. Known for sharp intuition on emerging technologies and business models, he combines industry trends with cutting-edge innovations to identify disruptive investment opportunities.\n\nEntrepreneurial Experience:\n• 1994: Co-founded Henan Huihuang Technology Co., Ltd., which went public in September 2009 (Stock Code: 002296.SZ).\n• 2009–2011: Co-invested and co-founded Shanghai PPLive Media (PPTV), serving as Executive Director. By the end of 2013, PPTV was acquired by Suning and Lenovo Hony Capital for USD 480 million, generating a 1,000x return on investment.\n\nMajor Investment Achievements:\n• Jedee Technology – Angel investor in a smart in-vehicle cockpit developer and service provider. Today, Jedee has become the largest in-car software provider and car owner service platform in China's automotive industry.\n• Bubi Blockchain – Angel investor in one of China's earliest blockchain technology companies, now a core technology provider for the national blockchain infrastructure 'BSN Xinghuo Chain Network.'\n• Lingou Microelectronics – Angel investor in a motion control chip and solutions provider. In July 2022, Lingou was acquired by the listed company Jingfeng Mingyuan at a valuation of RMB 580 million.\n• Boton Optoelectronics – Angel investor in China's first domestically commercialized RF ion source company. Its ion source core equipment now plays an irreplaceable role in national communications, satellites, semiconductors, and superconductors.\n• Hongjing Optics – Angel investor in an optical lens and solutions provider. Today, Hongjing has become a global leader in specialized optoelectronic imaging and video solutions, and successfully went public on ChiNext on March 18, 2025.\n• Junduo Robotics – Angel investor in a dexterous robotic hand company. Now the leading domestic enterprise in electric grippers, it is disrupting traditional mechanical grippers and overtaking incumbents in robotic end-effector solutions.\n• Kunwei Force Sensing – Angel investor in a six-dimensional force sensor provider. Today, Kunwei is the No.1 company by market share in China's six-dimensional force sensing sector.\n• Boson Quantum – Angel investor in China's first coherent optical quantum computing company. In April 2024, the company released the world's leading 550-qubit coherent optical quantum computer, the first commercialized quantum computer in China. It delivers computing power 1,000x higher than traditional computers for specialized problems and has broad applications in AI, communications, finance, and pharmaceuticals."
+          : "点亮资本创始人 | 科技企业家 | 技术创新与应用专家 | 科技创新领域知名投资人\n\n清华大学经济管理学院金融协会副会长。\n\n在科技投资领域拥有长期经验，擅长硬科技、光电、数据技术、机器人和人工智能的前瞻性研究。以对新兴技术和商业模式的敏锐直觉而闻名，他将行业趋势与前沿创新相结合，识别颠覆性投资机会。\n\n创业经历：\n• 1994年：联合创立河南辉煌科技股份有限公司，2009年9月上市（股票代码：002296.SZ）。\n• 2009-2011年：联合投资并联合创立上海聚力传媒（PPTV），担任执行董事。2013年底，PPTV被苏宁和联想弘毅资本以4.8亿美元收购，实现1000倍投资回报。\n\n主要投资成就：\n• 极豆科技 – 智能车载座舱开发和服务提供商的天使投资人。如今，极豆已成为中国汽车行业最大的车载软件提供商和车主服务平台。\n• 布比区块链 – 中国最早区块链技术公司之一的天使投资人，现为国家区块链基础设施'BSN星火链网'的核心技术提供商。\n• 凌鸥创芯 – 运动控制芯片和解决方案提供商的天使投资人。2022年7月，凌鸥被上市公司晶丰明源以5.8亿元估值收购。\n• 博顿光电 – 中国首家国产化商用射频离子源公司的天使投资人。其离子源核心设备现已在国家通信、卫星、半导体和超导体领域发挥不可替代的作用。\n• 弘景光电 – 光学镜头和解决方案提供商的天使投资人。如今，弘景已成为专业光电成像和视频解决方案的全球领导者，并于2025年3月18日成功在创业板上市。\n• 钧舵机器人 – 灵巧机械手公司的天使投资人。现为国内电动夹爪领先企业，正在颠覆传统机械夹爪，在机器人末端执行器解决方案方面超越现有企业。\n• 坤维力觉 – 六维力传感器提供商的天使投资人。如今，坤维是中国六维力传感领域市场份额第一的公司。\n• 玻色量子 – 中国首家相干光量子计算公司的天使投资人。2024年4月，公司发布了世界领先的550量子比特相干光量子计算机，这是中国首台商用量子计算机。它在专业问题上提供比传统计算机高1000倍的计算能力，在AI、通信、金融和制药领域有广泛应用。",
       hasModal: true,
     },
     {
       name: "Feng Guo",
-      title: language === "en" ? "Dr./Professor - Blockchain & IoT" : "博士/教授",
+      title: language === "en" ? "Guo Feng, Ph.D. in Engineering | Partner at Dianliang Capital" : "郭峰博士 | 点亮资本合伙人",
       description:
         language === "en"
-          ? "Focused on Internet and IoT domain investments, early blockchain technology researcher in China, Professor at Xi'an University of Electronic Science and Technology"
-          : "专注于互联网及物联网领域投资，国内早期区块链技术研究者；曾任西安电子科技大学教授。",
+          ? "Former Professor at Xidian University, Vice Dean of the School of Telecommunications Engineering, and Director of the State Key Laboratory of Integrated Services Networks"
+          : "曾任西安电子科技大学教授、电信工程学院副院长、综合业务网理论及关键技术国家重点实验室主任",
               image: "/investment-team/郭峰_personal_page.jpg",
       fullBio:
         language === "en"
-          ? "Dr. Guo Feng is a distinguished academic and investor focused on Internet and IoT domain investments. As one of China's early blockchain technology researchers, he brings deep technical expertise to investment decisions. He previously served as a Professor at Xi'an University of Electronic Science and Technology, combining academic rigor with practical investment experience."
-          : "郭峰博士是一位杰出的学者和投资人，专注于互联网及物联网领域投资。作为国内早期区块链技术研究者之一，他为投资决策带来了深厚的技术专业知识。他曾任西安电子科技大学教授，将学术严谨性与实际投资经验相结合。",
+          ? "Guo Feng, Ph.D. in Engineering | Partner at Dianliang Capital\n\nFormer Professor at Xidian University, Vice Dean of the School of Telecommunications Engineering, and Director of the State Key Laboratory of Integrated Services Networks. Previously held senior executive positions at NTT (Japan), Cisco (USA), and China Electronics Corporation (CEC).\n\nIn recent years, he has focused on early-stage investments in AI and robotics, IoT and smart manufacturing, semiconductors, blockchain and quantum computing, as well as new energy and digital assets. He also serves as an entrepreneurial mentor at several leading domestic innovation and investment institutions, including the Peking University Industry Research Institute, Tsinghua Tongfang Incubator, and the International University Innovation Alliance.\n\nDr. Guo is recognized as a pioneer and researcher in early-stage internet, WiFi and optical networks, quantum computing, blockchain, and emerging digital industries in China."
+          : "郭峰博士 | 点亮资本合伙人\n\n曾任西安电子科技大学教授、电信工程学院副院长、综合业务网理论及关键技术国家重点实验室主任。曾在日本NTT、美国思科、中国电子集团等知名企业担任高级管理职务。\n\n近年来专注于AI和机器人、物联网和智能制造、半导体、区块链和量子计算、新能源和数字资产等领域的早期投资。同时担任北京大学产业技术研究院、清华同方孵化器、国际大学创新联盟等多家国内知名创新投资机构的创业导师。\n\n郭峰博士被公认为中国早期互联网、WiFi和光网络、量子计算、区块链和新兴数字产业的先驱者和研究者。",
       hasModal: true,
     },
     {
@@ -199,18 +199,18 @@ export default function PortfolioPage() {
           : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。在识别和培育高增长科技公司方面拥有丰富的成功经验。",
       hasModal: true,
     },
-    {
+        {
       name: "Wencheng Li",
       title: language === "en" ? "PhD/Founding Partner" : "博士/创始合伙人",
       description:
         language === "en"
-          ? "PhD in Engineering from East China University of Science and Technology, adjunct professor at Hohai University Business School, founding partner of Born Capital with rich experience in early-stage technology investments"
-          : "在华东理工大学获得工科博士学位，同时也是清华大学五道口金融学院和浙江大学管理学院的校友。目前在河海大学商学院担任兼职教授。",
-              image: "/investment-team/李文成_personal_page.jpg",
+          ? "International high-tech investor and Founding Partner of Born Capital. PhD in Chemical Engineering from East China University of Science and Technology. Adjunct Professor at HoHai University."
+          : "国际高科技投资者，Born Capital创始合伙人。华东理工大学化学工程博士。河海大学兼职教授。",
+      image: "/investment-team/李文成_personal_page.jpg",
       fullBio:
         language === "en"
-          ? "Dr. Li Wencheng obtained his PhD in Engineering from East China University of Science and Technology, and is also an alumnus of Tsinghua University PBC School of Finance and Zhejiang University School of Management. He currently serves as an adjunct professor at Hohai University Business School. As a founding partner of Born Capital, he has participated in the formation and management of all funds under the company, has rich experience in early-stage investment in technology projects, and has been responsible for investments in Sandi Jianke, Yixun Optoelectronics, Token Cloud, Bubi Blockchain, Bose Quantum, and Zhongtan Guoke. He has also published multiple papers in international journals, participated in various domestic and international academic cooperation projects, serves as an innovation and entrepreneurship mentor at various universities, and was selected as one of the '35U35 Young Investors' by the Young Investor Club in 2021."
-          : "李文成博士在华东理工大学获得工科博士学位，同时也是清华大学五道口金融学院和浙江大学管理学院的校友。目前在河海大学商学院担任兼职教授。作为伯恩资本的创始合伙人，参与组建及管理过旗下所有基金，在科技类项目的早期投资中有丰富经验，负责过三迪建科、易迅光电、令牌云、布比区块链、玻色量子、中碳国科等项目的投资。此外，李文成博士还在国际期刊上发表过多篇论文，参与过诸多国内外合作学术项目，并在多家高校担任创新创业导师，于2021年获评青年投资家俱乐部的'35U35青年投资家'。",
+          ? "Dr. LI Wencheng is an international high-tech investor. He holds a Ph.D. in Chemical Engineering from East China University of Science and Technology. He is also an alumnus of Tsinghua University's PBCSF and Zhejiang University's School of Management. Dr. Li now serves as an Adjunct Professor at HoHai University. Dr. Li is the Founding Partner of Born Capital, where he has invested in over 100 high-tech startups, with a focus on areas such as quantum computing, artificial intelligence, and new energy. He is also the founder of Born International, a platform dedicated to connecting Chinese enterprises with global markets, particularly in regions like Russia, the Middle East, and Southeast Asia."
+          : "李文科博士是国际高科技投资者。他拥有华东理工大学化学工程博士学位。他也是清华大学五道口金融学院和浙江大学管理学院的校友。李博士现任河海大学兼职教授。李博士是Born Capital的创始合伙人，已投资超过100家高科技初创企业，专注于量子计算、人工智能和新能源等领域。他也是Born International的创始人，该平台致力于连接中国企业与全球市场，特别是在俄罗斯、中东和东南亚等地区。",
       hasModal: true,
     },
     {
@@ -319,6 +319,14 @@ export default function PortfolioPage() {
     if (selectedMemberIndex !== null) {
       const newIndex = selectedMemberIndex === 0 ? modalEnabledMembers.length - 1 : selectedMemberIndex - 1
       setSelectedMemberIndex(newIndex)
+      
+      // Scroll to top of modal content when switching members
+      setTimeout(() => {
+        const modalContent = document.querySelector('.modal-content-scrollable')
+        if (modalContent) {
+          modalContent.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+      }, 100)
     }
   }
 
@@ -326,6 +334,14 @@ export default function PortfolioPage() {
     if (selectedMemberIndex !== null) {
       const newIndex = selectedMemberIndex === modalEnabledMembers.length - 1 ? 0 : selectedMemberIndex + 1
       setSelectedMemberIndex(newIndex)
+      
+      // Scroll to top of modal content when switching members
+      setTimeout(() => {
+        const modalContent = document.querySelector('.modal-content-scrollable')
+        if (modalContent) {
+          modalContent.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+      }, 100)
     }
   }
 
@@ -488,32 +504,36 @@ export default function PortfolioPage() {
       {/* Custom Team Member Modal */}
       {isModalOpen && currentMember && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto relative">
-            {/* Close Button */}
-            <button
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 z-10 text-slate-400 hover:text-slate-600 bg-white rounded-full p-2 shadow-lg"
-            >
-              <X className="w-6 h-6" />
-            </button>
+          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto relative modal-content-scrollable">
+            {/* Close Button - Sticky to top */}
+            <div className="sticky top-0 z-20 bg-white rounded-t-lg">
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 z-30 text-slate-400 hover:text-slate-600 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={handlePreviousMember}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 rounded-full p-3 shadow-lg transition-all"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
+            {/* Navigation Arrows - Sticky to viewport */}
+            <div className="sticky top-1/2 transform -translate-y-1/2 z-20 pointer-events-none">
+              <button
+                onClick={handlePreviousMember}
+                className="absolute left-4 pointer-events-auto bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
 
-            <button
-              onClick={handleNextMember}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 rounded-full p-3 shadow-lg transition-all"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+              <button
+                onClick={handleNextMember}
+                className="absolute right-4 pointer-events-auto bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
 
             {/* Modal Content */}
-            <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col lg:flex-row pt-16">
               {/* Left Side - Image */}
               <div className="lg:w-1/2 p-8">
                 <div className="relative w-full h-96 lg:h-[600px]">
@@ -532,8 +552,499 @@ export default function PortfolioPage() {
                   <h2 className="text-4xl font-bold text-slate-900 mb-3">{currentMember.name}</h2>
                   <p className="text-xl text-blue-600 font-medium mb-6">{currentMember.title}</p>
                 </div>
-                <div className="text-slate-700 leading-relaxed text-lg">
+                <div className="text-slate-700 leading-relaxed text-lg prose prose-lg max-w-none">
+                  {currentMember.name === "Chong Li" ? (
+                    <div className="space-y-6">
+                      {/* Header Section */}
+                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <h3 className="text-2xl font-semibold text-slate-900 mb-4">Professional Profile</h3>
+                        <p className="text-lg leading-relaxed text-slate-700">
+                          Founder of Dianliang Capital | Technology Entrepreneur | Expert in Technological Innovation and Applications | Renowned Investor in the Tech Innovation Sector
+                        </p>
+                      </div>
+
+                      {/* Academic Position */}
+                      <div className="bg-slate-50 p-6 rounded-lg">
+                        <h4 className="text-lg font-semibold text-slate-900 mb-2">Academic Position</h4>
+                        <p className="text-slate-700">Vice President of the Finance Association, School of Economics and Management, Tsinghua University.</p>
+                      </div>
+
+                      {/* Expertise */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3">Expertise</h4>
+                        <p className="text-slate-700 mb-4">
+                          With long-term experience in technology-focused investments, he excels in forward-looking research in hard technology, optoelectronics, data technologies, robotics, and artificial intelligence. Known for sharp intuition on emerging technologies and business models, he combines industry trends with cutting-edge innovations to identify disruptive investment opportunities.
+                        </p>
+                      </div>
+
+                      {/* Entrepreneurial Experience */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Entrepreneurial Experience</h4>
+                        <ul className="space-y-3">
+                          <li className="flex items-start">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <div>
+                              <span className="font-medium">1994:</span> Co-founded Henan Huihuang Technology Co., Ltd., which went public in September 2009 (Stock Code: 002296.SZ).
+                            </div>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <div>
+                              <span className="font-medium">2009–2011:</span> Co-invested and co-founded Shanghai PPLive Media (PPTV), serving as Executive Director. By the end of 2013, PPTV was acquired by Suning and Lenovo Hony Capital for USD 480 million, generating a 1,000x return on investment.
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* Major Investment Achievements */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-4 border-b border-slate-200 pb-2">Major Investment Achievements</h4>
+                        <div className="grid gap-4">
+                          {[
+                            {
+                              company: "Jedee Technology",
+                              description: "Angel investor in a smart in-vehicle cockpit developer and service provider. Today, Jedee has become the largest in-car software provider and car owner service platform in China's automotive industry."
+                            },
+                            {
+                              company: "Bubi Blockchain",
+                              description: "Angel investor in one of China's earliest blockchain technology companies, now a core technology provider for the national blockchain infrastructure 'BSN Xinghuo Chain Network.'"
+                            },
+                            {
+                              company: "Lingou Microelectronics",
+                              description: "Angel investor in a motion control chip and solutions provider. In July 2022, Lingou was acquired by the listed company Jingfeng Mingyuan at a valuation of RMB 580 million."
+                            },
+                            {
+                              company: "Boton Optoelectronics",
+                              description: "Angel investor in China's first domestically commercialized RF ion source company. Its ion source core equipment now plays an irreplaceable role in national communications, satellites, semiconductors, and superconductors."
+                            },
+                            {
+                              company: "Hongjing Optics",
+                              description: "Angel investor in an optical lens and solutions provider. Today, Hongjing has become a global leader in specialized optoelectronic imaging and video solutions, and successfully went public on ChiNext on March 18, 2025."
+                            },
+                            {
+                              company: "Junduo Robotics",
+                              description: "Angel investor in a dexterous robotic hand company. Now the leading domestic enterprise in electric grippers, it is disrupting traditional mechanical grippers and overtaking incumbents in robotic end-effector solutions."
+                            },
+                            {
+                              company: "Kunwei Force Sensing",
+                              description: "Angel investor in a six-dimensional force sensor provider. Today, Kunwei is the No.1 company by market share in China's six-dimensional force sensing sector."
+                            },
+                            {
+                              company: "Boson Quantum",
+                              description: "Angel investor in China's first coherent optical quantum computing company. In April 2024, the company released the world's leading 550-qubit coherent optical quantum computer, the first commercialized quantum computer in China. It delivers computing power 1,000x higher than traditional computers for specialized problems and has broad applications in AI, communications, finance, and pharmaceuticals."
+                            }
+                          ].map((investment, index) => (
+                            <div key={index} className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+                              <h5 className="font-semibold text-slate-900 mb-2">{investment.company}</h5>
+                              <p className="text-slate-600 text-sm leading-relaxed">{investment.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                                     ) : currentMember.name === "Xueshu Tang" ? (
+                     <div className="space-y-6">
+                       {/* Header Section */}
+                       <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                         <h3 className="text-2xl font-semibold text-slate-900 mb-4">Executive Profile</h3>
+                         <p className="text-lg leading-relaxed text-slate-700">
+                           Chairman of Qingdao HYLIR Investment Group | Enterprise Leader | Industry Association Executive | Communist Party Member
+                         </p>
+                       </div>
+
+                       {/* Personal Background */}
+                       <div className="bg-slate-50 p-6 rounded-lg">
+                         <h4 className="text-lg font-semibold text-slate-900 mb-2">Personal Background</h4>
+                         <p className="text-slate-700">Tang Xueshu, female, Han nationality, was born in September 1952. She is a member of the Communist Party of China with a bachelor's degree.</p>
+                       </div>
+
+                       {/* Current Positions */}
+                       <div>
+                         <h4 className="text-lg font-semibold text-slate-900 mb-3">Current Positions</h4>
+                         <div className="grid gap-3">
+                           {[
+                             "Chairman of Qingdao HYLIR Investment Group",
+                             "Chairman of HYLIR (Chengdu) Headquarters Base Development Co., Ltd.",
+                             "Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association",
+                             "Vice President of Sichuan Provincial Rural Development Federation",
+                             "Standing Director of China Enterprise Culture Research Association",
+                             "Vice President of Qingdao Economic Association"
+                           ].map((position, index) => (
+                             <div key={index} className="flex items-start">
+                               <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <p className="text-slate-700">{position}</p>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+
+                       {/* Previous Experience */}
+                       <div>
+                         <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Previous Experience</h4>
+                         <div className="bg-green-50 p-6 rounded-lg">
+                           <p className="text-slate-700 mb-4">
+                             <span className="font-medium">First Director</span> of the Low-Power Wireless Communication Committee of China Communications Industry Association
+                           </p>
+                         </div>
+                       </div>
+
+                       {/* Key Leadership Areas */}
+                       <div>
+                         <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Key Leadership Areas</h4>
+                         <div className="grid gap-3">
+                           {[
+                             "Investment group management and strategic planning",
+                             "Enterprise association leadership and industry development",
+                             "Rural development and economic cooperation",
+                             "Corporate culture research and promotion",
+                             "Economic policy and regional development"
+                           ].map((area, index) => (
+                             <div key={index} className="flex items-start">
+                               <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <p className="text-slate-700">{area}</p>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+                     </div>
+                                     ) : currentMember.name === "Feng Guo" ? (
+                     <div className="space-y-6">
+                       {/* Header Section */}
+                       <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
+                         <h3 className="text-2xl font-semibold text-slate-900 mb-4">Academic & Investment Profile</h3>
+                         <p className="text-lg leading-relaxed text-slate-700">
+                           Guo Feng, Ph.D. in Engineering | Partner at Dianliang Capital | Pioneer in Digital Industries | Distinguished Academic Investor
+                         </p>
+                       </div>
+
+                       {/* Academic Leadership */}
+                       <div className="bg-slate-50 p-6 rounded-lg">
+                         <h4 className="text-lg font-semibold text-slate-900 mb-2">Academic Leadership</h4>
+                         <p className="text-slate-700">Former Professor at Xidian University, Vice Dean of the School of Telecommunications Engineering, and Director of the State Key Laboratory of Integrated Services Networks.</p>
+                       </div>
+
+                       {/* Corporate Experience */}
+                       <div>
+                         <h4 className="text-lg font-semibold text-slate-900 mb-3">Corporate Experience</h4>
+                         <div className="grid gap-3">
+                           {[
+                             "NTT (Japan) - Senior Executive Position",
+                             "Cisco (USA) - Senior Executive Position", 
+                             "China Electronics Corporation (CEC) - Senior Executive Position",
+                             "Combines academic rigor with industry experience"
+                           ].map((experience, index) => (
+                             <div key={index} className="flex items-start">
+                               <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <p className="text-slate-700">{experience}</p>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+
+                       {/* Investment Focus */}
+                       <div>
+                         <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Investment Focus</h4>
+                         <div className="grid gap-3">
+                           {[
+                             "AI and robotics",
+                             "IoT and smart manufacturing",
+                             "Semiconductors",
+                             "Blockchain and quantum computing",
+                             "New energy and digital assets"
+                           ].map((focus, index) => (
+                             <div key={index} className="flex items-start">
+                               <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <p className="text-slate-700">{focus}</p>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+
+                       {/* Mentorship & Recognition */}
+                       <div>
+                         <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Mentorship & Recognition</h4>
+                         <div className="bg-purple-50 p-6 rounded-lg">
+                           <p className="text-slate-700 mb-4">
+                             Serves as an entrepreneurial mentor at several leading domestic innovation and investment institutions, including:
+                           </p>
+                           <ul className="space-y-2">
+                             <li className="flex items-start">
+                               <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <span>Peking University Industry Research Institute</span>
+                             </li>
+                             <li className="flex items-start">
+                               <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <span>Tsinghua Tongfang Incubator</span>
+                             </li>
+                             <li className="flex items-start">
+                               <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                               <span>International University Innovation Alliance</span>
+                             </li>
+                           </ul>
+                           <p className="text-slate-700 mt-4 font-medium">
+                             Recognized as a pioneer and researcher in early-stage internet, WiFi and optical networks, quantum computing, blockchain, and emerging digital industries in China.
+                           </p>
+                         </div>
+                       </div>
+                     </div>
+                  ) : currentMember.name === "Dongmin Chen" ? (
+                    <div className="space-y-6">
+                      {/* Header Section */}
+                      <div className="bg-gradient-to-r from-orange-50 to-amber-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+                        <h3 className="text-2xl font-semibold text-slate-900 mb-4">Distinguished Scholar Profile</h3>
+                        <p className="text-lg leading-relaxed text-slate-700">
+                          National 'Thousand Talents Program' Scholar | Former Peking University Professor | Technology Development Expert | International Collaboration Specialist
+                        </p>
+                      </div>
+
+                      {/* Academic Leadership */}
+                      <div className="bg-slate-50 p-6 rounded-lg">
+                        <h4 className="text-lg font-semibold text-slate-900 mb-2">Academic Leadership</h4>
+                        <p className="text-slate-700">Former professor at Peking University's School of International Studies, with extensive experience in academia and technology development.</p>
+                      </div>
+
+                      {/* Key Leadership Positions */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3">Key Leadership Positions</h4>
+                        <div className="grid gap-3">
+                          {[
+                            "Deputy Director of Science and Technology Development Department",
+                            "Director of Industrial Technology Research Institute",
+                            "National 'Thousand Talents Program' Scholar",
+                            "International collaboration and technology transfer expert"
+                          ].map((position, index) => (
+                            <div key={index} className="flex items-start">
+                              <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <p className="text-slate-700">{position}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Expertise Areas */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Expertise Areas</h4>
+                        <div className="bg-orange-50 p-6 rounded-lg">
+                          <ul className="space-y-2">
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>International collaboration and partnerships</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Technology transfer and commercialization</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Strategic research development</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ) : currentMember.name === "Hao Chu" ? (
+                    <div className="space-y-6">
+                      {/* Header Section */}
+                      <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
+                        <h3 className="text-2xl font-semibold text-slate-900 mb-4">Investment Partner Profile</h3>
+                        <p className="text-lg leading-relaxed text-slate-700">
+                          Founding Partner | Multi-Sector Investment Expert | Technology & Consumer Specialist | Growth Company Mentor
+                        </p>
+                      </div>
+
+                      {/* Investment Focus */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3">Investment Focus</h4>
+                        <div className="grid gap-3">
+                          {[
+                            "Internet and digital technology",
+                            "Education technology and services",
+                            "Consumer upgrades and lifestyle",
+                            "Internet of Things (IoT) solutions"
+                          ].map((sector, index) => (
+                            <div key={index} className="flex items-start">
+                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <p className="text-slate-700">{sector}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Professional Experience */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Professional Experience</h4>
+                        <p className="text-slate-700 mb-4">
+                          Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors. Has a proven track record in identifying and nurturing high-growth technology companies.
+                        </p>
+                      </div>
+
+                      {/* Key Achievements */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Key Achievements</h4>
+                        <div className="bg-teal-50 p-6 rounded-lg">
+                          <ul className="space-y-2">
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Successfully identified and invested in numerous high-growth companies</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Established strong portfolio management practices</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Mentored and supported portfolio companies through growth phases</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ) : currentMember.name === "Wencheng Li" ? (
+                    <div className="space-y-6">
+                      {/* Header Section */}
+                      <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                        <h3 className="text-2xl font-semibold text-slate-900 mb-4">International High-Tech Investor Profile</h3>
+                        <p className="text-lg leading-relaxed text-slate-700">
+                          PhD/Founding Partner | International High-Tech Investor | Chemical Engineering Expert | Global Market Connector
+                        </p>
+                      </div>
+
+                      {/* Academic Background */}
+                      <div className="bg-slate-50 p-6 rounded-lg">
+                        <h4 className="text-lg font-semibold text-slate-900 mb-2">Academic Background</h4>
+                        <p className="text-slate-700">Ph.D. in Chemical Engineering from East China University of Science and Technology. Alumnus of Tsinghua University's PBCSF and Zhejiang University's School of Management. Currently serves as an Adjunct Professor at HoHai University.</p>
+                      </div>
+
+                      {/* Investment Leadership */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3">Investment Leadership</h4>
+                        <div className="grid gap-3">
+                          {[
+                            "Founding Partner of Born Capital",
+                            "Invested in over 100 high-tech startups",
+                            "Focus areas: quantum computing, artificial intelligence, and new energy",
+                            "Founder of Born International platform"
+                          ].map((leadership, index) => (
+                            <div key={index} className="flex items-start">
+                              <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <p className="text-slate-700">{leadership}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Global Market Platform */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Global Market Platform</h4>
+                        <div className="bg-indigo-50 p-6 rounded-lg">
+                          <p className="text-slate-700 mb-4">
+                            <span className="font-medium">Born International</span> - A platform dedicated to connecting Chinese enterprises with global markets, particularly in regions like Russia, the Middle East, and Southeast Asia.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Professional Affiliations */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Professional Affiliations</h4>
+                        <div className="grid gap-3">
+                          {[
+                            "Deputy of the Head of the United Business Cooperation Center at the SCO Business Council Secretariat for the Northwestern Federal District of the Russian Federation (Saint-Petersburg city)",
+                            "Member of the Shanghai Cooperation Organization Business Council",
+                            "Committee Member of the Youth Federation of Chengdu High-Tech Zone",
+                            "Initiator of the Angel Investment Association of Chengdu University District",
+                            "Recognized as a Rising Star Investor under 35 in China in 2021"
+                          ].map((affiliation, index) => (
+                            <div key={index} className="flex items-start">
+                              <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <p className="text-slate-700">{affiliation}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Key Investment Focus */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Key Investment Focus</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {[
+                            { area: "Quantum Computing", description: "Advanced quantum computing technologies and applications" },
+                            { area: "Artificial Intelligence", description: "AI startups and machine learning innovations" },
+                            { area: "New Energy", description: "Sustainable energy solutions and clean technology" }
+                          ].map((focus, index) => (
+                            <div key={index} className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+                              <h5 className="font-semibold text-slate-900 mb-2">{focus.area}</h5>
+                              <p className="text-slate-600 text-sm">{focus.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : currentMember.name === "Weixin Lao" ? (
+                    <div className="space-y-6">
+                      {/* Header Section */}
+                      <div className="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <h3 className="text-2xl font-semibold text-slate-900 mb-4">International Investment Profile</h3>
+                        <p className="text-lg leading-relaxed text-slate-700">
+                          Dr./Professor | Investment Partner | Cross-Border Investment Expert | 25+ Years High-Tech Industry Experience
+                        </p>
+                      </div>
+
+                      {/* Academic Position */}
+                      <div className="bg-slate-50 p-6 rounded-lg">
+                        <h4 className="text-lg font-semibold text-slate-900 mb-2">Academic Position</h4>
+                        <p className="text-slate-700">Distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University.</p>
+                      </div>
+
+                      {/* Geographic Experience */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3">Geographic Experience</h4>
+                        <div className="grid gap-3">
+                          {[
+                            "China - 25+ years of high-tech industry experience",
+                            "Hong Kong - Cross-border investment expertise",
+                            "United States - International market knowledge",
+                            "Global perspective on technology investments"
+                          ].map((experience, index) => (
+                            <div key={index} className="flex items-start">
+                              <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <p className="text-slate-700">{experience}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Investment Expertise */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Investment Expertise</h4>
+                        <p className="text-slate-700 mb-4">
+                          With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, Dr. Lao brings invaluable expertise in cross-border investments and technology sector analysis.
+                        </p>
+                      </div>
+
+                      {/* Key Strengths */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Key Strengths</h4>
+                        <div className="bg-red-50 p-6 rounded-lg">
+                          <ul className="space-y-2">
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Cross-border investment strategy and execution</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>Technology sector analysis and due diligence</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span>International market knowledge and connections</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
                   <p>{currentMember.fullBio}</p>
+                  )}
                 </div>
               </div>
             </div>
