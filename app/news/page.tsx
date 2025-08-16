@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    0: "/news/moscow-startup-village-2025",
     1: "/news/fourth-quarter-results",
     3: "/news/global-market-outlook",
     // Add more mappings as new articles are created
@@ -20,6 +21,20 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 0,
+    date: "May 30, 2025",
+    title_en: "Dr. Wencheng Li Leads Chinese Tech Delegation at 2025 Moscow Startup Village",
+    title_ru: "Доктор Вэньчэн Ли возглавляет китайскую технологическую делегацию на Startup Village 2025 в Москве",
+    excerpt_en:
+      "Russia's flagship innovation summit focuses on deepening high-tech collaboration with Chinese ventures spanning AI, quantum computing, solid-state batteries and MedTech.",
+    excerpt_ru:
+      "Флагманский саммит инноваций России сосредоточен на углублении высокотехнологичного сотрудничества с китайскими предприятиями в области ИИ, квантовых вычислений, твердотельных батарей и медицинских технологий.",
+    image: "/news/20250816/23401755338215_.pic_hd.jpg",
+    category_en: "Company News",
+    category_ru: "Новости компании",
+    readTime: "4 min read",
+  },
   {
     id: 1,
     date: "January 15, 2024",

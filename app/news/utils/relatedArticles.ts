@@ -24,6 +24,15 @@ export interface RelatedArticleConfig {
 // Sample articles database - in a real app, this would come from a CMS or database
 export const allArticles: Article[] = [
   {
+    id: "moscow-startup-village-2025",
+    title: "Dr. Wencheng Li Leads Chinese Tech Delegation at 2025 Moscow Startup Village",
+    excerpt: "Russia's flagship innovation summit focuses on deepening high-tech collaboration with Chinese ventures spanning AI, quantum computing, solid-state batteries and MedTech.",
+    image: "/news/20250816/23401755338215_.pic_hd.jpg",
+    date: "May 30, 2025",
+    category: "Company News",
+    tags: ["Technology", "Innovation", "International Relations", "Startup Village", "Sino-Russian Cooperation", "AI", "Quantum Computing", "MedTech"]
+  },
+  {
     id: "fourth-quarter-results",
     title: "Fourth Quarter 2023 Results: Strong Performance Across All Portfolios",
     excerpt: "Born International reports exceptional 4.9% quarterly return, driven by strategic investments in emerging technologies and sustainable solutions",
@@ -292,6 +301,7 @@ export function getSmartRelatedArticles(
 export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
+    "moscow-startup-village-2025": "/news/moscow-startup-village-2025",
     "fourth-quarter-results": "/news/fourth-quarter-results",
     "climate-transition-investments": "/news/template",
     "quantum-computing-breakthrough": "/news/template", 

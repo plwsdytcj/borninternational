@@ -93,6 +93,9 @@ export default function HomePage() {
 
       latestNews: "Latest news",
       viewAllNews: "View all news",
+      moscowStartupVillage: "Dr. Wencheng Li Leads Chinese Tech Delegation at 2025 Moscow Startup Village",
+      moscowStartupVillageDescription:
+        "Russia's flagship innovation summit focuses on deepening high-tech collaboration with Chinese ventures spanning AI, quantum computing, solid-state batteries and MedTech.",
       fourthQuarterResults: "Fourth quarter 2023 results",
       fourthQuarterResultsDescription:
         "The fund returned 4.9% in the fourth quarter, corresponding to a gain of NOK 980 billion.",
@@ -153,6 +156,9 @@ export default function HomePage() {
 
       latestNews: "Последние новости",
       viewAllNews: "Посмотреть все новости",
+      moscowStartupVillage: "Доктор Вэньчэн Ли возглавляет китайскую технологическую делегацию на Startup Village 2025 в Москве",
+      moscowStartupVillageDescription:
+        "Флагманский саммит инноваций России сосредоточен на углублении высокотехнологичного сотрудничества с китайскими предприятиями в области ИИ, квантовых вычислений, твердотельных батарей и медицинских технологий.",
       fourthQuarterResults: "Результаты за четвертый квартал 2023 г.",
       fourthQuarterResultsDescription:
         "Фонд вернул 4,9% в четвертом квартале, что соответствует прибыли в 980 миллиардов норвежских крон.",
@@ -717,17 +723,17 @@ export default function HomePage() {
             <div className="flex gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
               <div className="relative w-28 h-28 flex-shrink-0">
                 <Image 
-                  src="/news/20250815/1.jpg" 
-                  alt="Financial charts" 
+                  src="/news/20250816/23401755338215_.pic_hd.jpg" 
+                  alt="Dr. Wencheng Li at Moscow Startup Village" 
                   fill 
                   className="object-cover rounded-lg" 
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
-                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.fourthQuarterResults}</h3>
-                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
-                <Link href="/news/fourth-quarter-results">
+                <p className="text-xs text-slate-500 mb-1">May 30, 2025</p>
+                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.moscowStartupVillage}</h3>
+                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.moscowStartupVillageDescription}</p>
+                <Link href="/news/moscow-startup-village-2025">
                   <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                     {content.readMore}
                     <ExternalLink className="ml-1 w-3 h-3" />
@@ -740,17 +746,17 @@ export default function HomePage() {
             <div className="flex flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
               <div className="relative w-28 h-28 flex-shrink-0">
                 <Image 
-                  src="/biotechnology-background.png" 
-                  alt="Sustainable energy" 
+                  src="/news/20250815/1.jpg" 
+                  alt="Financial charts" 
                   fill 
                   className="object-cover rounded-lg" 
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-500 mb-1">January 10, 2024</p>
-                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.climateTransitionInvestments}</h3>
-                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.climateTransitionInvestmentsDescription}</p>
-                <Link href="/news/template">
+                <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
+                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.fourthQuarterResults}</h3>
+                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
+                <Link href="/news/fourth-quarter-results">
                   <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                     {content.readMore}
                     <ExternalLink className="ml-1 w-3 h-3" />
