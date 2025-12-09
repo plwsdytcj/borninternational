@@ -136,7 +136,7 @@ export default function PortfolioPage() {
         language === "en"
           ? "Chairman of Qingdao HYLIR Investment Group and HYLIR (Chengdu) Headquarters Base Development Co., Ltd. Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association."
           : "青岛海利尔投资集团董事长、海利尔（成都）总部基地发展有限公司董事长。四川省企业联合会、企业家协会副会长。",
-      image: "/investment-team/唐学书_profile.jpg",
+              image: "/investment-team/唐学书_profile.jpg",
       fullBio:
         language === "en"
           ? "Tang Xueshu, female, Han nationality, was born in September 1952. She is a member of the Communist Party of China with a bachelor's degree. She currently serves as the Chairman of Qingdao HYLIR Investment Group and HYLIR (Chengdu) Headquarters Base Development Co., Ltd. She was the first Director of the Low-Power Wireless Communication Committee of China Communications Industry Association. Now, she also holds the positions of Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association, Vice President of Sichuan Provincial Rural Development Federation, Standing Director of China Enterprise Culture Research Association, and Vice President of Qingdao Economic Association."
@@ -199,14 +199,14 @@ export default function PortfolioPage() {
           : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。在识别和培育高增长科技公司方面拥有丰富的成功经验。",
       hasModal: true,
     },
-        {
+    {
       name: "Wencheng Li",
       title: language === "en" ? "PhD/Founding Partner" : "博士/创始合伙人",
       description:
         language === "en"
           ? "International high-tech investor and Founding Partner of Born Capital. PhD in Chemical Engineering from East China University of Science and Technology. Adjunct Professor at HoHai University."
           : "国际高科技投资者，Born Capital创始合伙人。华东理工大学化学工程博士。河海大学兼职教授。",
-      image: "/investment-team/李文成_personal_page.jpg",
+              image: "/investment-team/李文成_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. LI Wencheng is an international high-tech investor. He holds a Ph.D. in Chemical Engineering from East China University of Science and Technology. He is also an alumnus of Tsinghua University's PBCSF and Zhejiang University's School of Management. Dr. Li now serves as an Adjunct Professor at HoHai University. Dr. Li is the Founding Partner of Born Capital, where he has invested in over 100 high-tech startups, with a focus on areas such as quantum computing, artificial intelligence, and new energy. He is also the founder of Born International, a platform dedicated to connecting Chinese enterprises with global markets, particularly in regions like Russia, the Middle East, and Southeast Asia."
@@ -511,29 +511,29 @@ export default function PortfolioPage() {
           <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto relative modal-content-scrollable">
             {/* Close Button - Sticky to top */}
             <div className="sticky top-0 z-20 bg-white rounded-t-lg">
-              <button
-                onClick={handleCloseModal}
+            <button
+              onClick={handleCloseModal}
                 className="absolute top-4 right-4 z-30 text-slate-400 hover:text-slate-600 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
-              >
-                <X className="w-6 h-6" />
-              </button>
+            >
+              <X className="w-6 h-6" />
+            </button>
             </div>
 
             {/* Navigation Arrows - Sticky to viewport */}
             <div className="sticky top-1/2 transform -translate-y-1/2 z-20 pointer-events-none">
-              <button
-                onClick={handlePreviousMember}
+            <button
+              onClick={handlePreviousMember}
                 className="absolute left-4 pointer-events-auto bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
 
-              <button
-                onClick={handleNextMember}
+            <button
+              onClick={handleNextMember}
                 className="absolute right-4 pointer-events-auto bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
             </div>
 
             {/* Modal Content */}
