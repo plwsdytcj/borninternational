@@ -269,9 +269,13 @@ export default function NewsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
+      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
         {/* Logo */}
-        <div className="flex items-center">
+        <button
+          onClick={() => router.push("/")}
+          className="flex items-center focus:outline-none"
+          aria-label="Back to Home"
+        >
           <Image
             src="/logo/born_logo_white.png"
             alt="BORN International logo"
@@ -279,13 +283,13 @@ export default function NewsPage() {
             height={48}
             className="h-12 w-auto"
           />
-        </div>
+        </button>
 
         {/* Navigation */}
         <div className="flex items-center space-x-6">
           <button
             onClick={() => router.push("/")}
-            className="flex items-center space-x-2 text-slate-700 hover:text-slate-900"
+            className="flex items-center space-x-2 text-white/90 hover:text-white"
           >
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">{languageContent[language].backToHome}</span>
