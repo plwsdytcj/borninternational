@@ -60,6 +60,8 @@ export default function HomePage() {
   const [language, setLanguage] = useState<"en" | "ru">("en")
   const [enableInertialScroll, setEnableInertialScroll] = useState<boolean>(true) // 控制惯性滑动效果，默认开启
   const isClient = useIsClient()
+  // Prefer the provided JPEG; gracefully fallback to JPG, then a default
+  const [businessBgSrc, setBusinessBgSrc] = useState<string>("/backgrounds/business-bg-1920x1080.jpeg")
 
   const portfolioCount = useCountUp(125, 5000, "+")
   const fundScale = useCountUp(280000000, 5000)
@@ -137,6 +139,14 @@ export default function HomePage() {
       portfolio: "Portfolio",
       fundScale: "Fund Scale",
       techGlobalization: "Technology Globalization",
+      businessOverviewTitle: "Business Overview",
+      businessOverviewSubtitle: "“One-Stop” Access to the Russian-Speaking Market",
+      viewBusinessOverview: "View business overview",
+      businessOverviewDescription:
+        "We offer one‑stop access to the Russian‑speaking market for Chinese and global tech companies — from strategy and compliance to localization and go‑to‑market execution.",
+      businessPoint1: "Market strategy, due diligence and localization",
+      businessPoint2: "Regulatory, legal and finance coordination",
+      businessPoint3: "Fundraising, partnerships and cross‑border M&A",
     },
     ru: {
       fundValueLabel: "СТОИМОСТЬ ФОНДА",
@@ -200,6 +210,14 @@ export default function HomePage() {
       portfolio: "Портфолио",
       fundScale: "Масштаб фонда",
       techGlobalization: "Технологическая глобализация",
+      businessOverviewTitle: "Обзор бизнеса",
+      businessOverviewSubtitle: "«Единое окно» доступа к русскоязычному рынку",
+      viewBusinessOverview: "Смотреть обзор бизнеса",
+      businessOverviewDescription:
+        "Мы предоставляем «единое окно» для выхода на русскоязычный рынок для китайских и глобальных технокомпаний — стратегия, соответствие требованиям, локализация и вывод на рынок.",
+      businessPoint1: "Стратегия выхода, due diligence и локализация",
+      businessPoint2: "Регуляторика, юридическое и финансовое сопровождение",
+      businessPoint3: "Привлечение капитала, партнерства и трансграничные M&A",
     },
   }
 
@@ -691,6 +709,61 @@ export default function HomePage() {
 
 
 
+      {/* Business Overview Teaser (from /business) */}
+      <section className="h-screen relative flex items-center snap-section">
+        <div className="absolute inset-0">
+          <Image
+            src={businessBgSrc}
+            alt="Business city skyline light background"
+            fill
+            className="object-cover"
+            onError={() =>
+              setBusinessBgSrc((prev) =>
+                prev.endsWith(".jpeg")
+                  ? "/backgrounds/business-bg-1920x1080.jpg"
+                  : "/backgrounds/bg-about.jpg"
+              )
+            }
+          />
+          <div className="absolute inset-0 bg-white/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6">{content.businessOverviewTitle}</h2>
+              <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed">{content.businessOverviewSubtitle}</p>
+              <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">{content.businessOverviewDescription}</p>
+              <div className="space-y-3 md:space-y-4 mb-2 md:mb-4">
+                <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-blue-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint1}</span></div>
+                <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-green-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint2}</span></div>
+                <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-purple-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint3}</span></div>
+              </div>
+              <Link href="/business">
+                <button className="mt-2 md:mt-4 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                    {content.viewBusinessOverview}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  </span>
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-blue-600" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+                </button>
+              </Link>
+            </div>
+            <div className="relative h-64 md:h-96">
+              <Image
+                src="/business/英文版业务简介_00.jpg"
+                alt="Business overview preview"
+                fill
+                className="object-cover rounded-lg"
+                unoptimized
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
       {/* News & Updates Section */}
       <section className="py-12 md:py-20 relative">
         <div className="absolute inset-0">
