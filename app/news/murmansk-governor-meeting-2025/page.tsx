@@ -9,41 +9,52 @@ import { useEffect, useState } from "react"
 import { getSmartRelatedArticles, getArticlePath, type Article } from "../utils/relatedArticles"
 
 const articleData = {
-  id: "institute-of-experimental-medicine-2025",
-  date: "November 22, 2025",
-  title: "Dr. Li Wencheng Leads Delegation to Visit Institute of Experimental Medicine, Holds Talks with Board Members",
-  subtitle: "SCO+ Medical and Biotechnology Park progresses with strategic cooperation discussions in St. Petersburg",
+  id: "murmansk-governor-meeting-2025",
+  date: "November 2, 2025",
+  title: "Murmansk Governor Andrey Chibis Meets Born International Representatives in Beijing",
+  subtitle: "Arctic development, Northern Sea Route logistics and sector cooperation discussed",
   author: "Born International Editorial Team",
-  readTime: "5 min read",
+  readTime: "4 min read",
   category: "Company News",
-  image: "/news/institute-of-experimental-medicine-2025/image1.jpeg",
+  image: "/news/murmansk-governor-meeting-2025/image1.jpeg",
   content: `
 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
   <p class="text-lg leading-relaxed text-slate-700 font-medium">
-    St. Petersburg, November 22, 2025 — The development of the SCO+ Medical and Biotechnology Park continues to advance. The park is established based on the Institute of Experimental Medicine. Recently, Professor O.N. Yelgashev, Director of the Institute, held a meeting with Dr. Li Wencheng, Chinese partner of the SCO+ Regional Center for Industrial Cooperation.
+    Beijing — Murmansk Region Governor Andrey Chibis met with Born International to explore Arctic investment potential and cooperation in logistics, fisheries, mining and shipbuilding.
   </p>
 </div>
 
 <div class="my-8">
   <div class="relative w-full h-72 md:h-80 rounded-lg overflow-hidden">
-    <img src="/news/institute-of-experimental-medicine-2025/image1.jpeg" alt="Talks at the Institute of Experimental Medicine" class="w-full h-full object-cover" />
+    <img src="/news/murmansk-governor-meeting-2025/image1.jpeg" alt="Meeting in Beijing with Murmansk Governor Andrey Chibis" class="w-full h-full object-cover" />
   </div>
-  <p class="text-sm text-slate-500 mt-2 text-center">Dr. Li Wencheng led a delegation in talks with representatives of the Institute of Experimental Medicine</p>
+  <p class="text-sm text-slate-500 mt-2 text-center">Born International meets with Murmansk Region Governor Andrey Chibis in Beijing</p>
 </div>
 
-<p>During the meeting, both parties discussed strategic cooperation on introducing artificial intelligence technologies into the institute’s experimental research fields, as well as the possibility of attracting Chinese partners to provide technical resources and infrastructure. This collaboration is expected to open new prospects for the implementation of joint projects in the biomedical field between China and Russia.</p>
+<p>The Murmansk Region is a key Russian Arctic territory, home to Russia's largest ice‑free port and a strategic hub for the Northern Sea Route.</p>
 
 <div class="my-8">
   <div class="relative w-full h-72 md:h-80 rounded-lg overflow-hidden">
-    <img src="/news/institute-of-experimental-medicine-2025/image2.jpeg" alt="Group photo after the meeting" class="w-full h-full object-cover" />
+    <img src="/news/murmansk-governor-meeting-2025/image2.png" alt="Murmansk government promotes Arctic development projects" class="w-full h-full object-cover" />
   </div>
-  <p class="text-sm text-slate-500 mt-2 text-center">Photo with representatives of the Institute of Experimental Medicine after the meeting</p>
+  <p class="text-sm text-slate-500 mt-2 text-center">Murmansk regional government promotes Arctic development projects</p>
+</div>
+
+<p>Discussion covered container shipping via Murmansk’s ice‑free port, fisheries, mining and shipbuilding (including vessels for NSR cargo). The region welcomes Chinese investment, offering tax incentives and free customs zones.</p>
+
+<p>Born International expressed strong interest in enabling Chinese capital and technology participation across energy, shipping, infrastructure and tourism to support sustainable Arctic development.</p>
+
+<div class="my-8">
+  <div class="relative w-full h-72 md:h-80 rounded-lg overflow-hidden">
+    <img src="/news/murmansk-governor-meeting-2025/image3.jpeg" alt="Group photo after the meeting" class="w-full h-full object-cover" />
+  </div>
+  <p class="text-sm text-slate-500 mt-2 text-center">Group photo of Born International and the Murmansk delegation</p>
 </div>
 `,
-  tags: ["SCO+", "Biotech", "St. Petersburg", "Institute of Experimental Medicine"],
+  tags: ["Murmansk", "Arctic", "NSR", "Logistics", "Investment"],
 }
 
-export default function EnDocxNews2Page() {
+export default function MurmanskGovernorMeetingPage() {
   const router = useRouter()
   const [isClient, setIsClient] = useState(false)
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([])
@@ -169,32 +180,9 @@ export default function EnDocxNews2Page() {
                 <div className="bg-slate-50 rounded-lg p-6">
                   <h3 className="text-lg font-medium text-slate-900 mb-4">Related Articles</h3>
                   <div className="space-y-4">
-                    {relatedArticles.length > 0 ? (
-                      relatedArticles.map((article) => (
-                        <Link key={article.id} href={getArticlePath(article.id)}>
-                          <Card className="border-0 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                            <CardContent className="p-0">
-                              <div className="relative h-24">
-                                <Image src={article.image} alt={article.title} fill className="object-cover rounded-t-lg" />
-                              </div>
-                              <div className="p-3">
-                                <p className="text-xs text-slate-500 mb-1">{article.date}</p>
-                                <h4 className="text-sm font-medium text-slate-900 mb-1 line-clamp-2">{article.title}</h4>
-                                <p className="text-xs text-slate-600 line-clamp-2">{article.excerpt}</p>
-                              </div>
-                            </CardContent>
-                          </Card>
-                        </Link>
-                      ))
-                    ) : (
-                      <div className="text-center py-4">
-                        <p className="text-sm text-slate-500">No related articles found</p>
-                      </div>
-                    )}
+                    {/* Related articles via smart recommendation */}
                   </div>
                 </div>
-
-                {/* Newsletter Signup */}
                 <div className="mt-6 bg-blue-50 rounded-lg p-6">
                   <h3 className="text-lg font-medium text-slate-900 mb-2">Stay Updated</h3>
                   <p className="text-sm text-slate-600 mb-4">Subscribe to our newsletter for the latest news and insights.</p>

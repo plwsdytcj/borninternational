@@ -217,24 +217,14 @@ export default function MoscowStartupVillagePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-gray-100">
-        <div className="flex items-center">
-          <Image
-            src="/logo/born_logo_white.png"
-            alt="BORN International logo"
-            width={120}
-            height={48}
-            className="h-8 sm:h-12 w-auto"
-          />
-        </div>
-        <div className="flex items-center">
-          <button
-            onClick={() => router.push("/news")}
-            className="flex items-center space-x-1 sm:space-x-2 text-slate-700 hover:text-slate-900 text-xs sm:text-sm"
-          >
-            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden sm:inline">Back to News</span>
-            <span className="sm:hidden">Back</span>
+      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
+        <button onClick={() => router.push("/")} className="flex items-center focus:outline-none" aria-label="Back to Home">
+          <Image src="/logo/born_logo_white.png" alt="BORN International logo" width={120} height={48} className="h-12 w-auto" />
+        </button>
+        <div className="flex items-center space-x-6">
+          <button onClick={() => router.push("/")} className="flex items-center space-x-2 text-white/90 hover:text-white">
+            <ArrowLeft className="w-4 h-4" />
+            <span className="text-sm">Back to Home</span>
           </button>
         </div>
       </header>

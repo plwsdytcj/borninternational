@@ -4,29 +4,16 @@ export default function NewsLoading() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
+      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="w-8 h-8 bg-slate-800 mr-3 flex items-center justify-center">
-            <div className="text-white font-bold text-lg">B</div>
-          </div>
-          <div className="text-slate-800">
-            <div className="text-sm font-medium leading-tight">Born International</div>
-            <div className="text-sm font-medium leading-tight">伯恩国际</div>
-            <div className="text-sm font-medium leading-tight">Global Investment Platform</div>
-          </div>
+          <div className="w-32 h-8 bg-slate-700 rounded animate-pulse mr-3" />
+          <div className="w-48 h-4 bg-slate-700 rounded animate-pulse" />
         </div>
 
         {/* Navigation */}
         <div className="flex items-center space-x-6">
-          <div className="flex items-center space-x-2 text-slate-700">
-            <Globe className="w-4 h-4" />
-            <div className="w-16 h-4 bg-gray-200 rounded animate-pulse"></div>
-          </div>
-          
-          <div className="flex items-center space-x-2 text-slate-700">
-            <div className="w-20 h-4 bg-gray-200 rounded animate-pulse"></div>
-          </div>
+          <div className="w-24 h-4 bg-slate-700 rounded animate-pulse"></div>
         </div>
       </header>
 
