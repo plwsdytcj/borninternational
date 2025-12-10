@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
+import UnderConstructionNotice from "@/components/under-construction-notice"
 
 export const metadata: Metadata = {
   title: "Born International",
@@ -69,7 +70,10 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <UnderConstructionNotice />
+        {children}
+      </body>
     </html>
   )
 }
