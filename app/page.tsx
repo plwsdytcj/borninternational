@@ -87,7 +87,7 @@ export default function HomePage() {
       valueDevelopment: "Value development",
       investmentInChina: "Investment in Chinese Mainland",
       investmentInChinaDescription:
-        "Born Capital is a well-known early-stage investment institution in Chinese Mainland with management of 10 RMB VC funds. We have invested directly or indirectly in more than 100 enterprises, most of which are high-tech startups.",
+        "Born Capital is a well-known early-stage investment institution in Chinese Mainland. We have invested directly or indirectly in more than 100 enterprises, most of which are high-tech startups.",
       learnMoreInvestments: "Learn more about our investments",
       globalInvestment: "Technology Globalization",
       globalInvestmentDescription:
@@ -158,7 +158,7 @@ export default function HomePage() {
       valueDevelopment: "Развитие стоимости",
       investmentInChina: "Инвестиции в материковом Китае",
       investmentInChinaDescription:
-        "Born Capital — известное инвестиционное учреждение на ранней стадии в материковом Китае, управляющее 10 фондами венчурного капитала в юанях. Мы инвестировали напрямую или косвенно в более чем 100 предприятий, большинство из которых являются высокотехнологичными стартапами.",
+        "Born Capital — известное инвестиционное учреждение на ранней стадии в материковом Китае. Мы инвестировали напрямую или косвенно в более чем 100 предприятий, большинство из которых являются высокотехнологичными стартапами.",
       learnMoreInvestments: "Узнайте больше о наших инвестициях",
       globalInvestment: "Технологическая глобализация",
       globalInvestmentDescription:
