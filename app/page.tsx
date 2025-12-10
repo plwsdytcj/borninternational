@@ -224,6 +224,13 @@ export default function HomePage() {
   const content = languageContent[language]
   const currentLanguage = languages.find((lang) => lang.code === language)
 
+  // Disable inertial/snap scrolling on mobile to improve UX
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      setEnableInertialScroll(false)
+    }
+  }, [])
+
   useEffect(() => {
     // 只在客户端渲染时执行
     if (!isClient) {
@@ -400,7 +407,8 @@ export default function HomePage() {
         /* 手机端优化 */
         @media (max-width: 768px) {
           .snap-section {
-            min-height: 100vh;
+            height: auto !important;
+            min-height: 100svh;
             padding: 0.5rem 0;
           }
           

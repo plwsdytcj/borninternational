@@ -68,6 +68,13 @@ html {
   --font-sans: ${GeistSans.variable};
   --font-mono: ${GeistMono.variable};
 }
+
+/* Global mobile adjustments */
+@media (max-width: 768px) {
+  /* Use small viewport units to avoid address bar issues */
+  .min-h-screen { min-height: 100svh !important; }
+  .h-screen { height: 100svh !important; }
+}
         `}</style>
       </head>
       <body>
