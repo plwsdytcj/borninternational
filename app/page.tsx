@@ -792,21 +792,21 @@ export default function HomePage() {
 
                     {/* Fixed Top News Row - Alternating Layout */}
           <div className="space-y-4 mb-6">
-            {/* First News Item - Left Image, Right Content */}
+            {/* First News Item - Latest 1 from /news */}
             <div className="flex gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
               <div className="relative w-28 h-28 flex-shrink-0">
                 <Image 
-                  src="/news/20250816/23401755338215_.pic_hd.jpg" 
-                  alt="Dr. Wencheng Li at Moscow Startup Village" 
+                  src="/news/murmansk-governor-meeting-2025/image1.jpeg" 
+                  alt="Murmansk Governor meets Born International in Beijing" 
                   fill 
                   className="object-cover rounded-lg" 
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-500 mb-1">May 30, 2025</p>
-                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.moscowStartupVillage}</h3>
-                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.moscowStartupVillageDescription}</p>
-                <Link href="/news/moscow-startup-village-2025">
+                <p className="text-xs text-slate-500 mb-1">November 2, 2025</p>
+                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-2">Murmansk Governor Andrey Chibis Meets Born International Representatives in Beijing</h3>
+                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">Arctic development, Northern Sea Route logistics and sector cooperation discussed.</p>
+                <Link href="/news/murmansk-governor-meeting-2025">
                   <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                     {content.readMore}
                     <ExternalLink className="ml-1 w-3 h-3" />
@@ -815,21 +815,21 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Second News Item - Right Image, Left Content */}
+            {/* Second News Item - Latest 2 from /news */}
             <div className="flex flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
               <div className="relative w-28 h-28 flex-shrink-0">
                 <Image 
-                  src="/news/20250815/1.jpg" 
-                  alt="Financial charts" 
+                  src="/news/china-russia-investment-committee-2025/image1.jpeg" 
+                  alt="China–Russia Investment Committee in Beijing" 
                   fill 
                   className="object-cover rounded-lg" 
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-500 mb-1">January 15, 2024</p>
-                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-1">{content.fourthQuarterResults}</h3>
-                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">{content.fourthQuarterResultsDescription}</p>
-                <Link href="/news/fourth-quarter-results">
+                <p className="text-xs text-slate-500 mb-1">November 1, 2025</p>
+                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-2">China–Russia Intergovernmental Investment Cooperation Committee Holds Meeting in Beijing; Murmansk Governor Andrey Chibis Delivers Speech</h3>
+                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">Talks highlight $200bn+ project pipeline, Arctic development and Northern Sea Route opportunities.</p>
+                <Link href="/news/china-russia-investment-committee-2025">
                   <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
                     {content.readMore}
                     <ExternalLink className="ml-1 w-3 h-3" />
@@ -842,267 +842,45 @@ export default function HomePage() {
           {/* Scrolling News Carousel */}
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll space-x-3">
-              {/* First set of scrolling news */}
-              <Link href="/news/brics-municipal-forum-2025" className="flex-shrink-0">
-                <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="relative h-20">
-                      <Image
-                        src="/news/brics-municipal-forum-2025/image1.jpeg"
-                        alt="BRICS International Municipal Forum"
-                        fill
-                        className="object-cover rounded-t-lg"
-                      />
-                    </div>
-                    <div className="p-2">
-                      <p className="text-xs text-slate-500 mb-1">November 21, 2025</p>
-                      <h4 className="text-xs font-medium text-slate-900 mb-1">BRICS International Municipal Forum</h4>
-                      <p className="text-xs text-slate-600 mb-1">Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              {/* Dynamic items from /news; duplicated for seamless loop */}
+              {[
+                { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
+                { href: "/news/institute-of-experimental-medicine-2025", img: "/news/institute-of-experimental-medicine-2025/image1.jpeg", date: "November 22, 2025", title: "Institute of Experimental Medicine Visit", desc: "SCO+ Medical & Biotechnology Park progresses in St. Petersburg." },
+                { href: "/news/china-russia-investment-committee-2025", img: "/news/china-russia-investment-committee-2025/image1.jpeg", date: "November 1, 2025", title: "China–Russia Investment Committee", desc: "$200bn+ pipeline; Arctic & NSR opportunities." },
+                { href: "/news/murmansk-governor-meeting-2025", img: "/news/murmansk-governor-meeting-2025/image1.jpeg", date: "November 2, 2025", title: "Murmansk Governor Meeting", desc: "Arctic, NSR logistics and sector cooperation." },
+              ]
+                .concat([
+                  { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
+                  { href: "/news/institute-of-experimental-medicine-2025", img: "/news/institute-of-experimental-medicine-2025/image1.jpeg", date: "November 22, 2025", title: "Institute of Experimental Medicine Visit", desc: "SCO+ Medical & Biotechnology Park progresses in St. Petersburg." },
+                  { href: "/news/china-russia-investment-committee-2025", img: "/news/china-russia-investment-committee-2025/image1.jpeg", date: "November 1, 2025", title: "China–Russia Investment Committee", desc: "$200bn+ pipeline; Arctic & NSR opportunities." },
+                  { href: "/news/murmansk-governor-meeting-2025", img: "/news/murmansk-governor-meeting-2025/image1.jpeg", date: "November 2, 2025", title: "Murmansk Governor Meeting", desc: "Arctic, NSR logistics and sector cooperation." },
+                ])
+                .map((n, idx) => (
+                  <Link key={`${n.href}-${idx}`} href={n.href} className="flex-shrink-0">
+                    <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
+                      <CardContent className="p-0">
+                        <div className="relative h-20">
+                          <Image src={n.img} alt={n.title} fill className="object-cover rounded-t-lg" />
+                        </div>
+                        <div className="p-2">
+                          <p className="text-xs text-slate-500 mb-1">{n.date}</p>
+                          <h4 className="text-xs font-medium text-slate-900 mb-1">{n.title}</h4>
+                          <p className="text-xs text-slate-600 mb-1">{n.desc}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              
+              
 
-              <Link href="/news/institute-of-experimental-medicine-2025" className="flex-shrink-0">
-                <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="relative h-20">
-                      <Image
-                        src="/news/institute-of-experimental-medicine-2025/image1.jpeg"
-                        alt="Institute of Experimental Medicine Visit"
-                        fill
-                        className="object-cover rounded-t-lg"
-                      />
-                    </div>
-                    <div className="p-2">
-                      <p className="text-xs text-slate-500 mb-1">November 22, 2025</p>
-                      <h4 className="text-xs font-medium text-slate-900 mb-1">Institute of Experimental Medicine Visit</h4>
-                      <p className="text-xs text-slate-600 mb-1">SCO+ Medical & Biotechnology Park progresses in St. Petersburg.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              
 
-              <Link href="/news/china-russia-investment-committee-2025" className="flex-shrink-0">
-                <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="relative h-20">
-                      <Image
-                        src="/news/china-russia-investment-committee-2025/image1.jpeg"
-                        alt="China–Russia Investment Committee in Beijing"
-                        fill
-                        className="object-cover rounded-t-lg"
-                      />
-                    </div>
-                    <div className="p-2">
-                      <p className="text-xs text-slate-500 mb-1">November 1, 2025</p>
-                      <h4 className="text-xs font-medium text-slate-900 mb-1">China–Russia Investment Committee</h4>
-                      <p className="text-xs text-slate-600 mb-1">$200bn+ pipeline; Arctic & NSR opportunities.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              
 
-              <Link href="/news/murmansk-governor-meeting-2025" className="flex-shrink-0">
-                <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="relative h-20">
-                      <Image
-                        src="/news/murmansk-governor-meeting-2025/image1.jpeg"
-                        alt="Murmansk Governor meets Born International in Beijing"
-                        fill
-                        className="object-cover rounded-t-lg"
-                      />
-                    </div>
-                    <div className="p-2">
-                      <p className="text-xs text-slate-500 mb-1">November 2, 2025</p>
-                      <h4 className="text-xs font-medium text-slate-900 mb-1">Murmansk Governor Meeting</h4>
-                      <p className="text-xs text-slate-600 mb-1">Arctic, NSR logistics and sector cooperation.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/news/20250815/3.jpg"
-                      alt="Market analysis"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">January 5, 2024</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.globalMarketOutlook}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.globalMarketOutlookDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              
 
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/modern-financial-office.png"
-                      alt="Company expansion"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 20, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.bornInternationalExpands}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.bornInternationalExpandsDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/quantum-computing-background.png"
-                      alt="Quantum computing"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 15, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.quantumComputingBreakthrough}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.quantumComputingBreakthroughDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/financial-charts-graphs.png"
-                      alt="Conference highlights"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 10, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.annualInvestorConference}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.annualInvestorConferenceDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Duplicate set for seamless infinite loop */}
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/news/20250815/3.jpg"
-                      alt="Market analysis"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">January 5, 2024</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.globalMarketOutlook}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.globalMarketOutlookDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/modern-financial-office.png"
-                      alt="Company expansion"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 20, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.bornInternationalExpands}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.bornInternationalExpandsDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/quantum-computing-background.png"
-                      alt="Quantum computing"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 15, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.quantumComputingBreakthrough}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.quantumComputingBreakthroughDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/financial-charts-graphs.png"
-                      alt="Conference highlights"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 10, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.annualInvestorConference}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.annualInvestorConferenceDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Additional duplicate for better infinite loop */}
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/news/20250815/3.jpg"
-                      alt="Market analysis"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">January 5, 2024</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.globalMarketOutlook}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.globalMarketOutlookDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
-                <CardContent className="p-0">
-                  <div className="relative h-20">
-                    <Image
-                      src="/modern-financial-office.png"
-                      alt="Company expansion"
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <p className="text-xs text-slate-500 mb-1">December 20, 2023</p>
-                    <h4 className="text-xs font-medium text-slate-900 mb-1">{content.bornInternationalExpands}</h4>
-                    <p className="text-xs text-slate-600 mb-1">{content.bornInternationalExpandsDescription}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* end dynamic duplicated items */}
             </div>
           </div>
 
