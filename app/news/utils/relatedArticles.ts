@@ -21,89 +21,114 @@ export interface RelatedArticleConfig {
   excludeCurrent?: boolean
 }
 
-// Sample articles database - in a real app, this would come from a CMS or database
+// Articles database restricted to real pages under /app/news
 export const allArticles: Article[] = [
+  // Real: Moscow Startup Village 2025
   {
     id: "moscow-startup-village-2025",
     title: "Dr. Wencheng Li Leads Chinese Tech Delegation at 2025 Moscow Startup Village",
-    excerpt: "Russia's flagship innovation summit focuses on deepening high-tech collaboration with Chinese ventures spanning AI, quantum computing, solid-state batteries and MedTech.",
+    excerpt: "Russia's flagship innovation summit focuses on deepening high‑tech collaboration with Chinese ventures spanning AI, quantum computing, solid‑state batteries and MedTech.",
     image: "/news/20250816/23401755338215_.pic_hd.jpg",
     date: "May 30, 2025",
     category: "Company News",
-    tags: ["Technology", "Innovation", "International Relations", "Startup Village", "Sino-Russian Cooperation", "AI", "Quantum Computing", "MedTech"]
+    tags: [
+      "Technology",
+      "Innovation",
+      "International Relations",
+      "Startup Village",
+      "Sino-Russian Cooperation",
+      "AI",
+      "Quantum Computing",
+      "MedTech",
+    ],
   },
+
+  // Real: BRICS Municipal Forum 2025
   {
-    id: "fourth-quarter-results",
-    title: "Fourth Quarter 2023 Results: Strong Performance Across All Portfolios",
-    excerpt: "Born International reports exceptional 4.9% quarterly return, driven by strategic investments in emerging technologies and sustainable solutions",
-    image: "/news/20250815/1.jpg",
-    date: "January 15, 2024",
-    category: "Financial Results",
-    tags: ["Financial Results", "Investment Performance", "Portfolio Management", "Sustainable Investing", "Technology", "Healthcare"]
+    id: "brics-municipal-forum-2025",
+    title:
+      "Dr. Li Wencheng Invited to Attend BRICS International Municipal Forum, Signs Series of Cooperation Memoranda on Behalf of SCO Business Council",
+    excerpt:
+      "Deepening practical cooperation and signing MOUs at St. Petersburg BRICS International Municipal Forum.",
+    image: "/news/brics-municipal-forum-2025/image1.jpeg",
+    date: "November 21, 2025",
+    category: "Company News",
+    tags: ["BRICS", "SCO", "St. Petersburg", "Municipal Forum", "Cooperation"],
   },
+
+  // Real: China–Russia Intergovernmental Investment Committee 2025
   {
-    id: "climate-transition-investments",
-    title: "Climate Transition Investment Framework",
-    excerpt: "New framework for investing in companies that contribute to the green transition. We are committed to supporting sustainable business practices.",
-    image: "/biotechnology-background.png",
-    date: "January 10, 2024",
-    category: "Sustainability",
-    tags: ["Sustainability", "Climate", "Green Technology", "ESG", "Investment Strategy"]
+    id: "china-russia-investment-committee-2025",
+    title:
+      "China–Russia Intergovernmental Investment Cooperation Committee Holds Meeting in Beijing; Murmansk Governor Andrey Chibis Delivers Speech",
+    excerpt:
+      "Talks highlight $200bn+ project pipeline, Arctic development and Northern Sea Route opportunities.",
+    image: "/news/china-russia-investment-committee-2025/image1.jpeg",
+    date: "November 1, 2025",
+    category: "Company News",
+    tags: ["Investment", "Committee", "Beijing", "Murmansk", "Arctic", "Northern Sea Route"],
   },
+
+  // Real: Murmansk Governor Meeting 2025
   {
-    id: "quantum-computing-breakthrough",
-    title: "Quantum Computing Investment Breakthrough",
-    excerpt: "Our portfolio company QBoson achieves major milestone with 1000+ qubit quantum computer, attracting global attention from tech giants.",
-    image: "/quantum-computing-background.png",
-    date: "December 15, 2023",
-    category: "Portfolio Updates",
-    tags: ["Quantum Computing", "Technology", "Portfolio Updates", "Innovation", "AI"]
+    id: "murmansk-governor-meeting-2025",
+    title: "Murmansk Governor Andrey Chibis Meets Born International Representatives in Beijing",
+    excerpt: "Arctic development, Northern Sea Route logistics and sector cooperation discussed.",
+    image: "/news/murmansk-governor-meeting-2025/image1.jpeg",
+    date: "November 2, 2025",
+    category: "Company News",
+    tags: ["Murmansk", "Arctic", "NSR", "Logistics", "Investment"],
   },
+
+  // Real: Institute of Experimental Medicine 2025
+  {
+    id: "institute-of-experimental-medicine-2025",
+    title:
+      "Dr. Li Wencheng Leads Delegation to Visit Institute of Experimental Medicine, Holds Talks with Board Members",
+    excerpt:
+      "SCO+ Medical and Biotechnology Park progresses with strategic cooperation discussions in St. Petersburg.",
+    image: "/news/institute-of-experimental-medicine-2025/image1.jpeg",
+    date: "November 22, 2025",
+    category: "Company News",
+    tags: ["SCO+", "Biotech", "St. Petersburg", "Institute of Experimental Medicine"],
+  },
+
+  // Real: Global Market Outlook 2024
   {
     id: "global-market-outlook",
-    title: "Global Market Outlook 2024",
-    excerpt: "Our expectations for global markets and investment opportunities in the year ahead. Key trends include technological innovation and emerging market growth.",
+    title: "Global Market Outlook 2024: Navigating Innovation and Emerging Opportunities",
+    excerpt:
+      "Our comprehensive analysis of global markets and strategic investment opportunities in the year ahead.",
     image: "/news/20250815/3.jpg",
     date: "January 5, 2024",
     category: "Market Analysis",
-    tags: ["Market Analysis", "Global Markets", "Investment Strategy", "Technology", "Emerging Markets"]
+    tags: [
+      "Market Analysis",
+      "Global Markets",
+      "Investment Strategy",
+      "Technology",
+      "Emerging Markets",
+    ],
   },
+
+  // Real: Fourth Quarter Results 2023
   {
-    id: "born-international-expands",
-    title: "Born International Expands to Southeast Asia",
-    excerpt: "Strategic expansion into Singapore and Hong Kong markets, establishing new partnerships with local investment firms and technology companies.",
-    image: "/modern-financial-office.png",
-    date: "December 20, 2023",
-    category: "Company News",
-    tags: ["Company News", "Expansion", "Southeast Asia", "Partnerships", "Global Markets"]
+    id: "fourth-quarter-results",
+    title: "Fourth Quarter 2023 Results: Strong Performance Across All Portfolios",
+    excerpt:
+      "Born International reports exceptional 4.9% quarterly return, driven by strategic investments in emerging technologies and sustainable solutions.",
+    image: "/news/20250815/1.jpg",
+    date: "January 15, 2024",
+    category: "Financial Results",
+    tags: [
+      "Financial Results",
+      "Investment Performance",
+      "Portfolio Management",
+      "Sustainable Investing",
+      "Technology",
+      "Healthcare",
+    ],
   },
-  {
-    id: "annual-investor-conference",
-    title: "Annual Investor Conference Highlights",
-    excerpt: "Key insights from our annual investor conference, featuring presentations from portfolio companies and market outlook discussions.",
-    image: "/financial-charts-graphs.png",
-    date: "December 10, 2023",
-    category: "Events",
-    tags: ["Events", "Investor Relations", "Portfolio Companies", "Market Outlook", "Conference"]
-  },
-  {
-    id: "ai-investment-trends",
-    title: "AI Investment Trends 2024",
-    excerpt: "Emerging opportunities in artificial intelligence sector. Analysis of key trends and investment opportunities in AI and machine learning.",
-    image: "/ai-background.png",
-    date: "December 5, 2023",
-    category: "Technology",
-    tags: ["AI", "Technology", "Investment Trends", "Machine Learning", "Innovation"]
-  },
-  {
-    id: "sustainability-impact-report",
-    title: "Sustainability Impact Report",
-    excerpt: "Our commitment to environmental responsibility. Comprehensive report on our ESG initiatives and their impact on portfolio performance.",
-    image: "/new-energy-background.png",
-    date: "November 30, 2023",
-    category: "Sustainability",
-    tags: ["Sustainability", "ESG", "Environmental Impact", "Responsible Investing", "Climate"]
-  }
 ]
 
 /**
@@ -302,15 +327,13 @@ export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
     "moscow-startup-village-2025": "/news/moscow-startup-village-2025",
-    "fourth-quarter-results": "/news/fourth-quarter-results",
-    "climate-transition-investments": "/news/template",
-    "quantum-computing-breakthrough": "/news/template", 
+    "brics-municipal-forum-2025": "/news/brics-municipal-forum-2025",
+    "china-russia-investment-committee-2025": "/news/china-russia-investment-committee-2025",
+    "murmansk-governor-meeting-2025": "/news/murmansk-governor-meeting-2025",
+    "institute-of-experimental-medicine-2025": "/news/institute-of-experimental-medicine-2025",
     "global-market-outlook": "/news/global-market-outlook",
-    "born-international-expands": "/news/template",
-    "annual-investor-conference": "/news/template",
-    "ai-investment-trends": "/news/template",
-    "sustainability-impact-report": "/news/template"
+    "fourth-quarter-results": "/news/fourth-quarter-results",
   }
   
-  return articlePathMap[articleId] || "/news/template"
-} 
+  return articlePathMap[articleId] || "/news"
+}

@@ -180,7 +180,28 @@ export default function MurmanskGovernorMeetingPage() {
                 <div className="bg-slate-50 rounded-lg p-6">
                   <h3 className="text-lg font-medium text-slate-900 mb-4">Related Articles</h3>
                   <div className="space-y-4">
-                    {/* Related articles via smart recommendation */}
+                    {relatedArticles.length > 0 ? (
+                      relatedArticles.map((article) => (
+                        <Link key={article.id} href={getArticlePath(article.id)}>
+                          <Card className="border-0 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                            <CardContent className="p-0">
+                              <div className="relative h-24">
+                                <Image src={article.image} alt={article.title} fill className="object-cover rounded-t-lg" />
+                              </div>
+                              <div className="p-3">
+                                <p className="text-xs text-slate-500 mb-1">{article.date}</p>
+                                <h4 className="text-sm font-medium text-slate-900 mb-1 line-clamp-2">{article.title}</h4>
+                                <p className="text-xs text-slate-600 line-clamp-2">{article.excerpt}</p>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </Link>
+                      ))
+                    ) : (
+                      <div className="text-center py-4">
+                        <p className="text-sm text-slate-500">No related articles found</p>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="mt-6 bg-blue-50 rounded-lg p-6">
