@@ -242,7 +242,7 @@ export default function GlobalMarketOutlookPage() {
                 {articleData.category}
               </span>
             </div>
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-4 leading-tight">
+            <h1 className="heading-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-tight mb-3 sm:mb-4 leading-tight">
               {articleData.title}
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-200 max-w-3xl">

@@ -198,7 +198,7 @@ export default function GlobalPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-3 sm:mb-4">{content.technologyGlobalization}</h1>
+            <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-3 sm:mb-4">{content.technologyGlobalization}</h1>
             <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">{content.technologyGlobalizationDescription}</p>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function GlobalPage() {
               />
             </div>
             <div>
-              <h2 className="text-4xl font-light text-slate-900 mb-6">{content.founderSection}</h2>
+              <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-6">{content.founderSection}</h2>
               <h3 className="text-2xl font-medium text-slate-800 mb-2">{content.founderName}</h3>
               <p className="text-lg text-blue-600 mb-6">{content.founderTitle}</p>
               <p className="text-lg text-slate-600 leading-relaxed">{content.founderDescription}</p>
@@ -249,7 +249,7 @@ export default function GlobalPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-light text-slate-900 mb-6">{content.eurasianRegion}</h2>
+              <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-6">{content.eurasianRegion}</h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">{content.eurasianDescription}</p>
               <div className="mb-8">
                 <h4 className="text-lg font-medium text-slate-800 mb-4">{content.keyProjects}</h4>
@@ -391,7 +391,7 @@ export default function GlobalPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-900 mb-4">{content.investmentSectors}</h2>
+            <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">{content.investmentSectors}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.sectorsDescription}</p>
           </div>
 

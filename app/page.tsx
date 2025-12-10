@@ -547,7 +547,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mt-8 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-6 md:px-4">
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <h3
-                  className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
+                  className="tabular-nums text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
                   style={{ color: "#f0f2ff" }}
                 >
                   {portfolioCount.count}
@@ -565,7 +565,7 @@ export default function HomePage() {
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <div className="flex items-baseline justify-center space-x-2 mb-3 md:mb-4">
                   <h3
-                    className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-blue-200 group-hover:scale-105"
+                    className="tabular-nums text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-blue-200 group-hover:scale-105"
                     style={{ color: "#ebeff2" }}
                   >
                     {formatNumber(fundScale.count)}
@@ -588,7 +588,7 @@ export default function HomePage() {
 
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <h3
-                  className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-green-200 group-hover:scale-105"
+                  className="tabular-nums text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-green-200 group-hover:scale-105"
                   style={{ color: "#f2f2f2" }}
                 >
                   {techGlobalization.count}
@@ -621,7 +621,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6">{content.investmentInChina}</h2>
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.investmentInChina}</h2>
               <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
@@ -682,7 +682,7 @@ export default function HomePage() {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6">{content.globalInvestment}</h2>
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.globalInvestment}</h2>
               <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
@@ -738,7 +738,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6">{content.businessOverviewTitle}</h2>
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.businessOverviewTitle}</h2>
               <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed">{content.businessOverviewSubtitle}</p>
               <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">{content.businessOverviewDescription}</p>
               <div className="space-y-3 md:space-y-4 mb-2 md:mb-4">

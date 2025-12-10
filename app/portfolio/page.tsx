@@ -389,7 +389,7 @@ export default function PortfolioPage() {
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-light text-white mb-4">{content.portfolioTitle}</h1>
+            <h1 className="heading-serif text-5xl lg:text-6xl font-light tracking-tight text-white mb-4">{content.portfolioTitle}</h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">{content.portfolioDescription}</p>
           </div>
         </div>
@@ -408,7 +408,7 @@ export default function PortfolioPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-900 mb-4">{content.investmentTeam}</h2>
+            <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">{content.investmentTeam}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.teamDescription}</p>
           </div>
 
@@ -553,7 +553,7 @@ export default function PortfolioPage() {
               {/* Right Side - Content */}
               <div className="lg:w-1/2 p-8 space-y-6">
                 <div>
-                  <h2 className="text-4xl font-bold text-slate-900 mb-3">{currentMember.name}</h2>
+                  <h2 className="heading-serif text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 mb-3">{currentMember.name}</h2>
                   <p className="text-xl text-blue-600 font-medium mb-6">{currentMember.title}</p>
                 </div>
                 <div className="text-slate-700 leading-relaxed text-lg prose prose-lg max-w-none">
@@ -1069,7 +1069,7 @@ export default function PortfolioPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-4">
+            <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">
               {language === "en" ? "Portfolio Companies" : "投资组合公司"}
             </h2>
             <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">

@@ -104,7 +104,7 @@ export default function KunweiTechnologyPage() {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl font-light text-white">Investment Services</h1>
+          <h1 className="heading-serif text-5xl lg:text-6xl font-light tracking-tight text-white">Investment Services</h1>
         </div>
       </section>
 
@@ -126,7 +126,7 @@ export default function KunweiTechnologyPage() {
             {/* Right Side - Company Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-light text-slate-900 mb-6">{content.companyName}</h2>
+                <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-6">{content.companyName}</h2>
                 <p className="text-lg text-slate-700 leading-relaxed mb-6">{content.companyDescription}</p>
                 <p className="text-lg text-slate-700 leading-relaxed">{content.applicationAreas}</p>
               </div>

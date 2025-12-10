@@ -215,7 +215,7 @@ export default function NewsTemplatePage() {
                 <span className="text-xs sm:text-sm">{templateData.readTime}</span>
               </div>
             </div>
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-3 sm:mb-4 leading-tight">
+            <h1 className="heading-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-tight text-white mb-3 sm:mb-4 leading-tight">
               {templateData.title}
             </h1>
             {templateData.subtitle && (

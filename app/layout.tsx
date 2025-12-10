@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
+import { Manrope, IBM_Plex_Serif } from "next/font/google"
 import "./globals.css"
 import UnderConstructionNotice from "@/components/under-construction-notice"
 
@@ -54,6 +54,19 @@ export const metadata: Metadata = {
   },
 }
 
+const manrope = Manrope({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+})
+const plexSerif = IBM_Plex_Serif({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["300", "400", "500"],
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,8 +77,9 @@ export default function RootLayout({
       <head>
         <style>{`
 html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
+  font-family: ${manrope.style.fontFamily};
+  --font-sans: ${manrope.style.fontFamily};
+  --font-serif: ${plexSerif.style.fontFamily};
   --font-mono: ${GeistMono.variable};
 }
 
@@ -75,9 +89,15 @@ html {
   .min-h-screen { min-height: 100svh !important; }
   .h-screen { height: 100svh !important; }
 }
+
+/* Heading serif utility */
+.heading-serif { font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif; }
+
+/* Tabular numbers for stable metric widths */
+.tabular-nums { font-variant-numeric: tabular-nums; }
         `}</style>
       </head>
-      <body>
+      <body className={`${manrope.variable} ${plexSerif.variable}`}>
         <UnderConstructionNotice />
         {children}
       </body>
