@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    9: "/news/china-russia-investment-committee-2025",
     8: "/news/institute-of-experimental-medicine-2025",
     7: "/news/brics-municipal-forum-2025",
     0: "/news/moscow-startup-village-2025",
@@ -23,6 +24,22 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 9,
+    date: "November 1, 2025",
+    title_en:
+      "China–Russia Investment Committee meets in Beijing; Murmansk Governor speaks",
+    title_ru:
+      "China–Russia Investment Committee meets in Beijing; Murmansk Governor speaks",
+    excerpt_en:
+      "$200bn+ project pipeline highlighted; Arctic development and Northern Sea Route opportunities discussed.",
+    excerpt_ru:
+      "$200bn+ project pipeline highlighted; Arctic development and Northern Sea Route opportunities discussed.",
+    image: "/news/china-russia-investment-committee-2025/image1.jpeg",
+    category_en: "Company News",
+    category_ru: "Company News",
+    readTime: "6 min read",
+  },
   {
     id: 8,
     date: "November 22, 2025",
