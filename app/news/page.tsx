@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    7: "/news/brics-municipal-forum-2025",
     0: "/news/moscow-startup-village-2025",
     1: "/news/fourth-quarter-results",
     3: "/news/global-market-outlook",
@@ -21,6 +22,22 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 7,
+    date: "November 21, 2025",
+    title_en:
+      "Dr. Li Wencheng Invited to Attend BRICS International Municipal Forum, Signs Series of Cooperation Memoranda on Behalf of SCO Business Council",
+    title_ru:
+      "Dr. Li Wencheng Invited to Attend BRICS International Municipal Forum, Signs Series of Cooperation Memoranda on Behalf of SCO Business Council",
+    excerpt_en:
+      "Born International founder Dr. Li Wencheng attended the BRICS International Municipal Forum in St. Petersburg and signed a series of cooperation MOUs on behalf of the SCO Business Council.",
+    excerpt_ru:
+      "Born International founder Dr. Li Wencheng attended the BRICS International Municipal Forum in St. Petersburg and signed a series of cooperation MOUs on behalf of the SCO Business Council.",
+    image: "/news/brics-municipal-forum-2025/image1.jpeg",
+    category_en: "Company News",
+    category_ru: "Company News",
+    readTime: "5 min read",
+  },
   {
     id: 0,
     date: "May 30, 2025",
