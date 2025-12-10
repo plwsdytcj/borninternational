@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    8: "/news/institute-of-experimental-medicine-2025",
     7: "/news/brics-municipal-forum-2025",
     0: "/news/moscow-startup-village-2025",
     1: "/news/fourth-quarter-results",
@@ -22,6 +23,22 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 8,
+    date: "November 22, 2025",
+    title_en:
+      "Dr. Li Wencheng Leads Delegation to Institute of Experimental Medicine",
+    title_ru:
+      "Dr. Li Wencheng Leads Delegation to Institute of Experimental Medicine",
+    excerpt_en:
+      "SCO+ Medical & Biotechnology Park progresses as Dr. Li meets with the Institute of Experimental Medicine in St. Petersburg.",
+    excerpt_ru:
+      "SCO+ Medical & Biotechnology Park progresses as Dr. Li meets with the Institute of Experimental Medicine in St. Petersburg.",
+    image: "/news/institute-of-experimental-medicine-2025/image1.jpeg",
+    category_en: "Company News",
+    category_ru: "Company News",
+    readTime: "5 min read",
+  },
   {
     id: 7,
     date: "November 21, 2025",

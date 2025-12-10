@@ -862,6 +862,26 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
               </Link>
+
+              <Link href="/news/institute-of-experimental-medicine-2025" className="flex-shrink-0">
+                <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
+                  <CardContent className="p-0">
+                    <div className="relative h-20">
+                      <Image
+                        src="/news/institute-of-experimental-medicine-2025/image1.jpeg"
+                        alt="Institute of Experimental Medicine Visit"
+                        fill
+                        className="object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <div className="p-2">
+                      <p className="text-xs text-slate-500 mb-1">November 22, 2025</p>
+                      <h4 className="text-xs font-medium text-slate-900 mb-1">Institute of Experimental Medicine Visit</h4>
+                      <p className="text-xs text-slate-600 mb-1">SCO+ Medical & Biotechnology Park progresses in St. Petersburg.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
               <Card className="flex-shrink-0 w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95">
                 <CardContent className="p-0">
                   <div className="relative h-20">
