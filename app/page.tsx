@@ -759,7 +759,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-64 md:h-96">
               <Image
-                src="/business/英文版业务简介_00.jpg"
+                src="/business/business_overview.jpg"
                 alt="Business overview preview"
                 fill
                 className="object-cover rounded-lg"
