@@ -128,13 +128,16 @@ export default function BusinessNewPage() {
 
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white overflow-hidden">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ 
-          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }} />
+        {/* Background Image */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src="/business/background.jpg" 
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-900/60" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28 lg:py-32 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28 lg:py-32 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-12 bg-amber-500" />

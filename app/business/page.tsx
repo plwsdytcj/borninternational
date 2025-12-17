@@ -37,14 +37,26 @@ export default function BusinessOverviewPage() {
         </button>
       </header>
 
+      {/* Hero Section with Background */}
+      <section className="relative py-16 sm:py-24 bg-slate-900">
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/business/background.jpg" 
+            alt="Business background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+          <p className="text-amber-500 font-semibold text-xs uppercase tracking-[0.2em] mb-4">Business Overview</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white leading-tight mb-6">"One-Stop" Access to the<br />Russian-Speaking Market</h1>
+          <p className="text-white/80 text-lg max-w-2xl">A comprehensive market entry blueprint backed by the SCO Business Council</p>
+        </div>
+      </section>
+
       {/* PDF Viewer */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-        <div className="mb-6 flex items-center justify-between">
-          <div>
-            <p className="text-amber-500 font-semibold text-xs uppercase tracking-[0.2em] mb-2">Business Overview</p>
-            <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900">“One-Stop” Access to the Russian-Speaking Market</h1>
-          </div>
-        </div>
         <div className="space-y-6">
           {pdfPages.map((src, idx) => (
             <div key={src} className="w-full border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
@@ -64,4 +76,3 @@ export default function BusinessOverviewPage() {
     </div>
   )
 }
-
