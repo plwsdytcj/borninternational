@@ -9,7 +9,7 @@ const pdfPages = [
   "/business/英文版业务简介_00.jpg",
   "/business/英文版业务简介_01.jpg",
   "/business/英文版业务简介_02.jpg",
-  "/business/英文版业务简介_03.jpg",
+  // "/business/英文版业务简介_03.jpg", // Hidden
   "/business/英文版业务简介_04.jpg",
   "/business/英文版业务简介_05.jpg",
 ]
