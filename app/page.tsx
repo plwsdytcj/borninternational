@@ -746,7 +746,7 @@ export default function HomePage() {
                 <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-green-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint2}</span></div>
                 <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-purple-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint3}</span></div>
               </div>
-              <Link href="/business">
+              <Link href="/business-new">
                 <button className="mt-2 md:mt-4 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
                     {content.viewBusinessOverview}
