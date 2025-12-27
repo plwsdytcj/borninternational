@@ -22,7 +22,7 @@ export default function KunweiTechnologyPage() {
       backToPortfolio: "Back to Portfolio",
       visitWebsite: "Visit Website",
       previousCompany: "Previous: Bubi Blockchain",
-      nextCompany: "Next: BOSON Quantum",
+      nextCompany: "Next: Token Cloud",
       companyDescription:
         "Kunwei Technology provides professional force measurement solutions and related products. Current products include robotic six-axis force sensors, intelligent joint torque sensors and other different categories, among which the six-axis force sensor is the company's core product. Kunwei products are at the international leading level.",
       applicationAreas:
@@ -35,7 +35,7 @@ export default function KunweiTechnologyPage() {
       backToPortfolio: "返回投资组合",
       visitWebsite: "进入官网",
       previousCompany: "上一篇：布比区块链",
-      nextCompany: "下一篇：玻色量子",
+      nextCompany: "下一篇：令牌云",
       companyDescription:
         "坤维科技，提供专业的力觉测量解决方案及相关产品。目前产品包括机器人六维力传感器、智能型关节扭矩传感器等不同种类，其中六维力传感器为公司的核心产品。坤维产品处于国际领先地位。",
       applicationAreas:
@@ -58,7 +58,7 @@ export default function KunweiTechnologyPage() {
   }
 
   const handleNextClick = () => {
-    router.push("/portfolio/boson-quantum")
+    router.push("/portfolio/token-cloud-shanghai-technology-co-ltd")
   }
 
   const handleReturnToList = () => {

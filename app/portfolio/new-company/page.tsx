@@ -1,50 +1,41 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ArrowLeft, Globe, ChevronDown, ExternalLink } from "lucide-react"
+import { ArrowLeft, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
-export default function BosonQuantumPage() {
+export default function NewCompanyPage() {
   const router = useRouter()
   const [language, setLanguage] = useState<"en" | "zh">("en")
 
-  const languages = [
-    { code: "en", name: "English" },
-    { code: "zh", name: "中文" },
-  ]
-
   const languageContent = {
     en: {
-      companyName: "BOSON Quantum",
-      sector: "Quantum Computing",
+      companyName: "New Company",
+      sector: "Technology",
       backToPortfolio: "Back to Portfolio",
       visitWebsite: "Visit Website",
-      previousCompany: "Previous: China Carbon Zero",
+      previousCompany: "Previous: BOSON Quantum",
       nextCompany: "Next: Bubi Blockchain",
       companyDescription:
-        "BOSON Quantum possesses proprietary and core technologies in quantum computing. The company's research achievements in the field of quantum computing are currently the world's only short-term commercializable solution, creating next-generation quantum artificial intelligence accelerated quantum artificial intelligence processing equipment to achieve hundreds of millions of times ultra-large-scale quantum computing.",
+        "Brief introduction to the company goes here. Replace with content from the Word document.",
       technicalAchievements:
-        "The BOSON Quantum team has completed CIM engineering prototype verification of over 1000+ quantum bits abroad and has stably operated some acceleration algorithms. BOSON Quantum's technical advantages are reflected in the practical CIM technical solutions, which are the most advanced second-generation photonic quantum computing technology currently available. It is the largest technical solution that has been practically realized among the three mainstream expandable quantum computing technology routes: superconducting, ion trap, and photonic quantum.",
-      investmentServices: "Investment Services",
+        "Key technologies, milestones, or achievements. Replace with details from the Word document.",
     },
     zh: {
-      companyName: "玻色量子",
-      sector: "量子计算",
+      companyName: "新公司",
+      sector: "科技",
       backToPortfolio: "返回投资组合",
       visitWebsite: "进入官网",
-      previousCompany: "上一篇：中国零碳科技集团",
+      previousCompany: "上一篇：玻色量子",
       nextCompany: "下一篇：布比区块链",
       companyDescription:
-        "玻色量子公司拥有比肩美国量子计算技术的专利布局和核心技术，在量子计算领域的科研成果是目前全球唯一一具备短期产品化商业化可行性的方案，打造新一代针对人工智能算力加速的量子人工智能处理设备，实现百万比特超大规模量子计算。",
+        "在此处填写公司简介。稍后用Word文档中的内容替换。",
       technicalAchievements:
-        "玻色量子团队目前已在国外完成1000+量子比特的CIM工程样机验证，并已稳定运行部分加速算法。玻色量子的技术优势体现在采用的CIM技术方案是最先进的第二代光量子计算技术，是现有超导、离子阱和光量子三大主流可扩展的量子计算技术路线中在已实现的比特数规模最大的技术方案。",
-      investmentServices: "投资者服务",
+        "核心技术、里程碑或重要成果。稍后用Word文档中的内容替换。",
     },
   }
 
-  const currentLanguage = languages.find((lang) => lang.code === language)
   const content = languageContent[language]
 
   useEffect(() => {
@@ -53,17 +44,8 @@ export default function BosonQuantumPage() {
     }
   }, [])
 
-  const handlePreviousClick = () => {
-    router.push("/portfolio/china-carbon-zero-and-technology-group")
-  }
-
-  const handleNextClick = () => {
-    router.push("/portfolio/bubi-blockchain")
-  }
-
   const handleReturnToList = () => {
     router.push("/portfolio")
-    // Use setTimeout to ensure the page has loaded before scrolling
     setTimeout(() => {
       const element = document.getElementById("portfolio-companies")
       if (element) {
@@ -100,7 +82,7 @@ export default function BosonQuantumPage() {
         className="py-16 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-                            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/office-background.jpg')",
+            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/office-background.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -115,8 +97,8 @@ export default function BosonQuantumPage() {
             {/* Left Side - Company Logo */}
             <div className="bg-transparent rounded-lg p-12 flex items-center justify-center relative h-96">
               <Image
-                src="/company-logos/boson-quantum-logo.jpg"
-                alt="BOSON Quantum Logo"
+                src="/company-logos/new-company-logo.svg"
+                alt="New Company Logo"
                 fill
                 className="object-contain"
               />
@@ -136,7 +118,7 @@ export default function BosonQuantumPage() {
                   className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3"
                   onClick={() => {
                     if (typeof window !== 'undefined') {
-                      window.open("https://www.qboson.com/", "_blank")
+                      window.open("#", "_blank")
                     }
                   }}
                 >
@@ -151,22 +133,6 @@ export default function BosonQuantumPage() {
                 >
                   {language === "zh" ? "返回列表" : "Return to List"}
                 </Button>
-              </div>
-
-              {/* Navigation */}
-              <div className="space-y-3 pt-8">
-                <button
-                  onClick={handlePreviousClick}
-                  className="w-full bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded transition-colors text-left"
-                >
-                  {content.previousCompany}
-                </button>
-                <button
-                  onClick={handleNextClick}
-                  className="w-full bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded transition-colors text-left"
-                >
-                  {content.nextCompany}
-                </button>
               </div>
             </div>
           </div>
@@ -290,3 +256,4 @@ export default function BosonQuantumPage() {
     </div>
   )
 }
+
