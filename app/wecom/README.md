@@ -23,3 +23,11 @@
    curl -i "https://你的域名/wecom/callback?msg_signature=xxx&timestamp=xxx&nonce=xxx&echostr=xxx"
    ```
    响应应为 `200`，`Content-Type: text/plain`，body 为解密后的明文 echostr，无 JSON、无引号、无多余换行。
+
+### 常见问题排查
+
+- 签名通过但解密报错（ERR_OSSL_BAD_DECRYPT）
+  - 99% 是 `WECOM_ENCODING_AES_KEY` 与企业微信后台配置不一致。
+  - 确认环境变量中 `WECOM_ENCODING_AES_KEY` 与后台完全一致（43 位），且未多空格、未换行。
+  - 确认 `WECOM_TOKEN` 也与后台一致；签名仅依赖 Token，不依赖 AES Key。
+  - echostr Base64 中 `+` 符号在传输中可能变为空格；本实现已自动修复，但请确保中间代理不改写查询串。

@@ -55,6 +55,8 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
   const cipherB64 = echostrBase64.trim().replace(/ /g, "+")
   const cipher = Buffer.from(cipherB64, "base64")
   const decipher = crypto.createDecipheriv("aes-256-cbc", aesKey, iv)
+  // 显式开启 PKCS#7 填充，确保在不同 OpenSSL 版本下一致
+  decipher.setAutoPadding(true)
   const randMsg = Buffer.concat([decipher.update(cipher), decipher.final()])
   const content = randMsg.subarray(16)
   const msgLen = content.readUInt32BE(0)

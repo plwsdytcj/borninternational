@@ -1,9 +1,6 @@
 import { NextRequest } from "next/server"
 import { verifySignature, decryptEchostr, computeSignature } from "@/lib/wecom-crypto"
-
-// 企业微信后台「接收消息」配置（与后台保持一致，下面为生成好的示例）
-const WECOM_TOKEN = "BornWecom2025CallbackToken"
-const WECOM_ENCODING_AES_KEY = "K8mN2pQ5rT9vX3yZ7bD1fH4jL6nP0sU8wA2cE5gl9kM"
+import { WECOM_TOKEN as CODE_WECOM_TOKEN, WECOM_ENCODING_AES_KEY as CODE_WECOM_ENCODING_AES_KEY } from "@/lib/wecom-config"
 
 /**
  * 从原始 query 手动解析，避免 URLSearchParams 把 + 当空格导致 echostr base64 损坏
@@ -69,17 +66,20 @@ export async function GET(request: NextRequest) {
       return new Response("fail", { status: 400 })
     }
 
-    const token = (process.env.WECOM_TOKEN ?? WECOM_TOKEN).trim()
-    const encodingAESKey = (process.env.WECOM_ENCODING_AES_KEY ?? WECOM_ENCODING_AES_KEY).trim()
+    // 优先读取代码里写死的常量，其次回退到环境变量
+    const token = (CODE_WECOM_TOKEN || process.env.WECOM_TOKEN || "").trim()
+    const encodingAESKey = (CODE_WECOM_ENCODING_AES_KEY || process.env.WECOM_ENCODING_AES_KEY || "").trim()
     console.log("[wecom/callback] config", {
       tokenLen: token.length,
       encodingAESKeyLen: encodingAESKey.length,
+      tokenFromCode: !!CODE_WECOM_TOKEN,
+      keyFromCode: !!CODE_WECOM_ENCODING_AES_KEY,
       tokenFromEnv: !!process.env.WECOM_TOKEN,
       keyFromEnv: !!process.env.WECOM_ENCODING_AES_KEY,
     })
 
     if (!token || !encodingAESKey) {
-      console.error("[wecom/callback] 400: token or encodingAESKey empty")
+      console.error("[wecom/callback] 400: token or encodingAESKey empty (must set WECOM_TOKEN and WECOM_ENCODING_AES_KEY in env, same as WeCom backend)")
       return new Response("fail", { status: 400 })
     }
     if (encodingAESKey.length !== 43) {
