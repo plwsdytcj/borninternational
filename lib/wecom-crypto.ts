@@ -116,13 +116,42 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
   try {
     const dnp = crypto.createDecipheriv("aes-256-cbc", aesKey, iv)
     dnp.setAutoPadding(false)
-    const raw = Buffer.concat([dnp.update(cipher), dnp.final()])
+    const raw = dnp.update(cipher)
     const tail = raw.subarray(-16)
     console.log("[wecom-crypto] raw tail(no padding)", {
       last16: tail.toString("hex"),
       lastByte: tail[15],
       uniqBytes: Array.from(new Set([...tail])).length,
+      rawLen: raw.length,
     })
+  } catch {}
+
+  // 进一步调试：尝试 AES-128-CBC（极少数场景/文档误配）
+  try {
+    const key128 = aesKey.subarray(0, 16)
+    const try128 = (ivToUse: Buffer) => {
+      const d = crypto.createDecipheriv("aes-128-cbc", key128, ivToUse)
+      d.setAutoPadding(true)
+      return Buffer.concat([d.update(cipher), d.final()])
+    }
+    try {
+      try128(iv)
+      console.log("[wecom-crypto] aes-128-cbc works with key-prefix iv")
+    } catch (e) {
+      console.log("[wecom-crypto] aes-128-cbc failed (key-prefix iv)")
+      try {
+        try128(Buffer.alloc(16, 0))
+        console.log("[wecom-crypto] aes-128-cbc works with zero iv")
+      } catch (e2) {
+        console.log("[wecom-crypto] aes-128-cbc failed (zero iv)")
+        try {
+          try128(cipher.subarray(0, 16))
+          console.log("[wecom-crypto] aes-128-cbc works with cipher-head iv")
+        } catch (e3) {
+          console.log("[wecom-crypto] aes-128-cbc failed (cipher-head iv)")
+        }
+      }
+    }
   } catch {}
   const content = randMsg.subarray(16)
   const msgLen = content.readUInt32BE(0)
