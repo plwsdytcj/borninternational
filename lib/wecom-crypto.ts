@@ -44,6 +44,13 @@ export function verifySignature(
  */
 export function decryptEchostr(encodingAESKey: string, echostrBase64: string): string {
   const key = encodingAESKey.trim()
+  console.log("[wecom-crypto] decryptEchostr input", {
+    keyLen: key.length,
+    keyPreview: key ? key.slice(0, 6) + "..." + key.slice(-6) : "",
+    echostrLen: echostrBase64?.length ?? 0,
+    echostrHasPlus: echostrBase64?.includes("+") ?? false,
+    echostrHasSpace: echostrBase64?.includes(" ") ?? false,
+  })
   // 官方：43 字符，Base64 解码时补 "="
   const keyB64 = key.length % 4 === 0 ? key : key + "="
   const aesKey = Buffer.from(keyB64, "base64")
@@ -54,10 +61,25 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
   // query 里 + 可能被解析成空格，base64 需把空格还原为 +
   const cipherB64 = echostrBase64.trim().replace(/ /g, "+")
   const cipher = Buffer.from(cipherB64, "base64")
+  console.log("[wecom-crypto] aes", {
+    aesKeyLen: aesKey.length,
+    ivPreview: iv.subarray(0, 4).toString("hex") + "...",
+    cipherLen: cipher.length,
+  })
   const decipher = crypto.createDecipheriv("aes-256-cbc", aesKey, iv)
   // 显式开启 PKCS#7 填充，确保在不同 OpenSSL 版本下一致
   decipher.setAutoPadding(true)
-  const randMsg = Buffer.concat([decipher.update(cipher), decipher.final()])
+  let randMsg: Buffer
+  try {
+    randMsg = Buffer.concat([decipher.update(cipher), decipher.final()])
+  } catch (e) {
+    console.error("[wecom-crypto] decrypt failure", {
+      err: (e as any)?.message,
+      code: (e as any)?.code,
+      name: (e as any)?.name,
+    })
+    throw e
+  }
   const content = randMsg.subarray(16)
   const msgLen = content.readUInt32BE(0)
   const msg = content.subarray(4, 4 + msgLen)
