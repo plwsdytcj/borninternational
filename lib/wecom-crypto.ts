@@ -54,12 +54,20 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
   // 官方：43 字符，Base64 解码时补 "="
   const keyB64 = key.length % 4 === 0 ? key : key + "="
   const aesKey = Buffer.from(keyB64, "base64")
+  console.log("[wecom-crypto] key decode", {
+    keyB64AddedPad: keyB64.endsWith("=") ? 1 : 0,
+    aesKeyLen: aesKey.length,
+    aesKeyPreview: aesKey.subarray(0, 2).toString("hex") + "..." + aesKey.subarray(-2).toString("hex"),
+  })
   if (aesKey.length !== 32) {
     throw new Error(`Invalid EncodingAESKey: decoded length ${aesKey.length}, expected 32`)
   }
   const iv = aesKey.subarray(0, 16)
   // query 里 + 可能被解析成空格，base64 需把空格还原为 +
   const cipherB64 = echostrBase64.trim().replace(/ /g, "+")
+  console.log("[wecom-crypto] cipher b64", {
+    preview: cipherB64.slice(0, 8) + "..." + cipherB64.slice(-8),
+  })
   const cipher = Buffer.from(cipherB64, "base64")
   console.log("[wecom-crypto] aes", {
     aesKeyLen: aesKey.length,
