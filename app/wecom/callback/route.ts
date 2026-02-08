@@ -67,6 +67,22 @@ export async function GET(request: NextRequest) {
     const nonce = params.nonce
     const echostr = params.echostr
 
+    // 打印完整原始参数，便于离线复现
+    try {
+      const sampleUrl = `${request.nextUrl.origin}${request.nextUrl.pathname}?msg_signature=${encodeURIComponent(
+        msgSignature ?? ""
+      )}&timestamp=${encodeURIComponent(timestamp ?? "")}&nonce=${encodeURIComponent(nonce ?? "")}&echostr=${encodeURIComponent(
+        echostr ?? ""
+      )}`
+      console.log("[wecom/callback] rawParams", {
+        msg_signature: msgSignature,
+        timestamp,
+        nonce,
+        echostr,
+        sampleUrl,
+      })
+    } catch {}
+
     console.log("[wecom/callback] params", {
       keys: Object.keys(params),
       msgSignatureLen: msgSignature?.length,
