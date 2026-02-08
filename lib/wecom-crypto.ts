@@ -10,8 +10,22 @@ function sha1Hex(text: string): string {
 }
 
 /**
- * 校验 URL 参数签名
+ * 计算签名（用于调试对比）
  * dev_msg_signature = sha1(sort(token, timestamp, nonce, echostr).join(''))
+ */
+export function computeSignature(
+  token: string,
+  timestamp: string,
+  nonce: string,
+  echostr: string
+): string {
+  const sorted = [token, timestamp, nonce, echostr].sort()
+  const str = sorted.join("")
+  return sha1Hex(str)
+}
+
+/**
+ * 校验 URL 参数签名
  */
 export function verifySignature(
   token: string,
@@ -20,10 +34,7 @@ export function verifySignature(
   echostr: string,
   msgSignature: string
 ): boolean {
-  const sorted = [token, timestamp, nonce, echostr].sort()
-  const str = sorted.join("")
-  const devSignature = sha1Hex(str)
-  return devSignature === msgSignature
+  return computeSignature(token, timestamp, nonce, echostr) === msgSignature
 }
 
 /**

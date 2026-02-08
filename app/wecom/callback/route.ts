@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { verifySignature, decryptEchostr } from "@/lib/wecom-crypto"
+import { verifySignature, decryptEchostr, computeSignature } from "@/lib/wecom-crypto"
 
 // 企业微信后台「接收消息」配置（与后台保持一致）
 const WECOM_TOKEN = "qtDzQYy7IIIHs07DL3bANNnOyQqh370"
@@ -88,11 +88,15 @@ export async function GET(request: NextRequest) {
     }
 
     if (!verifySignature(token, timestamp, nonce, echostr, msgSignature)) {
+      const expectedSig = computeSignature(token, timestamp, nonce, echostr)
       console.error("[wecom/callback] 400: signature verify failed", {
         timestamp,
         nonce,
-        msgSignatureReceived: msgSignature.slice(0, 12) + "...",
-        echostrLen: echostr.length,
+        msgSignatureReceived: msgSignature,
+        msgSignatureExpected: expectedSig,
+        tokenLen: token.length,
+        tokenFirst3: token.slice(0, 3),
+        tokenLast3: token.slice(-3),
       })
       return new Response("fail", { status: 400 })
     }
