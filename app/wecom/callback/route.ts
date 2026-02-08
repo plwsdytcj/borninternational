@@ -138,7 +138,13 @@ export async function GET(request: NextRequest) {
     }
 
     console.log("[wecom/callback] signature ok, decrypting")
-    const plainEchostr = decryptEchostr(encodingAESKey, echostr)
+    let plainEchostr: string | null = null
+    try {
+      plainEchostr = decryptEchostr(encodingAESKey, echostr)
+    } catch (e) {
+      console.warn("[wecom/callback] decrypt failed, fallback to raw echostr (compat mode)")
+      plainEchostr = echostr
+    }
     console.log("[wecom/callback] 200 ok", { plainEchostrLen: plainEchostr.length })
 
     return new Response(plainEchostr, {
@@ -147,6 +153,7 @@ export async function GET(request: NextRequest) {
         "Content-Type": "text/plain; charset=utf-8",
         "X-Wecom-Key-Preview": encodingAESKey.slice(0, 6) + "..." + encodingAESKey.slice(-6),
         "X-Wecom-Commit": process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_ID || "",
+        "X-Wecom-Echostr-Mode": plainEchostr === echostr ? "raw" : "decrypted",
       },
     })
   } catch (e) {
