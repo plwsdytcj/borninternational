@@ -1,9 +1,9 @@
 import { NextRequest } from "next/server"
 import { verifySignature, decryptEchostr, computeSignature } from "@/lib/wecom-crypto"
 
-// 企业微信后台「接收消息」配置（与后台保持一致）
-const WECOM_TOKEN = "qtDzQYy7IIIHs07DL3bANNnOyQqh370"
-const WECOM_ENCODING_AES_KEY = "EufHpcu5rYlv3OSfkbjl1pyRXZPHAjrcyxokoFQB2A1"
+// 企业微信后台「接收消息」配置（与后台保持一致，下面为生成好的示例）
+const WECOM_TOKEN = "BornWecom2025CallbackToken"
+const WECOM_ENCODING_AES_KEY = "K8mN2pQ5rT9vX3yZ7bD1fH4jL6nP0sU8wA2cE5gI9k"
 
 /**
  * 从原始 query 手动解析，避免 URLSearchParams 把 + 当空格导致 echostr base64 损坏
