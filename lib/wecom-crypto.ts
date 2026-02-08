@@ -74,20 +74,44 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
     ivPreview: iv.subarray(0, 4).toString("hex") + "...",
     cipherLen: cipher.length,
   })
-  const decipher = crypto.createDecipheriv("aes-256-cbc", aesKey, iv)
-  // 显式开启 PKCS#7 填充，确保在不同 OpenSSL 版本下一致
-  decipher.setAutoPadding(true)
+  const tryDec = (ivToUse: Buffer) => {
+    const d = crypto.createDecipheriv("aes-256-cbc", aesKey, ivToUse)
+    d.setAutoPadding(true)
+    return Buffer.concat([d.update(cipher), d.final()])
+  }
+
   let randMsg: Buffer
+  let ivVariant = "key-prefix"
   try {
-    randMsg = Buffer.concat([decipher.update(cipher), decipher.final()])
+    randMsg = tryDec(iv)
   } catch (e) {
-    console.error("[wecom-crypto] decrypt failure", {
+    console.error("[wecom-crypto] decrypt failure (key-prefix iv)", {
       err: (e as any)?.message,
       code: (e as any)?.code,
-      name: (e as any)?.name,
     })
-    throw e
+    // 调试备用：尝试零 IV
+    try {
+      ivVariant = "zeros"
+      randMsg = tryDec(Buffer.alloc(16, 0))
+    } catch (e2) {
+      console.error("[wecom-crypto] decrypt failure (zero iv)", {
+        err: (e2 as any)?.message,
+        code: (e2 as any)?.code,
+      })
+      // 再尝试以密文前 16 字节作为 IV（某些实现会这样做）
+      try {
+        ivVariant = "cipher-head"
+        randMsg = tryDec(cipher.subarray(0, 16))
+      } catch (e3) {
+        console.error("[wecom-crypto] decrypt failure (cipher-head iv)", {
+          err: (e3 as any)?.message,
+          code: (e3 as any)?.code,
+        })
+        throw e3
+      }
+    }
   }
+  console.log("[wecom-crypto] decrypt ivVariant", { ivVariant })
   const content = randMsg.subarray(16)
   const msgLen = content.readUInt32BE(0)
   const msg = content.subarray(4, 4 + msgLen)
