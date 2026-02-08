@@ -4,5 +4,10 @@
 // 示例：将下面两行替换为你自己的真实值
 export const WECOM_TOKEN = "KANvfG90ibgPsHhY27cu48h9" // 例如："YourWecomToken"
 export const WECOM_ENCODING_AES_KEY = "a3YnxTzUvHJ8qozY1Eri9DRxUPyvSapedfIDCppCIk7" // 43 位，例如："abcdefghijklmnopqrstuvwxyz0123456789ABCDEFG"
+// 可选：历史/备用 AESKey（43 位），用于平台出现旧 Key 仍在加密的过渡期时的兼容尝试
+export const WECOM_ENCODING_AES_KEY_FALLBACKS: string[] = [
+  "vko1eh5SZamivMqfD6sRSVUhjfNYUiNKwdo8zu96tQk",
+  "vko1eh5SZamivMqfD6sRSVUHjfNYUiNKwdo8zu96tQk",
+]
 
 // 提示：若保留空字符串，将回退到读取环境变量 WECOM_TOKEN / WECOM_ENCODING_AES_KEY。

@@ -1,6 +1,10 @@
 import { NextRequest } from "next/server"
 import { verifySignature, decryptEchostr, computeSignature } from "@/lib/wecom-crypto"
-import { WECOM_TOKEN as CODE_WECOM_TOKEN, WECOM_ENCODING_AES_KEY as CODE_WECOM_ENCODING_AES_KEY } from "@/lib/wecom-config"
+import {
+  WECOM_TOKEN as CODE_WECOM_TOKEN,
+  WECOM_ENCODING_AES_KEY as CODE_WECOM_ENCODING_AES_KEY,
+  WECOM_ENCODING_AES_KEY_FALLBACKS,
+} from "@/lib/wecom-config"
 
 /**
  * 从原始 query 手动解析，避免 URLSearchParams 把 + 当空格导致 echostr base64 损坏
@@ -139,11 +143,26 @@ export async function GET(request: NextRequest) {
 
     console.log("[wecom/callback] signature ok, decrypting")
     let plainEchostr: string | null = null
+    let mode: string = "decrypted"
     try {
       plainEchostr = decryptEchostr(encodingAESKey, echostr)
     } catch (e) {
-      console.warn("[wecom/callback] decrypt failed, fallback to raw echostr (compat mode)")
-      plainEchostr = echostr
+      // 逐个试用备用 AESKey（应对平台旧 Key 仍在加密的过渡期）
+      let recovered = false
+      for (const fb of WECOM_ENCODING_AES_KEY_FALLBACKS || []) {
+        try {
+          plainEchostr = decryptEchostr(fb, echostr)
+          mode = "decrypted:fallback"
+          console.warn("[wecom/callback] decrypted with fallback AESKey", { last6: fb.slice(-6) })
+          recovered = true
+          break
+        } catch {}
+      }
+      if (!recovered) {
+        console.warn("[wecom/callback] decrypt failed, fallback to raw echostr (compat mode)")
+        plainEchostr = echostr
+        mode = "raw"
+      }
     }
     console.log("[wecom/callback] 200 ok", { plainEchostrLen: plainEchostr.length })
 
@@ -153,7 +172,7 @@ export async function GET(request: NextRequest) {
         "Content-Type": "text/plain; charset=utf-8",
         "X-Wecom-Key-Preview": encodingAESKey.slice(0, 6) + "..." + encodingAESKey.slice(-6),
         "X-Wecom-Commit": process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_ID || "",
-        "X-Wecom-Echostr-Mode": plainEchostr === echostr ? "raw" : "decrypted",
+        "X-Wecom-Echostr-Mode": mode,
       },
     })
   } catch (e) {
