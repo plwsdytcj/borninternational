@@ -112,6 +112,18 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
     }
   }
   console.log("[wecom-crypto] decrypt ivVariant", { ivVariant })
+  // 额外调试：不启用填充，获取原始明文尾部用于判断是否像有效 PKCS#7
+  try {
+    const dnp = crypto.createDecipheriv("aes-256-cbc", aesKey, iv)
+    dnp.setAutoPadding(false)
+    const raw = Buffer.concat([dnp.update(cipher), dnp.final()])
+    const tail = raw.subarray(-16)
+    console.log("[wecom-crypto] raw tail(no padding)", {
+      last16: tail.toString("hex"),
+      lastByte: tail[15],
+      uniqBytes: Array.from(new Set([...tail])).length,
+    })
+  } catch {}
   const content = randMsg.subarray(16)
   const msgLen = content.readUInt32BE(0)
   const msg = content.subarray(4, 4 + msgLen)
