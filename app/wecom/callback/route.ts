@@ -25,8 +25,8 @@ export async function GET(request: NextRequest) {
       return new Response("fail", { status: 400 })
     }
 
-    const token = process.env.WECOM_TOKEN
-    const encodingAESKey = process.env.WECOM_ENCODING_AES_KEY
+    const token = (process.env.WECOM_TOKEN ?? "").trim()
+    const encodingAESKey = (process.env.WECOM_ENCODING_AES_KEY ?? "").trim()
     if (!token || !encodingAESKey) {
       console.error("[wecom/callback] 400: env WECOM_TOKEN or WECOM_ENCODING_AES_KEY not set")
       return new Response("fail", { status: 400 })
@@ -39,13 +39,15 @@ export async function GET(request: NextRequest) {
       console.error("[wecom/callback] 400: echostr decodeURIComponent failed")
       return new Response("fail", { status: 400 })
     }
+    // query 中 + 常被解析为空格，base64 参与签名时用原始值；解密前在 wecom-crypto 里会把空格还原为 +
+    const echostrForSign = echostr.replace(/ /g, "+")
 
-    if (!verifySignature(token, timestamp, nonce, echostr, msgSignature)) {
+    if (!verifySignature(token, timestamp, nonce, echostrForSign, msgSignature)) {
       console.error("[wecom/callback] 400: signature verify failed (Token/参数与后台不一致?)")
       return new Response("fail", { status: 400 })
     }
 
-    const plainEchostr = decryptEchostr(encodingAESKey, echostr)
+    const plainEchostr = decryptEchostr(encodingAESKey, echostrForSign)
 
     return new Response(plainEchostr, {
       status: 200,

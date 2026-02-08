@@ -32,13 +32,17 @@ export function verifySignature(
  * 解密后：16 随机字节 + 4 字节 msg_len(大端) + msg + receiveid
  */
 export function decryptEchostr(encodingAESKey: string, echostrBase64: string): string {
-  const keyWithPad = encodingAESKey.length % 4 === 0 ? encodingAESKey : encodingAESKey + "="
-  const aesKey = Buffer.from(keyWithPad, "base64")
+  const key = encodingAESKey.trim()
+  // 官方：43 字符，Base64 解码时补 "="
+  const keyB64 = key.length % 4 === 0 ? key : key + "="
+  const aesKey = Buffer.from(keyB64, "base64")
   if (aesKey.length !== 32) {
-    throw new Error("Invalid EncodingAESKey: decoded length must be 32")
+    throw new Error(`Invalid EncodingAESKey: decoded length ${aesKey.length}, expected 32`)
   }
   const iv = aesKey.subarray(0, 16)
-  const cipher = Buffer.from(echostrBase64, "base64")
+  // query 里 + 可能被解析成空格，base64 需把空格还原为 +
+  const cipherB64 = echostrBase64.trim().replace(/ /g, "+")
+  const cipher = Buffer.from(cipherB64, "base64")
   const decipher = crypto.createDecipheriv("aes-256-cbc", aesKey, iv)
   const randMsg = Buffer.concat([decipher.update(cipher), decipher.final()])
   const content = randMsg.subarray(16)
