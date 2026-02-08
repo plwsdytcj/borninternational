@@ -16,19 +16,32 @@ export async function GET(request: NextRequest) {
     let echostr = searchParams.get("echostr")
 
     if (!msgSignature || !timestamp || !nonce || echostr == null || echostr === "") {
+      console.error("[wecom/callback] 400: missing query param", {
+        hasMsgSig: !!msgSignature,
+        hasTimestamp: !!timestamp,
+        hasNonce: !!nonce,
+        hasEchostr: echostr != null && echostr !== "",
+      })
       return new Response("fail", { status: 400 })
     }
 
     const token = process.env.WECOM_TOKEN
     const encodingAESKey = process.env.WECOM_ENCODING_AES_KEY
     if (!token || !encodingAESKey) {
+      console.error("[wecom/callback] 400: env WECOM_TOKEN or WECOM_ENCODING_AES_KEY not set")
       return new Response("fail", { status: 400 })
     }
 
     // 企业微信文档：echostr 需先 urldecode 再参与签名与解密
-    echostr = decodeURIComponent(echostr)
+    try {
+      echostr = decodeURIComponent(echostr)
+    } catch {
+      console.error("[wecom/callback] 400: echostr decodeURIComponent failed")
+      return new Response("fail", { status: 400 })
+    }
 
     if (!verifySignature(token, timestamp, nonce, echostr, msgSignature)) {
+      console.error("[wecom/callback] 400: signature verify failed (Token/参数与后台不一致?)")
       return new Response("fail", { status: 400 })
     }
 
@@ -40,7 +53,8 @@ export async function GET(request: NextRequest) {
         "Content-Type": "text/plain; charset=utf-8",
       },
     })
-  } catch {
+  } catch (e) {
+    console.error("[wecom/callback] 400: decrypt or other error", e)
     return new Response("fail", { status: 400 })
   }
 }
