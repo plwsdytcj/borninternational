@@ -35,11 +35,29 @@ function parseQuery(rawUrl: string): Record<string, string> {
  */
 export async function GET(request: NextRequest) {
   try {
-    const params = parseQuery(request.url ?? "")
+    const hasQueryInUrl = (request.url ?? "").includes("?")
+    const urlWithQuery =
+      hasQueryInUrl ? request.url! : request.nextUrl.origin + request.nextUrl.pathname + request.nextUrl.search
+    console.log("[wecom/callback] GET", {
+      requestUrlHasQuery: hasQueryInUrl,
+      nextUrlSearchLen: request.nextUrl.search?.length ?? 0,
+      urlUsedLen: urlWithQuery.length,
+    })
+
+    const params = parseQuery(urlWithQuery)
     const msgSignature = params.msg_signature
     const timestamp = params.timestamp
     const nonce = params.nonce
     const echostr = params.echostr
+
+    console.log("[wecom/callback] params", {
+      keys: Object.keys(params),
+      msgSignatureLen: msgSignature?.length,
+      timestamp,
+      nonce,
+      echostrLen: echostr?.length,
+      echostrHasPlus: echostr?.includes("+"),
+    })
 
     if (!msgSignature || !timestamp || !nonce || !echostr) {
       console.error("[wecom/callback] 400: missing query param", {
@@ -53,6 +71,13 @@ export async function GET(request: NextRequest) {
 
     const token = (process.env.WECOM_TOKEN ?? WECOM_TOKEN).trim()
     const encodingAESKey = (process.env.WECOM_ENCODING_AES_KEY ?? WECOM_ENCODING_AES_KEY).trim()
+    console.log("[wecom/callback] config", {
+      tokenLen: token.length,
+      encodingAESKeyLen: encodingAESKey.length,
+      tokenFromEnv: !!process.env.WECOM_TOKEN,
+      keyFromEnv: !!process.env.WECOM_ENCODING_AES_KEY,
+    })
+
     if (!token || !encodingAESKey) {
       console.error("[wecom/callback] 400: token or encodingAESKey empty")
       return new Response("fail", { status: 400 })
@@ -63,11 +88,18 @@ export async function GET(request: NextRequest) {
     }
 
     if (!verifySignature(token, timestamp, nonce, echostr, msgSignature)) {
-      console.error("[wecom/callback] 400: signature verify failed (Token/参数与后台不一致?)")
+      console.error("[wecom/callback] 400: signature verify failed", {
+        timestamp,
+        nonce,
+        msgSignatureReceived: msgSignature.slice(0, 12) + "...",
+        echostrLen: echostr.length,
+      })
       return new Response("fail", { status: 400 })
     }
 
+    console.log("[wecom/callback] signature ok, decrypting")
     const plainEchostr = decryptEchostr(encodingAESKey, echostr)
+    console.log("[wecom/callback] 200 ok", { plainEchostrLen: plainEchostr.length })
 
     return new Response(plainEchostr, {
       status: 200,
