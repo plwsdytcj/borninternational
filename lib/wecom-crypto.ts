@@ -52,10 +52,27 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
     echostrHasSpace: echostrBase64?.includes(" ") ?? false,
   })
   // 官方：43 字符，Base64 解码时补 "="
-  const keyB64 = key.length % 4 === 0 ? key : key + "="
-  const aesKey = Buffer.from(keyB64, "base64")
+  const keyB64Padded = key.length % 4 === 0 ? key : key + "="
+  const tryKeys: { label: string; buf: Buffer }[] = []
+  try {
+    tryKeys.push({ label: "padded", buf: Buffer.from(keyB64Padded, "base64") })
+  } catch {}
+  try {
+    tryKeys.push({ label: "raw", buf: Buffer.from(key, "base64") })
+  } catch {}
+  // 去重无效项，仅保留长度为 32 的候选
+  const keyCandidates = tryKeys.filter(k => k.buf?.length).map(k => ({ label: k.label, buf: Buffer.from(k.buf) }))
+  console.log("[wecom-crypto] key candidates", keyCandidates.map(k => ({ label: k.label, len: k.buf.length })))
+  let aesKey: Buffer | null = null
+  let aesKeyLabel = ""
+  for (const k of keyCandidates) {
+    if (k.buf.length === 32) { aesKey = k.buf; aesKeyLabel = k.label; break }
+  }
+  if (!aesKey) {
+    throw new Error(`Invalid EncodingAESKey: decoded length ${keyCandidates.map(k=>k.buf.length).join(',')}, expected 32`)
+  }
   console.log("[wecom-crypto] key decode", {
-    keyB64AddedPad: keyB64.endsWith("=") ? 1 : 0,
+    picked: aesKeyLabel,
     aesKeyLen: aesKey.length,
     aesKeyPreview: aesKey.subarray(0, 2).toString("hex") + "..." + aesKey.subarray(-2).toString("hex"),
   })
@@ -74,8 +91,8 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
     ivPreview: iv.subarray(0, 4).toString("hex") + "...",
     cipherLen: cipher.length,
   })
-  const tryDec = (ivToUse: Buffer) => {
-    const d = crypto.createDecipheriv("aes-256-cbc", aesKey, ivToUse)
+  const tryDec = (ivToUse: Buffer, keyToUse: Buffer = aesKey) => {
+    const d = crypto.createDecipheriv("aes-256-cbc", keyToUse, ivToUse)
     d.setAutoPadding(true)
     return Buffer.concat([d.update(cipher), d.final()])
   }
@@ -107,7 +124,19 @@ export function decryptEchostr(encodingAESKey: string, echostrBase64: string): s
           err: (e3 as any)?.message,
           code: (e3 as any)?.code,
         })
-        throw e3
+        // 再最后尝试：若挑选的 key 是 padded 版本，再尝试 raw 版本（或相反）
+        try {
+          const altKey = keyCandidates.find(k => k.label !== aesKeyLabel && k.buf.length === 32)?.buf
+          if (!altKey) throw e3
+          ivVariant = `altKey:${aesKeyLabel}=>${keyCandidates.find(k => k.label !== aesKeyLabel)?.label}`
+          randMsg = tryDec(iv, altKey)
+        } catch (e4) {
+          console.error("[wecom-crypto] decrypt failure (altKey)", {
+            err: (e4 as any)?.message,
+            code: (e4 as any)?.code,
+          })
+          throw e3
+        }
       }
     }
   }
