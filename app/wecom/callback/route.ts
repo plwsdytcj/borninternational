@@ -42,6 +42,26 @@ export async function GET(request: NextRequest) {
     })
 
     const params = parseQuery(urlWithQuery)
+    // 轻量调试：当 ?debug=1 时，直接输出当前配置指纹，便于确认命中的是哪个部署/配置
+    if (params.debug === "1") {
+      const token = (CODE_WECOM_TOKEN || process.env.WECOM_TOKEN || "").trim()
+      const encodingAESKey = (CODE_WECOM_ENCODING_AES_KEY || process.env.WECOM_ENCODING_AES_KEY || "").trim()
+      const body = JSON.stringify({
+        tokenLen: token.length,
+        tokenPreview: token ? token.slice(0, 4) + "..." + token.slice(-4) : "",
+        encodingAESKeyLen: encodingAESKey.length,
+        encodingAESKeyPreview: encodingAESKey ? encodingAESKey.slice(0, 6) + "..." + encodingAESKey.slice(-6) : "",
+        commit: process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_ID || "",
+        fromCode: {
+          token: !!CODE_WECOM_TOKEN,
+          key: !!CODE_WECOM_ENCODING_AES_KEY,
+        },
+      })
+      return new Response(body, {
+        status: 200,
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+      })
+    }
     const msgSignature = params.msg_signature
     const timestamp = params.timestamp
     const nonce = params.nonce
@@ -109,10 +129,22 @@ export async function GET(request: NextRequest) {
       status: 200,
       headers: {
         "Content-Type": "text/plain; charset=utf-8",
+        "X-Wecom-Key-Preview": encodingAESKey.slice(0, 6) + "..." + encodingAESKey.slice(-6),
+        "X-Wecom-Commit": process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_ID || "",
       },
     })
   } catch (e) {
     console.error("[wecom/callback] 400: decrypt or other error", e)
-    return new Response("fail", { status: 400 })
+    // 失败时也带上配置指纹，助于定位是否命中旧部署
+    const token = (CODE_WECOM_TOKEN || process.env.WECOM_TOKEN || "").trim()
+    const encodingAESKey = (CODE_WECOM_ENCODING_AES_KEY || process.env.WECOM_ENCODING_AES_KEY || "").trim()
+    return new Response("fail", {
+      status: 400,
+      headers: {
+        "X-Wecom-Key-Preview": encodingAESKey ? encodingAESKey.slice(0, 6) + "..." + encodingAESKey.slice(-6) : "",
+        "X-Wecom-Token-Len": String(token.length),
+        "X-Wecom-Commit": process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_ID || "",
+      },
+    })
   }
 }
