@@ -511,7 +511,7 @@ export default function HomePage() {
       <main className="relative h-screen snap-section">
         <div className="absolute inset-0">
           <Image
-            src="/home/hero-tech.jpg"
+            src="/vi-reference/image1.jpeg"
             alt=""
             fill
             className="object-cover object-center"
