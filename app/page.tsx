@@ -511,8 +511,8 @@ export default function HomePage() {
       <main className="relative h-screen snap-section">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image1.jpeg"
-            alt="Homepage visual reference"
+            src="/home/hero-tech.jpg"
+            alt=""
             fill
             className="object-cover object-center"
             priority
@@ -628,8 +628,8 @@ export default function HomePage() {
       <section className="h-screen relative flex items-center snap-section">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/bg-project-1.jpg"
-            alt="Investment landscape"
+            src="/home/investment-bg.jpg"
+            alt=""
             fill
             className="object-cover"
           />
@@ -654,8 +654,8 @@ export default function HomePage() {
             </div>
             <div className="relative h-64 md:h-96">
               <Image
-                src="/modern-financial-office.png"
-                alt="Modern financial district"
+                src="/home/investment-panel.jpg"
+                alt=""
                 fill
                 className="object-cover rounded-lg"
               />
@@ -668,8 +668,8 @@ export default function HomePage() {
       <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/worldmap.jpg"
-            alt="Global map"
+            src="/home/global-bg.jpg"
+            alt=""
             fill
             className="object-cover object-center"
           />
@@ -679,8 +679,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg order-2 lg:order-1">
               <Image
-                src="/global-connections-map.png"
-                alt="Global connections"
+                src="/home/global-panel.jpg"
+                alt=""
                 fill
                 className="object-cover object-center"
               />
@@ -711,8 +711,8 @@ export default function HomePage() {
       <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image3.png"
-            alt="AI and intelligent systems"
+            src="/home/ai-tech.jpg"
+            alt=""
             fill
             className="object-cover object-center"
           />
@@ -737,7 +737,7 @@ export default function HomePage() {
             </div>
             <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg">
               <Image
-                src="/vi-reference/image3.png"
+                src="/home/ai-tech.jpg"
                 alt=""
                 fill
                 className="object-cover object-center"
@@ -752,8 +752,8 @@ export default function HomePage() {
       <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image12.jpeg"
-            alt="News section visual reference"
+            src="/home/news-bg.jpg"
+            alt=""
             fill
             className="object-cover object-center"
           />
