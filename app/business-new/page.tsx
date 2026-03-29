@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowLeft, ArrowRight, Check } from "lucide-react"
+import { ViSecondaryShell } from "@/components/vi-secondary-shell"
+import { ArrowRight, Check } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
@@ -107,53 +108,25 @@ export default function BusinessNewPage() {
   const router = useRouter()
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-6 lg:px-12 py-4 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
-        <button
-          onClick={() => router.push("/")}
-          className="flex items-center focus:outline-none"
-          aria-label="Back to Home"
-        >
-          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={160} height={50} className="h-8 sm:h-9 md:h-10 w-auto" />
-        </button>
-        <button
-          onClick={() => router.push("/")}
-          className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="text-sm font-medium hidden sm:inline">Back to Home</span>
-        </button>
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white overflow-hidden">
-        {/* Background Image */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src="/business/background.jpg" 
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-slate-900/60" />
-        
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28 lg:py-32 relative z-10">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-amber-500" />
-              <span className="text-amber-500 font-medium text-sm tracking-wider uppercase">Business Overview</span>
-            </div>
-            <h1 className="heading-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-6">
-              "One-Stop" Access to the Russian-Speaking Market
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
-              A comprehensive market entry blueprint backed by the SCO Business Council
-            </p>
-          </div>
+    <ViSecondaryShell
+      sidebarKicker="Global Expansion"
+      pageTitle="Russian-Speaking Market"
+      pageSubtitle="One-stop access · SCO Business Council"
+      heroImageSrc="/vi-reference/image3.png"
+      heroPriority
+      heroAlt="VI reference — global market entry"
+    >
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 md:pt-12 pb-2 md:pb-4">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px w-12 bg-amber-600" />
+          <span className="text-amber-800 font-medium text-sm tracking-wider uppercase">Business Overview</span>
         </div>
-        
-        {/* Bottom accent line */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-transparent" />
+        <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 leading-tight mb-4">
+          &quot;One-Stop&quot; Access to the Russian-Speaking Market
+        </h1>
+        <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+          A comprehensive market entry blueprint backed by the SCO Business Council
+        </p>
       </section>
 
       {/* Value Proposition */}
@@ -279,6 +252,118 @@ export default function BusinessNewPage() {
         </div>
       </section>
 
+      {/* Our Globalization Team */}
+      <section className="bg-white py-16 md:py-24 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-12 bg-amber-500" />
+              <span className="text-amber-600 font-medium text-sm tracking-wider uppercase">Global expansion</span>
+            </div>
+            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">Our Globalization Team</h2>
+          </div>
+          <div className="relative w-full aspect-video max-h-[380px] mb-10 md:mb-14 rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+            <Image
+              src="/vi-reference/image9.jpeg"
+              alt="VI reference — globalization team"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 72rem"
+            />
+          </div>
+          <div className="space-y-12 md:space-y-16">
+            {[
+              {
+                name: "Yuqing Jiang (Taiwan, China)",
+                role: "Head of Overseas Expansion Services",
+                bio: "Council Member and Expert Advisor for the CIS Region at the China Business Advertising Association Brand Globalization Committee; Specially Appointed Mentor at the Cross-Border Expansion Research Institute of Shanghai Jiao Tong University. With extensive experience in corporate strategic management and hands-on expertise in brand globalization, Mr. Jiang has supported numerous leading enterprises, including iFLYTEK, in expanding into the Russian market.",
+              },
+              {
+                name: "Michael Digkas (Greece)",
+                role: "Strategic Advisor at Born International",
+                bio: "Greek lawyer, obtained Chinese permanent residence in 2018. He holds a Bachelor of Laws degree from Italy and a Master's degree from China University of Political Science and Law. Currently, he serves as Foreign-related Project Director at Sichuan Technical Exchange Center, China Representative of the Sino-Hellenic Economic Council, and also Founder and CEO of China West Connector. He specializes in providing full-process support for Chinese enterprises' overseas expansion, including compliance risk control, financing connection and overseas market layout.",
+              },
+              {
+                name: "Jingyi Zhang",
+                role: "Expert Service Advisor",
+                bio: "Lecturer at the National Research University Higher School of Economics (HSE), Russia. Ms. Zhang previously served at the Beijing Municipal Commission of Commerce and later as International Director at the International Technology Transfer Network (ITTN), where she supported over 100 foreign startups in entering the Chinese market. She specializes in international cooperation, startup incubation, and technology transfer.",
+              },
+              {
+                name: "Pavel Golosov (Russia)",
+                role: "Expert Service Advisor",
+                bio: "Dean of the Faculty of Social Sciences and Scientific Director of the Artificial Intelligence Research Center at the Russian Presidential Academy of National Economy and Public Administration (RANEPA). Member of the Expert Advisory Council on Constitutional Legislation and State Building of the Federation Council of the Russian Federation. Founder of the international university award in artificial intelligence and big data, “Gravitation”.",
+              },
+              {
+                name: "Pengfei Qi",
+                role: "Business Representative",
+                bio: "Resident Representative in Russia at Born International. Mr. Qi has been involved in hosting multiple high-level China-Russia government delegations and, on behalf of the Guangdong CIS International Science and Technology Cooperation Alliance, signed a bilateral cooperation agreement with the Ryazan Regional Government of Russia. He has played a key role in advancing initiatives such as the “Bilateral Enterprise Localization Support Program” and the “Hongqi Automobile Introduction Project in Ryazan”.",
+              },
+              {
+                name: "Dr. Dan Wang",
+                role: "Senior Overseas Expansion Service Advisor at Born International",
+                bio: "Dr. Wang holds a Doctor of Agricultural Economics and Management degree from the Chinese Academy of Social Sciences and a Master of International Finance degree from the University of Sydney, Australia. A senior financial expert with over 20 years of experience, she is Co-founder and CFO of Zhongxihui (Chengdu) Information Technology Co., Ltd. and Business Investment Representative of Hylir Group. She is good at connecting overseas resources, assisting enterprises in handling the whole process of overseas expansion, and assists Michael Digkas in advancing major China-Greece projects, jointly helping enterprises explore the European market and avoid cross-border risks.",
+              },
+            ].map((m) => (
+              <div key={m.name} className="border-b border-slate-100 last:border-0 pb-12 md:pb-16 last:pb-0">
+                <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-1">{m.name}</h3>
+                <p className="text-amber-700 font-medium text-sm mb-4">{m.role}</p>
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base max-w-4xl">{m.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Highlights */}
+      <section className="bg-slate-50 py-16 md:py-24 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="mb-10 md:mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-12 bg-amber-500" />
+              <span className="text-amber-600 font-medium text-sm tracking-wider uppercase">Outcomes</span>
+            </div>
+            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">Case Highlights</h2>
+          </div>
+          <div className="grid lg:grid-cols-[1fr_minmax(0,42%)] gap-10 items-start mb-10">
+            <ul className="space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base order-2 lg:order-1">
+            <li className="flex gap-3">
+              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
+              <span>
+                At the St. Petersburg International Economic Forum, our Russia market entry team facilitated trade negotiations resulting in billion-RMB-level orders.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
+              <span>
+                Supported a leading Chinese geospatial technology company, UNRE Technology, in building a pipeline of 214 potential clients in Russia, with targeted engagement of key industry players such as Rusgeocom, EFT Group, and Technokauf. Delivered 30+ high-level technical demonstrations, advancing 5 clients into core negotiations, securing pilot orders, and initiating long-term partnership discussions.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
+              <span>
+                On Russia’s Ozon platform, enabled iFLYTEK to achieve No.2 brand ranking in the electronic translator and dictionary category, and No.1 single-product revenue within 90 days.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
+              <span>
+                Secured exclusive distribution rights in Russia for the full product line of Jissbon, completed comprehensive market feasibility studies, and successfully launched the first batch of products in the Russian market.
+              </span>
+            </li>
+          </ul>
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-200/80 shadow-md order-1 lg:order-2 bg-slate-200">
+              <Image
+                src="/vi-reference/image10.jpeg"
+                alt="VI reference — case highlights"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Resources */}
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -293,6 +378,16 @@ export default function BusinessNewPage() {
             <p className="text-slate-600 max-w-2xl">
               Leverage our extensive network to gain unparalleled access to the Russian market
             </p>
+          </div>
+
+          <div className="relative w-full aspect-video max-h-[420px] mb-10 md:mb-12 rounded-xl overflow-hidden border border-slate-300/60 shadow-sm">
+            <Image
+              src="/vi-reference/image4.png"
+              alt="VI reference — strategic resources"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 72rem"
+            />
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -366,6 +461,6 @@ export default function BusinessNewPage() {
           </p>
         </div>
       </footer>
-    </div>
+    </ViSecondaryShell>
   )
 }

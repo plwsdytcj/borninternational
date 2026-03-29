@@ -1,14 +1,12 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ArrowLeft, Globe, ChevronDown, MapPin, Users } from "lucide-react"
+import { ViSecondaryShell } from "@/components/vi-secondary-shell"
+import { MapPin, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 
 export default function GlobalPage() {
-  const router = useRouter()
   const [language, setLanguage] = useState<"en" | "ru">("en")
 
   const languages = [
@@ -143,8 +141,24 @@ export default function GlobalPage() {
     },
   }
 
-  const currentLanguage = languages.find((lang) => lang.code === language)
   const content = languageContent[language]
+
+  const langToggle = (
+    <div className="inline-flex rounded border border-slate-700/90 overflow-hidden">
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          type="button"
+          onClick={() => setLanguage(lang.code as "en" | "ru")}
+          className={`px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wide ${
+            language === lang.code ? "bg-amber-600 text-white" : "text-slate-500 hover:text-slate-200 bg-slate-900/50"
+          }`}
+        >
+          {lang.code}
+        </button>
+      ))}
+    </div>
+  )
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -153,55 +167,17 @@ export default function GlobalPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
-        {/* Logo */}
-        <button
-          onClick={() => router.push("/")}
-          className="flex items-center focus:outline-none"
-          aria-label="Back to Home"
-        >
-          <Image
-            src="/logo/born_logo_white.png"
-            alt="BORN International Logo"
-            width={180}
-            height={60}
-            className="h-12 w-auto"
-          />
-        </button>
-
-        {/* Navigation */}
-        <div className="flex items-center space-x-6">
-
-
-          <button
-            onClick={() => router.push("/")}
-            className="flex items-center space-x-2 text-white/90 hover:text-white"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">{content.backToHome}</span>
-          </button>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="py-12 sm:py-16 relative">
-        <div className="absolute inset-0">
-          <Image
-            src="/backgrounds/global_technology_background.jpg"
-            alt="Global technology background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-3 sm:mb-4">{content.technologyGlobalization}</h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">{content.technologyGlobalizationDescription}</p>
-          </div>
-        </div>
+    <ViSecondaryShell
+      sidebarKicker="Technology"
+      pageTitle={content.technologyGlobalization}
+      heroImageSrc="/vi-reference/image8.png"
+      heroAlt="VI reference — technology globalization"
+      headerExtra={langToggle}
+    >
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+        <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl">
+          {content.technologyGlobalizationDescription}
+        </p>
       </section>
 
       {/* Founder Section */}
@@ -630,6 +606,6 @@ export default function GlobalPage() {
           </div>
         </div>
       </footer>
-    </div>
+    </ViSecondaryShell>
   )
 }

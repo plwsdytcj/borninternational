@@ -60,17 +60,9 @@ export default function HomePage() {
   const [language, setLanguage] = useState<"en" | "ru">("en")
   const [enableInertialScroll, setEnableInertialScroll] = useState<boolean>(true) // 控制惯性滑动效果，默认开启
   const isClient = useIsClient()
-  // Prefer the provided JPEG; gracefully fallback to JPG, then a default
-  const [businessBgSrc, setBusinessBgSrc] = useState<string>("/backgrounds/business-bg-1920x1080.jpeg")
-
   const portfolioCount = useCountUp(125, 5000, "+")
   const fundScale = useCountUp(280000000, 5000)
   const techGlobalization = useCountUp(100, 5000, "+")
-
-  const annualizedIRR = useCountUp(24, 5000, "%+")
-  const portfolioCompanies = useCountUp(100, 5000, "+")
-  const investors = useCountUp(30, 5000, "+")
-  const fundValue = useCountUp(140, 5000)
 
   const languages = [
     { code: "en", name: "English" },
@@ -85,13 +77,23 @@ export default function HomePage() {
       portfolioCompanies: "Portfolio companies",
       investors: "Investors",
       valueDevelopment: "Value development",
-      investmentInChina: "Investment in Chinese Mainland",
+      homeHeroLine1: "Investment",
+      homeHeroLine2: "Enterprise Global Expansion",
+      homeHeroLine3: "AI Company",
+      investmentInChina: "Investment",
+      investmentInChinaLead: "Delivering 50x+ value creation across our portfolio Company.",
       investmentInChinaDescription:
-        "Born Capital is a well-known early-stage investment institution in Chinese Mainland. We have invested directly or indirectly in more than 100 enterprises, most of which are high-tech startups.",
-      learnMoreInvestments: "Learn more about our investments",
-      globalInvestment: "Technology Globalization",
+        "Focused on technology, we have invested in 100+ companies, with multiple achieving exceptional, multi-fold growth.",
+      learnMoreInvestments: "Explore our investments →",
+      globalInvestment: "Global Expansion",
       globalInvestmentDescription:
-        "We drive technology globalization through strategic investments across multiple global markets including Hong Kong, Singapore, Dubai, Saudi Arabia, London, Oxford, Germany, Japan, Russia, Israel, and the United States, fostering cross-border innovation and technology transfer.",
+        "Enabling leading companies to scale globally. We support market entry and operations in Russia and the European Union—achieving exponential returns with capital-efficient strategies.",
+      exploreGlobalExpansion: "Explore our global expansion →",
+      aiCompanyTitle: "AI Company",
+      aiCompanySubtitle: "Driving efficiency. Reducing costs.",
+      aiCompanyDescription:
+        "We build proprietary AI systems that transform operations and enhance performance for financial institutions.",
+      exploreAiCapabilities: "Explore our AI capabilities→",
 
       latestNews: "Latest news",
       viewAllNews: "View all news",
@@ -139,14 +141,6 @@ export default function HomePage() {
       portfolio: "Portfolio",
       fundScale: "Fund Scale",
       techGlobalization: "Technology Globalization",
-      businessOverviewTitle: "Business Overview",
-      businessOverviewSubtitle: "“One-Stop” Access to the Russian-Speaking Market",
-      viewBusinessOverview: "View business overview",
-      businessOverviewDescription:
-        "We offer one‑stop access to the Russian‑speaking market for Chinese and global tech companies — from strategy and compliance to localization and go‑to‑market execution.",
-      businessPoint1: "Market strategy, due diligence and localization",
-      businessPoint2: "Regulatory, legal and finance coordination",
-      businessPoint3: "Fundraising, partnerships and cross‑border M&A",
     },
     ru: {
       fundValueLabel: "СТОИМОСТЬ ФОНДА",
@@ -156,13 +150,23 @@ export default function HomePage() {
       portfolioCompanies: "Портфельные компании",
       investors: "Инвесторы",
       valueDevelopment: "Развитие стоимости",
-      investmentInChina: "Инвестиции в материковом Китае",
+      homeHeroLine1: "Инвестиции",
+      homeHeroLine2: "Глобальная экспансия предприятий",
+      homeHeroLine3: "AI-компания",
+      investmentInChina: "Инвестиции",
+      investmentInChinaLead: "Создаём рост стоимости более чем в 50 раз в нашем портфеле.",
       investmentInChinaDescription:
-        "Born Capital — известное инвестиционное учреждение на ранней стадии в материковом Китае. Мы инвестировали напрямую или косвенно в более чем 100 предприятий, большинство из которых являются высокотехнологичными стартапами.",
-      learnMoreInvestments: "Узнайте больше о наших инвестициях",
-      globalInvestment: "Технологическая глобализация",
+        "Сфокусированы на технологиях: инвестировали в 100+ компаний, многие показали многократный рост.",
+      learnMoreInvestments: "Изучить наши инвестиции",
+      globalInvestment: "Глобальная экспансия",
       globalInvestmentDescription:
-        "Мы способствуем технологической глобализации через стратегические инвестиции на многих мировых рынках, включая Гонконг, Сингапур, Дубай, Саудовскую Аравию, Лондон, Оксфорд, Германию, Японию, Россию, Израиль и США, способствуя трансграничным инновациям и передаче технологий.",
+        "Помогаем лидирующим компаниям масштабироваться глобально. Поддерживаем выход и операции в России и ЕС — экспоненциальная доходность при эффективном использовании капитала.",
+      exploreGlobalExpansion: "Глобальная экспансия — подробнее",
+      aiCompanyTitle: "AI-компания",
+      aiCompanySubtitle: "Повышаем эффективность. Снижаем затраты.",
+      aiCompanyDescription:
+        "Создаём собственные AI-системы, которые трансформируют операции и повышают эффективность для финансовых институтов.",
+      exploreAiCapabilities: "Возможности AI — подробнее",
 
       latestNews: "Последние новости",
       viewAllNews: "Посмотреть все новости",
@@ -210,14 +214,6 @@ export default function HomePage() {
       portfolio: "Портфолио",
       fundScale: "Масштаб фонда",
       techGlobalization: "Технологическая глобализация",
-      businessOverviewTitle: "Обзор бизнеса",
-      businessOverviewSubtitle: "«Единое окно» доступа к русскоязычному рынку",
-      viewBusinessOverview: "Смотреть обзор бизнеса",
-      businessOverviewDescription:
-        "Мы предоставляем «единое окно» для выхода на русскоязычный рынок для китайских и глобальных технокомпаний — стратегия, соответствие требованиям, локализация и вывод на рынок.",
-      businessPoint1: "Стратегия выхода, due diligence и локализация",
-      businessPoint2: "Регуляторика, юридическое и финансовое сопровождение",
-      businessPoint3: "Привлечение капитала, партнерства и трансграничные M&A",
     },
   }
 
@@ -515,13 +511,13 @@ export default function HomePage() {
       <main className="relative h-screen snap-section">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/mount_watermarked_background.jpeg"
-            alt="BORN Capital mountain landscape with snow-capped peaks and blue sky"
+            src="/vi-reference/image1.jpeg"
+            alt="Homepage visual reference"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/10" />
+          <div className="absolute inset-0 bg-black/35" />
         </div>
 
         <div className="relative z-10 h-full px-4">
@@ -538,13 +534,34 @@ export default function HomePage() {
           
 
 
-          {/* Centered statistics cards */}
-          <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="mb-8"></div>
-            <div className="mb-12 max-w-2xl"></div>
+          {/* Centered headline + statistics */}
+          <div className="flex flex-col items-center justify-center h-full text-center px-4">
+            <div className="max-w-6xl mb-8 md:mb-12 mt-16 md:mt-24 px-2">
+              <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white drop-shadow-md leading-tight text-center">
+                {language === "en" ? (
+                  <span className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center sm:items-baseline gap-y-2 gap-x-3">
+                    <span>{content.homeHeroLine1}</span>
+                    <span className="hidden sm:inline text-white/45 font-light select-none" aria-hidden>
+                      -
+                    </span>
+                    <span className="text-white/95">{content.homeHeroLine2}</span>
+                    <span className="hidden sm:inline text-white/45 font-light select-none" aria-hidden>
+                      -
+                    </span>
+                    <span className="text-white/90">{content.homeHeroLine3}</span>
+                  </span>
+                ) : (
+                  <span className="flex flex-col space-y-1 md:space-y-2">
+                    <span>{content.homeHeroLine1}</span>
+                    <span className="text-white/95">{content.homeHeroLine2}</span>
+                    <span className="text-white/90">{content.homeHeroLine3}</span>
+                  </span>
+                )}
+              </h1>
+            </div>
 
             {/* Key Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mt-8 md:mt-80 mb-8 md:mb-12 max-w-4xl w-full px-6 md:px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mt-4 md:mt-8 mb-8 md:mb-12 max-w-4xl w-full px-6 md:px-4">
               <div className="text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 hover:-translate-y-4">
                 <h3
                   className="tabular-nums text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 tracking-tighter drop-shadow-lg transition-all duration-500 group-hover:text-yellow-200 group-hover:scale-105"
@@ -607,36 +624,23 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* Investment Strategy Section */}
-      <section className="h-screen relative flex items-center snap-section">
+      {/* Investment — Word VI: 16:9 visual + 次级页风格 */}
+      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/bg-project-1.jpg"
-            alt="Investment landscape"
+            src="/vi-reference/image2.jpeg"
+            alt="Investment visual reference"
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/50" />
+          <div className="absolute inset-0 bg-white/55" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.investmentInChina}</h2>
+              <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed">{content.investmentInChinaLead}</p>
               <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full" />
-                  <span className="text-slate-700">100+ Portfolio companies</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-green-600 rounded-full" />
-                  <span className="text-slate-700">24%+ Annualized IRR</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-orange-600 rounded-full" />
-                  <span className="text-slate-700">30+ Investors</span>
-                </div>
-              </div>
               <Link href="/portfolio">
                 <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
@@ -648,60 +652,46 @@ export default function HomePage() {
                 </button>
               </Link>
             </div>
-            <div className="relative h-64 md:h-96">
+            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg">
               <Image
-                src="/modern-financial-office.png"
-                alt="Modern financial district"
+                src="/vi-reference/image2.jpeg"
+                alt=""
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover object-center"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Responsible Investment Section - Text on Right */}
-      <section className="h-screen relative flex items-center snap-section">
+      {/* Global Expansion */}
+      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/bg-team.jpg"
-            alt="Rock climbing adventure landscape"
+            src="/vi-reference/image3.png"
+            alt="Global expansion visual reference"
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-white/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="relative h-64 md:h-96">
+            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg order-2 lg:order-1">
               <Image
-                src="/backgrounds/worldmap.jpg"
-                alt="Global technology network connections world map"
+                src="/vi-reference/image3.png"
+                alt=""
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover object-center"
               />
             </div>
-            <div>
+            <div className="order-1 lg:order-2">
               <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.globalInvestment}</h2>
               <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-green-600 rounded-full" />
-                  <span className="text-slate-700">Silicon Valley & New York</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full" />
-                  <span className="text-slate-700">London & Oxford</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-purple-600 rounded-full" />
-                  <span className="text-slate-700">Asia-Pacific presence</span>
-                </div>
-              </div>
-              <Link href="/global">
+              <Link href="/business-new">
                 <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                    Learn more about technology globalization
+                    {content.exploreGlobalExpansion}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                   </span>
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-green-600" />
@@ -717,39 +707,27 @@ export default function HomePage() {
 
 
 
-      {/* Business Overview Teaser (from /business) */}
-      <section className="h-screen relative flex items-center snap-section">
+      {/* AI Company */}
+      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src={businessBgSrc}
-            alt="Business city skyline light background"
+            src="/vi-reference/image11.png"
+            alt="AI company visual reference"
             fill
-            className="object-cover"
-            onError={() =>
-              setBusinessBgSrc((prev) =>
-                prev.endsWith(".jpeg")
-                  ? "/backgrounds/business-bg-1920x1080.jpg"
-                  : "/backgrounds/bg-about.jpg"
-              )
-            }
+            className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/50" />
+          <div className="absolute inset-0 bg-white/55" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.businessOverviewTitle}</h2>
-              <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed">{content.businessOverviewSubtitle}</p>
-              <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">{content.businessOverviewDescription}</p>
-              <div className="space-y-3 md:space-y-4 mb-2 md:mb-4">
-                <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-blue-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint1}</span></div>
-                <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-green-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint2}</span></div>
-                <div className="flex items-center space-x-3"><div className="w-2.5 h-2.5 bg-purple-600 rounded-full" /><span className="text-slate-700 text-sm md:text-base">{content.businessPoint3}</span></div>
-              </div>
-              <Link href="/business-new">
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.aiCompanyTitle}</h2>
+              <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed font-medium">{content.aiCompanySubtitle}</p>
+              <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">{content.aiCompanyDescription}</p>
+              <Link href="/ai-company">
                 <button className="mt-2 md:mt-4 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
                   <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                    {content.viewBusinessOverview}
+                    {content.exploreAiCapabilities}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                   </span>
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-blue-600" />
@@ -757,14 +735,12 @@ export default function HomePage() {
                 </button>
               </Link>
             </div>
-            <div className="relative h-64 md:h-96">
+            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg">
               <Image
-                src="/business/business_overview.jpg"
-                alt="Business overview preview"
+                src="/vi-reference/image11.png"
+                alt=""
                 fill
-                className="object-cover rounded-lg"
-                unoptimized
-                priority
+                className="object-cover object-center"
               />
             </div>
           </div>
@@ -773,15 +749,15 @@ export default function HomePage() {
 
       
       {/* News & Updates Section */}
-      <section className="py-12 md:py-20 relative">
+      <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/bg-about.jpg"
-            alt="Expansive mountain news background"
+            src="/vi-reference/image12.jpeg"
+            alt="News section visual reference"
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/50" />
+          <div className="absolute inset-0 bg-white/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0">
@@ -801,8 +777,8 @@ export default function HomePage() {
                     {/* Fixed Top News Row - Alternating Layout */}
           <div className="space-y-4 mb-6">
             {/* First News Item - Latest 1 from /news */}
-            <div className="flex gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
-              <div className="relative w-28 h-28 flex-shrink-0">
+            <div className="flex flex-row gap-5 md:gap-8 items-stretch bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 min-h-[140px]">
+              <div className="relative w-32 h-32 md:w-44 md:h-44 flex-shrink-0 self-center">
                 <Image 
                   src="/news/murmansk-governor-meeting-2025/image1.jpeg" 
                   alt="Murmansk Governor meets Born International in Beijing" 
@@ -824,8 +800,8 @@ export default function HomePage() {
             </div>
 
             {/* Second News Item - Latest 2 from /news */}
-            <div className="flex flex-row-reverse gap-4 items-center bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
-              <div className="relative w-28 h-28 flex-shrink-0">
+            <div className="flex flex-row-reverse gap-5 md:gap-8 items-stretch bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 min-h-[140px]">
+              <div className="relative w-32 h-32 md:w-44 md:h-44 flex-shrink-0 self-center">
                 <Image 
                   src="/news/china-russia-investment-committee-2025/image1.jpeg" 
                   alt="China–Russia Investment Committee in Beijing" 

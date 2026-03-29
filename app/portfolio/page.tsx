@@ -1,12 +1,13 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ArrowLeft, Globe, ChevronDown, ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { ViSecondaryShell } from "@/components/vi-secondary-shell"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { getPortfolioCompanies } from "@/lib/portfolio-companies"
 
 export default function PortfolioPage() {
   const router = useRouter()
@@ -21,16 +22,16 @@ export default function PortfolioPage() {
 
   const languageContent = {
     en: {
-      portfolioTitle: "Investment Portfolio",
+      portfolioTitle: "Investment",
       portfolioDescription:
-        "Discover our comprehensive investment approach through our dedicated teams and diversified fund structures",
+        "Delivering 50x+ value creation across our portfolio companies—with technology at the core.",
       backToHome: "Back to Home",
       investmentTeam: "Investment Team",
       teamDescription: "Our experienced professionals bring deep expertise across sectors and regions",
       fundStructure: "Fund Structure",
       fundDescription:
         "Diversified investment vehicles designed to capture opportunities across different stages and sectors",
-      viewDetails: "View Details",
+      viewDetails: "View details→",
       previousMember: "Previous Member",
       nextMember: "Next Member",
       closeModal: "Close",
@@ -72,16 +73,16 @@ export default function PortfolioPage() {
       teamMember6Desc: "Machine learning and artificial intelligence research",
     },
     ru: {
-      portfolioTitle: "Инвестиционный портфель",
+      portfolioTitle: "Инвестиции",
       portfolioDescription:
-        "Откройте для себя наш комплексный инвестиционный подход через наши специализированные команды и диверсифицированные структуры фондов",
+        "Создание стоимости более чем в 50 раз в портфеле — с технологиями в основе.",
       backToHome: "Вернуться на главную",
       investmentTeam: "Инвестиционная команда",
       teamDescription: "Наши опытные профессионалы обладают глубокой экспертизой в различных секторах и регионах",
       fundStructure: "Структура фондов",
       fundDescription:
         "Диверсифицированные инвестиционные инструменты, предназначенные для использования возможностей на разных этапах и в разных секторах",
-      viewDetails: "Посмотреть детали",
+      viewDetails: "Подробнее→",
       previousMember: "Предыдущий член",
       nextMember: "Следующий член",
       closeModal: "Закрыть",
@@ -125,8 +126,8 @@ export default function PortfolioPage() {
     },
   }
 
-  const currentLanguage = languages.find((lang) => lang.code === language)
   const content = languageContent[language]
+  const companies = getPortfolioCompanies(language)
 
   const teamMembers = [
     {
@@ -254,48 +255,11 @@ export default function PortfolioPage() {
   // Filter team members that have modals
   const modalEnabledMembers = teamMembers.filter((member) => member.hasModal)
 
-  const funds = [
-    {
-      number: "01",
-      title: content.motherFund,
-      description: content.motherFundDesc,
-      color: "bg-gradient-to-br from-amber-400 to-amber-600",
-      textColor: "text-white",
-    },
-    {
-      number: "02",
-      title: content.directInvestment,
-      description: content.directInvestmentDesc,
-      color: "bg-gradient-to-br from-amber-400 to-amber-600",
-      textColor: "text-white",
-    },
-    {
-      number: "03",
-      title: content.specialFund,
-      description: content.specialFundDesc,
-      color: "bg-gradient-to-br from-amber-400 to-amber-600",
-      textColor: "text-white",
-    },
-    {
-      number: "04",
-      title: content.moreFunds,
-      description: content.moreFundsDesc,
-      color: "bg-gradient-to-br from-amber-400 to-amber-600",
-      textColor: "text-white",
-    },
-  ]
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0)
     }
   }, [])
-
-  const handleViewDetails = (index: number) => {
-    if (index === 0) {
-      router.push("/mother-fund")
-    }
-  }
 
   const handleMemberClick = (memberIndex: number) => {
     const member = teamMembers[memberIndex]
@@ -352,51 +316,184 @@ export default function PortfolioPage() {
 
   const currentMember = selectedMemberIndex !== null ? modalEnabledMembers[selectedMemberIndex] : null
 
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
-        {/* Logo */}
+  const langToggle = (
+    <div className="inline-flex rounded border border-slate-700/90 overflow-hidden">
+      {languages.map((lang) => (
         <button
-          onClick={() => router.push("/")}
-          className="flex items-center focus:outline-none"
-          aria-label="Back to Home"
+          key={lang.code}
+          type="button"
+          onClick={() => setLanguage(lang.code as "en" | "ru")}
+          className={`px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wide ${
+            language === lang.code ? "bg-amber-600 text-white" : "text-slate-500 hover:text-slate-200 bg-slate-900/50"
+          }`}
         >
-          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={180} height={60} className="h-12 w-auto" />
+          {lang.code}
         </button>
+      ))}
+    </div>
+  )
 
-        {/* Navigation */}
-        <div className="flex items-center space-x-6">
-
-
-          <button
-            onClick={() => router.push("/")}
-            className="flex items-center space-x-2 text-white/90 hover:text-white"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">{content.backToHome}</span>
-          </button>
+  return (
+    <ViSecondaryShell
+      sidebarKicker="Investment"
+      pageTitle={content.portfolioTitle}
+      pageSubtitle={content.portfolioDescription}
+      heroImageSrc="/vi-reference/image2.jpeg"
+      heroAlt="VI reference — investment platform"
+      headerExtra={langToggle}
+    >
+      {/* Portfolio Companies */}
+      <section id="portfolio-companies" className="py-20 relative scroll-mt-24">
+        <div className="absolute inset-0">
+          <Image src="/backgrounds/bg-project-1.jpg" alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-white/85" />
         </div>
-      </header>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">
+              {language === "en" ? "Portfolio Companies" : "投资组合公司"}
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              {language === "en"
+                ? "Highlighted return profiles and full portfolio access."
+                : "重点展示收益倍数，完整了解投资组合。"}
+            </p>
+          </div>
 
-      {/* Hero Section */}
-      <section
-        className="py-16 bg-cover bg-center bg-no-repeat relative"
-        style={{
-          backgroundImage:
-                            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/backgrounds/portfolio-background.png')",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="heading-serif text-5xl lg:text-6xl font-light tracking-tight text-white mb-4">{content.portfolioTitle}</h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">{content.portfolioDescription}</p>
+          <div className="space-y-10 mb-16">
+            {companies
+              .filter((c) => c.featured)
+              .map((company) => (
+                <Card key={company.slug} className="border-2 border-slate-200 shadow-xl bg-white/95 overflow-hidden">
+                  <CardContent className="p-6 sm:p-10">
+                    <div className="grid md:grid-cols-[minmax(0,200px)_1fr_auto] gap-8 items-center">
+                      <div className="relative w-full h-40 md:h-48 mx-auto max-w-[200px]">
+                        <Image
+                          src={company.logo}
+                          alt={company.name}
+                          fill
+                          className={company.logoStyle || "object-contain"}
+                        />
+                      </div>
+                      <div>
+                        <p className="text-amber-800 font-semibold text-sm uppercase tracking-wider mb-2">
+                          {language === "en" ? "Return Multiple" : "回报倍数"}: {company.returnMultiple}
+                        </p>
+                        <h3 className="text-2xl font-semibold text-slate-900 mb-2">{company.name}</h3>
+                        <p className="text-slate-500 text-sm mb-3">{company.sector}</p>
+                        <p className="text-slate-600 leading-relaxed">{company.description}</p>
+                      </div>
+                      <div className="flex md:flex-col justify-start">
+                        <Button
+                          variant="outline"
+                          className="whitespace-nowrap"
+                          onClick={() => router.push(`/portfolio/${company.slug}`)}
+                        >
+                          {content.viewDetails}
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {companies
+              .filter((c) => !c.featured)
+              .map((company) => (
+                <Card key={company.slug} className="border border-slate-200 shadow-sm hover:shadow-md bg-white/95">
+                  <CardContent className="p-4 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+                    <div className="relative w-16 h-16 flex-shrink-0">
+                      <Image
+                        src={company.logo}
+                        alt={company.name}
+                        fill
+                        className={company.logoStyle || "object-contain"}
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0 text-center sm:text-left">
+                      <h4 className="font-semibold text-slate-900 text-sm line-clamp-2">{company.name}</h4>
+                      <p className="text-xs text-slate-500 mt-1">{company.sector}</p>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="mt-2 p-0 h-auto text-blue-600"
+                        onClick={() => router.push(`/portfolio/${company.slug}`)}
+                      >
+                        {content.viewDetails}
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Edge */}
+      <section id="our-edge" className="py-20 relative scroll-mt-24 border-y border-slate-200 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-50" />
+        <div className="absolute inset-0 opacity-[0.14] pointer-events-none">
+          <Image src="/vi-reference/image5.jpeg" alt="" fill className="object-cover object-center" sizes="100vw" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+          <h2 className="heading-serif text-3xl sm:text-4xl font-light text-slate-900 mb-12 text-center">
+            {language === "en" ? "Our Edge" : "我们的优势"}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: language === "en" ? "Team & Track Record" : "团队与业绩",
+                body:
+                  language === "en"
+                    ? "Decade-long experience in early-stage technology investing, with a proven track record of backing and scaling category-defining companies."
+                    : "早期科技投资数十年经验，经实践检验的投资与培育定义品类企业的能力。",
+                href: "/portfolio#investment-team-section",
+                cta: language === "en" ? "View more details→" : "了解更多→",
+              },
+              {
+                title: language === "en" ? "AI-Driven Investment" : "AI驱动投资",
+                body:
+                  language === "en"
+                    ? "Deep focus on AI, powered by a proprietary, end-to-end AI investment management system that enhances speed, precision, and scalability."
+                    : "深耕人工智能，依托端到端专有AI投资管理体系，提升速度、精准度与规模。",
+                href: "/ai-company",
+                cta: language === "en" ? "View more details→" : "了解更多→",
+              },
+              {
+                title: language === "en" ? "Investment + Global Expansion" : "投资与全球拓展",
+                body:
+                  language === "en"
+                    ? "From capital to market entry, we enable companies to scale into Russia and beyond—unlocking growth through a dual-engine model of investment and international expansion."
+                    : "从资本到市场进入，助力企业拓展至俄罗斯及其他地区——投资与国际化双引擎释放增长。",
+                href: "/business-new",
+                cta: language === "en" ? "View more details→" : "了解更多→",
+              },
+              {
+                title: language === "en" ? "Proprietary Deal Flow" : "专有项目渠道",
+                body:
+                  language === "en"
+                    ? "Privileged access to top-tier research, industry experts, and institutional networks—ensuring a consistent pipeline of high-quality opportunities."
+                    : "对接顶级研究、行业专家与机构网络，持续获得高质量投资机会。",
+                href: "/portfolio#portfolio-companies",
+                cta: language === "en" ? "View more details→" : "了解更多→",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">{item.body}</p>
+                <Link href={item.href} className="text-blue-600 text-sm font-medium hover:underline">
+                  {item.cta}
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Investment Team Section */}
-      <section className="py-20 relative">
+      <section id="investment-team-section" className="py-20 relative scroll-mt-24">
         <div className="absolute inset-0">
           <Image
                           src="/backgrounds/bg-team.jpg"
@@ -1056,224 +1153,24 @@ export default function PortfolioPage() {
         </div>
       )}
 
-      {/* Fund Structure Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-project-1.jpg"
-            alt="Portfolio background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/85" />
+      {/* Fundraising */}
+      <section className="py-16 relative bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-25">
+          <Image src="/vi-reference/image13.jpeg" alt="" fill className="object-cover object-center" sizes="100vw" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">
-              {language === "en" ? "Portfolio Companies" : "投资组合公司"}
-            </h2>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
-              {language === "en"
-                ? "Discover the innovative companies we have invested in across various sectors and stages"
-                : "探索我们在各个行业和阶段投资的创新公司"}
-            </p>
-          </div>
-
-          {/* Additional Portfolio Companies List */}
-          <div id="portfolio-companies" className="space-y-4 sm:space-y-6">
-            {[
-              {
-                name: language === "en" ? "BOSON Quantum" : "玻色量子",
-                nameEn: "BOSON Quantum",
-                nameCn: "玻色量子",
-                sector: language === "en" ? "Quantum Computing" : "量子计算",
-                description:
-                  language === "en"
-                    ? "Leading quantum computing technology company specializing in quantum algorithms and hardware solutions"
-                    : "领先的量子计算技术公司，专注于量子算法和硬件解决方案",
-                logo: "/company-logos/boson-quantum-logo.jpg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Bubi Blockchain" : "布比区块链",
-                nameEn: "Bubi Blockchain",
-                nameCn: "布比区块链",
-                sector: language === "en" ? "Blockchain Technology" : "区块链技术",
-                description:
-                  language === "en"
-                    ? "Leading blockchain technology platform and solutions provider"
-                    : "领先的区块链技术平台和解决方案提供商",
-                logo: "/company-logos/bubi-blockchain-logo.png",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Kunwei Technology" : "坤维科技",
-                nameEn: "Kunwei Technology",
-                nameCn: "坤维科技",
-                sector: language === "en" ? "Technology Solutions" : "技术解决方案",
-                description:
-                  language === "en"
-                    ? "Innovative technology solutions provider focusing on digital transformation"
-                    : "创新技术解决方案提供商，专注于数字化转型",
-                logo: "/company-logos/kunwei-technology-logo.jpg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Token Cloud (Shanghai) Technology Co., Ltd." : "令牌云",
-                nameEn: "token-cloud-shanghai-technology-co-ltd",
-                nameCn: "令牌云",
-                sector: language === "en" ? "Digital Identity" : "数字身份",
-                description:
-                  language === "en"
-                    ? "Digital identity authentication for finance, government and hospitality; ID/passport chip verification and TMFA device security."
-                    : "面向金融、政务、酒店的数字身份认证；身份证/护照芯片校验与TMFA设备安全。",
-                logo: "/company-logos/token-cloud-shanghai-technology-co-ltd-logo.png",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Shanghai Droid Robotics Co., Ltd. (DroidUp)" : "卓益得",
-                nameEn: "shanghai-droid-robotics-co-ltd-droidup",
-                nameCn: "卓益得",
-                sector: language === "en" ? "Humanoid Robotics" : "人形机器人",
-                description:
-                  language === "en"
-                    ? "General-purpose humanoid robots with multi-modal AI limb bionics; platforms, expression robots; Guinness-record biped."
-                    : "通用人形机器人，多模态AI四肢仿生；平台、表情机器人；双足步行创纪录。",
-                logo: "/company-logos/shanghai-droid-robotics-co-ltd-droidup-logo.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Shenzhen Huazhi Intelligent Manufacturing Technology Co., LTD." : "华制智能",
-                nameEn: "shenzhen-huazhi-intelligent-manufacturing-technology-co-ltd",
-                nameCn: "华制智能",
-                sector: language === "en" ? "Industrial Internet" : "工业互联网",
-                description:
-                  language === "en"
-                    ? "'Huazhi Cloud' for equipment interconnection, collaboration, ops control and data intelligence; national standards participant."
-                    : "“华制云”覆盖设备互联、协同、运营管控与数据智能；参与国家标准制定。",
-                logo: "/company-logos/shenzhen-huazhi-intelligent-manufacturing-technology-co-ltd-logo.jpeg",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "Chengdu Zhongkang Dacheng Environmental Protection Technology Co., Ltd." : "中康达成",
-                nameEn: "chengdu-zhongkang-dacheng-environmental-protection-technology-co-ltd",
-                nameCn: "中康达成",
-                sector: language === "en" ? "IoT + Retail" : "物联网+零售",
-                description:
-                  language === "en"
-                    ? "IoT + tobacco-industry digitalization; smart retail, smoking cabins, age-verification, logistics; 10,000+ devices deployed."
-                    : "物联网与烟草行业数字化；智能零售、吸烟亭、年龄验证、物流；累计部署1万+设备。",
-                logo: "/company-logos/chengdu-zhongkang-dacheng-environmental-protection-technology-co-ltd-logo.png",
-                logoStyle: "object-contain",
-              },
-              {
-                name: language === "en" ? "China Carbon Zero and Technology Group" : "China Carbon Zero and Technology Group",
-                nameEn: "china-carbon-zero-and-technology-group",
-                nameCn: "China Carbon Zero and Technology Group",
-                sector: language === "en" ? "Carbon Assets" : "碳资产",
-                description:
-                  language === "en"
-                    ? "Carbon asset development and trading: consulting, CCER/VCS projects, market trading and carbon finance; blockchain-enabled platform."
-                    : "碳资产开发与交易：咨询、CCER/VCS项目、市场交易与碳金融；区块链数据平台。",
-                logo: "/company-logos/china-carbon-zero-and-technology-group-logo.png",
-                logoStyle: "object-contain",
-              },
-            ].map((company, index) => (
-              <Card
-                key={index}
-                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.005] hover:-translate-y-0.5 bg-white overflow-hidden relative cursor-pointer"
-              >
-                {/* Subtle background overlay */}
-                <div className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
-
-                {/* Animated border effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gray-300 rounded-lg transition-all duration-500" />
-
-                {/* Floating particles effect - grayscale */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500 delay-100" />
-                <div className="absolute top-8 right-8 w-1 h-1 bg-gray-500 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200" />
-                <div className="absolute top-6 right-12 w-1.5 h-1.5 bg-gray-600 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500 delay-300" />
-
-                <CardContent className="p-4 sm:p-6 relative z-10">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
-                    <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full">
-                      {/* Enhanced logo container with smaller size */}
-                      <div className="relative w-32 h-32 sm:w-64 sm:h-64 flex-shrink-0 group-hover:scale-105 transition-transform duration-700 ease-out">
-                        {/* Subtle shadow effect */}
-                        <div className="absolute inset-0 rounded-lg bg-gray-300 opacity-0 group-hover:opacity-1 blur-xl transition-all duration-700 transform group-hover:scale-125" />
-
-                        {/* Image container with enhanced effects */}
-                        <div className="relative w-full h-full overflow-hidden rounded-lg bg-transparent transition-colors duration-500">
-                          <Image
-                            src={company.logo || "/placeholder.svg"}
-                            alt={company.name}
-                            fill
-                            className={`${company.logoStyle || "object-contain"} transition-all duration-700 group-hover:scale-105 group-hover:rotate-1 filter group-hover:brightness-110 group-hover:contrast-110`}
-                          />
-
-                          {/* Subtle overlay on hover */}
-                          <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-
-                          {/* Shimmer effect */}
-                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
-                        </div>
-                      </div>
-
-                      {/* Enhanced text content */}
-                      <div className="flex-1 text-center sm:text-left space-y-3">
-                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-1 group-hover:text-slate-700 transition-all duration-500 transform group-hover:translate-x-2">
-                          {company.name}
-                        </h3>
-
-                        {/* Animated sector badge - grayscale */}
-                        <div className="inline-block">
-                          <p className="text-slate-600 font-medium mb-2 px-3 py-1 rounded-full bg-gray-100 group-hover:bg-gray-200 group-hover:text-slate-700 group-hover:scale-105 transition-all duration-500 transform group-hover:shadow-md">
-                            {company.sector}
-                          </p>
-                        </div>
-
-                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base group-hover:text-slate-700 transition-colors duration-500 transform group-hover:translate-x-1">
-                          {company.description}
-                        </p>
-
-                        {/* Animated underline - grayscale */}
-                        <div className="w-0 h-0.5 bg-gray-400 group-hover:w-full transition-all duration-700 ease-out" />
-                      </div>
-                    </div>
-
-                    {/* Enhanced button with smaller effects */}
-                    <div className="flex-shrink-0 relative">
-                      {/* Button glow effect - grayscale */}
-                      <div className="absolute inset-0 bg-gray-300 rounded-lg opacity-0 group-hover:opacity-10 blur-lg transition-all duration-500 transform group-hover:scale-105" />
-
-                      <Button
-                        variant="ghost"
-                        className="relative text-slate-600 hover:text-slate-900 text-sm sm:text-base px-6 py-3 rounded-lg border-2 border-gray-300 hover:border-gray-500 hover:bg-gray-100 transition-all duration-500 transform group-hover:scale-105 group-hover:shadow-xl group-hover:-translate-y-0.5 overflow-hidden"
-                        onClick={() => {
-                          const companySlug = company.nameEn.toLowerCase().replace(/\s+/g, "-")
-                          router.push(`/portfolio/${companySlug}`)
-                        }}
-                      >
-                        {/* Button background animation - grayscale */}
-                        <div className="absolute inset-0 bg-gray-200 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-
-                        <span className="relative z-10 flex items-center">
-                          {language === "en" ? "View Details" : "查看详情"}
-                          <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 group-hover:scale-125 transition-all duration-500" />
-                        </span>
-
-                        {/* Button shine effect */}
-                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Bottom progress bar animation - grayscale */}
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 group-hover:w-full transition-all duration-1000 ease-out" />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="absolute inset-0 bg-slate-950/75" />
+        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+          <h2 className="heading-serif text-3xl font-light mb-4">{language === "en" ? "Fundraising" : "募资"}</h2>
+          <p className="text-slate-300 leading-relaxed mb-2">
+            {language === "en"
+              ? "Our new technology-focused fund is currently in formation."
+              : "我们新的科技主题基金正在筹备中。"}
+          </p>
+          <p className="text-slate-400 text-sm">
+            {language === "en"
+              ? "For partnership and investment opportunities, please feel free to contact us."
+              : "合作与投资欢迎与我们联系。"}
+          </p>
         </div>
       </section>
 
@@ -1391,6 +1288,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </footer>
-    </div>
+    </ViSecondaryShell>
   )
 }
