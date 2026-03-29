@@ -633,17 +633,17 @@ export default function HomePage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-white/50" />
+          <div className="absolute inset-0 bg-white/65" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div>
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.investmentInChina}</h2>
-              <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed">{content.investmentInChinaLead}</p>
-              <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
+            <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.investmentInChina}</h2>
+              <p className="text-base md:text-lg text-slate-800 mb-3 md:mb-4 leading-relaxed">{content.investmentInChinaLead}</p>
+              <p className="text-base md:text-lg text-slate-800 mb-6 md:mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
               <Link href="/portfolio">
-                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                  <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
                     {content.learnMoreInvestments}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                   </span>
@@ -673,7 +673,7 @@ export default function HomePage() {
             fill
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/50" />
+          <div className="absolute inset-0 bg-white/65" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
@@ -685,12 +685,12 @@ export default function HomePage() {
                 className="object-cover object-center"
               />
             </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.globalInvestment}</h2>
-              <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
+            <div className="order-1 lg:order-2 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.globalInvestment}</h2>
+              <p className="text-base md:text-lg text-slate-800 mb-6 md:mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
               <Link href="/business-new">
-                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                  <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
                     {content.exploreGlobalExpansion}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                   </span>
@@ -716,17 +716,17 @@ export default function HomePage() {
             fill
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/55" />
+          <div className="absolute inset-0 bg-white/68" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div>
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4 md:mb-6">{content.aiCompanyTitle}</h2>
-              <p className="text-base md:text-lg text-slate-600 mb-3 md:mb-4 leading-relaxed font-medium">{content.aiCompanySubtitle}</p>
-              <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">{content.aiCompanyDescription}</p>
+            <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
+              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.aiCompanyTitle}</h2>
+              <p className="text-base md:text-lg text-slate-800 mb-3 md:mb-4 leading-relaxed font-medium">{content.aiCompanySubtitle}</p>
+              <p className="text-sm md:text-base text-slate-800 mb-4 md:mb-6 leading-relaxed">{content.aiCompanyDescription}</p>
               <Link href="/ai-company">
-                <button className="mt-2 md:mt-4 group relative flex items-center text-base md:text-lg font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                  <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+                <button className="mt-2 md:mt-4 group relative flex items-center text-base md:text-lg font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
                     {content.exploreAiCapabilities}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                   </span>
@@ -757,14 +757,14 @@ export default function HomePage() {
             fill
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/60" />
+          <div className="absolute inset-0 bg-white/72" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0">
-            <h2 className="text-3xl font-light text-slate-900">{content.latestNews}</h2>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0 rounded-2xl border border-white/80 bg-white/90 backdrop-blur-md shadow-sm px-5 py-4 md:px-6 md:py-5">
+            <h2 className="text-3xl font-light text-slate-950">{content.latestNews}</h2>
             <Link href="/news">
-              <button className="group relative flex items-center text-base font-medium text-slate-900 hover:text-slate-700 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                <span className="relative border-b-2 border-slate-300 group-hover:border-slate-500 pb-1 transition-all duration-500 group-hover:shadow-lg">
+              <button className="group relative flex items-center text-base font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
                   {content.viewAllNews}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-700 ease-out"></span>
                 </span>
