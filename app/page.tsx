@@ -668,8 +668,8 @@ export default function HomePage() {
       <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image3.png"
-            alt="Global expansion visual reference"
+            src="/backgrounds/worldmap.jpg"
+            alt="Global map"
             fill
             className="object-cover object-center"
           />
@@ -679,8 +679,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg order-2 lg:order-1">
               <Image
-                src="/vi-reference/image3.png"
-                alt=""
+                src="/global-connections-map.png"
+                alt="Global connections"
                 fill
                 className="object-cover object-center"
               />
@@ -711,8 +711,8 @@ export default function HomePage() {
       <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image11.png"
-            alt="AI company visual reference"
+            src="/vi-reference/image3.png"
+            alt="AI and intelligent systems"
             fill
             className="object-cover object-center"
           />
@@ -737,7 +737,7 @@ export default function HomePage() {
             </div>
             <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg">
               <Image
-                src="/vi-reference/image11.png"
+                src="/vi-reference/image3.png"
                 alt=""
                 fill
                 className="object-cover object-center"
