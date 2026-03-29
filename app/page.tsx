@@ -624,16 +624,16 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* Investment — Word VI: 16:9 visual + 次级页风格 */}
-      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
+      {/* Investment */}
+      <section className="h-screen relative flex items-center snap-section">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image2.jpeg"
-            alt="Investment visual reference"
+            src="/backgrounds/bg-project-1.jpg"
+            alt="Investment landscape"
             fill
-            className="object-cover object-center"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-white/55" />
+          <div className="absolute inset-0 bg-white/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
@@ -652,12 +652,12 @@ export default function HomePage() {
                 </button>
               </Link>
             </div>
-            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-lg overflow-hidden border border-slate-300/60 shadow-lg">
+            <div className="relative h-64 md:h-96">
               <Image
-                src="/vi-reference/image2.jpeg"
-                alt=""
+                src="/modern-financial-office.png"
+                alt="Modern financial district"
                 fill
-                className="object-cover object-center"
+                className="object-cover rounded-lg"
               />
             </div>
           </div>
