@@ -35,9 +35,9 @@ export default function AiCompanyPage() {
       sidebarKicker="AI Company"
       pageTitle="AI-Driven Investment Infrastructure"
       pageSubtitle="Lifecycle-wide AI · Proprietary systems"
-      heroImageSrc="/vi-reference/image6.png"
+      heroImageSrc="/home/ai-tech.jpg"
       heroPriority
-      heroAlt="VI reference — AI & technology"
+      heroAlt=""
       mainTone="dark"
     >
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 md:pt-12 pb-2">
@@ -62,8 +62,8 @@ export default function AiCompanyPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-12 md:pb-16">
         <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-700/60 shadow-lg">
           <Image
-            src="/vi-reference/image11.png"
-            alt="VI reference — AI systems"
+            src="/home/ai-tech.jpg"
+            alt=""
             fill
             className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 64rem"

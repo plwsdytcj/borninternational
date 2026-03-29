@@ -338,8 +338,8 @@ export default function PortfolioPage() {
       sidebarKicker="Investment"
       pageTitle={content.portfolioTitle}
       pageSubtitle={content.portfolioDescription}
-      heroImageSrc="/vi-reference/image2.jpeg"
-      heroAlt="VI reference — investment platform"
+      heroImageSrc="/home/investment-panel.jpg"
+      heroAlt=""
       headerExtra={langToggle}
     >
       {/* Portfolio Companies */}

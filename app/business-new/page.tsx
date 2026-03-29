@@ -112,9 +112,9 @@ export default function BusinessNewPage() {
       sidebarKicker="Global Expansion"
       pageTitle="Russian-Speaking Market"
       pageSubtitle="One-stop access · SCO Business Council"
-      heroImageSrc="/vi-reference/image3.png"
+      heroImageSrc="/home/global-panel.jpg"
       heroPriority
-      heroAlt="VI reference — global market entry"
+      heroAlt=""
     >
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 md:pt-12 pb-2 md:pb-4">
         <div className="flex items-center gap-3 mb-4">
