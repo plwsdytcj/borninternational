@@ -20,18 +20,15 @@ export default function BusinessOverviewPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
+      <header className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
         <button
           onClick={() => router.push("/")}
           className="flex items-center focus:outline-none"
           aria-label="Back to Home"
         >
-          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={180} height={60} className="h-12 w-auto" />
+          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={180} height={60} className="h-9 w-auto sm:h-12" />
         </button>
-        <button
-          onClick={() => router.push("/")}
-          className="flex items-center space-x-2 text-white/90 hover:text-white"
-        >
+        <button onClick={() => router.push("/")} className="flex items-center space-x-2 text-white/90 hover:text-white">
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm">Back to Home</span>
         </button>
@@ -50,8 +47,8 @@ export default function BusinessOverviewPage() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
           <p className="text-amber-500 font-semibold text-xs uppercase tracking-[0.2em] mb-4">Business Overview</p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white leading-tight mb-6">"One-Stop" Access to the<br />Russian-Speaking Market</h1>
-          <p className="text-white/80 text-lg max-w-2xl">A comprehensive market entry blueprint backed by the SCO Business Council</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white leading-tight mb-6">&quot;One-Stop&quot; Access to the<br />Russian-Speaking Market</h1>
+          <p className="text-white/80 text-base sm:text-lg max-w-2xl">A government-linked market entry model for Chinese companies entering Russia and the wider CIS</p>
         </div>
       </section>
 

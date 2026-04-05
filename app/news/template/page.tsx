@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { getSmartRelatedArticles, getArticlePath, type Article } from "../utils/relatedArticles"
+import { NewsArticleLayout } from "@/components/news-article-layout"
 
 // Template data - This will be replaced with actual data for each news article
 const templateData = {
@@ -169,6 +170,8 @@ export default function NewsTemplatePage() {
   if (!isClient) {
     return null
   }
+
+  return <NewsArticleLayout article={templateData} relatedArticles={relatedArticles} getArticlePath={getArticlePath} />
 
   return (
     <div className="min-h-screen bg-white">
@@ -350,7 +353,7 @@ export default function NewsTemplatePage() {
                 />
               </div>
               <p className="text-slate-400 text-sm">
-                A global investment platform focusing on early-stage high-tech startups.
+                Investing in Chinese hard tech and building operating routes into Russia, the CIS, and adjacent markets.
               </p>
             </div>
 

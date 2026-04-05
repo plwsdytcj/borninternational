@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import { ArrowLeft, Globe, ChevronDown, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { ResponsibleInvestmentBlurb } from "@/components/responsible-investment-blurb"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
@@ -30,7 +31,7 @@ export default function MotherFundPage() {
       investmentDetails:
         "The invested funds include Dianliang Capital Ningbo Fund, Fukun Venture Capital Chengdu Fund, Hongtai (Chengdu) Fund, Chengdu Dianliang Born Fund, etc.",
       ecosystemAdvantage:
-        "Relying on the investment fields and stages covered by various sub-funds, Born Rongchuang Fund has leveraged the advantages of an 'ecosystem fund', assisting the development of terminal invested enterprises through resource connection and empowerment.",
+        "Because the sub-funds cover multiple stages and sectors, Born Rongchuang Fund can route customers, industrial partners, and follow-on capital to portfolio companies instead of offering generic 'value-add'.",
       investmentCommittee: "Investment Committee",
       investedProjects: "Invested Projects",
       closeModal: "Close",
@@ -49,7 +50,7 @@ export default function MotherFundPage() {
       investmentDetails:
         "Инвестированные фонды включают Фонд Dianliang Capital Ningbo, Фонд Fukun Venture Capital Chengdu, Фонд Hongtai (Chengdu), Фонд Chengdu Dianliang Born и др.",
       ecosystemAdvantage:
-        "Опираясь на инвестиционные области и этапы, охватываемые различными суб-фондами, Фонд Born Rongchuang использовал преимущества 'экосистемного фонда', помогая развитию конечных инвестированных предприятий через связывание ресурсов и расширение возможностей.",
+        "Благодаря охвату разных стадий и отраслей субфондами, фонд Born Rongchuang может направлять портфельным компаниям клиентов, промышленных партнеров и последующий капитал, а не ограничиваться абстрактной 'поддержкой'.",
       investmentCommittee: "Инвестиционный комитет",
       investedProjects: "Инвестированные проекты",
       closeModal: "Закрыть",
@@ -204,9 +205,9 @@ export default function MotherFundPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-gray-100">
+      <header className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 bg-gray-100/95 backdrop-blur-sm border-b border-slate-200">
         <div className="flex items-center">
-          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={180} height={60} className="h-12 w-auto" />
+          <Image src="/logo/born_logo_white.png" alt="BORN International Logo" width={180} height={60} className="h-9 w-auto brightness-0 invert sm:h-12" />
         </div>
 
         <div className="flex items-center space-x-6">
@@ -224,21 +225,21 @@ export default function MotherFundPage() {
 
       {/* Banner Section */}
       <section
-        className="py-24 bg-cover bg-center bg-no-repeat relative"
+        className="py-16 sm:py-20 md:py-24 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
                             "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/design-background.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center text-white">
-          <p className="text-lg font-light mb-4 opacity-90">{content.pageSubtitle}</p>
-          <h1 className="text-5xl font-light">{content.pageTitle}</h1>
+          <p className="text-base sm:text-lg font-light mb-4 opacity-90">{content.pageSubtitle}</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">{content.pageTitle}</h1>
         </div>
       </section>
 
       {/* Main Content */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left Side - Fund Number */}
             <div className="lg:w-1/4">
@@ -388,7 +389,7 @@ export default function MotherFundPage() {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1fr_0.95fr_1.55fr_0.95fr]">
             <div>
               <div className="flex items-center mb-6">
                 <Image
@@ -400,7 +401,7 @@ export default function MotherFundPage() {
                 />
               </div>
               <p className="text-slate-400 text-sm">
-                A global investment platform focusing on early-stage high-tech startups.
+                Investing in Chinese hard tech and building operating routes into Russia, the CIS, and adjacent markets.
               </p>
             </div>
 
@@ -430,31 +431,7 @@ export default function MotherFundPage() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">Responsible Investment</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Our approach
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Climate
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Ownership
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Exclusions
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <ResponsibleInvestmentBlurb language={language} theme="dark" />
 
             <div>
               <h4 className="font-medium mb-4">About Born International</h4>

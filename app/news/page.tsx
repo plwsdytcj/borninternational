@@ -1,5 +1,6 @@
 "use client"
 import { ArrowLeft, Calendar, ExternalLink, Search, Globe, ChevronDown, ArrowUpDown } from "lucide-react"
+import { ResponsibleInvestmentBlurb } from "@/components/responsible-investment-blurb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -251,7 +252,7 @@ export default function NewsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
+      <header className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-md">
         {/* Logo */}
         <button
           onClick={() => router.push("/")}
@@ -263,12 +264,12 @@ export default function NewsPage() {
             alt="BORN International logo"
             width={120}
             height={48}
-            className="h-12 w-auto"
+            className="h-9 w-auto sm:h-12"
           />
         </button>
 
         {/* Navigation */}
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-3 sm:space-x-6">
           <button
             onClick={() => router.push("/")}
             className="flex items-center space-x-2 text-white/90 hover:text-white"
@@ -323,9 +324,9 @@ export default function NewsPage() {
           />
           <div className="absolute inset-0 bg-white/90" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           {/* Search Results Info and Sort Controls */}
-          <div className="flex justify-between items-center mb-6">
+          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex-1">
               {/* Search Results Info */}
               {searchQuery.trim() !== "" && (
@@ -341,11 +342,11 @@ export default function NewsPage() {
             </div>
             
             {/* Sort Dropdown - Positioned in top right */}
-            <div className="flex items-center space-x-2">
+            <div className="flex w-full items-center gap-2 sm:w-auto">
               <span className="text-sm text-slate-600">{languageContent[language].sortBy}:</span>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                  <Button variant="outline" size="sm" className="flex w-full items-center justify-between gap-2 sm:w-auto">
                     <ArrowUpDown className="w-4 h-4" />
                     <span>
                       {sortBy === "date" && languageContent[language].sortByDate}
@@ -407,7 +408,7 @@ export default function NewsPage() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center space-x-4 mb-3 text-sm text-slate-500">
+                    <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
                       <div className="flex items-center space-x-1">
                         <Calendar className="w-4 h-4" />
                         <span>{article.date}</span>
@@ -453,7 +454,7 @@ export default function NewsPage() {
           />
           <div className="absolute inset-0 bg-slate-900/85" />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-light mb-4">{languageContent[language].stayInformed}</h2>
           <p className="text-slate-300 mb-8">{languageContent[language].newsletterDescription}</p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -465,8 +466,8 @@ export default function NewsPage() {
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1fr_0.95fr_1.55fr_0.95fr]">
             <div>
               <div className="flex items-center mb-6">
                 <Image
@@ -478,7 +479,7 @@ export default function NewsPage() {
                 />
               </div>
               <p className="text-slate-400 text-sm">
-                A global investment platform focusing on early-stage high-tech startups.
+                Investing in Chinese hard tech and building operating routes into Russia, the CIS, and adjacent markets.
               </p>
             </div>
 
@@ -508,31 +509,7 @@ export default function NewsPage() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">{languageContent[language].responsibleInvestment}</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    {languageContent[language].ourApproach}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    {languageContent[language].climate}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    {languageContent[language].ownership}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    {languageContent[language].exclusions}
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <ResponsibleInvestmentBlurb language={language} theme="dark" />
 
             <div>
               <h4 className="font-medium mb-4">{languageContent[language].aboutBornInternational}</h4>

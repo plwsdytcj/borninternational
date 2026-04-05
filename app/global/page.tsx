@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import { ResponsibleInvestmentBlurb } from "@/components/responsible-investment-blurb"
 import { ViSecondaryShell } from "@/components/vi-secondary-shell"
 import { MapPin, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -16,128 +17,128 @@ export default function GlobalPage() {
 
   const languageContent = {
     en: {
-      technologyGlobalization: "Technology Globalization",
+      technologyGlobalization: "Cross-Border Technology Network",
       technologyGlobalizationDescription:
-        "We drive technology globalization through strategic investments across multiple global markets, fostering cross-border innovation and technology transfer to accelerate global digital transformation",
+        "We take Chinese hard-tech companies from domestic product-market fit to regulated overseas execution through SCO channels, local operators, and project-level market access.",
       backToHome: "Back to Home",
       founderSection: "Leadership",
       founderName: "Dr. Li Wencheng",
       founderTitle: "PhD/Founding Partner",
       founderDescription:
-        "Dr. Li Wencheng graduated from East China University of Science and Technology, obtained a master's degree from Tsinghua University, and a doctorate degree from Zhejiang University. He then taught at Hohai University. He has many years of experience in the investment field.",
-      eurasianRegion: "Eurasian Technology Hub",
+        "Dr. Li Wencheng is the founding partner behind Born Capital and Born International. He invests in Chinese hard tech and builds the cross-border routes, local relationships, and operating teams needed to land those companies in overseas markets.",
+      eurasianRegion: "Russia & CIS Corridor",
       eurasianDescription:
-        "Strategic technology partnerships across Russia, Central Asia, and the Shanghai Cooperation Organization (SCO) member states, with a focus on AI, quantum computing, and blockchain technology transfer.",
+        "Our primary corridor: Chinese AI, robotics, quantum, climate, and industrial systems entering Russia, Central Asia, and SCO member markets through policy-backed channels and local execution.",
       regionalLeader: "Regional Leader",
-      keyProjects: "Key Technology Projects",
-      skolkovoPartnership: "Skolkovo AI Innovation Center",
-      scoTechInitiative: "SCO Quantum Technology Initiative",
-      crossBorderInnovation: "Cross-border Blockchain Fund",
-      euRegion: "European Technology Corridor",
+      keyProjects: "Active Channels",
+      skolkovoPartnership: "Skolkovo and research-institute introductions",
+      scoTechInitiative: "SCO-linked policy and industry access",
+      crossBorderInnovation: "Cross-border fintech and settlement structures",
+      euRegion: "European Compliance Corridor",
       euDescription:
-        "Comprehensive technology coverage across EU markets with focus on deep tech, AI research, and digital transformation initiatives connecting Silicon Valley to European innovation hubs.",
+        "Selective EU work for companies that already have traction in China or Eurasia and need certification, channel partners, or pilot customers rather than generic 'global expansion'.",
       euLeader: "Dr. Maria Schmidt",
       euTitle: "EU Technology Director",
-      euProject1: "Berlin AI Research Hub",
-      euProject2: "Green Tech Innovation",
-      euProject3: "Digital Health Platform",
-      middleEastRegion: "Middle East Tech Bridge",
+      euProject1: "Certification and compliance pathways",
+      euProject2: "Industrial distributor partnerships",
+      euProject3: "Pilot projects with local buyers",
+      middleEastRegion: "Middle East Project Corridor",
       middleEastDescription:
-        "Strategic technology presence in UAE, Saudi Arabia, and Israel, focusing on fintech innovation, smart city technologies, and connecting Middle Eastern tech ecosystems with global markets.",
+        "We pursue the Gulf selectively, focusing on project owners, sovereign-linked buyers, and local sponsors for Chinese fintech, energy, and industrial technology companies.",
       meLeader: "Ahmed Al-Rashid",
       meTitle: "MENA Technology Director",
-      meProject1: "Dubai Fintech Innovation Lab",
-      meProject2: "Saudi Smart City Initiative",
-      meProject3: "Israeli Deep Tech Accelerator",
-      southAfricaRegion: "African Technology Gateway",
+      meProject1: "Government-linked commercial introductions",
+      meProject2: "Local sponsor and JV structuring",
+      meProject3: "Project-owner sales channels",
+      southAfricaRegion: "Africa Entry Gateway",
       southAfricaDescription:
-        "Gateway to African tech markets with emphasis on mobile technology innovation, fintech solutions, and connecting African startups with global technology networks.",
+        "We treat Africa as a targeted channel strategy: telecom, payments, logistics, and industrial partners first, broad market claims second.",
       saLeader: "Dr. Nomsa Mbeki",
       saTitle: "Africa Technology Director",
-      saProject1: "Cape Town Tech Innovation Hub",
-      saProject2: "Mobile Fintech Solutions",
-      saProject3: "African AI Research Center",
-      investmentSectors: "Technology Investment Sectors",
+      saProject1: "Telecom and enterprise channels",
+      saProject2: "Payments and settlement partners",
+      saProject3: "Infrastructure-adjacent buyers",
+      investmentSectors: "Sectors We Can Commercialize Cross-Border",
       sectorsDescription:
-        "Our technology-focused portfolio spans multiple high-growth sectors, each managed by specialized teams with deep domain expertise in emerging technologies.",
+        "We focus on sectors where Chinese technical advantage can translate into procurement, distribution, licensing, or joint-venture demand overseas.",
       medicalSector: "Medical Technology & Digital Health",
-      medicalDescription: "AI-powered diagnostics, telemedicine, digital therapeutics",
+      medicalDescription: "Diagnostics, devices, and digital health products that can clear local partners and regulators",
       newEnergySector: "Clean Energy Technology",
-      newEnergyDescription: "Smart grid, energy storage, renewable tech innovation",
+      newEnergyDescription: "Grid equipment, storage systems, and project developers that can localize procurement",
       aiSector: "Artificial Intelligence & Machine Learning",
-      aiDescription: "Deep learning, computer vision, natural language processing",
+      aiDescription: "Applied models for enterprise workflows, industrial systems, and regulated sectors",
       fintechSector: "Financial Technology",
-      fintechDescription: "Blockchain, digital payments, decentralized finance",
+      fintechDescription: "Payments, identity, settlement, and blockchain rails for cross-border transactions",
       spaceSector: "Space Technology & Aerospace",
-      spaceDescription: "Satellite technology, space exploration, aerospace innovation",
+      spaceDescription: "Satellite components, sensing systems, and aerospace supply-chain entry points",
       quantumSector: "Quantum Computing & Cryptography",
-      quantumDescription: "Quantum algorithms, quantum hardware, quantum security",
+      quantumDescription: "Quantum hardware, communications, and security with state and research demand",
       roboticsSector: "Robotics & Automation",
-      roboticsDescription: "Industrial automation, AI robotics, autonomous systems",
+      roboticsDescription: "Industrial robots, sensing, and embodied systems with local manufacturing demand",
       bioSector: "Biotechnology & Life Sciences",
-      bioDescription: "Gene editing, synthetic biology, precision medicine",
+      bioDescription: "Biotech tools, MedTech platforms, and translational research partnerships",
     },
     ru: {
-      technologyGlobalization: "Технологическая глобализация",
+      technologyGlobalization: "Трансграничная технологическая сеть",
       technologyGlobalizationDescription:
-        "Мы способствуем технологической глобализации через стратегические инвестиции на множественных мировых рынках, поощряя трансграничные инновации и передачу технологий для ускорения глобальной цифровой трансформации",
+        "Мы переводим китайские hard-tech компании от внутреннего product-market fit к регулируемому зарубежному исполнению через каналы ШОС, локальные команды и доступ к проектному спросу.",
       backToHome: "Вернуться на главную",
       founderSection: "Руководство",
       founderName: "Доктор Ли Вэньчэн",
       founderTitle: "博士/创始合伙人",
       founderDescription:
-        "Доктор Ли Вэньчэн окончил Восточно-Китайский научно-технологический университет, получил степень магистра в Университете Цинхуа и докторскую степень в Чжэцзянском университете. Затем он преподавал в Университете Хохай. Имеет многолетний опыт работы в сфере инвестиций.",
-      eurasianRegion: "Евразийский технологический хаб",
+        "Доктор Ли Вэньчэн — основатель Born Capital и Born International. Он инвестирует в китайский hard tech и выстраивает трансграничные маршруты, локальные связи и операционные команды, необходимые для вывода таких компаний на зарубежные рынки.",
+      eurasianRegion: "Коридор Россия и СНГ",
       eurasianDescription:
-        "Стратегические технологические партнерства в России, Центральной Азии и государствах-членах ШОС с акцентом на ИИ, квантовые вычисления и передачу блокчейн-технологий.",
+        "Наш основной коридор: вывод китайских AI-, робототехнических, квантовых, климатических и промышленных решений в Россию, Центральную Азию и страны ШОС через каналы, поддержанные политикой, и локальное исполнение.",
       regionalLeader: "Региональный руководитель",
-      keyProjects: "Ключевые технологические проекты",
-      skolkovoPartnership: "Инновационный центр ИИ Сколково",
-      scoTechInitiative: "Квантовая технологическая инициатива ШОС",
-      crossBorderInnovation: "Трансграничный блокчейн-фонд",
-      euRegion: "Европейский технологический коридор",
+      keyProjects: "Активные каналы",
+      skolkovoPartnership: "Входы в Сколково и исследовательские институты",
+      scoTechInitiative: "Доступ к политике и индустрии через ШОС",
+      crossBorderInnovation: "Трансграничные финтех- и расчетные структуры",
+      euRegion: "Европейский коридор соответствия",
       euDescription:
-        "Комплексное технологическое покрытие рынков ЕС с акцентом на глубокие технологии, исследования ИИ и инициативы цифровой трансформации, соединяющие Силиконовую долину с европейскими инновационными хабами.",
+        "Избирательная работа по ЕС для компаний, у которых уже есть traction в Китае или Евразии и которым нужны сертификация, канальные партнеры или пилотные клиенты, а не абстрактная 'глобальная экспансия'.",
       euLeader: "Доктор Мария Шмидт",
       euTitle: "Директор по технологиям ЕС",
-      euProject1: "Берлинский исследовательский хаб ИИ",
-      euProject2: "Инновации зеленых технологий",
-      euProject3: "Платформа цифрового здравоохранения",
-      middleEastRegion: "Технологический мост Ближнего Востока",
+      euProject1: "Сертификация и compliance-пути",
+      euProject2: "Партнерства с промышленными дистрибьюторами",
+      euProject3: "Пилотные проекты с локальными покупателями",
+      middleEastRegion: "Ближневосточный проектный коридор",
       middleEastDescription:
-        "Стратегическое технологическое присутствие в ОАЭ, Саудовской Аравии и Израиле с акцентом на финтех-инновации, технологии умных городов и соединение ближневосточных технологических экосистем с мировыми рынками.",
+        "В странах Залива мы работаем выборочно, делая упор на project owners, квазисуверенных покупателей и локальных спонсоров для китайских финтех-, энергетических и промышленных технологических компаний.",
       meLeader: "Ахмед Аль-Рашид",
       meTitle: "Директор по технологиям MENA",
-      meProject1: "Дубайская лаборатория финтех-инноваций",
-      meProject2: "Саудовская инициатива умных городов",
-      meProject3: "Израильский акселератор глубоких технологий",
-      southAfricaRegion: "Африканские технологические ворота",
+      meProject1: "Коммерческие интро через госканалы",
+      meProject2: "Локальные спонсоры и структура СП",
+      meProject3: "Каналы продаж через project owners",
+      southAfricaRegion: "Африканская точка входа",
       southAfricaDescription:
-        "Ворота на африканские технологические рынки с акцентом на инновации мобильных технологий, финтех-решения и соединение африканских стартапов с глобальными технологическими сетями.",
+        "Африку мы рассматриваем как точечную канальную стратегию: сначала телеком, платежи, логистика и промышленные партнеры, а уже потом широкие рыночные заявления.",
       saLeader: "Доктор Номса Мбеки",
       saTitle: "Директор по технологиям Африки",
-      saProject1: "Технологический инновационный хаб Кейптауна",
-      saProject2: "Мобильные финтех-решения",
-      saProject3: "Африканский исследовательский центр ИИ",
-      investmentSectors: "Технологические инвестиционные секторы",
+      saProject1: "Телеком- и enterprise-каналы",
+      saProject2: "Платежные и расчетные партнеры",
+      saProject3: "Покупатели рядом с инфраструктурными проектами",
+      investmentSectors: "Сектора, которые мы умеем коммерциализировать трансгранично",
       sectorsDescription:
-        "Наш технологически ориентированный портфель охватывает множество быстрорастущих секторов, каждый из которых управляется специализированными командами с глубокой экспертизой в новых технологиях.",
+        "Мы фокусируемся на секторах, где китайское технологическое преимущество может превратиться в зарубежный спрос на закупки, дистрибуцию, лицензирование или совместные предприятия.",
       medicalSector: "Медицинские технологии и цифровое здравоохранение",
-      medicalDescription: "ИИ-диагностика, телемедицина, цифровая терапия",
+      medicalDescription: "Диагностика, устройства и digital health-продукты, которые могут пройти через локальных партнеров и регуляторов",
       newEnergySector: "Технологии чистой энергии",
-      newEnergyDescription: "Умные сети, накопление энергии, инновации возобновляемых технологий",
+      newEnergyDescription: "Сетевое оборудование, storage-системы и project developers с возможностью локализации закупок",
       aiSector: "Искусственный интеллект и машинное обучение",
-      aiDescription: "Глубокое обучение, компьютерное зрение, обработка естественного языка",
+      aiDescription: "Прикладные модели для enterprise-процессов, промышленных систем и регулируемых отраслей",
       fintechSector: "Финансовые технологии",
-      fintechDescription: "Блокчейн, цифровые платежи, децентрализованные финансы",
+      fintechDescription: "Платежи, идентификация, расчеты и блокчейн-рельсы для трансграничных транзакций",
       spaceSector: "Космические технологии и аэрокосмическая отрасль",
-      spaceDescription: "Спутниковые технологии, освоение космоса, аэрокосмические инновации",
+      spaceDescription: "Спутниковые компоненты, sensing-системы и точки входа в аэрокосмические цепочки поставок",
       quantumSector: "Квантовые вычисления и криптография",
-      quantumDescription: "Квантовые алгоритмы, квантовое оборудование, квантовая безопасность",
+      quantumDescription: "Квантовое оборудование, коммуникации и безопасность со спросом со стороны государства и research-среды",
       roboticsSector: "Робототехника и автоматизация",
-      roboticsDescription: "Промышленная автоматизация, ИИ-робототехника, автономные системы",
+      roboticsDescription: "Промышленные роботы, сенсоры и embodied-системы под локальный производственный спрос",
       bioSector: "Биотехнологии и науки о жизни",
-      bioDescription: "Редактирование генов, синтетическая биология, точная медицина",
+      bioDescription: "Биотех-инструменты, MedTech-платформы и партнерства в прикладных исследованиях",
     },
   }
 
@@ -168,7 +169,7 @@ export default function GlobalPage() {
 
   return (
     <ViSecondaryShell
-      sidebarKicker="Technology"
+      sidebarKicker="Cross-Border"
       pageTitle={content.technologyGlobalization}
       heroImageSrc="/vi-reference/image8.png"
       heroAlt="VI reference — technology globalization"
@@ -495,7 +496,7 @@ export default function GlobalPage() {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1fr_0.95fr_1.55fr_0.95fr]">
             <div>
               <div className="flex items-center mb-6">
                 <Image
@@ -507,7 +508,7 @@ export default function GlobalPage() {
                 />
               </div>
               <p className="text-slate-400 text-sm">
-                A global investment platform focusing on early-stage high-tech startups.
+                Investing in Chinese hard tech and building operating routes into Russia, the CIS, and adjacent markets.
               </p>
             </div>
 
@@ -537,31 +538,7 @@ export default function GlobalPage() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">Responsible Investment</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Our approach
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Climate
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Ownership
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Exclusions
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <ResponsibleInvestmentBlurb language={language} theme="dark" />
 
             <div>
               <h4 className="font-medium mb-4">About Born International</h4>

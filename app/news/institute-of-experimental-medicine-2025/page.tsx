@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { getSmartRelatedArticles, getArticlePath, type Article } from "../utils/relatedArticles"
+import { NewsArticleLayout } from "@/components/news-article-layout"
 
 const articleData = {
   id: "institute-of-experimental-medicine-2025",
@@ -70,6 +71,8 @@ export default function EnDocxNews2Page() {
   }, [])
 
   if (!isClient) return null
+
+  return <NewsArticleLayout article={articleData} relatedArticles={relatedArticles} getArticlePath={getArticlePath} />
 
   return (
     <div className="min-h-screen bg-white">
@@ -214,7 +217,7 @@ export default function EnDocxNews2Page() {
               <div className="flex items-center mb-6">
                 <Image src="/logo/born_logo_white.png" alt="BORN International logo" width={120} height={48} className="h-12 w-auto" />
               </div>
-              <p className="text-slate-400 text-sm">A global investment platform focusing on early-stage high-tech startups.</p>
+              <p className="text-slate-400 text-sm">Investing in Chinese hard tech and building operating routes into Russia, the CIS, and adjacent markets.</p>
             </div>
             <div>
               <h4 className="font-medium mb-4">The Fund</h4>

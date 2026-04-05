@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { GeistMono } from "geist/font/mono"
 import { Manrope, IBM_Plex_Serif } from "next/font/google"
 import "./globals.css"
@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: "Born International",
   description: "Global Investment Platform - Born International",
   generator: "v0.dev",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
-  themeColor: '#0f766e',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -52,6 +50,13 @@ export const metadata: Metadata = {
     description: 'Global Investment Platform - Born International',
     images: ['/og-image.png'],
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0f766e",
 }
 
 const manrope = Manrope({

@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import { ResponsibleInvestmentBlurb } from "@/components/responsible-investment-blurb"
 import { ViSecondaryShell } from "@/components/vi-secondary-shell"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -24,13 +25,13 @@ export default function PortfolioPage() {
     en: {
       portfolioTitle: "Investment",
       portfolioDescription:
-        "Delivering 50x+ value creation across our portfolio companies—with technology at the core.",
+        "We invest early in Chinese hard-tech companies, then help them win customers, partners, and local operating capacity in Russia, the CIS, and adjacent markets.",
       backToHome: "Back to Home",
       investmentTeam: "Investment Team",
-      teamDescription: "Our experienced professionals bring deep expertise across sectors and regions",
+      teamDescription: "Investors and operators who can source frontier technology in China and execute cross-border commercialization on the ground.",
       fundStructure: "Fund Structure",
       fundDescription:
-        "Diversified investment vehicles designed to capture opportunities across different stages and sectors",
+        "Capital structures built to underwrite Chinese hard tech at home and support commercialization across Russia, the CIS, and selected overseas corridors.",
       viewDetails: "View details→",
       previousMember: "Previous Member",
       nextMember: "Next Member",
@@ -45,13 +46,13 @@ export default function PortfolioPage() {
       // Fund Types
       motherFund: "Mother Fund",
       motherFundDesc:
-        "Diversified fund of funds investing in multiple asset classes and strategies across global markets",
+        "Fund-of-funds exposure across the managers, stages, and industrial networks we use to move portfolio companies from domestic traction to overseas execution.",
       directInvestment: "Direct Investment",
-      directInvestmentDesc: "Technology-focused direct investments in AI, IoT, blockchain, and emerging technologies",
+      directInvestmentDesc: "Direct positions in AI, robotics, blockchain, quantum, and industrial tech where cross-border rollout is part of the underwriting case.",
       specialFund: "Special Fund",
-      specialFundDesc: "Specialized funds including environmental funds and new energy investment vehicles",
+      specialFundDesc: "Thematic vehicles for energy transition, industrial localization, and policy-linked cross-border projects.",
       moreFunds: "More Funds",
-      moreFundsDesc: "Explore additional investment opportunities and future fund structures",
+      moreFundsDesc: "Additional structures for co-investment, local joint ventures, and later-stage overseas rollout.",
       // Team member names and details
       teamMember1: "Dr. Sarah Johnson",
       teamMember1Title: "Senior Partner - Technology",
@@ -75,13 +76,13 @@ export default function PortfolioPage() {
     ru: {
       portfolioTitle: "Инвестиции",
       portfolioDescription:
-        "Создание стоимости более чем в 50 раз в портфеле — с технологиями в основе.",
+        "Мы инвестируем в китайские hard-tech компании на ранней стадии, а затем помогаем им получать клиентов, партнеров и локальную операционную базу в России, СНГ и соседних рынках.",
       backToHome: "Вернуться на главную",
       investmentTeam: "Инвестиционная команда",
-      teamDescription: "Наши опытные профессионалы обладают глубокой экспертизой в различных секторах и регионах",
+      teamDescription: "Инвесторы и операторы, которые умеют находить передовые технологии в Китае и доводить их до трансграничной коммерциализации на месте.",
       fundStructure: "Структура фондов",
       fundDescription:
-        "Диверсифицированные инвестиционные инструменты, предназначенные для использования возможностей на разных этапах и в разных секторах",
+        "Структуры капитала, созданные для инвестиций в китайский hard tech внутри страны и поддержки коммерциализации в России, СНГ и выбранных зарубежных коридорах.",
       viewDetails: "Подробнее→",
       previousMember: "Предыдущий член",
       nextMember: "Следующий член",
@@ -96,14 +97,14 @@ export default function PortfolioPage() {
       // Fund Types
       motherFund: "Материнский фонд",
       motherFundDesc:
-        "Диверсифицированный фонд фондов, инвестирующий в несколько классов активов и стратегий на мировых рынках",
+        "Фонд фондов, который дает доступ к управляющим, стадиям и промышленным сетям, помогающим переводить портфельные компании от локального traction к зарубежному исполнению.",
       directInvestment: "Прямые инвестиции",
-      directInvestmentDesc: "Технологически ориентированные прямые инвестиции в ИИ, IoT, блокчейн и новые технологии",
+      directInvestmentDesc: "Прямые инвестиции в AI, робототехнику, блокчейн, квантовые и промышленные технологии, где трансграничный rollout входит в сам инвестиционный тезис.",
       specialFund: "Специальный фонд",
       specialFundDesc:
-        "Специализированные фонды, включая экологические фонды и инвестиционные инструменты новой энергетики",
+        "Тематические фонды для энергетического перехода, промышленной локализации и проектов, завязанных на трансграничную политику.",
       moreFunds: "Больше фондов",
-      moreFundsDesc: "Изучите дополнительные инвестиционные возможности и будущие структуры фондов",
+      moreFundsDesc: "Дополнительные структуры для ко-инвестиций, локальных СП и более позднего зарубежного масштабирования.",
       // Team member names and details
       teamMember1: "Доктор Сара Джонсон",
       teamMember1Title: "Старший партнер - Технологии",
@@ -210,7 +211,7 @@ export default function PortfolioPage() {
               image: "/investment-team/李文成_personal_page.jpg",
       fullBio:
         language === "en"
-          ? "Dr. LI Wencheng is an international high-tech investor. He holds a Ph.D. in Chemical Engineering from East China University of Science and Technology. He is also an alumnus of Tsinghua University's PBCSF and Zhejiang University's School of Management. Dr. Li now serves as an Adjunct Professor at HoHai University. Dr. Li is the Founding Partner of Born Capital, where he has invested in over 100 high-tech startups, with a focus on areas such as quantum computing, artificial intelligence, and new energy. He is also the founder of Born International, a platform dedicated to connecting Chinese enterprises with global markets, particularly in regions like Russia, the Middle East, and Southeast Asia."
+          ? "Dr. LI Wencheng is an international high-tech investor. He holds a Ph.D. in Chemical Engineering from East China University of Science and Technology. He is also an alumnus of Tsinghua University's PBCSF and Zhejiang University's School of Management. Dr. Li now serves as an Adjunct Professor at HoHai University. Dr. Li is the Founding Partner of Born Capital, where he has invested in over 100 high-tech startups, with a focus on areas such as quantum computing, artificial intelligence, and new energy. He is also the founder of Born International, which helps Chinese companies enter Russia, the CIS, the Middle East, and Southeast Asia through local partners, policy access, and execution teams."
           : "李文科博士是国际高科技投资者。他拥有华东理工大学化学工程博士学位。他也是清华大学五道口金融学院和浙江大学管理学院的校友。李博士现任河海大学兼职教授。李博士是Born Capital的创始合伙人，已投资超过100家高科技初创企业，专注于量子计算、人工智能和新能源等领域。他也是Born International的创始人，该平台致力于连接中国企业与全球市场，特别是在俄罗斯、中东和东南亚等地区。",
       hasModal: true,
     },
@@ -1034,12 +1035,12 @@ export default function PortfolioPage() {
                         </div>
                       </div>
 
-                      {/* Global Market Platform */}
+                      {/* Cross-Border Operating Platform */}
                       <div>
-                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Global Market Platform</h4>
+                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Cross-Border Operating Platform</h4>
                         <div className="bg-indigo-50 p-6 rounded-lg">
                           <p className="text-slate-700 mb-4">
-                            <span className="font-medium">Born International</span> - A platform dedicated to connecting Chinese enterprises with global markets, particularly in regions like Russia, the Middle East, and Southeast Asia.
+                            <span className="font-medium">Born International</span> - A platform that helps Chinese companies enter Russia, the CIS, the Middle East, and Southeast Asia through local partners, policy access, and execution teams.
                           </p>
                         </div>
                       </div>
@@ -1177,7 +1178,7 @@ export default function PortfolioPage() {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1fr_0.95fr_1.55fr_0.95fr]">
             <div>
               <div className="flex items-center mb-6">
                 <Image
@@ -1189,7 +1190,7 @@ export default function PortfolioPage() {
                 />
               </div>
               <p className="text-slate-400 text-sm">
-                A global investment platform focusing on early-stage high-tech startups.
+                Investing in Chinese hard tech and building operating routes into Russia, the CIS, and adjacent markets.
               </p>
             </div>
 
@@ -1219,31 +1220,7 @@ export default function PortfolioPage() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">Responsible Investment</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Our approach
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Climate
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Ownership
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Exclusions
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <ResponsibleInvestmentBlurb language={language} theme="dark" />
 
             <div>
               <h4 className="font-medium mb-4">About Born International</h4>

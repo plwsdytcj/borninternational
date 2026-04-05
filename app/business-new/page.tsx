@@ -56,42 +56,42 @@ const phases = [
 const resources = [
   {
     title: "SCO Business Council",
-    description: "Your official gateway. Gain direct access to leading enterprises within the SCO, ensuring a credible and high-level entry into the Russian-speaking market.",
+    description: "Government-linked entry point into the Russian-speaking market, with direct access to decision-makers, industrial groups, and credible local partners.",
     image: "/business-new/media/image1.jpeg",
   },
   {
     title: "BRICS Forum",
-    description: "Build global influence. Participate in impactful international forums to connect with Russian and global business leaders.",
+    description: "Meet governors, trade officials, distributors, and industrial buyers in one room instead of building the network cold.",
     image: "/business-new/media/image2.jpeg",
   },
   {
     title: "St. Petersburg Economic Forum",
-    description: "Access policy & decision-makers. Engage at Russia's premier economic platform to stay ahead of trends and build key relationships.",
+    description: "Use Russia's premier economic forum to reach regional governments, strategic investors, and large corporate buyers.",
     image: "/business-new/media/image3.jpeg",
   },
   {
     title: "National-Level Industrial Parks",
-    description: "Secure a strategic foothold. Visit state-level economic zones to understand the latest industrial policies and incentives.",
+    description: "Identify the industrial zones, subsidies, and localization requirements that determine whether a Chinese company can operate on the ground.",
     image: "/business-new/media/image2.png",
   },
   {
     title: "University & Research Resources",
-    description: "Drive innovation. Partner with top Russian universities to tap into cutting-edge R&D and recruit elite talent.",
+    description: "Source labs, pilots, and technical hires for China-Russia commercialization instead of treating research access as branding.",
     image: "/business-new/media/image4.jpeg",
   },
   {
     title: "Direct Customer Networks",
-    description: "Understand real demand. Establish direct lines to end-buyers and local clients to grasp genuine needs.",
+    description: "Get direct feedback from buyers, integrators, and distributors before committing capital to localization.",
     image: "/business-new/media/image5.jpeg",
   },
   {
     title: "Oligarch & Industry Leader Access",
-    description: "Navigate the market with insight. Connect directly with major industry players for accelerated market penetration.",
+    description: "Reach conglomerates and decision-makers who control procurement, logistics, and distribution in key sectors.",
     image: "/business-new/media/image6.jpeg",
   },
   {
     title: "Local Partner Ecosystem",
-    description: "Collaborate for success. Forge solid partnerships across sectors for sustainable, mutually beneficial growth.",
+    description: "Build importer, distributor, compliance, and after-sales coverage instead of relying on ad hoc agents.",
     image: "/business-new/media/image7.jpeg",
   },
 ]
@@ -109,9 +109,9 @@ export default function BusinessNewPage() {
 
   return (
     <ViSecondaryShell
-      sidebarKicker="Global Expansion"
+      sidebarKicker="Russia & CIS"
       pageTitle="Russian-Speaking Market"
-      pageSubtitle="One-stop access · SCO Business Council"
+      pageSubtitle="Government-linked access · SCO Business Council"
       heroImageSrc="/home/global-panel.jpg"
       heroPriority
       heroAlt=""
@@ -125,7 +125,7 @@ export default function BusinessNewPage() {
           &quot;One-Stop&quot; Access to the Russian-Speaking Market
         </h1>
         <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
-          A comprehensive market entry blueprint backed by the SCO Business Council
+          A government-linked market entry model for Chinese companies entering Russia and the wider CIS
         </p>
       </section>
 
@@ -144,7 +144,7 @@ export default function BusinessNewPage() {
               </div>
             </div>
             <p className="text-slate-600 leading-relaxed pl-16">
-              Backed by the SCO Business Council, we integrate government, banking, and regulatory bodies into a unified whitelist. This enables enterprises to secure their market entry permit first, then navigate around the hidden obstacles of sanctions and exchange rate fluctuations.
+              Backed by the SCO Business Council, we align government, banking, and regulatory stakeholders before a company spends heavily on entry. That lets Chinese enterprises solve access, sanctions, and FX friction upfront.
             </p>
           </div>
           
@@ -160,7 +160,7 @@ export default function BusinessNewPage() {
               </div>
             </div>
             <p className="text-slate-600 leading-relaxed pl-16">
-              Entrust company registration, talent recruitment, and financial/tax compliance to our local team. This allows your business to operate like a local Russian company, rather than merely conducting foreign trade in Russia.
+              Our local team handles company formation, hiring, compliance, and finance so a Chinese company can operate as a local Russian business, not just export into it.
             </p>
           </div>
         </div>
