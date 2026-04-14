@@ -133,9 +133,9 @@ export default function HomePage() {
       privacyPolicy: "Privacy Policy",
       termsOfUse: "Terms of Use",
       accessibility: "Accessibility",
-      portfolio: "Portfolio",
-      fundScale: "Fund Scale",
-      techGlobalization: "Cross-Border Projects",
+      portfolio: "Investment",
+      fundScale: "Enterprise Global Expansion",
+      techGlobalization: "AI Company",
     },
     ru: {
       fundValueLabel: "СТОИМОСТЬ ФОНДА",
@@ -206,9 +206,9 @@ export default function HomePage() {
       privacyPolicy: "Политика конфиденциальности",
       termsOfUse: "Условия использования",
       accessibility: "Доступность",
-      portfolio: "Портфолио",
-      fundScale: "Масштаб фонда",
-      techGlobalization: "Трансграничные проекты",
+      portfolio: "Investment",
+      fundScale: "Enterprise Global Expansion",
+      techGlobalization: "AI Company",
     },
   }
 

@@ -129,6 +129,7 @@ export default function PortfolioPage() {
 
   const content = languageContent[language]
   const companies = getPortfolioCompanies(language)
+  const marqueeCompanies = companies.concat(companies)
 
   const teamMembers = [
     {
@@ -341,12 +342,29 @@ export default function PortfolioPage() {
       pageSubtitle={content.portfolioDescription}
       headerExtra={langToggle}
     >
+      <style jsx global>{`
+        @keyframes portfolioLogoMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .portfolio-marquee-track {
+          animation: portfolioLogoMarquee 36s linear infinite;
+          width: max-content;
+          display: flex;
+        }
+
+        .portfolio-marquee-wrap:hover .portfolio-marquee-track {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       {/* Portfolio Companies */}
-      <section id="portfolio-companies" className="py-20 relative scroll-mt-24">
-        <div className="absolute inset-0">
-          <Image src="/backgrounds/bg-project-1.jpg" alt="" fill className="object-cover" />
-          <div className="absolute inset-0 bg-white/85" />
-        </div>
+      <section id="portfolio-companies" className="py-20 relative scroll-mt-24 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">
@@ -354,78 +372,29 @@ export default function PortfolioPage() {
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               {language === "en"
-                ? "Highlighted return profiles and full portfolio access."
-                : "重点展示收益倍数，完整了解投资组合。"}
+                ? "All portfolio companies run in an infinite horizontal stream. Hover any logo to pause and open details."
+                : "所有投资企业以无限横向滚动展示，鼠标悬停即可暂停并查看详情。"}
             </p>
           </div>
 
-          <div className="space-y-10 mb-16">
-            {companies
-              .filter((c) => c.featured)
-              .map((company) => (
-                <Card key={company.slug} className="border-2 border-slate-200 shadow-xl bg-white/95 overflow-hidden">
-                  <CardContent className="p-6 sm:p-10">
-                    <div className="grid md:grid-cols-[minmax(0,200px)_1fr_auto] gap-8 items-center">
-                      <div className="relative w-full h-40 md:h-48 mx-auto max-w-[200px]">
-                        <Image
-                          src={company.logo}
-                          alt={company.name}
-                          fill
-                          className={company.logoStyle || "object-contain"}
-                        />
-                      </div>
-                      <div>
-                        <p className="text-amber-800 font-semibold text-sm uppercase tracking-wider mb-2">
-                          {language === "en" ? "Return Multiple" : "回报倍数"}: {company.returnMultiple}
-                        </p>
-                        <h3 className="text-2xl font-semibold text-slate-900 mb-2">{company.name}</h3>
-                        <p className="text-slate-500 text-sm mb-3">{company.sector}</p>
-                        <p className="text-slate-600 leading-relaxed">{company.description}</p>
-                      </div>
-                      <div className="flex md:flex-col justify-start">
-                        <Button
-                          variant="outline"
-                          className="whitespace-nowrap"
-                          onClick={() => router.push(`/portfolio/${company.slug}`)}
-                        >
-                          {content.viewDetails}
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+          <div className="portfolio-marquee-wrap relative overflow-hidden rounded-2xl border border-slate-200 bg-white/90 shadow-sm">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
+            <div className="portfolio-marquee-track py-6">
+              {marqueeCompanies.map((company, idx) => (
+                <button
+                  key={`${company.slug}-${idx}`}
+                  type="button"
+                  onClick={() => router.push(`/portfolio/${company.slug}`)}
+                  className="mx-3 w-48 shrink-0 rounded-xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <div className="relative h-14 w-full">
+                    <Image src={company.logo} alt={company.name} fill className={company.logoStyle || "object-contain"} />
+                  </div>
+                  <p className="mt-3 line-clamp-2 text-sm font-medium text-slate-900">{company.name}</p>
+                </button>
               ))}
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {companies
-              .filter((c) => !c.featured)
-              .map((company) => (
-                <Card key={company.slug} className="border border-slate-200 shadow-sm hover:shadow-md bg-white/95">
-                  <CardContent className="p-4 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
-                    <div className="relative w-16 h-16 flex-shrink-0">
-                      <Image
-                        src={company.logo}
-                        alt={company.name}
-                        fill
-                        className={company.logoStyle || "object-contain"}
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0 text-center sm:text-left">
-                      <h4 className="font-semibold text-slate-900 text-sm line-clamp-2">{company.name}</h4>
-                      <p className="text-xs text-slate-500 mt-1">{company.sector}</p>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="mt-2 p-0 h-auto text-blue-600"
-                        onClick={() => router.push(`/portfolio/${company.slug}`)}
-                      >
-                        {content.viewDetails}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -433,9 +402,6 @@ export default function PortfolioPage() {
       {/* Our Edge */}
       <section id="our-edge" className="py-20 relative scroll-mt-24 border-y border-slate-200 overflow-hidden">
         <div className="absolute inset-0 bg-slate-50" />
-        <div className="absolute inset-0 opacity-[0.14] pointer-events-none">
-          <Image src="/vi-reference/image5.jpeg" alt="" fill className="object-cover object-center" sizes="100vw" />
-        </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="heading-serif text-3xl sm:text-4xl font-light text-slate-900 mb-12 text-center">
             {language === "en" ? "Our Edge" : "我们的优势"}
@@ -492,16 +458,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Investment Team Section */}
-      <section id="investment-team-section" className="py-20 relative scroll-mt-24">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-team.jpg"
-            alt="Team background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/80" />
-        </div>
+      <section id="investment-team-section" className="py-20 relative scroll-mt-24 bg-gradient-to-br from-slate-100 via-white to-slate-100">
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">{content.investmentTeam}</h2>
@@ -1153,11 +1110,8 @@ export default function PortfolioPage() {
       )}
 
       {/* Fundraising */}
-      <section className="py-16 relative bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-25">
-          <Image src="/vi-reference/image13.jpeg" alt="" fill className="object-cover object-center" sizes="100vw" />
-        </div>
-        <div className="absolute inset-0 bg-slate-950/75" />
+      <section className="py-24 md:py-32 relative bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black" />
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="heading-serif text-3xl font-light mb-4">{language === "en" ? "Fundraising" : "募资"}</h2>
           <p className="text-slate-300 leading-relaxed mb-2">
