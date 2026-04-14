@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import { ArrowRight, ExternalLink } from "lucide-react"
-import { ResponsibleInvestmentBlurb } from "@/components/responsible-investment-blurb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
@@ -708,7 +707,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-slate-900/90 backdrop-blur-md text-white py-16 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1fr_0.95fr_1.55fr_0.95fr]">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
             <div>
               <div className="flex items-center mb-6">
                 <Image
@@ -750,7 +749,31 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <ResponsibleInvestmentBlurb language={language} theme="dark" />
+            <div>
+              <h4 className="font-medium mb-4">{content.responsibleInvestment}</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li>
+                  <a href="#" className="hover:text-white">
+                    {content.ourApproach}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    {content.climate}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    {content.ownership}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    {content.exclusions}
+                  </a>
+                </li>
+              </ul>
+            </div>
 
             <div>
               <h4 className="font-medium mb-4">{content.aboutNbim}</h4>
