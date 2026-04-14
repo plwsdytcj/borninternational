@@ -104,6 +104,25 @@ const challenges = [
   "Business Development"
 ]
 
+const caseHighlights = [
+  {
+    text: "At the St. Petersburg International Economic Forum, our Russia market entry team facilitated trade negotiations resulting in billion-RMB-level orders.",
+    image: "/business-new/media/image1.jpeg",
+  },
+  {
+    text: "Supported a leading Chinese geospatial technology company, UNRE Technology, in building a pipeline of 214 potential clients in Russia, with targeted engagement of key industry players such as Rusgeocom, EFT Group, and Technokauf. Delivered 30+ high-level technical demonstrations, advancing 5 clients into core negotiations, securing pilot orders, and initiating long-term partnership discussions.",
+    image: "/business-new/media/image2.jpeg",
+  },
+  {
+    text: "On Russia’s Ozon platform, enabled iFLYTEK to achieve No.2 brand ranking in the electronic translator and dictionary category, and No.1 single-product revenue within 90 days.",
+    image: "/business-new/media/image3.jpeg",
+  },
+  {
+    text: "Secured exclusive distribution rights in Russia for the full product line of Jissbon, completed comprehensive market feasibility studies, and successfully launched the first batch of products in the Russian market.",
+    image: "/business-new/media/image2.png",
+  },
+]
+
 export default function BusinessNewPage() {
   const router = useRouter()
 
@@ -112,9 +131,6 @@ export default function BusinessNewPage() {
       sidebarKicker="Russia & CIS"
       pageTitle="Russian-Speaking Market"
       pageSubtitle="Government-linked access · SCO Business Council"
-      heroImageSrc="/home/global-panel.jpg"
-      heroPriority
-      heroAlt=""
     >
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 md:pt-12 pb-2 md:pb-4">
         <div className="flex items-center gap-3 mb-4">
@@ -262,15 +278,6 @@ export default function BusinessNewPage() {
             </div>
             <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">Our Globalization Team</h2>
           </div>
-          <div className="relative w-full aspect-video max-h-[380px] mb-10 md:mb-14 rounded-xl overflow-hidden border border-slate-200 shadow-sm">
-            <Image
-              src="/vi-reference/image9.jpeg"
-              alt="VI reference — globalization team"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 72rem"
-            />
-          </div>
           <div className="space-y-12 md:space-y-16">
             {[
               {
@@ -324,42 +331,26 @@ export default function BusinessNewPage() {
             </div>
             <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">Case Highlights</h2>
           </div>
-          <div className="grid lg:grid-cols-[1fr_minmax(0,42%)] gap-10 items-start mb-10">
-            <ul className="space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base order-2 lg:order-1">
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
-              <span>
-                At the St. Petersburg International Economic Forum, our Russia market entry team facilitated trade negotiations resulting in billion-RMB-level orders.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
-              <span>
-                Supported a leading Chinese geospatial technology company, UNRE Technology, in building a pipeline of 214 potential clients in Russia, with targeted engagement of key industry players such as Rusgeocom, EFT Group, and Technokauf. Delivered 30+ high-level technical demonstrations, advancing 5 clients into core negotiations, securing pilot orders, and initiating long-term partnership discussions.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
-              <span>
-                On Russia’s Ozon platform, enabled iFLYTEK to achieve No.2 brand ranking in the electronic translator and dictionary category, and No.1 single-product revenue within 90 days.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-light text-lg flex-shrink-0">·</span>
-              <span>
-                Secured exclusive distribution rights in Russia for the full product line of Jissbon, completed comprehensive market feasibility studies, and successfully launched the first batch of products in the Russian market.
-              </span>
-            </li>
-          </ul>
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-200/80 shadow-md order-1 lg:order-2 bg-slate-200">
-              <Image
-                src="/vi-reference/image10.jpeg"
-                alt="VI reference — case highlights"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            {caseHighlights.map((item) => (
+              <article
+                key={item.text}
+                className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm"
+              >
+                <div className="relative aspect-video">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">{item.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -378,16 +369,6 @@ export default function BusinessNewPage() {
             <p className="text-slate-600 max-w-2xl">
               Leverage our extensive network to gain unparalleled access to the Russian market
             </p>
-          </div>
-
-          <div className="relative w-full aspect-video max-h-[420px] mb-10 md:mb-12 rounded-xl overflow-hidden border border-slate-300/60 shadow-sm">
-            <Image
-              src="/vi-reference/image4.png"
-              alt="VI reference — strategic resources"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 72rem"
-            />
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

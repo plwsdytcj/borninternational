@@ -35,9 +35,6 @@ export default function AiCompanyPage() {
       sidebarKicker="AI Company"
       pageTitle="AI-Driven Investment Infrastructure"
       pageSubtitle="Lifecycle-wide AI · Proprietary systems"
-      heroImageSrc="/home/ai-tech.jpg"
-      heroPriority
-      heroAlt=""
       mainTone="dark"
     >
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 md:pt-12 pb-2">

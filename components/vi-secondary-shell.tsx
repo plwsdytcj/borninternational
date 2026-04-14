@@ -49,7 +49,7 @@ export function ViSecondaryShell({
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-slate-950">
       {/* Left sidebar — Word VI: 左侧边栏、金属冷色底 */}
-      <aside className="w-full md:w-[min(17rem,20vw)] md:min-h-screen shrink-0 border-b md:border-b-0 md:border-r border-slate-700/60 relative overflow-hidden">
+      <aside className="w-full md:w-[min(17rem,20vw)] md:h-screen md:sticky md:top-0 shrink-0 border-b md:border-b-0 md:border-r border-slate-700/60 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-black"
           aria-hidden
@@ -122,6 +122,18 @@ export function ViSecondaryShell({
       <div
         className={`flex-1 min-w-0 flex flex-col ${mainTone === "dark" ? "bg-gradient-to-br from-slate-950 via-slate-900 to-black text-slate-100" : "bg-gradient-to-br from-slate-200/90 via-slate-100 to-slate-300/80"} ${mainClassName}`}
       >
+        <div className="pointer-events-none fixed right-2 top-1/2 z-30 hidden -translate-y-1/2 md:flex flex-col items-center gap-4 pr-1">
+          {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
+            <span
+              key={label}
+              className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
+              style={{ writingMode: "vertical-rl" }}
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+
         <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-slate-300/80 bg-slate-900/95 shrink-0">
           {headerExtra}
           <button

@@ -317,7 +317,7 @@ export default function HomePage() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/50 to-slate-950/82 md:from-slate-950/35 md:via-slate-950/40 md:to-slate-950/58" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/22 via-slate-950/26 to-slate-950/40 md:from-slate-950/16 md:via-slate-950/20 md:to-slate-950/30" />
         </div>
 
         <div className="relative z-10 h-full px-4">
@@ -337,32 +337,6 @@ export default function HomePage() {
           {/* Centered headline + statistics */}
           <div className="flex h-full flex-col items-center justify-center px-2 pb-8 pt-20 text-center sm:px-4 md:pb-12 md:pt-24">
             <div className="w-full max-w-5xl rounded-[28px] border border-white/12 bg-slate-950/18 px-4 py-6 backdrop-blur-[3px] sm:px-6 sm:py-8 md:border-0 md:bg-transparent md:px-2 md:py-0 md:backdrop-blur-0">
-              <div className="mx-auto mb-6 max-w-4xl md:mb-10">
-                <h1 className="heading-serif text-[2rem] font-light tracking-tight leading-[1.15] text-white drop-shadow-md sm:text-4xl md:text-5xl lg:text-6xl">
-                {language === "en" ? (
-                  <span className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center sm:items-baseline gap-y-2 gap-x-3">
-                    <span>{content.homeHeroLine1}</span>
-                    <span className="hidden sm:inline text-white/45 font-light select-none" aria-hidden>
-                      -
-                    </span>
-                    <span className="text-white/95">{content.homeHeroLine2}</span>
-                    <span className="hidden sm:inline text-white/45 font-light select-none" aria-hidden>
-                      -
-                    </span>
-                    <span className="text-white/90">{content.homeHeroLine3}</span>
-                  </span>
-                ) : (
-                  <span className="flex flex-col space-y-1 md:space-y-2">
-                    <span>{content.homeHeroLine1}</span>
-                    <span className="text-white/95">{content.homeHeroLine2}</span>
-                    <span className="text-white/90">{content.homeHeroLine3}</span>
-                  </span>
-                )}
-                </h1>
-                <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/88 sm:text-base md:text-lg">
-                  {content.heroDescription}
-                </p>
-              </div>
 
               {/* Key Statistics Cards */}
               <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 md:gap-6">

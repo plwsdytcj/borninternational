@@ -339,8 +339,6 @@ export default function PortfolioPage() {
       sidebarKicker="Investment"
       pageTitle={content.portfolioTitle}
       pageSubtitle={content.portfolioDescription}
-      heroImageSrc="/home/investment-panel.jpg"
-      heroAlt=""
       headerExtra={langToggle}
     >
       {/* Portfolio Companies */}
