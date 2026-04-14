@@ -28,7 +28,7 @@ export default function PortfolioPage() {
         "We invest early in Chinese hard-tech companies, then help them win customers, partners, and local operating capacity in Russia, the CIS, and adjacent markets.",
       backToHome: "Back to Home",
       investmentTeam: "Investment Team",
-      teamDescription: "Investors and operators who can source frontier technology in China and execute cross-border commercialization on the ground.",
+      teamDescription: "Our experienced professionals bring deep expertise across sectors and regions.",
       fundStructure: "Fund Structure",
       fundDescription:
         "Capital structures built to underwrite Chinese hard tech at home and support commercialization across Russia, the CIS, and selected overseas corridors.",
@@ -79,7 +79,7 @@ export default function PortfolioPage() {
         "Мы инвестируем в китайские hard-tech компании на ранней стадии, а затем помогаем им получать клиентов, партнеров и локальную операционную базу в России, СНГ и соседних рынках.",
       backToHome: "Вернуться на главную",
       investmentTeam: "Инвестиционная команда",
-      teamDescription: "Инвесторы и операторы, которые умеют находить передовые технологии в Китае и доводить их до трансграничной коммерциализации на месте.",
+      teamDescription: "Наши опытные специалисты обладают глубокой экспертизой в различных секторах и регионах.",
       fundStructure: "Структура фондов",
       fundDescription:
         "Структуры капитала, созданные для инвестиций в китайский hard tech внутри страны и поддержки коммерциализации в России, СНГ и выбранных зарубежных коридорах.",
@@ -129,7 +129,7 @@ export default function PortfolioPage() {
 
   const content = languageContent[language]
   const companies = getPortfolioCompanies(language)
-  const marqueeCompanies = companies.concat(companies)
+
 
   const teamMembers = [
     {
@@ -343,24 +343,7 @@ export default function PortfolioPage() {
       headerExtra={langToggle}
     >
       <style jsx global>{`
-        @keyframes portfolioLogoMarquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .portfolio-marquee-track {
-          animation: portfolioLogoMarquee 36s linear infinite;
-          width: max-content;
-          display: flex;
-        }
-
-        .portfolio-marquee-wrap:hover .portfolio-marquee-track {
-          animation-play-state: paused;
-        }
+        
       `}</style>
 
       {/* Portfolio Companies */}
@@ -370,31 +353,50 @@ export default function PortfolioPage() {
             <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">
               {language === "en" ? "Portfolio Companies" : "投资组合公司"}
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              {language === "en"
-                ? "All portfolio companies run in an infinite horizontal stream. Hover any logo to pause and open details."
-                : "所有投资企业以无限横向滚动展示，鼠标悬停即可暂停并查看详情。"}
-            </p>
           </div>
 
-          <div className="portfolio-marquee-wrap relative overflow-hidden rounded-2xl border border-slate-200 bg-white/90 shadow-sm">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
-            <div className="portfolio-marquee-track py-6">
-              {marqueeCompanies.map((company, idx) => (
-                <button
-                  key={`${company.slug}-${idx}`}
-                  type="button"
-                  onClick={() => router.push(`/portfolio/${company.slug}`)}
-                  className="mx-3 w-48 shrink-0 rounded-xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <div className="relative h-14 w-full">
-                    <Image src={company.logo} alt={company.name} fill className={company.logoStyle || "object-contain"} />
-                  </div>
-                  <p className="mt-3 line-clamp-2 text-sm font-medium text-slate-900">{company.name}</p>
-                </button>
-              ))}
-            </div>
+          {/* Featured companies — big cards with return multiples */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {companies.filter(c => c.featured).map((company) => (
+              <button
+                key={company.slug}
+                type="button"
+                onClick={() => router.push(`/portfolio/${company.slug}`)}
+                className="group rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="relative h-16 w-full mb-4">
+                  <Image src={company.logo} alt={company.name} fill className={company.logoStyle || "object-contain object-left"} />
+                </div>
+                {company.returnMultiple && (
+                  <p className="text-2xl font-bold text-amber-600 mb-2">Return Multiple: {company.returnMultiple}</p>
+                )}
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{company.name}</h3>
+                <p className="text-sm text-slate-600 line-clamp-2 mb-4">{company.description}</p>
+                <span className="text-sm font-medium text-slate-900 group-hover:text-amber-600 transition-colors">
+                  {content.viewDetails}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Other companies — small cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {companies.filter(c => !c.featured).map((company) => (
+              <button
+                key={company.slug}
+                type="button"
+                onClick={() => router.push(`/portfolio/${company.slug}`)}
+                className="group rounded-xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="relative h-12 w-full mb-3">
+                  <Image src={company.logo} alt={company.name} fill className={company.logoStyle || "object-contain object-left"} />
+                </div>
+                <p className="text-sm font-medium text-slate-900 line-clamp-1">{company.name}</p>
+                <span className="mt-2 block text-xs font-medium text-slate-500 group-hover:text-amber-600 transition-colors">
+                  {content.viewDetails}
+                </span>
+              </button>
+            ))}
           </div>
         </div>
       </section>

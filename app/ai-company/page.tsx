@@ -34,7 +34,7 @@ export default function AiCompanyPage() {
     <ViSecondaryShell
       sidebarKicker="AI Company"
       pageTitle="AI-Driven Investment Infrastructure"
-      pageSubtitle="Lifecycle-wide AI · Proprietary systems"
+      pageSubtitle="We go beyond investing in AI industry—we embed AI across the entire investment lifecycle, and scale these capabilities to peer enterprises."
       mainTone="dark"
     >
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 md:pt-12 pb-2">
