@@ -592,26 +592,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/72" />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
-          <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
-          <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
-            Born
-          </span>
-        </div>
-        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
-          <div className="flex flex-col items-center gap-4 pr-1">
-            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
-              <span
-                key={label}
-                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
-                style={{ writingMode: "vertical-rl" }}
-              >
-                {label}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0 rounded-2xl border border-white/80 bg-white/90 backdrop-blur-md shadow-sm px-5 py-4 md:px-6 md:py-5">
             <h2 className="heading-serif text-3xl md:text-4xl font-light text-slate-950">{content.latestNews}</h2>
             <Link href="/news">
