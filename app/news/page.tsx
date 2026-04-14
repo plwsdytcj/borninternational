@@ -281,17 +281,8 @@ export default function NewsPage() {
       </header>
 
       {/* Hero Section */}
-      <section id="news-top" className="py-12 sm:py-16 relative">
-        <div className="absolute inset-0">
-          <Image
-            src="/backgrounds/news_background.jpg"
-            alt="News background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <section id="news-top" className="py-12 sm:py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-3 sm:mb-4">{languageContent[language].latestNews}</h1>
             <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">{languageContent[language].newsDescription}</p>
@@ -314,17 +305,8 @@ export default function NewsPage() {
       </section>
 
       {/* News Grid */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-news.jpg"
-            alt="News background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/90" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-gradient-to-br from-slate-100 via-white to-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Search Results Info and Sort Controls */}
           <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex-1">
@@ -444,17 +426,8 @@ export default function NewsPage() {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-case.jpg"
-            alt="Newsletter background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-slate-900/85" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <section className="py-16 bg-gradient-to-br from-slate-900 via-slate-950 to-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center text-white">
           <h2 className="text-3xl font-light mb-4">{languageContent[language].stayInformed}</h2>
           <p className="text-slate-300 mb-8">{languageContent[language].newsletterDescription}</p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -539,7 +512,7 @@ export default function NewsPage() {
           </div>
 
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Born International. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm">
                 {languageContent[language].privacyPolicy}

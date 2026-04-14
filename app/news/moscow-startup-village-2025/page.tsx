@@ -433,7 +433,7 @@ export default function MoscowStartupVillagePage() {
           </div>
 
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Born International. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm">Privacy Policy</a>
               <a href="#" className="text-slate-400 hover:text-white text-sm">Terms of Use</a>

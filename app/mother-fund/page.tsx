@@ -228,7 +228,7 @@ export default function MotherFundPage() {
         className="py-16 sm:py-20 md:py-24 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage:
-                            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/backgrounds/design-background.jpg')",
+            "linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.96))",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center text-white">
@@ -461,7 +461,7 @@ export default function MotherFundPage() {
           </div>
 
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Born International. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm">
                 Privacy Policy

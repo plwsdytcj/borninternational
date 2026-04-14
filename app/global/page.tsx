@@ -171,8 +171,6 @@ export default function GlobalPage() {
     <ViSecondaryShell
       sidebarKicker="Cross-Border"
       pageTitle={content.technologyGlobalization}
-      heroImageSrc="/vi-reference/image8.png"
-      heroAlt="VI reference — technology globalization"
       headerExtra={langToggle}
     >
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 md:pt-12 pb-4">
@@ -182,17 +180,8 @@ export default function GlobalPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-about.jpg"
-            alt="Leadership background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/85" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-gradient-to-br from-slate-100 via-white to-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <Image
@@ -213,17 +202,8 @@ export default function GlobalPage() {
       </section>
 
       {/* Eurasian Technology Hub Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-project-1.jpg"
-            alt="Eurasian technology background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/80" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-gradient-to-br from-white via-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-6">{content.eurasianRegion}</h2>
@@ -259,17 +239,8 @@ export default function GlobalPage() {
       </section>
 
       {/* Three Technology Regions Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-team.jpg"
-            alt="Global technology regions background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/85" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* EU Technology Corridor */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
@@ -356,17 +327,8 @@ export default function GlobalPage() {
       </section>
 
       {/* Technology Investment Sectors - Puzzle Layout */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0">
-          <Image
-                          src="/backgrounds/bg-news.jpg"
-            alt="Technology sectors background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-white/75" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-gradient-to-br from-white via-slate-50 to-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">{content.investmentSectors}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.sectorsDescription}</p>
@@ -568,7 +530,7 @@ export default function GlobalPage() {
           </div>
 
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Born International. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm">
                 Privacy Policy
