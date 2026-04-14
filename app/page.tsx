@@ -423,14 +423,14 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/65" />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/20 bg-gradient-to-b from-slate-950/82 via-slate-900/72 to-slate-950/82 py-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
             <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
               <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.investmentInChina}</h2>
               <p className="text-base md:text-lg text-slate-800 mb-3 md:mb-4 leading-relaxed">{content.investmentInChinaLead}</p>
@@ -469,14 +469,14 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/65" />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/20 bg-gradient-to-b from-slate-950/82 via-slate-900/72 to-slate-950/82 py-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
             <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-xl overflow-hidden border border-slate-300/60 shadow-lg order-2 lg:order-1">
               <Image
                 src="/home/global-panel.jpg"
@@ -518,14 +518,14 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/68" />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/20 bg-gradient-to-b from-slate-950/82 via-slate-900/72 to-slate-950/82 py-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
             <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
               <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.aiCompanyTitle}</h2>
               <p className="text-base md:text-lg text-slate-800 mb-3 md:mb-4 leading-relaxed font-medium">{content.aiCompanySubtitle}</p>
@@ -565,7 +565,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-white/72" />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/20 bg-gradient-to-b from-slate-950/82 via-slate-900/72 to-slate-950/82 py-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
