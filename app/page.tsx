@@ -216,6 +216,18 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white scroll-smooth snap-container">
+      <div className="pointer-events-none fixed right-2 top-1/2 z-30 hidden -translate-y-1/2 md:flex flex-col items-center gap-4 pr-1">
+        {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
+          <span
+            key={label}
+            className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
+            style={{ writingMode: "vertical-rl" }}
+          >
+            {label}
+          </span>
+        ))}
+      </div>
+
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
@@ -649,7 +661,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-16">
+      <footer className="bg-slate-900/90 backdrop-blur-md text-white py-16 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1fr_0.95fr_1.55fr_0.95fr]">
             <div>
@@ -723,7 +735,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Born International. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm">
                 {content.privacyPolicy}
