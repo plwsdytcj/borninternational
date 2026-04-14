@@ -216,18 +216,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white scroll-smooth snap-container">
-      <div className="pointer-events-none fixed right-2 top-1/2 z-30 hidden -translate-y-1/2 md:flex flex-col items-center gap-4 pr-1">
-        {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
-          <span
-            key={label}
-            className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
-            style={{ writingMode: "vertical-rl" }}
-          >
-            {label}
-          </span>
-        ))}
-      </div>
-
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
@@ -429,6 +417,19 @@ export default function HomePage() {
             Born
           </span>
         </div>
+        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
+          <div className="flex flex-col items-center gap-4 pr-1">
+            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
+              <span
+                key={label}
+                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
+                style={{ writingMode: "vertical-rl" }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
             <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
@@ -474,6 +475,19 @@ export default function HomePage() {
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
+          <div className="flex flex-col items-center gap-4 pr-1">
+            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
+              <span
+                key={label}
+                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
+                style={{ writingMode: "vertical-rl" }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
@@ -524,6 +538,19 @@ export default function HomePage() {
             Born
           </span>
         </div>
+        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
+          <div className="flex flex-col items-center gap-4 pr-1">
+            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
+              <span
+                key={label}
+                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
+                style={{ writingMode: "vertical-rl" }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
             <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
@@ -570,6 +597,19 @@ export default function HomePage() {
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
+          <div className="flex flex-col items-center gap-4 pr-1">
+            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
+              <span
+                key={label}
+                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
+                style={{ writingMode: "vertical-rl" }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0 rounded-2xl border border-white/80 bg-white/90 backdrop-blur-md shadow-sm px-5 py-4 md:px-6 md:py-5">
