@@ -26,19 +26,15 @@ export function ResponsibleInvestmentBlurb({
   const isDark = theme === "dark"
 
   return (
-    <div
-      className={`rounded-2xl border p-5 sm:p-6 ${
-        isDark ? "border-slate-800 bg-slate-950/40" : "border-slate-200 bg-white"
-      }`}
-    >
-      <h4 className={`text-base font-semibold ${isDark ? "text-white" : "text-slate-950"}`}>{content.title}</h4>
-      <p className={`mt-3 text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-600"}`}>{content.summary}</p>
+    <div>
+      <h4 className={`font-medium mb-4 ${isDark ? "text-white" : "text-slate-950"}`}>{content.title}</h4>
+      <p className={`text-sm leading-6 ${isDark ? "text-slate-400" : "text-slate-600"}`}>{content.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {content.topics.map((topic) => (
           <span
             key={topic}
             className={`rounded-full border px-2.5 py-1 text-xs ${
-              isDark ? "border-slate-700 bg-slate-900/70 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-600"
+              isDark ? "border-slate-700 text-slate-400" : "border-slate-200 bg-slate-50 text-slate-600"
             }`}
           >
             {topic}
