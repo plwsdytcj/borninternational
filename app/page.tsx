@@ -428,15 +428,14 @@ export default function HomePage() {
       </main>
 
       {/* Investment */}
-      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
+      <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/home/investment-bg.jpg"
+            src="/investment_landing_2x_upscaled.png"
             alt=""
             fill
-            className="object-cover"
+            className="object-cover object-left"
           />
-          <div className="absolute inset-0 bg-white/65" />
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
@@ -444,58 +443,37 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
-          <div className="flex flex-col items-center gap-4 pr-1">
-            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
-              <span
-                key={label}
-                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
-                style={{ writingMode: "vertical-rl" }}
-              >
-                {label}
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col pl-3 pr-5 pb-20 pt-6 sm:pl-5 sm:pr-8 md:pl-6 md:pr-10 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+          {/* Reserve vertical space for the large “Investment” title baked into the artwork */}
+          <div
+            className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
+            aria-hidden
+          />
+          <div className="max-w-lg -translate-x-1 space-y-5 sm:-translate-x-0.5 md:max-w-xl md:space-y-6 [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+            <h2 className="sr-only">{content.investmentInChina}</h2>
+            <p className="text-base font-medium leading-relaxed md:text-lg">{content.investmentInChinaLead}</p>
+            <p className="text-base leading-relaxed md:text-lg">{content.investmentInChinaDescription}</p>
+            <Link
+              href="/portfolio"
+              className="group inline-flex self-start bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
+            >
+              <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
+                {content.learnMoreInvestments}
               </span>
-            ))}
-          </div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
-            <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.investmentInChina}</h2>
-              <p className="text-base md:text-lg text-slate-800 mb-3 md:mb-4 leading-relaxed">{content.investmentInChinaLead}</p>
-              <p className="text-base md:text-lg text-slate-800 mb-6 md:mb-8 leading-relaxed">{content.investmentInChinaDescription}</p>
-              <Link href="/portfolio">
-                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                  <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                    {content.learnMoreInvestments}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                  </span>
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-blue-600" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
-                </button>
-              </Link>
-            </div>
-            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-xl overflow-hidden border border-slate-300/60 shadow-lg">
-              <Image
-                src="/home/investment-panel.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Global Expansion */}
-      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
+      {/* Global Expansion — same pattern as Investment: full-bleed art, no white wash, copy under baked-in title */}
+      <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/home/global-bg.jpg"
+            src="/global_expansion_2x_high_resolution.png"
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-cover object-left"
           />
-          <div className="absolute inset-0 bg-white/65" />
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
@@ -503,41 +481,23 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
-          <div className="flex flex-col items-center gap-4 pr-1">
-            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
-              <span
-                key={label}
-                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
-                style={{ writingMode: "vertical-rl" }}
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col pb-20 pl-3 pr-3 pt-6 sm:pl-5 sm:pr-5 md:pl-6 md:pr-8 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
+          <div
+            className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
+            aria-hidden
+          />
+          {/* Right column: under the large “Global Expansion” title in the artwork */}
+          <div className="flex w-full justify-end">
+            <div className="flex max-w-md flex-col items-end space-y-5 text-right sm:max-w-lg md:max-w-xl md:space-y-6 [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+              <h2 className="sr-only">{content.globalInvestment}</h2>
+              <p className="text-base leading-relaxed md:text-lg">{content.globalInvestmentDescription}</p>
+              <Link
+                href="/business-new"
+                className="group inline-flex self-end bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
               >
-                {label}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
-            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-xl overflow-hidden border border-slate-300/60 shadow-lg order-2 lg:order-1">
-              <Image
-                src="/home/global-panel.jpg"
-                alt=""
-                fill
-                className="object-cover object-center"
-              />
-            </div>
-            <div className="order-1 lg:order-2 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.globalInvestment}</h2>
-              <p className="text-base md:text-lg text-slate-800 mb-6 md:mb-8 leading-relaxed">{content.globalInvestmentDescription}</p>
-              <Link href="/business-new">
-                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                  <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                    {content.exploreGlobalExpansion}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                  </span>
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-green-600" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
-                </button>
+                <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
+                  {content.exploreGlobalExpansion}
+                </span>
               </Link>
             </div>
           </div>
@@ -548,16 +508,15 @@ export default function HomePage() {
 
 
 
-      {/* AI Company */}
-      <section className="min-h-screen relative flex items-center snap-section py-12 md:py-0">
+      {/* AI Company — same pattern as Investment: full-bleed art, copy under baked-in title */}
+      <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
         <div className="absolute inset-0">
           <Image
-            src="/home/ai-tech.jpg"
+            src="/ai_company_text_up_2x_high_resolution.png"
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-cover object-left"
           />
-          <div className="absolute inset-0 bg-white/68" />
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
@@ -565,44 +524,23 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="pointer-events-none absolute inset-y-0 right-2 z-20 hidden lg:flex items-center">
-          <div className="flex flex-col items-center gap-4 pr-1">
-            {["Investment", "Enterprise Global Expansion", "AI Company"].map((label, index) => (
-              <span
-                key={label}
-                className={`text-[10px] tracking-[0.24em] uppercase ${index === 0 ? "text-slate-500/85" : "text-slate-400/75"}`}
-                style={{ writingMode: "vertical-rl" }}
-              >
-                {label}
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col pl-2 pr-5 pb-20 pt-6 sm:pl-4 sm:pr-8 md:pl-5 md:pr-10 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
+          <div
+            className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
+            aria-hidden
+          />
+          <div className="max-w-lg -translate-x-2 space-y-5 sm:-translate-x-1.5 md:max-w-xl md:-translate-x-1 md:space-y-6 [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+            <h2 className="sr-only">{content.aiCompanyTitle}</h2>
+            <p className="text-base font-medium leading-relaxed md:text-lg">{content.aiCompanySubtitle}</p>
+            <p className="text-base leading-relaxed md:text-lg">{content.aiCompanyDescription}</p>
+            <Link
+              href="/ai-company"
+              className="group inline-flex self-start bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
+            >
+              <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
+                {content.exploreAiCapabilities}
               </span>
-            ))}
-          </div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-28 w-full py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 md:gap-12 lg:gap-14 items-center">
-            <div className="rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md shadow-sm px-6 py-8 md:px-8 md:py-10">
-              <h2 className="heading-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 mb-4 md:mb-6">{content.aiCompanyTitle}</h2>
-              <p className="text-base md:text-lg text-slate-800 mb-3 md:mb-4 leading-relaxed font-medium">{content.aiCompanySubtitle}</p>
-              <p className="text-base md:text-lg text-slate-800 mb-6 md:mb-8 leading-relaxed">{content.aiCompanyDescription}</p>
-              <Link href="/ai-company">
-                <button className="mt-6 md:mt-8 group relative flex items-center text-base md:text-lg font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                  <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
-                    {content.exploreAiCapabilities}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                  </span>
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-blue-600" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
-                </button>
-              </Link>
-            </div>
-            <div className="relative w-full aspect-video max-h-[min(52vh,520px)] rounded-xl overflow-hidden border border-slate-300/60 shadow-lg">
-              <Image
-                src="/home/ai-tech.jpg"
-                alt=""
-                fill
-                className="object-cover object-center"
-              />
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -612,12 +550,11 @@ export default function HomePage() {
       <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/home/news-bg.jpg"
+            src="/blank_dark_ui_2x_high_resolution.png"
             alt=""
             fill
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/72" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0 rounded-2xl border border-white/80 bg-white/90 backdrop-blur-md shadow-sm px-5 py-4 md:px-6 md:py-5">
