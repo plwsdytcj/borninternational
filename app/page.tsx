@@ -557,16 +557,15 @@ export default function HomePage() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 md:gap-0 rounded-2xl border border-white/80 bg-white/90 backdrop-blur-md shadow-sm px-5 py-4 md:px-6 md:py-5">
-            <h2 className="heading-serif text-3xl md:text-4xl font-light text-slate-950">{content.latestNews}</h2>
+          <div className="mb-6 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/12 bg-white/[0.06] px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md md:flex-row md:items-center md:gap-0 md:px-6 md:py-5">
+            <h2 className="heading-serif text-3xl font-light text-white/95 md:text-4xl">{content.latestNews}</h2>
             <Link href="/news">
-              <button className="group relative flex items-center text-base font-medium text-slate-950 hover:text-slate-800 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
-                <span className="relative border-b-2 border-slate-400 group-hover:border-slate-600 pb-1 transition-all duration-500 group-hover:shadow-lg">
+              <button className="group relative flex transform items-center text-base font-medium text-cyan-200/90 transition-all duration-500 hover:scale-105 hover:-translate-y-1 hover:text-cyan-100">
+                <span className="relative border-b-2 border-cyan-400/40 pb-1 transition-all duration-500 group-hover:border-cyan-300/70 group-hover:shadow-[0_0_24px_rgba(34,211,238,0.15)]">
                   {content.viewAllNews}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-cyan-300 transition-all duration-700 ease-out group-hover:w-full"></span>
                 </span>
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-3 group-hover:scale-110 transition-all duration-500 group-hover:text-purple-600" />
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg -z-10"></div>
+                <ArrowRight className="ml-2 h-4 w-4 transition-all duration-500 group-hover:translate-x-3 group-hover:scale-110 group-hover:text-cyan-200" />
               </button>
             </Link>
           </div>
@@ -574,46 +573,46 @@ export default function HomePage() {
                     {/* Fixed Top News Row - Alternating Layout */}
           <div className="space-y-4 mb-6">
             {/* First News Item - Latest 1 from /news */}
-            <div className="flex flex-col gap-4 sm:flex-row sm:gap-5 md:gap-8 items-stretch bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 min-h-[140px]">
-              <div className="relative w-full h-48 sm:w-32 sm:h-32 md:w-44 md:h-44 flex-shrink-0 self-center">
+            <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row sm:gap-5 md:gap-8 md:p-6">
+              <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
                 <Image 
                   src="/news/murmansk-governor-meeting-2025/image1.jpeg" 
                   alt="Murmansk Governor meets Born International in Beijing" 
                   fill 
-                  className="object-cover rounded-lg" 
+                  className="rounded-lg object-cover ring-1 ring-white/10" 
                 />
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-500 mb-1">November 2, 2025</p>
-                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-2">Murmansk Governor Andrey Chibis Meets Born International Representatives in Beijing</h3>
-                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">Arctic development, Northern Sea Route logistics and sector cooperation discussed.</p>
+              <div className="min-w-0 flex-1">
+                <p className="mb-1 text-xs text-zinc-400">November 2, 2025</p>
+                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">Murmansk Governor Andrey Chibis Meets Born International Representatives in Beijing</h3>
+                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">Arctic development, Northern Sea Route logistics and sector cooperation discussed.</p>
                 <Link href="/news/murmansk-governor-meeting-2025">
-                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
+                  <Button variant="ghost" className="h-auto p-0 text-xs text-cyan-300 hover:bg-transparent hover:text-cyan-200">
                     {content.readMore}
-                    <ExternalLink className="ml-1 w-3 h-3" />
+                    <ExternalLink className="ml-1 h-3 w-3" />
                   </Button>
                 </Link>
               </div>
             </div>
 
             {/* Second News Item - Latest 2 from /news */}
-            <div className="flex flex-col gap-4 sm:flex-row-reverse sm:gap-5 md:gap-8 items-stretch bg-white/95 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 min-h-[140px]">
-              <div className="relative w-full h-48 sm:w-32 sm:h-32 md:w-44 md:h-44 flex-shrink-0 self-center">
+            <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row-reverse sm:gap-5 md:gap-8 md:p-6">
+              <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
                 <Image 
                   src="/news/china-russia-investment-committee-2025/image1.jpeg" 
                   alt="China–Russia Investment Committee in Beijing" 
                   fill 
-                  className="object-cover rounded-lg" 
+                  className="rounded-lg object-cover ring-1 ring-white/10" 
                 />
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-500 mb-1">November 1, 2025</p>
-                <h3 className="text-base font-medium text-slate-900 mb-2 line-clamp-2">China–Russia Intergovernmental Investment Cooperation Committee Holds Meeting in Beijing; Murmansk Governor Andrey Chibis Delivers Speech</h3>
-                <p className="text-sm text-slate-600 mb-3 line-clamp-2 leading-relaxed">Talks highlight $200bn+ project pipeline, Arctic development and Northern Sea Route opportunities.</p>
+              <div className="min-w-0 flex-1">
+                <p className="mb-1 text-xs text-zinc-400">November 1, 2025</p>
+                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">China–Russia Intergovernmental Investment Cooperation Committee Holds Meeting in Beijing; Murmansk Governor Andrey Chibis Delivers Speech</h3>
+                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">Talks highlight $200bn+ project pipeline, Arctic development and Northern Sea Route opportunities.</p>
                 <Link href="/news/china-russia-investment-committee-2025">
-                  <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 text-xs">
+                  <Button variant="ghost" className="h-auto p-0 text-xs text-cyan-300 hover:bg-transparent hover:text-cyan-200">
                     {content.readMore}
-                    <ExternalLink className="ml-1 w-3 h-3" />
+                    <ExternalLink className="ml-1 h-3 w-3" />
                   </Button>
                 </Link>
               </div>
@@ -638,15 +637,15 @@ export default function HomePage() {
                 ])
                 .map((n, idx) => (
                   <Link key={`${n.href}-${idx}`} href={n.href} className="flex-shrink-0">
-                    <Card className="w-56 border-0 shadow-sm hover:shadow-md transition-shadow bg-white/95 cursor-pointer">
+                    <Card className="w-56 cursor-pointer gap-0 border border-white/10 bg-white/[0.07] py-0 text-zinc-100 shadow-sm backdrop-blur-md transition-shadow hover:border-white/18 hover:bg-white/10 hover:shadow-md">
                       <CardContent className="p-0">
                         <div className="relative h-20">
-                          <Image src={n.img} alt={n.title} fill className="object-cover rounded-t-lg" />
+                          <Image src={n.img} alt={n.title} fill className="rounded-t-lg object-cover ring-1 ring-inset ring-white/10" />
                         </div>
                         <div className="p-2">
-                          <p className="text-xs text-slate-500 mb-1">{n.date}</p>
-                          <h4 className="text-xs font-medium text-slate-900 mb-1">{n.title}</h4>
-                          <p className="text-xs text-slate-600 mb-1">{n.desc}</p>
+                          <p className="mb-1 text-xs text-zinc-400">{n.date}</p>
+                          <h4 className="mb-1 text-xs font-medium text-white/95">{n.title}</h4>
+                          <p className="mb-1 text-xs leading-snug text-zinc-400">{n.desc}</p>
                         </div>
                       </CardContent>
                     </Card>
