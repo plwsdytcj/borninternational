@@ -74,6 +74,9 @@ export default function HomePage() {
       homeHeroLine1: "Investment",
       homeHeroLine2: "Enterprise Global Expansion",
       homeHeroLine3: "AI Company",
+      heroStatFoot1: "Portfolio",
+      heroStatFoot2: "USD",
+      heroStatFoot3: "Tech Globalization",
       investmentInChina: "Investment",
       investmentInChinaLead: "Delivering 50x+ value creation across our portfolio Company.",
       investmentInChinaDescription:
@@ -147,6 +150,9 @@ export default function HomePage() {
       homeHeroLine1: "Инвестиции",
       homeHeroLine2: "Глобальная экспансия предприятий",
       homeHeroLine3: "AI-компания",
+      heroStatFoot1: "Портфель",
+      heroStatFoot2: "USD",
+      heroStatFoot3: "Технологическая глобализация",
       investmentInChina: "Инвестиции",
       investmentInChinaLead: "Создаем 50x+ прирост стоимости в портфельных компаниях.",
       investmentInChinaDescription:
@@ -310,13 +316,17 @@ export default function HomePage() {
       <main className="relative h-screen snap-section">
         <div className="absolute inset-0">
           <Image
-            src="/vi-reference/image1.jpeg"
+            src="/vi-reference/born_cover.png"
             alt=""
             fill
             className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/22 via-slate-950/26 to-slate-950/40 md:from-slate-950/16 md:via-slate-950/20 md:to-slate-950/30" />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(52%,420px)] bg-gradient-to-t from-slate-950/78 via-slate-950/40 to-transparent md:h-[min(48%,380px)]"
+            aria-hidden
+          />
         </div>
 
         <div className="relative z-10 h-full px-4">
@@ -333,67 +343,85 @@ export default function HomePage() {
           
 
 
-          {/* Centered headline + statistics */}
-          <div className="flex h-full flex-col items-center justify-center px-2 pb-8 pt-20 text-center sm:px-4 md:pb-12 md:pt-24">
-            <div className="w-full max-w-5xl rounded-[28px] border border-white/12 bg-slate-950/18 px-4 py-6 backdrop-blur-[3px] sm:px-6 sm:py-8 md:border-0 md:bg-transparent md:px-2 md:py-0 md:backdrop-blur-0">
+          {/* Hero stats: lower on screen; glowing axis → captions → numbers (no panel / no backdrop) */}
+          <div className="flex h-full flex-col items-center justify-end px-2 pb-10 pt-20 text-center sm:px-4 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
+            <div className="mx-auto w-full max-w-5xl translate-y-2 px-3 sm:translate-y-3 sm:px-4 md:translate-y-4 md:px-2">
+                {/* Glowing axis: one segment per column so dots align with copy below */}
+                <div className="mx-auto grid w-full max-w-5xl grid-cols-3 items-center">
+                  {[
+                    { left: false, right: true },
+                    { left: true, right: true },
+                    { left: true, right: false },
+                  ].map((seg, i) => (
+                    <div key={i} className="flex min-h-[2.75rem] items-center">
+                      {seg.left ? <div className="h-px min-w-0 flex-1 rounded-full bg-white/88" /> : null}
+                      <span className="relative mx-1 flex h-5 w-5 shrink-0 items-center justify-center md:h-6 md:w-6">
+                        <span className="absolute inset-0 rounded-full bg-cyan-400/45 blur-[7px] md:blur-[9px]" />
+                        <span className="relative h-2.5 w-2.5 rounded-full bg-[#ecfeff] shadow-[0_0_14px_4px_rgba(34,211,238,0.72)] md:h-3 md:w-3" />
+                      </span>
+                      {seg.right ? <div className="h-px min-w-0 flex-1 rounded-full bg-white/88" /> : null}
+                    </div>
+                  ))}
+                </div>
 
-              {/* Key Statistics Cards */}
-              <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 md:gap-6">
-                <div className="group rounded-2xl border border-white/12 bg-black/18 px-4 py-4 text-center shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-yellow-200/40">
-                  <h3
-                    className="tabular-nums mb-1 text-3xl font-black tracking-tighter drop-shadow-lg sm:text-[2rem] md:mb-3 md:text-4xl lg:text-5xl"
-                    style={{ color: "#f0f2ff" }}
-                  >
-                    {portfolioCount.count}
-                    {portfolioCount.suffix}
-                  </h3>
-                  <p
-                    className="text-sm font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg"
-                    style={{ color: "#ebeff2" }}
-                  >
-                    {content.portfolio}
+                {/* Captions directly under the axis (restores copy that sat under the bar before) */}
+                <div className="mx-auto mt-2 grid w-full max-w-5xl grid-cols-1 gap-2 sm:mt-3 sm:grid-cols-3 sm:gap-3 md:gap-4">
+                  <p className="heading-serif px-1 text-xs font-light leading-snug tracking-wide text-white/92 sm:text-sm md:text-base">
+                    {content.homeHeroLine1}
+                  </p>
+                  <p className="heading-serif px-1 text-[0.7rem] font-light leading-snug tracking-wide text-white/92 sm:text-xs md:text-sm">
+                    {content.homeHeroLine2}
+                  </p>
+                  <p className="heading-serif px-1 text-xs font-light leading-snug tracking-wide text-white/92 sm:text-sm md:text-base">
+                    {content.homeHeroLine3}
                   </p>
                 </div>
 
-                <div className="group rounded-2xl border border-white/12 bg-black/18 px-4 py-4 text-center shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-blue-200/40">
-                  <div className="mb-1 flex flex-col items-center justify-center gap-1 sm:mb-3">
+                {/* Numbers */}
+                <div className="mx-auto mt-4 grid w-full max-w-5xl grid-cols-1 gap-5 sm:mt-5 sm:grid-cols-3 sm:gap-6 md:mt-7 md:gap-8">
+                  <div className="text-center">
                     <h3
-                      className="tabular-nums text-[2rem] font-black tracking-tighter drop-shadow-lg sm:text-[2rem] md:text-4xl lg:text-5xl"
+                      className="tabular-nums text-4xl font-black tracking-tighter drop-shadow-lg sm:text-5xl md:text-6xl lg:text-6xl"
+                      style={{ color: "#f0f2ff" }}
+                    >
+                      {portfolioCount.count}
+                      {portfolioCount.suffix}
+                    </h3>
+                  </div>
+                  <div className="text-center">
+                    <h3
+                      className="tabular-nums text-4xl font-black tracking-tighter drop-shadow-lg sm:text-5xl md:text-6xl lg:text-6xl"
                       style={{ color: "#ebeff2" }}
                     >
                       {formatNumber(fundScale.count)}
                     </h3>
-                    <span
-                      className="text-sm font-semibold tracking-[0.16em] text-white/90 sm:text-sm md:text-base lg:text-lg"
+                  </div>
+                  <div className="text-center">
+                    <h3
+                      className="tabular-nums text-4xl font-black tracking-tighter drop-shadow-lg sm:text-5xl md:text-6xl lg:text-6xl"
                       style={{ color: "#f2f2f2" }}
                     >
-                      USD
-                    </span>
+                      {techGlobalization.count}
+                      {techGlobalization.suffix}
+                    </h3>
                   </div>
-                  <p
-                    className="text-sm font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg"
-                    style={{ color: "#f2f2f2" }}
-                  >
-                    {content.fundScale}
-                  </p>
                 </div>
 
-                <div className="group rounded-2xl border border-white/12 bg-black/18 px-4 py-4 text-center shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-green-200/40">
-                  <h3
-                    className="tabular-nums mb-1 text-3xl font-black tracking-tighter drop-shadow-lg sm:text-[2rem] md:mb-3 md:text-4xl lg:text-5xl"
+                {/* Short labels under the big numbers (same role as old stat cards) */}
+                <div className="mx-auto mt-2 grid w-full max-w-5xl grid-cols-1 gap-2 sm:mt-3 sm:grid-cols-3 sm:gap-3 md:gap-4">
+                  <p className="text-sm font-semibold tracking-wide text-white/90 sm:text-base md:text-lg" style={{ color: "#ebeff2" }}>
+                    {content.heroStatFoot1}
+                  </p>
+                  <p
+                    className="text-sm font-semibold tracking-[0.16em] text-white/90 sm:text-base md:text-lg"
                     style={{ color: "#f2f2f2" }}
                   >
-                    {techGlobalization.count}
-                    {techGlobalization.suffix}
-                  </h3>
-                  <p
-                    className="text-sm font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg"
-                    style={{ color: "#ffffff" }}
-                  >
-                    {content.techGlobalization}
+                    {content.heroStatFoot2}
+                  </p>
+                  <p className="text-sm font-semibold tracking-wide text-white/90 sm:text-base md:text-lg" style={{ color: "#ffffff" }}>
+                    {content.heroStatFoot3}
                   </p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
