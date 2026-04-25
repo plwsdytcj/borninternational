@@ -47,9 +47,9 @@ export function ViSecondaryShell({
   const router = useRouter()
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-slate-950">
-      {/* Left sidebar — Word VI: 左侧边栏、金属冷色底 */}
-      <aside className="w-full md:w-[min(17rem,20vw)] md:h-screen md:sticky md:top-0 shrink-0 border-b md:border-b-0 md:border-r border-slate-700/60 relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-slate-950 lg:flex-row">
+      {/* Left sidebar — stack above main until lg so tablets (768–1023px) are not squeezed */}
+      <aside className="relative w-full shrink-0 overflow-hidden border-b border-slate-700/60 lg:sticky lg:top-0 lg:h-screen lg:w-[min(17rem,20vw)] lg:border-b-0 lg:border-r">
         <div
           className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-black"
           aria-hidden
@@ -62,7 +62,7 @@ export function ViSecondaryShell({
           className="absolute inset-0 opacity-30 bg-[linear-gradient(125deg,rgba(245,158,11,0.12)_0%,transparent_45%,rgba(148,163,184,0.08)_100%)]"
           aria-hidden
         />
-        <div className="relative z-10 p-5 md:p-6 flex flex-col md:min-h-screen">
+        <div className="relative z-10 flex flex-col p-5 md:p-6 lg:min-h-screen">
           <button
             type="button"
             onClick={() => router.push("/")}
@@ -81,7 +81,7 @@ export function ViSecondaryShell({
           <p className="text-amber-500/95 text-[10px] font-semibold tracking-[0.28em] uppercase mb-2">
             {sidebarKicker}
           </p>
-          <h1 className="heading-serif text-lg md:text-xl font-light text-white leading-snug mb-1">
+          <h1 className="heading-serif mb-1 max-w-full break-words text-lg font-light leading-snug text-white md:text-xl">
             {pageTitle}
           </h1>
           {pageSubtitle ? (
@@ -92,19 +92,19 @@ export function ViSecondaryShell({
             <div className="border-b border-slate-800/80 pb-6 mb-2" />
           )}
 
-          <nav className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-x-4 gap-y-0 md:gap-0 md:space-y-0.5 text-xs md:text-sm">
+          <nav className="flex flex-row flex-wrap gap-x-4 gap-y-0 text-xs md:gap-0 lg:flex-col lg:flex-nowrap lg:space-y-0.5 lg:text-sm">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-2 md:py-2.5 md:pl-3 md:-ml-3 md:border-l-2 border-transparent text-slate-500 hover:text-amber-400/95 hover:border-amber-600 transition-colors"
+                className="border-transparent py-2 text-slate-500 transition-colors hover:border-amber-600 hover:text-amber-400/95 lg:-ml-3 lg:border-l-2 lg:py-2.5 lg:pl-3"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex mt-auto pt-10 flex-col gap-3">
+          <div className="mt-auto hidden flex-col gap-3 pt-10 lg:flex">
             {headerExtra}
             <button
               type="button"
@@ -122,7 +122,7 @@ export function ViSecondaryShell({
       <div
         className={`flex-1 min-w-0 flex flex-col ${mainTone === "dark" ? "bg-gradient-to-br from-slate-950 via-slate-900 to-black text-slate-100" : "bg-gradient-to-br from-slate-200/90 via-slate-100 to-slate-300/80"} ${mainClassName}`}
       >
-        <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-slate-300/80 bg-slate-900/95 shrink-0">
+        <div className="flex shrink-0 items-center justify-between border-b border-slate-700/80 bg-slate-900/95 px-4 py-3 lg:hidden">
           {headerExtra}
           <button
             type="button"

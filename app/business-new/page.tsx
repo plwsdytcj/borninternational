@@ -160,7 +160,7 @@ export default function BusinessNewPage() {
                 <div className="h-0.5 w-12 bg-amber-500 group-hover:w-24 transition-all duration-500" />
               </div>
             </div>
-            <p className="pl-16 leading-relaxed text-slate-400">
+            <p className="pl-0 leading-relaxed text-slate-400 sm:pl-12 md:pl-16">
               Backed by the SCO Business Council, we align government, banking, and regulatory stakeholders before a company spends heavily on entry. That lets Chinese enterprises solve access, sanctions, and FX friction upfront.
             </p>
           </div>
@@ -176,7 +176,7 @@ export default function BusinessNewPage() {
                 <div className="h-0.5 w-12 bg-amber-500 group-hover:w-24 transition-all duration-500" />
               </div>
             </div>
-            <p className="pl-16 leading-relaxed text-slate-400">
+            <p className="pl-0 leading-relaxed text-slate-400 sm:pl-12 md:pl-16">
               Our local team handles company formation, hiring, compliance, and finance so a Chinese company can operate as a local Russian business, not just export into it.
             </p>
           </div>

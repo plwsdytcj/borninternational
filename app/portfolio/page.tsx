@@ -466,7 +466,7 @@ export default function PortfolioPage() {
 
       {/* Investment Team Section */}
       <section id="investment-team-section" className="relative scroll-mt-24 border-t border-slate-800/80 py-20">
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-16 text-center">
             <h2 className="heading-serif mb-4 text-4xl font-light tracking-tight text-white/95 lg:text-5xl">{content.investmentTeam}</h2>
             <p className="mx-auto max-w-3xl text-xl text-slate-400">{content.teamDescription}</p>

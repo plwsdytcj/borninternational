@@ -324,7 +324,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/22 via-slate-950/26 to-slate-950/40 md:from-slate-950/16 md:via-slate-950/20 md:to-slate-950/30" />
           <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(52%,420px)] bg-gradient-to-t from-slate-950/78 via-slate-950/40 to-transparent md:h-[min(48%,380px)]"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(58%,480px)] bg-gradient-to-t from-slate-950/90 via-slate-950/55 to-transparent max-md:from-slate-950/92 max-md:via-slate-950/65 md:h-[min(48%,380px)]"
             aria-hidden
           />
         </div>
@@ -343,62 +343,61 @@ export default function HomePage() {
           
 
 
-          {/* Hero stats: lower on screen; glowing axis → captions → numbers (no panel / no backdrop) */}
-          <div className="flex h-full flex-col items-center justify-end px-2 pb-10 pt-20 text-center sm:px-4 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
-            <div className="mx-auto w-full max-w-5xl translate-y-2 px-3 sm:translate-y-3 sm:px-4 md:translate-y-4 md:px-2">
-                {/* Glowing axis: one segment per column so dots align with copy below */}
-                <div className="mx-auto grid w-full max-w-5xl grid-cols-3 items-center">
+          {/* Hero stats: single column until md so phone / narrow widths never triple-stack huge figures */}
+          <div className="flex h-full min-h-0 flex-col items-center justify-end px-3 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-20 text-center sm:px-4 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
+            <div className="mx-auto w-full min-w-0 max-w-5xl translate-y-1 px-2 sm:translate-y-2 sm:px-3 md:translate-y-4 md:px-2">
+              <div className="max-md:rounded-2xl max-md:bg-black/50 max-md:px-2 max-md:py-4 max-md:backdrop-blur-md md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
+                {/* Glowing axis — hide connectors on very small screens to reduce visual noise */}
+                <div className="mx-auto grid w-full max-w-5xl grid-cols-3 items-center max-md:max-w-xs max-md:mx-auto">
                   {[
                     { left: false, right: true },
                     { left: true, right: true },
                     { left: true, right: false },
                   ].map((seg, i) => (
-                    <div key={i} className="flex min-h-[2.75rem] items-center">
-                      {seg.left ? <div className="h-px min-w-0 flex-1 rounded-full bg-white/88" /> : null}
-                      <span className="relative mx-1 flex h-5 w-5 shrink-0 items-center justify-center md:h-6 md:w-6">
-                        <span className="absolute inset-0 rounded-full bg-cyan-400/45 blur-[7px] md:blur-[9px]" />
-                        <span className="relative h-2.5 w-2.5 rounded-full bg-[#ecfeff] shadow-[0_0_14px_4px_rgba(34,211,238,0.72)] md:h-3 md:w-3" />
+                    <div key={i} className="flex min-h-[2.25rem] items-center max-md:min-h-[2rem] md:min-h-[2.75rem]">
+                      {seg.left ? <div className="h-px min-w-0 flex-1 rounded-full bg-white/88 max-md:opacity-80" /> : null}
+                      <span className="relative mx-0.5 flex h-4 w-4 shrink-0 items-center justify-center sm:mx-1 sm:h-5 sm:w-5 md:h-6 md:w-6">
+                        <span className="absolute inset-0 rounded-full bg-cyan-400/45 blur-[6px] sm:blur-[7px] md:blur-[9px]" />
+                        <span className="relative h-2 w-2 rounded-full bg-[#ecfeff] shadow-[0_0_12px_3px_rgba(34,211,238,0.72)] sm:h-2.5 sm:w-2.5 sm:shadow-[0_0_14px_4px_rgba(34,211,238,0.72)] md:h-3 md:w-3" />
                       </span>
-                      {seg.right ? <div className="h-px min-w-0 flex-1 rounded-full bg-white/88" /> : null}
+                      {seg.right ? <div className="h-px min-w-0 flex-1 rounded-full bg-white/88 max-md:opacity-80" /> : null}
                     </div>
                   ))}
                 </div>
 
-                {/* Captions directly under the axis (restores copy that sat under the bar before) */}
-                <div className="mx-auto mt-2 grid w-full max-w-5xl grid-cols-1 gap-2 sm:mt-3 sm:grid-cols-3 sm:gap-3 md:gap-4">
-                  <p className="heading-serif px-1 text-xs font-light leading-snug tracking-wide text-white/92 sm:text-sm md:text-base">
+                <div className="mx-auto mt-3 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-3 md:mt-4 md:grid-cols-3 md:gap-4">
+                  <p className="heading-serif px-0.5 text-xs font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-sm md:text-base">
                     {content.homeHeroLine1}
                   </p>
-                  <p className="heading-serif px-1 text-[0.7rem] font-light leading-snug tracking-wide text-white/92 sm:text-xs md:text-sm">
+                  <p className="heading-serif px-0.5 text-[0.7rem] font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-xs md:text-sm">
                     {content.homeHeroLine2}
                   </p>
-                  <p className="heading-serif px-1 text-xs font-light leading-snug tracking-wide text-white/92 sm:text-sm md:text-base">
+                  <p className="heading-serif px-0.5 text-xs font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-sm md:text-base">
                     {content.homeHeroLine3}
                   </p>
                 </div>
 
-                {/* Numbers */}
-                <div className="mx-auto mt-4 grid w-full max-w-5xl grid-cols-1 gap-5 sm:mt-5 sm:grid-cols-3 sm:gap-6 md:mt-7 md:gap-8">
-                  <div className="text-center">
+                <div className="mx-auto mt-5 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-4 md:mt-7 md:grid-cols-3 md:gap-8">
+                  <div className="min-w-0 text-center">
                     <h3
-                      className="tabular-nums text-4xl font-black tracking-tighter drop-shadow-lg sm:text-5xl md:text-6xl lg:text-6xl"
+                      className="break-words text-[clamp(1.75rem,9vw,2.5rem)] font-black tabular-nums tracking-tight drop-shadow-lg md:text-6xl lg:text-6xl"
                       style={{ color: "#f0f2ff" }}
                     >
                       {portfolioCount.count}
                       {portfolioCount.suffix}
                     </h3>
                   </div>
-                  <div className="text-center">
+                  <div className="min-w-0 text-center">
                     <h3
-                      className="tabular-nums text-4xl font-black tracking-tighter drop-shadow-lg sm:text-5xl md:text-6xl lg:text-6xl"
+                      className="break-all text-[clamp(1rem,5.2vw,1.65rem)] font-black tabular-nums leading-tight tracking-tight drop-shadow-lg sm:break-normal sm:text-[clamp(1.1rem,5vw,1.85rem)] md:text-5xl lg:text-6xl"
                       style={{ color: "#ebeff2" }}
                     >
                       {formatNumber(fundScale.count)}
                     </h3>
                   </div>
-                  <div className="text-center">
+                  <div className="min-w-0 text-center">
                     <h3
-                      className="tabular-nums text-4xl font-black tracking-tighter drop-shadow-lg sm:text-5xl md:text-6xl lg:text-6xl"
+                      className="break-words text-[clamp(1.75rem,9vw,2.5rem)] font-black tabular-nums tracking-tight drop-shadow-lg md:text-6xl lg:text-6xl"
                       style={{ color: "#f2f2f2" }}
                     >
                       {techGlobalization.count}
@@ -407,21 +406,21 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Short labels under the big numbers (same role as old stat cards) */}
-                <div className="mx-auto mt-2 grid w-full max-w-5xl grid-cols-1 gap-2 sm:mt-3 sm:grid-cols-3 sm:gap-3 md:gap-4">
-                  <p className="text-sm font-semibold tracking-wide text-white/90 sm:text-base md:text-lg" style={{ color: "#ebeff2" }}>
+                <div className="mx-auto mt-4 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-3 md:mt-5 md:grid-cols-3 md:gap-4">
+                  <p className="text-xs font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg" style={{ color: "#ebeff2" }}>
                     {content.heroStatFoot1}
                   </p>
                   <p
-                    className="text-sm font-semibold tracking-[0.16em] text-white/90 sm:text-base md:text-lg"
+                    className="text-xs font-semibold tracking-[0.12em] text-white/90 sm:text-sm md:text-base lg:text-lg"
                     style={{ color: "#f2f2f2" }}
                   >
                     {content.heroStatFoot2}
                   </p>
-                  <p className="text-sm font-semibold tracking-wide text-white/90 sm:text-base md:text-lg" style={{ color: "#ffffff" }}>
+                  <p className="text-xs font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg" style={{ color: "#ffffff" }}>
                     {content.heroStatFoot3}
                   </p>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -434,22 +433,22 @@ export default function HomePage() {
             src="/investment_landing_2x_upscaled.png"
             alt=""
             fill
-            className="object-cover object-left"
+            className="object-cover object-[center_18%] lg:object-left"
           />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col pl-3 pr-5 pb-20 pt-6 sm:pl-5 sm:pr-8 md:pl-6 md:pr-10 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-4 pb-20 pt-6 sm:px-6 md:px-8 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
           {/* Reserve vertical space for the large “Investment” title baked into the artwork */}
           <div
             className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
             aria-hidden
           />
-          <div className="max-w-lg -translate-x-1 space-y-5 sm:-translate-x-0.5 md:max-w-xl md:space-y-6 [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+          <div className="max-w-lg space-y-5 rounded-xl max-lg:bg-black/35 max-lg:px-3 max-lg:py-4 max-lg:backdrop-blur-sm sm:max-w-xl md:max-w-xl md:space-y-6 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
             <h2 className="sr-only">{content.investmentInChina}</h2>
             <p className="text-base font-medium leading-relaxed md:text-lg">{content.investmentInChinaLead}</p>
             <p className="text-base leading-relaxed md:text-lg">{content.investmentInChinaDescription}</p>
@@ -472,28 +471,28 @@ export default function HomePage() {
             src="/global_expansion_2x_high_resolution.png"
             alt=""
             fill
-            className="object-cover object-left"
+            className="object-cover object-[center_22%] lg:object-left"
           />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col pb-20 pl-3 pr-3 pt-6 sm:pl-5 sm:pr-5 md:pl-6 md:pr-8 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-4 pb-20 pt-6 sm:px-6 md:px-8 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
           <div
             className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
             aria-hidden
           />
           {/* Right column: under the large “Global Expansion” title in the artwork */}
-          <div className="flex w-full justify-end">
-            <div className="flex max-w-md flex-col items-end space-y-5 text-right sm:max-w-lg md:max-w-xl md:space-y-6 [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+          <div className="flex w-full justify-end max-lg:justify-stretch">
+            <div className="flex w-full max-w-md flex-col items-end space-y-5 text-right max-lg:max-w-none max-lg:items-stretch max-lg:rounded-xl max-lg:bg-black/35 max-lg:px-3 max-lg:py-4 max-lg:text-left max-lg:backdrop-blur-sm sm:max-w-lg md:max-w-xl md:space-y-6 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
               <h2 className="sr-only">{content.globalInvestment}</h2>
               <p className="text-base leading-relaxed md:text-lg">{content.globalInvestmentDescription}</p>
               <Link
                 href="/business-new"
-                className="group inline-flex self-end bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
+                className="group inline-flex bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 max-lg:self-start md:text-lg lg:self-end"
               >
                 <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
                   {content.exploreGlobalExpansion}
@@ -515,21 +514,21 @@ export default function HomePage() {
             src="/ai_company_text_up_2x_high_resolution.png"
             alt=""
             fill
-            className="object-cover object-left"
+            className="object-cover object-[center_20%] lg:object-left"
           />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[92px] lg:flex flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col pl-2 pr-5 pb-20 pt-6 sm:pl-4 sm:pr-8 md:pl-5 md:pr-10 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-4 pb-20 pt-6 sm:px-6 md:px-8 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
           <div
             className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
             aria-hidden
           />
-          <div className="max-w-lg -translate-x-2 space-y-5 sm:-translate-x-1.5 md:max-w-xl md:-translate-x-1 md:space-y-6 [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+          <div className="max-w-lg space-y-5 rounded-xl max-lg:bg-black/35 max-lg:px-3 max-lg:py-4 max-lg:backdrop-blur-sm sm:max-w-xl md:max-w-xl md:space-y-6 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
             <h2 className="sr-only">{content.aiCompanyTitle}</h2>
             <p className="text-base font-medium leading-relaxed md:text-lg">{content.aiCompanySubtitle}</p>
             <p className="text-base leading-relaxed md:text-lg">{content.aiCompanyDescription}</p>
