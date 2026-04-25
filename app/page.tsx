@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
+import { HomeSectionBackground } from "@/components/home-section-background"
 
 // 客户端检测hook
 function useIsClient() {
@@ -315,10 +316,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <main className="relative h-screen snap-section">
         <div className="absolute inset-0">
-          <Image
-            src="/vi-reference/born_cover.png"
-            alt=""
-            fill
+          <HomeSectionBackground
+            mobileSrc="/vi-reference/born_cover_mobile.png"
+            desktopSrc="/vi-reference/born_cover.png"
             className="object-cover object-center"
             priority
           />
@@ -346,7 +346,7 @@ export default function HomePage() {
           {/* Hero stats: single column until md so phone / narrow widths never triple-stack huge figures */}
           <div className="flex h-full min-h-0 flex-col items-center justify-end px-3 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-20 text-center sm:px-4 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
             <div className="mx-auto w-full min-w-0 max-w-5xl translate-y-1 px-2 sm:translate-y-2 sm:px-3 md:translate-y-4 md:px-2">
-              <div className="max-md:rounded-2xl max-md:bg-black/50 max-md:px-2 max-md:py-4 max-md:backdrop-blur-md md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
+              <div className="w-full min-w-0">
                 {/* Glowing axis — hide connectors on very small screens to reduce visual noise */}
                 <div className="mx-auto grid w-full max-w-5xl grid-cols-3 items-center max-md:max-w-xs max-md:mx-auto">
                   {[
@@ -429,10 +429,9 @@ export default function HomePage() {
       {/* Investment */}
       <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
         <div className="absolute inset-0">
-          <Image
-            src="/investment_landing_2x_upscaled.png"
-            alt=""
-            fill
+          <HomeSectionBackground
+            mobileSrc="/investment_landing_mobile.png"
+            desktopSrc="/investment_landing_2x_upscaled.png"
             className="object-cover object-[center_18%] lg:object-left"
           />
         </div>
@@ -448,7 +447,7 @@ export default function HomePage() {
             className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
             aria-hidden
           />
-          <div className="max-w-lg space-y-5 rounded-xl max-lg:bg-black/35 max-lg:px-3 max-lg:py-4 max-lg:backdrop-blur-sm sm:max-w-xl md:max-w-xl md:space-y-6 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+          <div className="max-w-lg space-y-5 sm:max-w-xl md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
             <h2 className="sr-only">{content.investmentInChina}</h2>
             <p className="text-base font-medium leading-relaxed md:text-lg">{content.investmentInChinaLead}</p>
             <p className="text-base leading-relaxed md:text-lg">{content.investmentInChinaDescription}</p>
@@ -467,10 +466,9 @@ export default function HomePage() {
       {/* Global Expansion — same pattern as Investment: full-bleed art, no white wash, copy under baked-in title */}
       <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
         <div className="absolute inset-0">
-          <Image
-            src="/global_expansion_2x_high_resolution.png"
-            alt=""
-            fill
+          <HomeSectionBackground
+            mobileSrc="/global_expansion_mobile.png"
+            desktopSrc="/global_expansion_2x_high_resolution.png"
             className="object-cover object-[center_22%] lg:object-left"
           />
         </div>
@@ -487,7 +485,7 @@ export default function HomePage() {
           />
           {/* Right column: under the large “Global Expansion” title in the artwork */}
           <div className="flex w-full justify-end max-lg:justify-stretch">
-            <div className="flex w-full max-w-md flex-col items-end space-y-5 text-right max-lg:max-w-none max-lg:items-stretch max-lg:rounded-xl max-lg:bg-black/35 max-lg:px-3 max-lg:py-4 max-lg:text-left max-lg:backdrop-blur-sm sm:max-w-lg md:max-w-xl md:space-y-6 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+            <div className="flex w-full max-w-md flex-col items-end space-y-5 text-right max-lg:max-w-none max-lg:items-stretch max-lg:text-left sm:max-w-lg md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
               <h2 className="sr-only">{content.globalInvestment}</h2>
               <p className="text-base leading-relaxed md:text-lg">{content.globalInvestmentDescription}</p>
               <Link
@@ -510,10 +508,9 @@ export default function HomePage() {
       {/* AI Company — same pattern as Investment: full-bleed art, copy under baked-in title */}
       <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
         <div className="absolute inset-0">
-          <Image
-            src="/ai_company_text_up_2x_high_resolution.png"
-            alt=""
-            fill
+          <HomeSectionBackground
+            mobileSrc="/ai_company_text_up_mobile.png"
+            desktopSrc="/ai_company_text_up_2x_high_resolution.png"
             className="object-cover object-[center_20%] lg:object-left"
           />
         </div>
@@ -528,7 +525,7 @@ export default function HomePage() {
             className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
             aria-hidden
           />
-          <div className="max-w-lg space-y-5 rounded-xl max-lg:bg-black/35 max-lg:px-3 max-lg:py-4 max-lg:backdrop-blur-sm sm:max-w-xl md:max-w-xl md:space-y-6 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+          <div className="max-w-lg space-y-5 sm:max-w-xl md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
             <h2 className="sr-only">{content.aiCompanyTitle}</h2>
             <p className="text-base font-medium leading-relaxed md:text-lg">{content.aiCompanySubtitle}</p>
             <p className="text-base leading-relaxed md:text-lg">{content.aiCompanyDescription}</p>
@@ -548,10 +545,9 @@ export default function HomePage() {
       {/* News & Updates Section */}
       <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/blank_dark_ui_2x_high_resolution.png"
-            alt=""
-            fill
+          <HomeSectionBackground
+            mobileSrc="/blank_dark_ui_mobile.png"
+            desktopSrc="/blank_dark_ui_2x_high_resolution.png"
             className="object-cover object-center"
           />
         </div>
