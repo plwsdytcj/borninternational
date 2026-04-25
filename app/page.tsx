@@ -365,60 +365,108 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <div className="mx-auto mt-3 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-3 md:mt-4 md:grid-cols-3 md:gap-4">
-                  <p className="heading-serif px-0.5 text-xs font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-sm md:text-base">
-                    {content.homeHeroLine1}
-                  </p>
-                  <p className="heading-serif px-0.5 text-[0.7rem] font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-xs md:text-sm">
-                    {content.homeHeroLine2}
-                  </p>
-                  <p className="heading-serif px-0.5 text-xs font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-sm md:text-base">
-                    {content.homeHeroLine3}
-                  </p>
-                </div>
-
-                <div className="mx-auto mt-5 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-4 md:mt-7 md:grid-cols-3 md:gap-8">
-                  <div className="min-w-0 text-center">
+                {/* Mobile: each pillar = title → number → caption (e.g. Portfolio under 125+) */}
+                <div className="mx-auto mt-3 w-full min-w-0 max-w-5xl space-y-6 md:hidden">
+                  <div className="flex flex-col items-center text-center">
+                    <p className="heading-serif px-0.5 text-xs font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-sm">
+                      {content.homeHeroLine1}
+                    </p>
                     <h3
-                      className="break-words text-[clamp(1.75rem,9vw,2.5rem)] font-black tabular-nums tracking-tight drop-shadow-lg md:text-6xl lg:text-6xl"
+                      className="mt-2 break-words text-[clamp(1.75rem,9vw,2.5rem)] font-black tabular-nums tracking-tight drop-shadow-lg"
                       style={{ color: "#f0f2ff" }}
                     >
                       {portfolioCount.count}
                       {portfolioCount.suffix}
                     </h3>
+                    <p className="mt-1.5 text-xs font-semibold tracking-wide text-white/90 sm:text-sm" style={{ color: "#ebeff2" }}>
+                      {content.heroStatFoot1}
+                    </p>
                   </div>
-                  <div className="min-w-0 text-center">
+                  <div className="flex flex-col items-center text-center">
+                    <p className="heading-serif px-0.5 text-[0.7rem] font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-xs">
+                      {content.homeHeroLine2}
+                    </p>
                     <h3
-                      className="break-all text-[clamp(1rem,5.2vw,1.65rem)] font-black tabular-nums leading-tight tracking-tight drop-shadow-lg sm:break-normal sm:text-[clamp(1.1rem,5vw,1.85rem)] md:text-5xl lg:text-6xl"
+                      className="mt-2 break-all text-[clamp(1rem,5.2vw,1.65rem)] font-black tabular-nums leading-tight tracking-tight drop-shadow-lg sm:break-normal sm:text-[clamp(1.1rem,5vw,1.85rem)]"
                       style={{ color: "#ebeff2" }}
                     >
                       {formatNumber(fundScale.count)}
                     </h3>
+                    <p className="mt-1.5 text-xs font-semibold tracking-[0.12em] text-white/90 sm:text-sm" style={{ color: "#f2f2f2" }}>
+                      {content.heroStatFoot2}
+                    </p>
                   </div>
-                  <div className="min-w-0 text-center">
+                  <div className="flex flex-col items-center text-center">
+                    <p className="heading-serif px-0.5 text-xs font-light leading-snug tracking-wide text-white/92 sm:px-1 sm:text-sm">
+                      {content.homeHeroLine3}
+                    </p>
                     <h3
-                      className="break-words text-[clamp(1.75rem,9vw,2.5rem)] font-black tabular-nums tracking-tight drop-shadow-lg md:text-6xl lg:text-6xl"
+                      className="mt-2 break-words text-[clamp(1.75rem,9vw,2.5rem)] font-black tabular-nums tracking-tight drop-shadow-lg"
                       style={{ color: "#f2f2f2" }}
                     >
                       {techGlobalization.count}
                       {techGlobalization.suffix}
                     </h3>
+                    <p className="mt-1.5 text-xs font-semibold tracking-wide text-white/90 sm:text-sm" style={{ color: "#ffffff" }}>
+                      {content.heroStatFoot3}
+                    </p>
                   </div>
                 </div>
 
-                <div className="mx-auto mt-4 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-3 md:mt-5 md:grid-cols-3 md:gap-4">
-                  <p className="text-xs font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg" style={{ color: "#ebeff2" }}>
-                    {content.heroStatFoot1}
-                  </p>
-                  <p
-                    className="text-xs font-semibold tracking-[0.12em] text-white/90 sm:text-sm md:text-base lg:text-lg"
-                    style={{ color: "#f2f2f2" }}
-                  >
-                    {content.heroStatFoot2}
-                  </p>
-                  <p className="text-xs font-semibold tracking-wide text-white/90 sm:text-sm md:text-base lg:text-lg" style={{ color: "#ffffff" }}>
-                    {content.heroStatFoot3}
-                  </p>
+                {/* Desktop: three rows (labels / figures / captions) */}
+                <div className="mx-auto mt-3 hidden w-full min-w-0 max-w-5xl md:mt-4 md:block">
+                  <div className="grid w-full grid-cols-3 gap-4">
+                    <p className="heading-serif px-0.5 text-center text-base font-light leading-snug tracking-wide text-white/92">
+                      {content.homeHeroLine1}
+                    </p>
+                    <p className="heading-serif px-0.5 text-center text-sm font-light leading-snug tracking-wide text-white/92">
+                      {content.homeHeroLine2}
+                    </p>
+                    <p className="heading-serif px-0.5 text-center text-base font-light leading-snug tracking-wide text-white/92">
+                      {content.homeHeroLine3}
+                    </p>
+                  </div>
+
+                  <div className="mx-auto mt-7 grid w-full min-w-0 grid-cols-3 gap-8">
+                    <div className="min-w-0 text-center">
+                      <h3
+                        className="break-words text-6xl font-black tabular-nums tracking-tight drop-shadow-lg lg:text-6xl"
+                        style={{ color: "#f0f2ff" }}
+                      >
+                        {portfolioCount.count}
+                        {portfolioCount.suffix}
+                      </h3>
+                    </div>
+                    <div className="min-w-0 text-center">
+                      <h3
+                        className="break-words text-5xl font-black tabular-nums leading-tight tracking-tight drop-shadow-lg lg:text-6xl"
+                        style={{ color: "#ebeff2" }}
+                      >
+                        {formatNumber(fundScale.count)}
+                      </h3>
+                    </div>
+                    <div className="min-w-0 text-center">
+                      <h3
+                        className="break-words text-6xl font-black tabular-nums tracking-tight drop-shadow-lg lg:text-6xl"
+                        style={{ color: "#f2f2f2" }}
+                      >
+                        {techGlobalization.count}
+                        {techGlobalization.suffix}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="mx-auto mt-5 grid w-full min-w-0 grid-cols-3 gap-4">
+                    <p className="text-center text-base font-semibold tracking-wide text-white/90 lg:text-lg" style={{ color: "#ebeff2" }}>
+                      {content.heroStatFoot1}
+                    </p>
+                    <p className="text-center text-base font-semibold tracking-[0.12em] text-white/90 lg:text-lg" style={{ color: "#f2f2f2" }}>
+                      {content.heroStatFoot2}
+                    </p>
+                    <p className="text-center text-base font-semibold tracking-wide text-white/90 lg:text-lg" style={{ color: "#ffffff" }}>
+                      {content.heroStatFoot3}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -462,7 +510,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Global Expansion — full-bleed art, copy on art (no panel), strong type shadows for legibility */}
+      {/* Global Expansion — desktop: type on art; mobile: dark read panel for legibility */}
       <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="absolute inset-0">
           <HomeSectionBackground
@@ -479,7 +527,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
           <div className="flex w-full justify-end max-lg:justify-stretch">
-            <div className="flex w-full max-w-2xl flex-col items-end space-y-4 text-right max-lg:max-w-none max-lg:items-stretch max-lg:text-left sm:max-w-3xl sm:space-y-6 md:space-y-8 lg:max-w-[min(36rem,42vw)] [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+            <div className="flex w-full max-w-2xl flex-col items-end space-y-4 text-right max-lg:max-w-none max-lg:items-stretch max-lg:rounded-2xl max-lg:border max-lg:border-white/12 max-lg:bg-slate-950/88 max-lg:px-4 max-lg:py-6 max-lg:text-left max-lg:shadow-[0_12px_40px_rgba(0,0,0,0.45)] sm:max-lg:px-6 sm:max-lg:py-8 sm:max-w-3xl sm:space-y-6 md:space-y-8 lg:max-w-[min(36rem,42vw)] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:text-right lg:shadow-none [&_p]:break-words [&_p]:text-white lg:[&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)] max-lg:[&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.45)]">
               <h2 className="heading-serif w-full break-words text-[clamp(1.875rem,8vw,2.75rem)] font-light leading-[1.08] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
                 {content.globalInvestment}
               </h2>
