@@ -131,16 +131,17 @@ export default function BusinessNewPage() {
       sidebarKicker="Russia & CIS"
       pageTitle="Russian-Speaking Market"
       pageSubtitle="Government-linked access · SCO Business Council"
+      mainTone="dark"
     >
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 md:pt-12 pb-2 md:pb-4">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-12 bg-amber-600" />
-          <span className="text-amber-800 font-medium text-sm tracking-wider uppercase">Business Overview</span>
+          <span className="text-sm font-medium uppercase tracking-wider text-amber-400/95">Business Overview</span>
         </div>
-        <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 leading-tight mb-4">
+        <h1 className="heading-serif mb-4 text-3xl font-light leading-tight text-white/95 sm:text-4xl md:text-5xl lg:text-6xl">
           &quot;One-Stop&quot; Access to the Russian-Speaking Market
         </h1>
-        <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+        <p className="max-w-2xl text-lg leading-relaxed text-slate-400">
           A government-linked market entry model for Chinese companies entering Russia and the wider CIS
         </p>
       </section>
@@ -151,15 +152,15 @@ export default function BusinessNewPage() {
           {/* Official Access */}
           <div className="group">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 border-2 border-slate-900 flex items-center justify-center flex-shrink-0">
-                <span className="heading-serif text-lg font-light">01</span>
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border-2 border-white/25">
+                <span className="heading-serif text-lg font-light text-white/90">01</span>
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-1">Official Access Channel</h3>
+                <h3 className="mb-1 text-xl font-semibold text-white/95 sm:text-2xl">Official Access Channel</h3>
                 <div className="h-0.5 w-12 bg-amber-500 group-hover:w-24 transition-all duration-500" />
               </div>
             </div>
-            <p className="text-slate-600 leading-relaxed pl-16">
+            <p className="pl-16 leading-relaxed text-slate-400">
               Backed by the SCO Business Council, we align government, banking, and regulatory stakeholders before a company spends heavily on entry. That lets Chinese enterprises solve access, sanctions, and FX friction upfront.
             </p>
           </div>
@@ -167,28 +168,28 @@ export default function BusinessNewPage() {
           {/* Local Implementation */}
           <div className="group">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 border-2 border-slate-900 flex items-center justify-center flex-shrink-0">
-                <span className="heading-serif text-lg font-light">02</span>
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border-2 border-white/25">
+                <span className="heading-serif text-lg font-light text-white/90">02</span>
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-1">Local Implementation</h3>
+                <h3 className="mb-1 text-xl font-semibold text-white/95 sm:text-2xl">Local Implementation</h3>
                 <div className="h-0.5 w-12 bg-amber-500 group-hover:w-24 transition-all duration-500" />
               </div>
             </div>
-            <p className="text-slate-600 leading-relaxed pl-16">
+            <p className="pl-16 leading-relaxed text-slate-400">
               Our local team handles company formation, hiring, compliance, and finance so a Chinese company can operate as a local Russian business, not just export into it.
             </p>
           </div>
         </div>
 
         {/* Challenges Banner */}
-        <div className="mt-16 border-t border-b border-slate-200 py-8">
-          <p className="text-center text-sm text-slate-500 uppercase tracking-wider mb-4">Fundamentally resolves the five major challenges</p>
+        <div className="mt-16 border-y border-slate-700/70 py-8">
+          <p className="mb-4 text-center text-sm uppercase tracking-wider text-slate-500">Fundamentally resolves the five major challenges</p>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
             {challenges.map((challenge, idx) => (
               <div key={challenge} className="flex items-center gap-2">
-                <span className="text-slate-900 font-medium text-sm sm:text-base">{challenge}</span>
-                {idx < challenges.length - 1 && <span className="hidden sm:block text-slate-300">·</span>}
+                <span className="text-sm font-medium text-white/90 sm:text-base">{challenge}</span>
+                {idx < challenges.length - 1 && <span className="hidden text-slate-600 sm:block">·</span>}
               </div>
             ))}
           </div>
@@ -196,14 +197,14 @@ export default function BusinessNewPage() {
       </section>
 
       {/* Implementation Plan */}
-      <section className="bg-slate-50 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="border-t border-slate-800/80 bg-slate-950/40 py-16 backdrop-blur-sm md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
           <div className="mb-12 md:mb-16">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4 flex items-center gap-3">
               <div className="h-px w-12 bg-amber-500" />
-              <span className="text-amber-600 font-medium text-sm tracking-wider uppercase">Implementation Plan</span>
+              <span className="text-sm font-medium uppercase tracking-wider text-amber-400/95">Implementation Plan</span>
             </div>
-            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">
+            <h2 className="heading-serif text-3xl font-light text-white/95 sm:text-4xl md:text-5xl">
               Russia Market Entry Phases
             </h2>
           </div>
@@ -213,32 +214,32 @@ export default function BusinessNewPage() {
               <div key={phase.title} className="relative">
                 {/* Timeline connector */}
                 {idx < phases.length - 1 && (
-                  <div className="absolute left-6 top-24 bottom-0 w-px bg-slate-300 hidden lg:block" />
+                  <div className="absolute bottom-0 left-6 top-24 hidden w-px bg-slate-700 lg:block" />
                 )}
                 
-                <div className="grid lg:grid-cols-[120px_1fr] gap-6 lg:gap-12 py-8 lg:py-12 border-b border-slate-200 last:border-0">
+                <div className="grid gap-6 border-b border-slate-700/70 py-8 last:border-0 lg:grid-cols-[120px_1fr] lg:gap-12 lg:py-12">
                   {/* Step number */}
-                  <div className="flex lg:flex-col items-center lg:items-start gap-4">
+                  <div className="flex items-center gap-4 lg:flex-col lg:items-start">
                     <div className="relative">
-                      <span className="heading-serif text-5xl sm:text-6xl lg:text-7xl font-light text-slate-200">{phase.step}</span>
+                      <span className="heading-serif text-5xl font-light text-white/20 sm:text-6xl lg:text-7xl">{phase.step}</span>
                       <div className="absolute -bottom-1 left-0 h-1 w-8 bg-amber-500" />
                     </div>
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wider lg:mt-2">{phase.duration}</span>
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-500 lg:mt-2">{phase.duration}</span>
                   </div>
                   
                   {/* Content */}
-                  <div className="bg-white border border-slate-200 p-6 sm:p-8 lg:p-10">
-                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-6">{phase.title}</h3>
+                  <div className="border border-slate-700/80 bg-slate-950/55 p-6 backdrop-blur-sm sm:p-8 lg:p-10">
+                    <h3 className="mb-6 text-xl font-semibold text-white/95 sm:text-2xl">{phase.title}</h3>
                     
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                          <span className="w-4 h-px bg-slate-300" />
+                        <p className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                          <span className="h-px w-4 bg-slate-600" />
                           Features
                         </p>
                         <ul className="space-y-3">
                           {phase.features.map((f) => (
-                            <li key={f} className="flex items-start gap-3 text-slate-700">
+                            <li key={f} className="flex items-start gap-3 text-slate-300">
                               <span className="w-1 h-1 rounded-full bg-slate-400 mt-2.5 flex-shrink-0" />
                               <span className="text-sm sm:text-base">{f}</span>
                             </li>
@@ -246,13 +247,13 @@ export default function BusinessNewPage() {
                         </ul>
                       </div>
                       <div>
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                          <span className="w-4 h-px bg-slate-300" />
+                        <p className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                          <span className="h-px w-4 bg-slate-600" />
                           Advantages
                         </p>
                         <ul className="space-y-3">
                           {phase.advantages.map((a) => (
-                            <li key={a} className="flex items-start gap-3 text-slate-700">
+                            <li key={a} className="flex items-start gap-3 text-slate-300">
                               <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                               <span className="text-sm sm:text-base">{a}</span>
                             </li>
@@ -269,14 +270,14 @@ export default function BusinessNewPage() {
       </section>
 
       {/* Our Globalization Team */}
-      <section className="bg-white py-16 md:py-24 border-t border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="border-t border-slate-800/80 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
           <div className="mb-12 md:mb-16">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4 flex items-center gap-3">
               <div className="h-px w-12 bg-amber-500" />
-              <span className="text-amber-600 font-medium text-sm tracking-wider uppercase">Global expansion</span>
+              <span className="text-sm font-medium uppercase tracking-wider text-amber-400/95">Global expansion</span>
             </div>
-            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">Our Globalization Team</h2>
+            <h2 className="heading-serif text-3xl font-light text-white/95 sm:text-4xl md:text-5xl">Our Globalization Team</h2>
           </div>
           <div className="space-y-12 md:space-y-16">
             {[
@@ -311,10 +312,10 @@ export default function BusinessNewPage() {
                 bio: "Dr. Wang holds a Doctor of Agricultural Economics and Management degree from the Chinese Academy of Social Sciences and a Master of International Finance degree from the University of Sydney, Australia. A senior financial expert with over 20 years of experience, she is Co-founder and CFO of Zhongxihui (Chengdu) Information Technology Co., Ltd. and Business Investment Representative of Hylir Group. She is good at connecting overseas resources, assisting enterprises in handling the whole process of overseas expansion, and assists Michael Digkas in advancing major China-Greece projects, jointly helping enterprises explore the European market and avoid cross-border risks.",
               },
             ].map((m) => (
-              <div key={m.name} className="border-b border-slate-100 last:border-0 pb-12 md:pb-16 last:pb-0">
-                <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-1">{m.name}</h3>
-                <p className="text-amber-700 font-medium text-sm mb-4">{m.role}</p>
-                <p className="text-slate-600 leading-relaxed text-sm sm:text-base max-w-4xl">{m.bio}</p>
+              <div key={m.name} className="border-b border-slate-800/80 pb-12 last:border-0 last:pb-0 md:pb-16">
+                <h3 className="mb-1 text-xl font-semibold text-white/95 sm:text-2xl">{m.name}</h3>
+                <p className="mb-4 text-sm font-medium text-amber-400/90">{m.role}</p>
+                <p className="max-w-4xl text-sm leading-relaxed text-slate-400 sm:text-base">{m.bio}</p>
               </div>
             ))}
           </div>
@@ -322,20 +323,20 @@ export default function BusinessNewPage() {
       </section>
 
       {/* Case Highlights */}
-      <section className="bg-slate-50 py-16 md:py-24 border-t border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="border-t border-slate-800/80 bg-slate-950/35 py-16 backdrop-blur-sm md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
           <div className="mb-10 md:mb-12">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4 flex items-center gap-3">
               <div className="h-px w-12 bg-amber-500" />
-              <span className="text-amber-600 font-medium text-sm tracking-wider uppercase">Outcomes</span>
+              <span className="text-sm font-medium uppercase tracking-wider text-amber-400/95">Outcomes</span>
             </div>
-            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">Case Highlights</h2>
+            <h2 className="heading-serif text-3xl font-light text-white/95 sm:text-4xl md:text-5xl">Case Highlights</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
+          <div className="mb-10 grid gap-6 md:grid-cols-2">
             {caseHighlights.map((item) => (
               <article
                 key={item.text}
-                className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm"
+                className="overflow-hidden rounded-xl border border-slate-700/80 bg-slate-950/55 shadow-sm backdrop-blur-sm"
               >
                 <div className="relative aspect-video">
                   <Image
@@ -347,7 +348,7 @@ export default function BusinessNewPage() {
                   />
                 </div>
                 <div className="p-5">
-                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">{item.text}</p>
+                  <p className="text-sm leading-relaxed text-slate-300 sm:text-base">{item.text}</p>
                 </div>
               </article>
             ))}
@@ -357,16 +358,16 @@ export default function BusinessNewPage() {
 
       {/* Resources */}
       <section className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
           <div className="mb-12 md:mb-16">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4 flex items-center gap-3">
               <div className="h-px w-12 bg-amber-500" />
-              <span className="text-amber-600 font-medium text-sm tracking-wider uppercase">Our Resources</span>
+              <span className="text-sm font-medium uppercase tracking-wider text-amber-400/95">Our Resources</span>
             </div>
-            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-4">
+            <h2 className="heading-serif mb-4 text-3xl font-light text-white/95 sm:text-4xl md:text-5xl">
               Strategic Access Points
             </h2>
-            <p className="text-slate-600 max-w-2xl">
+            <p className="max-w-2xl text-slate-400">
               Leverage our extensive network to gain unparalleled access to the Russian market
             </p>
           </div>
@@ -423,7 +424,7 @@ export default function BusinessNewPage() {
           </p>
           <button
             onClick={() => router.push("/#contact")}
-            className="group inline-flex items-center gap-3 bg-white text-slate-900 font-semibold px-8 py-4 hover:bg-amber-500 hover:text-white transition-all duration-300"
+            className="group inline-flex items-center gap-3 bg-white/95 px-8 py-4 font-semibold text-slate-950 transition-all duration-300 hover:bg-amber-500 hover:text-white"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -435,9 +436,9 @@ export default function BusinessNewPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-8 border-t border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <p className="text-slate-400 text-sm">
+      <footer className="border-t border-slate-800 py-8 text-center text-slate-500">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
+          <p className="text-sm">
             © 2025 BORN International. All rights reserved.
           </p>
         </div>

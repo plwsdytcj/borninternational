@@ -341,16 +341,21 @@ export default function PortfolioPage() {
       pageTitle={content.portfolioTitle}
       pageSubtitle={content.portfolioDescription}
       headerExtra={langToggle}
+      mainTone="dark"
     >
       <style jsx global>{`
         
       `}</style>
 
-      {/* Portfolio Companies */}
-      <section id="portfolio-companies" className="py-20 relative scroll-mt-24 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">
+      {/* Portfolio Companies — single flat card surface (no stacked glass / blur layers) */}
+      <section id="portfolio-companies" className="relative scroll-mt-24 border-b border-slate-800/80 py-20">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_0%,rgba(245,158,11,0.045),transparent_50%)]"
+          aria-hidden
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-16 text-center">
+            <h2 className="heading-serif mb-4 text-3xl font-light tracking-tight text-white/95 sm:text-4xl lg:text-5xl">
               {language === "en" ? "Portfolio Companies" : "投资组合公司"}
             </h2>
           </div>
@@ -362,17 +367,17 @@ export default function PortfolioPage() {
                 key={company.slug}
                 type="button"
                 onClick={() => router.push(`/portfolio/${company.slug}`)}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group rounded-2xl border border-slate-600/50 bg-slate-800/95 p-6 text-left shadow-md shadow-black/25 transition hover:-translate-y-1 hover:border-slate-500/60 hover:bg-slate-800 hover:shadow-lg"
               >
-                <div className="relative h-16 w-full mb-4">
+                <div className="relative mb-4 h-16 w-full">
                   <Image src={company.logo} alt={company.name} fill className={company.logoStyle || "object-contain object-left"} />
                 </div>
                 {company.returnMultiple && (
-                  <p className="text-2xl font-bold text-amber-600 mb-2">Return Multiple: {company.returnMultiple}</p>
+                  <p className="mb-2 text-2xl font-bold text-amber-400/95">Return Multiple: {company.returnMultiple}</p>
                 )}
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">{company.name}</h3>
-                <p className="text-sm text-slate-600 line-clamp-2 mb-4">{company.description}</p>
-                <span className="text-sm font-medium text-slate-900 group-hover:text-amber-600 transition-colors">
+                <h3 className="mb-2 text-lg font-semibold text-white/95">{company.name}</h3>
+                <p className="mb-4 line-clamp-2 text-sm text-slate-400">{company.description}</p>
+                <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-amber-400">
                   {content.viewDetails}
                 </span>
               </button>
@@ -386,13 +391,13 @@ export default function PortfolioPage() {
                 key={company.slug}
                 type="button"
                 onClick={() => router.push(`/portfolio/${company.slug}`)}
-                className="group rounded-xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                className="group rounded-xl border border-slate-600/50 bg-slate-800/95 px-4 py-4 text-left shadow-md shadow-black/20 transition hover:-translate-y-0.5 hover:border-slate-500/60 hover:bg-slate-800 hover:shadow-md"
               >
-                <div className="relative h-12 w-full mb-3">
+                <div className="relative mb-3 h-12 w-full">
                   <Image src={company.logo} alt={company.name} fill className={company.logoStyle || "object-contain object-left"} />
                 </div>
-                <p className="text-sm font-medium text-slate-900 line-clamp-1">{company.name}</p>
-                <span className="mt-2 block text-xs font-medium text-slate-500 group-hover:text-amber-600 transition-colors">
+                <p className="line-clamp-1 text-sm font-medium text-white/95">{company.name}</p>
+                <span className="mt-2 block text-xs font-medium text-slate-500 transition-colors group-hover:text-amber-400">
                   {content.viewDetails}
                 </span>
               </button>
@@ -402,10 +407,10 @@ export default function PortfolioPage() {
       </section>
 
       {/* Our Edge */}
-      <section id="our-edge" className="py-20 relative scroll-mt-24 border-y border-slate-200 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-50" />
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
-          <h2 className="heading-serif text-3xl sm:text-4xl font-light text-slate-900 mb-12 text-center">
+      <section id="our-edge" className="relative scroll-mt-24 overflow-hidden border-y border-slate-800/80 py-20">
+        <div className="absolute inset-0 bg-slate-950/35" aria-hidden />
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
+          <h2 className="heading-serif mb-12 text-center text-3xl font-light text-white/95 sm:text-4xl">
             {language === "en" ? "Our Edge" : "我们的优势"}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -447,10 +452,10 @@ export default function PortfolioPage() {
                 cta: language === "en" ? "View more details→" : "了解更多→",
               },
             ].map((item) => (
-              <div key={item.title} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">{item.body}</p>
-                <Link href={item.href} className="text-blue-600 text-sm font-medium hover:underline">
+              <div key={item.title} className="rounded-xl border border-slate-700/80 bg-slate-950/55 p-6 shadow-sm backdrop-blur-sm">
+                <h3 className="mb-3 text-lg font-semibold text-white/95">{item.title}</h3>
+                <p className="mb-4 text-sm leading-relaxed text-slate-400">{item.body}</p>
+                <Link href={item.href} className="text-sm font-medium text-amber-400/95 hover:text-amber-300 hover:underline">
                   {item.cta}
                 </Link>
               </div>
@@ -460,11 +465,11 @@ export default function PortfolioPage() {
       </section>
 
       {/* Investment Team Section */}
-      <section id="investment-team-section" className="py-20 relative scroll-mt-24 bg-gradient-to-br from-slate-100 via-white to-slate-100">
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="heading-serif text-4xl lg:text-5xl font-light tracking-tight text-slate-900 mb-4">{content.investmentTeam}</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">{content.teamDescription}</p>
+      <section id="investment-team-section" className="relative scroll-mt-24 border-t border-slate-800/80 py-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="heading-serif mb-4 text-4xl font-light tracking-tight text-white/95 lg:text-5xl">{content.investmentTeam}</h2>
+            <p className="mx-auto max-w-3xl text-xl text-slate-400">{content.teamDescription}</p>
           </div>
 
           {/* Team Members Grid - 2 rows of 4 */}
@@ -472,12 +477,12 @@ export default function PortfolioPage() {
             {teamMembers.slice(0, 4).map((member, index) => (
               <Card
                 key={index}
-                className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+                className={`border border-slate-700/80 bg-slate-950/60 text-slate-100 shadow-lg backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:bg-slate-900/70 hover:shadow-2xl ${
                   member.hasModal ? "cursor-pointer" : ""
                 } group relative overflow-hidden`}
                 onClick={() => member.hasModal && handleMemberClick(index)}
               >
-                <CardContent className="p-8 text-center relative z-10">
+                <CardContent className="relative z-10 p-8 text-center">
                   <div className="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full group-hover:shadow-xl transition-shadow duration-500">
                     <Image
                       src={member.image || "/placeholder.svg"}
@@ -487,16 +492,16 @@ export default function PortfolioPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2 transition-colors duration-300">
+                  <h3 className="mb-2 text-xl font-semibold text-white/95 transition-colors duration-300">
                     {member.name}
                   </h3>
-                  <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">{member.title}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed transition-colors duration-300">
+                  <p className="mb-3 font-medium text-amber-400/95 transition-colors duration-300">{member.title}</p>
+                  <p className="text-sm leading-relaxed text-slate-400 transition-colors duration-300">
                     {member.description}
                   </p>
                   {member.hasModal && (
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                      <span className="text-xs text-slate-600 font-medium bg-gray-100 px-3 py-1 rounded-full">
+                    <div className="absolute bottom-4 left-1/2 translate-y-2 -translate-x-1/2 transform opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                      <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300">
                         Click to learn more
                       </span>
                     </div>
@@ -510,20 +515,20 @@ export default function PortfolioPage() {
             {teamMembers.slice(4, 8).map((member, index) => (
               <Card
                 key={index + 4}
-                className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+                className={`border border-slate-700/80 bg-slate-950/60 text-slate-100 shadow-lg backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:bg-slate-900/70 hover:shadow-2xl ${
                   member.hasModal ? "cursor-pointer" : ""
                 } ${
                   member.isMoreButton
-                    ? "cursor-pointer border-2 border-dashed border-gray-300 bg-gray-50 hover:border-gray-400 hover:bg-gray-100"
+                    ? "cursor-pointer border-2 border-dashed border-slate-600 bg-slate-900/40 hover:border-slate-500 hover:bg-slate-800/50"
                     : ""
                 } group relative overflow-hidden`}
                 onClick={() => handleMemberClick(index + 4)}
               >
-                <CardContent className="p-8 text-center relative z-10">
-                  <div className="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full group-hover:shadow-xl transition-shadow duration-500">
+                <CardContent className="relative z-10 p-8 text-center">
+                  <div className="relative mx-auto mb-6 h-40 w-40 overflow-hidden rounded-full transition-shadow duration-500 group-hover:shadow-xl">
                     {member.isMoreButton ? (
-                      <div className="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-full flex items-center justify-center group-hover:bg-gray-200 group-hover:border-gray-400 transition-all duration-300">
-                        <div className="text-6xl font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">+</div>
+                      <div className="flex h-full w-full items-center justify-center rounded-full border-2 border-dashed border-slate-600 bg-slate-800/60 transition-all duration-300 group-hover:border-slate-500 group-hover:bg-slate-800">
+                        <div className="text-6xl font-light text-slate-500 transition-colors duration-300 group-hover:text-slate-300">+</div>
                       </div>
                     ) : (
                       <>
@@ -537,18 +542,18 @@ export default function PortfolioPage() {
                       </>
                     )}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 text-slate-900">
+                  <h3 className="mb-2 text-xl font-semibold text-white/95 transition-colors duration-300">
                     {member.name}
                   </h3>
-                  <p className="text-blue-600 font-medium mb-3 transition-colors duration-300">
+                  <p className="mb-3 font-medium text-amber-400/95 transition-colors duration-300">
                     {member.title}
                   </p>
-                  <p className="text-slate-600 text-sm leading-relaxed transition-colors duration-300">
+                  <p className="text-sm leading-relaxed text-slate-400 transition-colors duration-300">
                     {member.description}
                   </p>
                   {(member.hasModal || member.isMoreButton) && (
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                      <span className="text-xs text-slate-600 font-medium bg-gray-100 px-3 py-1 rounded-full">
+                    <div className="absolute bottom-4 left-1/2 translate-y-2 -translate-x-1/2 transform opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                      <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300">
                         {member.isMoreButton ? "More" : "Click to learn more"}
                       </span>
                     </div>
