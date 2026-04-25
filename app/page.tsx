@@ -221,7 +221,7 @@ export default function HomePage() {
   const content = languageContent[language]
 
   return (
-    <div className="min-h-screen bg-white scroll-smooth snap-container">
+    <div className="min-h-screen scroll-smooth bg-white pb-[env(safe-area-inset-bottom,0px)] snap-container">
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
@@ -314,7 +314,7 @@ export default function HomePage() {
         }
       `}</style>
       {/* Hero Section */}
-      <main className="relative h-screen snap-section">
+      <main className="relative h-[100svh] min-h-[100svh] snap-section md:h-screen md:min-h-screen">
         <div className="absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/born_cover_mobile.png"
@@ -329,9 +329,9 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 h-full px-4">
+        <div className="relative z-10 h-full px-4 sm:px-5">
           {/* Top-left corner content */}
-          <div className="absolute left-5 top-5 sm:left-8 sm:top-8">
+          <div className="absolute left-[max(1rem,env(safe-area-inset-left,0px))] top-[max(1rem,env(safe-area-inset-top,0px))] sm:left-8 sm:top-8">
             <Image
               src="/logo/born_logo_white.png"
               alt="BORN International logo"
@@ -427,12 +427,12 @@ export default function HomePage() {
       </main>
 
       {/* Investment */}
-      <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
+      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="absolute inset-0">
           <HomeSectionBackground
-            mobileSrc="/investment_landing_mobile.png"
-            desktopSrc="/investment_landing_2x_upscaled.png"
-            className="object-cover object-[center_18%] lg:object-left"
+            mobileSrc="/vi-reference/fck/investment_removed_globe_mobile.png"
+            desktopSrc="/vi-reference/fck/investment_removed_globe_2x_high_resolution.png"
+            className="object-cover object-[center_38%] lg:object-center"
           />
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
@@ -441,35 +441,34 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-4 pb-20 pt-6 sm:px-6 md:px-8 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
-          {/* Reserve vertical space for the large “Investment” title baked into the artwork */}
-          <div
-            className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
-            aria-hidden
-          />
-          <div className="max-w-lg space-y-5 sm:max-w-xl md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
-            <h2 className="sr-only">{content.investmentInChina}</h2>
-            <p className="text-base font-medium leading-relaxed md:text-lg">{content.investmentInChinaLead}</p>
-            <p className="text-base leading-relaxed md:text-lg">{content.investmentInChinaDescription}</p>
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+          <div className="flex flex-col rounded-2xl border border-transparent bg-transparent p-0 max-lg:border-white/10 max-lg:bg-slate-950/85 max-lg:p-4 sm:max-lg:p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
+          <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+            {content.investmentInChina}
+          </h2>
+          <div className="mt-6 max-w-lg space-y-4 sm:max-w-xl sm:space-y-5 md:mt-10 md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+            <p className="text-[0.9375rem] font-medium leading-relaxed sm:text-base md:text-lg">{content.investmentInChinaLead}</p>
+            <p className="text-[0.9375rem] leading-relaxed sm:text-base md:text-lg">{content.investmentInChinaDescription}</p>
             <Link
               href="/portfolio"
-              className="group inline-flex self-start bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
+              className="group inline-flex min-h-[44px] items-center self-start bg-transparent py-2 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
             >
               <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
                 {content.learnMoreInvestments}
               </span>
             </Link>
           </div>
+          </div>
         </div>
       </section>
 
-      {/* Global Expansion — same pattern as Investment: full-bleed art, no white wash, copy under baked-in title */}
-      <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
+      {/* Global Expansion — full-bleed art, copy on art (no panel), strong type shadows for legibility */}
+      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="absolute inset-0">
           <HomeSectionBackground
-            mobileSrc="/global_expansion_mobile.png"
-            desktopSrc="/global_expansion_2x_high_resolution.png"
-            className="object-cover object-[center_22%] lg:object-left"
+            mobileSrc="/vi-reference/fck/global_expansion_removed_mobile.png"
+            desktopSrc="/vi-reference/fck/global_expansion_removed_2x_high_resolution.png"
+            className="object-cover max-lg:object-center lg:object-[14%_center]"
           />
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
@@ -478,19 +477,16 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-4 pb-20 pt-6 sm:px-6 md:px-8 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
-          <div
-            className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
-            aria-hidden
-          />
-          {/* Right column: under the large “Global Expansion” title in the artwork */}
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
           <div className="flex w-full justify-end max-lg:justify-stretch">
-            <div className="flex w-full max-w-md flex-col items-end space-y-5 text-right max-lg:max-w-none max-lg:items-stretch max-lg:text-left sm:max-w-lg md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
-              <h2 className="sr-only">{content.globalInvestment}</h2>
-              <p className="text-base leading-relaxed md:text-lg">{content.globalInvestmentDescription}</p>
+            <div className="flex w-full max-w-2xl flex-col items-end space-y-4 text-right max-lg:max-w-none max-lg:items-stretch max-lg:text-left sm:max-w-3xl sm:space-y-6 md:space-y-8 lg:max-w-[min(36rem,42vw)] [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+              <h2 className="heading-serif w-full break-words text-[clamp(1.875rem,8vw,2.75rem)] font-light leading-[1.08] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
+                {content.globalInvestment}
+              </h2>
+              <p className="text-[0.9375rem] leading-relaxed text-white/95 sm:text-base md:text-lg">{content.globalInvestmentDescription}</p>
               <Link
                 href="/business-new"
-                className="group inline-flex bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 max-lg:self-start md:text-lg lg:self-end"
+                className="group inline-flex min-h-[44px] items-center bg-transparent py-2 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 max-lg:self-start md:text-lg lg:self-end"
               >
                 <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
                   {content.exploreGlobalExpansion}
@@ -506,12 +502,12 @@ export default function HomePage() {
 
 
       {/* AI Company — same pattern as Investment: full-bleed art, copy under baked-in title */}
-      <section className="relative flex min-h-screen snap-section items-start py-10 md:py-0">
+      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="absolute inset-0">
           <HomeSectionBackground
-            mobileSrc="/ai_company_text_up_mobile.png"
-            desktopSrc="/ai_company_text_up_2x_high_resolution.png"
-            className="object-cover object-[center_20%] lg:object-left"
+            mobileSrc="/vi-reference/fck/ai_company_removed_mobile.png"
+            desktopSrc="/vi-reference/fck/ai_company_removed_2x_high_resolution.png"
+            className="object-cover object-[center_35%] lg:object-center"
           />
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
@@ -520,30 +516,30 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-4 pb-20 pt-6 sm:px-6 md:px-8 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
-          <div
-            className="min-h-[min(48svh,380px)] shrink-0 sm:min-h-[min(50svh,400px)] md:min-h-[min(52svh,420px)] lg:min-h-[min(54svh,440px)]"
-            aria-hidden
-          />
-          <div className="max-w-lg space-y-5 sm:max-w-xl md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
-            <h2 className="sr-only">{content.aiCompanyTitle}</h2>
-            <p className="text-base font-medium leading-relaxed md:text-lg">{content.aiCompanySubtitle}</p>
-            <p className="text-base leading-relaxed md:text-lg">{content.aiCompanyDescription}</p>
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
+          <div className="flex flex-col rounded-2xl border border-transparent bg-transparent p-0 max-lg:border-white/10 max-lg:bg-slate-950/85 max-lg:p-4 sm:max-lg:p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
+          <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+            {content.aiCompanyTitle}
+          </h2>
+          <div className="mt-6 max-w-lg space-y-4 sm:max-w-xl sm:space-y-5 md:mt-10 md:max-w-xl md:space-y-6 [&_p]:break-words [&_p]:text-white [&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)]">
+            <p className="text-[0.9375rem] font-medium leading-relaxed sm:text-base md:text-lg">{content.aiCompanySubtitle}</p>
+            <p className="text-[0.9375rem] leading-relaxed sm:text-base md:text-lg">{content.aiCompanyDescription}</p>
             <Link
               href="/ai-company"
-              className="group inline-flex self-start bg-transparent pt-1 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
+              className="group inline-flex min-h-[44px] items-center self-start bg-transparent py-2 text-base font-medium text-white transition-colors duration-500 hover:text-cyan-100 md:text-lg"
             >
               <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-cyan-200/90">
                 {content.exploreAiCapabilities}
               </span>
             </Link>
           </div>
+          </div>
         </div>
       </section>
 
       
       {/* News & Updates Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden">
+      <section className="relative overflow-hidden py-10 sm:py-12 md:py-20">
         <div className="absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/blank_dark_ui_mobile.png"
@@ -551,7 +547,7 @@ export default function HomePage() {
             className="object-cover object-center"
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative z-10 mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
           <div className="mb-6 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/12 bg-white/[0.06] px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md md:flex-row md:items-center md:gap-0 md:px-6 md:py-5">
             <h2 className="heading-serif text-3xl font-light text-white/95 md:text-4xl">{content.latestNews}</h2>
             <Link href="/news">
@@ -616,7 +612,7 @@ export default function HomePage() {
 
           {/* Scrolling News Carousel */}
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-3">
+            <div className="flex animate-scroll space-x-3 pb-1 [-webkit-overflow-scrolling:touch]">
               {/* Dynamic items from /news; duplicated for seamless loop */}
               {[
                 { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
@@ -631,8 +627,8 @@ export default function HomePage() {
                   { href: "/news/murmansk-governor-meeting-2025", img: "/news/murmansk-governor-meeting-2025/image1.jpeg", date: "November 2, 2025", title: "Murmansk Governor Meeting", desc: "Arctic, NSR logistics and sector cooperation." },
                 ])
                 .map((n, idx) => (
-                  <Link key={`${n.href}-${idx}`} href={n.href} className="flex-shrink-0">
-                    <Card className="w-56 cursor-pointer gap-0 border border-white/10 bg-white/[0.07] py-0 text-zinc-100 shadow-sm backdrop-blur-md transition-shadow hover:border-white/18 hover:bg-white/10 hover:shadow-md">
+                  <Link key={`${n.href}-${idx}`} href={n.href} className="min-w-0 flex-shrink-0 snap-start">
+                    <Card className="w-[min(100vw-2.5rem,14rem)] cursor-pointer gap-0 border border-white/10 bg-white/[0.07] py-0 text-zinc-100 shadow-sm backdrop-blur-md transition-shadow hover:border-white/18 hover:bg-white/10 hover:shadow-md sm:w-56">
                       <CardContent className="p-0">
                         <div className="relative h-20">
                           <Image src={n.img} alt={n.title} fill className="rounded-t-lg object-cover ring-1 ring-inset ring-white/10" />
@@ -664,8 +660,8 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900/90 backdrop-blur-md text-white py-16 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <footer className="border-t border-white/10 bg-slate-900/90 pb-[max(4rem,env(safe-area-inset-bottom,0px))] pt-12 text-white backdrop-blur-md sm:py-16">
+        <div className="mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
             <div>
               <div className="flex items-center mb-6">
