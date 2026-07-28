@@ -23,6 +23,15 @@ export interface RelatedArticleConfig {
 
 // Articles database restricted to real pages under /app/news
 export const allArticles: Article[] = [
+  {
+    id: "hong-kong-health-week-2026",
+    title: "Global Healthcare Leaders Discuss New Breakthroughs as Dr. Li Wencheng Attends Hong Kong International Healthcare Week",
+    excerpt: "Born International explores healthcare innovation, international market access and China-Russia medical cooperation during the three-day event.",
+    image: "/news/hong-kong-health-week-2026/image1.png",
+    date: "May 11, 2026",
+    category: "Company News",
+    tags: ["Healthcare", "Hong Kong", "ASGH", "China-Russia Cooperation", "Medical Technology"],
+  },
   // Real: Moscow Startup Village 2025
   {
     id: "moscow-startup-village-2025",
@@ -326,6 +335,7 @@ export function getSmartRelatedArticles(
 export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
+    "hong-kong-health-week-2026": "/news/hong-kong-health-week-2026",
     "moscow-startup-village-2025": "/news/moscow-startup-village-2025",
     "brics-municipal-forum-2025": "/news/brics-municipal-forum-2025",
     "china-russia-investment-committee-2025": "/news/china-russia-investment-committee-2025",
