@@ -663,12 +663,14 @@ export default function HomePage() {
             <div className="flex animate-scroll space-x-3 pb-1 [-webkit-overflow-scrolling:touch]">
               {/* Dynamic items from /news; duplicated for seamless loop */}
               {[
+                { href: "/news/hong-kong-health-week-2026", img: "/news/hong-kong-health-week-2026/image1.png", date: "May 11, 2026", title: "Hong Kong International Healthcare Week", desc: "Healthcare innovation, global market access and China-Russia medical cooperation." },
                 { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
                 { href: "/news/institute-of-experimental-medicine-2025", img: "/news/institute-of-experimental-medicine-2025/image1.jpeg", date: "November 22, 2025", title: "Institute of Experimental Medicine Visit", desc: "SCO+ Medical & Biotechnology Park progresses in St. Petersburg." },
                 { href: "/news/china-russia-investment-committee-2025", img: "/news/china-russia-investment-committee-2025/image1.jpeg", date: "November 1, 2025", title: "China–Russia Investment Committee", desc: "$200bn+ pipeline; Arctic & NSR opportunities." },
                 { href: "/news/murmansk-governor-meeting-2025", img: "/news/murmansk-governor-meeting-2025/image1.jpeg", date: "November 2, 2025", title: "Murmansk Governor Meeting", desc: "Arctic, NSR logistics and sector cooperation." },
               ]
                 .concat([
+                  { href: "/news/hong-kong-health-week-2026", img: "/news/hong-kong-health-week-2026/image1.png", date: "May 11, 2026", title: "Hong Kong International Healthcare Week", desc: "Healthcare innovation, global market access and China-Russia medical cooperation." },
                   { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
                   { href: "/news/institute-of-experimental-medicine-2025", img: "/news/institute-of-experimental-medicine-2025/image1.jpeg", date: "November 22, 2025", title: "Institute of Experimental Medicine Visit", desc: "SCO+ Medical & Biotechnology Park progresses in St. Petersburg." },
                   { href: "/news/china-russia-investment-committee-2025", img: "/news/china-russia-investment-committee-2025/image1.jpeg", date: "November 1, 2025", title: "China–Russia Investment Committee", desc: "$200bn+ pipeline; Arctic & NSR opportunities." },
