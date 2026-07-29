@@ -13,6 +13,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    15: "/news/apec-healthcare-digitalization-forum-2026",
     14: "/news/muhammad-yunus-meeting-2026",
     13: "/news/hong-kong-health-week-2026",
     10: "/news/murmansk-governor-meeting-2025",
@@ -28,6 +29,20 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 15,
+    date: "July 18, 2026",
+    title_en: "Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum on New Cross-Border Opportunities",
+    title_ru: "Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum on New Cross-Border Opportunities",
+    excerpt_en:
+      "Born International chairman shares a commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.",
+    excerpt_ru:
+      "Born International chairman shares a commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.",
+    image: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg",
+    category_en: "Company News",
+    category_ru: "Company News",
+    readTime: "8 min read",
+  },
   {
     id: 14,
     date: "May 19, 2026",

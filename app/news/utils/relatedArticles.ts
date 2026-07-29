@@ -24,6 +24,15 @@ export interface RelatedArticleConfig {
 // Articles database restricted to real pages under /app/news
 export const allArticles: Article[] = [
   {
+    id: "apec-healthcare-digitalization-forum-2026",
+    title: "Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum on New Cross-Border Opportunities",
+    excerpt: "Born International chairman shares a commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.",
+    image: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg",
+    date: "July 18, 2026",
+    category: "Company News",
+    tags: ["APEC", "Digital Health", "Medical Technology", "Cross-Border Commercialization", "Russia", "Central Asia"],
+  },
+  {
     id: "muhammad-yunus-meeting-2026",
     title: "Nobel Peace Prize Laureate Muhammad Yunus Meets Born International Founder Dr. Li Wencheng",
     excerpt: "Talks in Dhaka focus on localized medical technology, biopharmaceutical cooperation and inclusive healthcare.",
@@ -344,6 +353,7 @@ export function getSmartRelatedArticles(
 export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
+    "apec-healthcare-digitalization-forum-2026": "/news/apec-healthcare-digitalization-forum-2026",
     "muhammad-yunus-meeting-2026": "/news/muhammad-yunus-meeting-2026",
     "hong-kong-health-week-2026": "/news/hong-kong-health-week-2026",
     "moscow-startup-village-2025": "/news/moscow-startup-village-2025",

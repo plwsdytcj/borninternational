@@ -615,10 +615,34 @@ export default function HomePage() {
             <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row sm:gap-5 md:gap-8 md:p-6">
               <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
                 <Image 
+                  src="/news/apec-healthcare-digitalization-forum-2026/image1.jpg" 
+                  alt="Dr. Li Wencheng speaks at the APEC healthcare digitalization forum" 
+                  fill 
+                  className="rounded-lg object-cover ring-1 ring-white/10" 
+                  style={{ objectPosition: "32% center" }}
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="mb-1 text-xs text-zinc-400">July 18, 2026</p>
+                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum on New Cross-Border Opportunities</h3>
+                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">A commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.</p>
+                <Link href="/news/apec-healthcare-digitalization-forum-2026">
+                  <Button variant="ghost" className="h-auto p-0 text-xs text-cyan-300 hover:bg-transparent hover:text-cyan-200">
+                    {content.readMore}
+                    <ExternalLink className="ml-1 h-3 w-3" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Second News Item - Latest 2 from /news */}
+            <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row-reverse sm:gap-5 md:gap-8 md:p-6">
+              <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
+                <Image 
                   src="/news/muhammad-yunus-meeting-2026/image1.jpg" 
                   alt="Dr. Li Wencheng meets Professor Muhammad Yunus in Dhaka" 
                   fill 
-                  className="rounded-lg object-cover object-center ring-1 ring-white/10" 
+                  className="rounded-lg object-cover ring-1 ring-white/10" 
                 />
               </div>
               <div className="min-w-0 flex-1">
@@ -633,29 +657,6 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-
-            {/* Second News Item - Latest 2 from /news */}
-            <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row-reverse sm:gap-5 md:gap-8 md:p-6">
-              <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
-                <Image 
-                  src="/news/china-russia-investment-committee-2025/image1.jpeg" 
-                  alt="China–Russia Investment Committee in Beijing" 
-                  fill 
-                  className="rounded-lg object-cover ring-1 ring-white/10" 
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="mb-1 text-xs text-zinc-400">November 1, 2025</p>
-                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">China–Russia Intergovernmental Investment Cooperation Committee Holds Meeting in Beijing; Murmansk Governor Andrey Chibis Delivers Speech</h3>
-                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">Talks highlight $200bn+ project pipeline, Arctic development and Northern Sea Route opportunities.</p>
-                <Link href="/news/china-russia-investment-committee-2025">
-                  <Button variant="ghost" className="h-auto p-0 text-xs text-cyan-300 hover:bg-transparent hover:text-cyan-200">
-                    {content.readMore}
-                    <ExternalLink className="ml-1 h-3 w-3" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Scrolling News Carousel */}
@@ -663,6 +664,7 @@ export default function HomePage() {
             <div className="flex animate-scroll space-x-3 pb-1 [-webkit-overflow-scrolling:touch]">
               {/* Dynamic items from /news; duplicated for seamless loop */}
               {[
+                { href: "/news/apec-healthcare-digitalization-forum-2026", img: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg", date: "July 18, 2026", title: "APEC Healthcare Digitalization Forum", desc: "Cross-border commercialization opportunities for China's digital health technologies." },
                 { href: "/news/muhammad-yunus-meeting-2026", img: "/news/muhammad-yunus-meeting-2026/image1.jpg", date: "May 19, 2026", title: "Muhammad Yunus Meets Dr. Li Wencheng", desc: "Localized medical technology, biopharmaceuticals and inclusive healthcare." },
                 { href: "/news/hong-kong-health-week-2026", img: "/news/hong-kong-health-week-2026/image1.png", date: "May 11, 2026", title: "Hong Kong International Healthcare Week", desc: "Healthcare innovation, global market access and China-Russia medical cooperation." },
                 { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
@@ -671,6 +673,7 @@ export default function HomePage() {
                 { href: "/news/murmansk-governor-meeting-2025", img: "/news/murmansk-governor-meeting-2025/image1.jpeg", date: "November 2, 2025", title: "Murmansk Governor Meeting", desc: "Arctic, NSR logistics and sector cooperation." },
               ]
                 .concat([
+                  { href: "/news/apec-healthcare-digitalization-forum-2026", img: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg", date: "July 18, 2026", title: "APEC Healthcare Digitalization Forum", desc: "Cross-border commercialization opportunities for China's digital health technologies." },
                   { href: "/news/muhammad-yunus-meeting-2026", img: "/news/muhammad-yunus-meeting-2026/image1.jpg", date: "May 19, 2026", title: "Muhammad Yunus Meets Dr. Li Wencheng", desc: "Localized medical technology, biopharmaceuticals and inclusive healthcare." },
                   { href: "/news/hong-kong-health-week-2026", img: "/news/hong-kong-health-week-2026/image1.png", date: "May 11, 2026", title: "Hong Kong International Healthcare Week", desc: "Healthcare innovation, global market access and China-Russia medical cooperation." },
                   { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
@@ -684,15 +687,19 @@ export default function HomePage() {
                       <CardContent className="p-0">
                         <div className="relative h-20">
                           <Image
-                        src={n.img}
-                        alt={n.title}
-                        fill
-                        className="rounded-t-lg object-cover ring-1 ring-inset ring-white/10"
-                        style={{
-                          objectPosition:
-                            n.href === "/news/muhammad-yunus-meeting-2026" ? "center 14%" : undefined,
-                        }}
-                      />
+                            src={n.img}
+                            alt={n.title}
+                            fill
+                            className="rounded-t-lg object-cover ring-1 ring-inset ring-white/10"
+                            style={{
+                              objectPosition:
+                                n.href === "/news/apec-healthcare-digitalization-forum-2026"
+                                  ? "32% center"
+                                  : n.href === "/news/muhammad-yunus-meeting-2026"
+                                    ? "center 14%"
+                                    : undefined,
+                            }}
+                          />
                         </div>
                         <div className="p-2">
                           <p className="mb-1 text-xs text-zinc-400">{n.date}</p>
