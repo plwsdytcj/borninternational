@@ -13,6 +13,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    14: "/news/muhammad-yunus-meeting-2026",
     13: "/news/hong-kong-health-week-2026",
     10: "/news/murmansk-governor-meeting-2025",
     9: "/news/china-russia-investment-committee-2025",
@@ -27,6 +28,20 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 14,
+    date: "May 19, 2026",
+    title_en: "Nobel Peace Prize Laureate Muhammad Yunus Meets Born International Founder Dr. Li Wencheng",
+    title_ru: "Nobel Peace Prize Laureate Muhammad Yunus Meets Born International Founder Dr. Li Wencheng",
+    excerpt_en:
+      "Talks in Dhaka focus on localized medical technology, biopharmaceutical cooperation and inclusive healthcare.",
+    excerpt_ru:
+      "Talks in Dhaka focus on localized medical technology, biopharmaceutical cooperation and inclusive healthcare.",
+    image: "/news/muhammad-yunus-meeting-2026/image1.jpg",
+    category_en: "Company News",
+    category_ru: "Company News",
+    readTime: "6 min read",
+  },
   {
     id: 13,
     date: "May 11, 2026",

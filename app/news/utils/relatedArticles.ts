@@ -24,6 +24,15 @@ export interface RelatedArticleConfig {
 // Articles database restricted to real pages under /app/news
 export const allArticles: Article[] = [
   {
+    id: "muhammad-yunus-meeting-2026",
+    title: "Nobel Peace Prize Laureate Muhammad Yunus Meets Born International Founder Dr. Li Wencheng",
+    excerpt: "Talks in Dhaka focus on localized medical technology, biopharmaceutical cooperation and inclusive healthcare.",
+    image: "/news/muhammad-yunus-meeting-2026/image1.jpg",
+    date: "May 19, 2026",
+    category: "Company News",
+    tags: ["Bangladesh", "Muhammad Yunus", "Healthcare", "Medical Technology", "Biopharmaceuticals", "Localization"],
+  },
+  {
     id: "hong-kong-health-week-2026",
     title: "Global Healthcare Leaders Discuss New Breakthroughs as Dr. Li Wencheng Attends Hong Kong International Healthcare Week",
     excerpt: "Born International explores healthcare innovation, international market access and China-Russia medical cooperation during the three-day event.",
@@ -335,6 +344,7 @@ export function getSmartRelatedArticles(
 export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
+    "muhammad-yunus-meeting-2026": "/news/muhammad-yunus-meeting-2026",
     "hong-kong-health-week-2026": "/news/hong-kong-health-week-2026",
     "moscow-startup-village-2025": "/news/moscow-startup-village-2025",
     "brics-municipal-forum-2025": "/news/brics-municipal-forum-2025",
