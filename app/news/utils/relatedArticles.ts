@@ -24,6 +24,15 @@ export interface RelatedArticleConfig {
 // Articles database restricted to real pages under /app/news
 export const allArticles: Article[] = [
   {
+    id: "spief-2026-strategic-cooperation",
+    title: "Born International Signs Tripartite Strategic Cooperation Agreement at SPIEF 2026",
+    excerpt: "Born International, the Institute of Experimental Medicine and the Center for Artificial Intelligence for SCO+ Countries establish a long-term cooperation framework.",
+    image: "/news/spief-2026-strategic-cooperation/image1.jpg",
+    date: "June 19, 2026",
+    category: "Company News",
+    tags: ["SPIEF 2026", "Artificial Intelligence", "Healthcare", "Life Sciences", "Institute of Experimental Medicine", "SCO+", "China-Russia Cooperation"],
+  },
+  {
     id: "apec-healthcare-digitalization-forum-2026",
     title: "Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum on New Cross-Border Opportunities",
     excerpt: "Born International chairman shares a commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.",
@@ -353,6 +362,7 @@ export function getSmartRelatedArticles(
 export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
+    "spief-2026-strategic-cooperation": "/news/spief-2026-strategic-cooperation",
     "apec-healthcare-digitalization-forum-2026": "/news/apec-healthcare-digitalization-forum-2026",
     "muhammad-yunus-meeting-2026": "/news/muhammad-yunus-meeting-2026",
     "hong-kong-health-week-2026": "/news/hong-kong-health-week-2026",
