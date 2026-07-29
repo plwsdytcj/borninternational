@@ -15,17 +15,18 @@ const offices = [
   {
     city: "Chengdu",
     country: "China",
-    entity: "成都柏锐科技有限公司",
-    address: "四川省成都市金牛区府河苑横路71号2层12号",
-    contact: "姜童耀",
+    entity: "Chengdu Borui Technology Co., Ltd. (成都柏锐科技有限公司)",
+    address: "Room 12, 2/F, No. 71 Fuheyuan Heng Road, Jinniu District, Chengdu, Sichuan, China",
+    contact: "Jiang Tongyao",
     phone: "+86 155 8653 3666",
     phoneHref: "+8615586533666",
   },
   {
     city: "Shanghai",
     country: "China",
-    entity: "上海伯嶙科技发展有限公司",
-    address: "中国（上海）自由贸易试验区临港新片区新杨公路860号10幢",
+    entity: "Shanghai Bolin Technology Development Co., Ltd. (上海伯嶙科技发展有限公司)",
+    address:
+      "Building 10, No. 860 Xinyang Highway, Lin-gang Special Area, China (Shanghai) Pilot Free Trade Zone, Shanghai, China",
     contact: "Azmatjan Rouzmamat",
     phone: "+86 192 1133 7173",
     phoneHref: "+8619211337173",
@@ -58,7 +59,7 @@ export function ContactSection() {
         <div className="grid gap-12 border-b border-slate-800 pb-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.24em] text-cyan-300/80">
-              Contact · 联系我们
+              Contact
             </p>
             <h2 className="heading-serif max-w-3xl text-4xl font-light leading-tight text-white md:text-6xl">
               Let&apos;s build the next cross-border opportunity.
@@ -147,13 +148,16 @@ export function ContactSection() {
             <figure className="flex items-center gap-5">
               <Image
                 src="/contact/born-capital-qr.png"
-                alt="伯恩资本国际部 WeChat QR code"
+                alt="BORN Capital International Department WeChat QR code"
                 width={160}
                 height={160}
-                className="h-32 w-32 bg-white object-contain p-1"
+                className="h-32 w-32 shrink-0 bg-white object-cover object-[77%_50%]"
               />
               <figcaption>
-                <p className="font-medium text-white">伯恩资本国际部</p>
+                <p className="font-medium text-white">
+                  BORN Capital International Department
+                  <span className="mt-1 block text-sm font-normal text-slate-500">伯恩资本国际部</span>
+                </p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-500">
                   Company news, investment, and international business.
                 </p>
@@ -162,13 +166,16 @@ export function ContactSection() {
             <figure className="flex items-center gap-5">
               <Image
                 src="/contact/lightspeed-cruising-qr.png"
-                alt="光速巡航工作室 WeChat QR code"
+                alt="Lightspeed Cruising Studio WeChat QR code"
                 width={160}
                 height={160}
-                className="h-32 w-32 bg-white object-contain p-1"
+                className="h-32 w-32 shrink-0 bg-white object-cover"
               />
               <figcaption>
-                <p className="font-medium text-white">光速巡航工作室</p>
+                <p className="font-medium text-white">
+                  Lightspeed Cruising Studio
+                  <span className="mt-1 block text-sm font-normal text-slate-500">光速巡航工作室</span>
+                </p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-500">
                   Technology content and industry insights.
                 </p>
