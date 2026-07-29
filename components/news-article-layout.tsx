@@ -165,9 +165,9 @@ export function NewsArticleLayout({
               <div className="mt-6 rounded-2xl bg-blue-50 p-5 sm:p-6">
                 <h3 className="mb-2 text-lg font-medium text-slate-900">Stay Updated</h3>
                 <p className="mb-4 text-sm text-slate-600">
-                  Subscribe to our newsletter for the latest news and insights.
+                  Contact our team for the latest news and investment insights.
                 </p>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">Subscribe</Button>
+                <Button asChild className="w-full bg-blue-600 hover:bg-blue-700"><Link href="/contact">Contact our team</Link></Button>
               </div>
             </aside>
           </div>

@@ -30,6 +30,7 @@ const nav = [
   { href: "/ai-company", label: "AI Company" },
   { href: "/global", label: "Technology" },
   { href: "/news", label: "News" },
+  { href: "/contact", label: "Contact" },
 ] as const
 
 export function ViSecondaryShell({

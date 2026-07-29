@@ -55,6 +55,12 @@ export function SiteFooter({
               AI Company
             </Link>
             <Link
+              href="/contact"
+              className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}
+            >
+              Contact
+            </Link>
+            <Link
               href="/news"
               className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}
             >
@@ -68,14 +74,11 @@ export function SiteFooter({
         </div>
 
         <div className="flex flex-col gap-3 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p className={isDark ? "text-slate-400" : "text-slate-600"}>© 2024 Born International. All rights reserved.</p>
+          <p className={isDark ? "text-slate-400" : "text-slate-600"}>© 2026 Born International. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <a href="#" className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}>
-              Privacy Policy
-            </a>
-            <a href="#" className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}>
-              Terms of Use
-            </a>
+            <Link href="/contact" className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}>
+              Contact
+            </Link>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ function getArticlePathFromId(id: number): string {
     3: "/news/global-market-outlook",
     // Add more mappings as new articles are created
   }
-  return articlePathMap[id] || "/news/template"
+  return articlePathMap[id] || "/news"
 }
 
 const newsArticles = [
@@ -472,24 +472,17 @@ export default function NewsPage() {
             ))}
           </div>
 
-          {/* Load More Button */}
-          <div className="text-center mt-12">
-            <Button variant="outline" className="px-8 py-3 bg-transparent">
-              {languageContent[language].loadMoreArticles}
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Newsletter Subscription */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 via-slate-950 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center text-white">
-          <h2 className="text-3xl font-light mb-4">{languageContent[language].stayInformed}</h2>
-          <p className="text-slate-300 mb-8">{languageContent[language].newsletterDescription}</p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <Input placeholder={languageContent[language].enterYourEmail} className="flex-1 bg-white text-slate-900" />
-            <Button className="bg-blue-600 hover:bg-blue-700">{languageContent[language].subscribe}</Button>
-          </div>
+      {/* Contact CTA */}
+      <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-black py-16">
+        <div className="mx-auto max-w-4xl px-4 text-center text-white sm:px-6">
+          <h2 className="text-3xl font-light mb-4">Connect with Born International</h2>
+          <p className="mb-8 text-slate-300">Contact our team for media, investment, and international business enquiries.</p>
+          <Link href="/contact" className="inline-flex border border-slate-600 bg-white px-6 py-3 text-sm font-medium text-slate-950 transition hover:bg-cyan-300">
+            Contact our team
+          </Link>
         </div>
       </section>
 
@@ -516,22 +509,22 @@ export default function NewsPage() {
               <h4 className="font-medium mb-4">{languageContent[language].theFund}</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio" className="hover:text-white">
                     {languageContent[language].aboutTheFund}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio#our-edge" className="hover:text-white">
                     {languageContent[language].investmentStrategy}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio#portfolio-companies" className="hover:text-white">
                     {languageContent[language].returns}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio#portfolio-companies" className="hover:text-white">
                     {languageContent[language].holdings}
                   </a>
                 </li>
@@ -544,19 +537,19 @@ export default function NewsPage() {
               <h4 className="font-medium mb-4">{languageContent[language].aboutBornInternational}</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/global" className="hover:text-white">
                     {languageContent[language].organization}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="mailto:azmatjan@bornpe.com?subject=Career%20Enquiry" className="hover:text-white">
                     {languageContent[language].careers}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/contact" className="hover:text-white">
                     {languageContent[language].contact}
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/news" className="hover:text-white">
@@ -570,15 +563,15 @@ export default function NewsPage() {
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
+              <span className="text-slate-500 text-sm">
                 {languageContent[language].privacyPolicy}
-              </a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
+              </span>
+              <span className="text-slate-500 text-sm">
                 {languageContent[language].termsOfUse}
-              </a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
+              </span>
+              <span className="text-slate-500 text-sm">
                 {languageContent[language].accessibility}
-              </a>
+              </span>
             </div>
           </div>
         </div>

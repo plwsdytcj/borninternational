@@ -353,17 +353,10 @@ export default function GlobalMarketOutlookPage() {
               <div className="bg-blue-50 rounded-lg p-6 mt-6">
                 <h3 className="text-lg font-medium text-slate-900 mb-2">Stay Updated</h3>
                 <p className="text-sm text-slate-600 mb-4">
-                  Get the latest market insights and investment opportunities delivered to your inbox.
+                  Contact our team for the latest market insights and investment opportunities.
                 </p>
                 <div className="space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-sm">
-                    Subscribe
-                  </Button>
+                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-sm"><Link href="/contact">Contact our team</Link></Button>
                 </div>
               </div>
             </div>
