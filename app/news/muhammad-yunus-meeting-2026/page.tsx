@@ -14,6 +14,7 @@ const articleData = {
   readTime: "6 min read",
   category: "Company News",
   image: "/news/muhammad-yunus-meeting-2026/image1.jpg",
+  imagePosition: "center top",
   content: `
 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
   <p class="text-lg leading-relaxed text-slate-700 font-medium">Dhaka, May 19, 2026 — Dr. Li Wencheng, founder of Born International and Lifetime Honorary Vice Chairman of the SCO Industrialists Committee, met Professor Muhammad Yunus, 2006 Nobel Peace Prize laureate and former Chief Adviser of Bangladesh's interim government, at the Chief Adviser's Office in Dhaka.</p>
@@ -23,7 +24,7 @@ const articleData = {
 
 <div class="my-8">
   <div class="relative w-full h-72 md:h-[32rem] rounded-lg overflow-hidden bg-slate-100">
-    <img src="/news/muhammad-yunus-meeting-2026/image1.jpg" alt="Dr. Li Wencheng meets Professor Muhammad Yunus in Dhaka on May 19, 2026" class="w-full h-full object-cover object-center" />
+    <img src="/news/muhammad-yunus-meeting-2026/image1.jpg" alt="Dr. Li Wencheng meets Professor Muhammad Yunus in Dhaka on May 19, 2026" class="w-full h-full object-cover object-top" />
   </div>
   <p class="text-sm text-slate-500 mt-2 text-center">Dr. Li Wencheng and Professor Muhammad Yunus during their meeting in Dhaka on May 19, 2026.</p>
 </div>

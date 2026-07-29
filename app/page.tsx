@@ -618,7 +618,7 @@ export default function HomePage() {
                   src="/news/muhammad-yunus-meeting-2026/image1.jpg" 
                   alt="Dr. Li Wencheng meets Professor Muhammad Yunus in Dhaka" 
                   fill 
-                  className="rounded-lg object-cover ring-1 ring-white/10" 
+                  className="rounded-lg object-cover object-top ring-1 ring-white/10" 
                 />
               </div>
               <div className="min-w-0 flex-1">
@@ -683,7 +683,14 @@ export default function HomePage() {
                     <Card className="w-[min(100vw-2.5rem,14rem)] cursor-pointer gap-0 border border-white/10 bg-white/[0.07] py-0 text-zinc-100 shadow-sm backdrop-blur-md transition-shadow hover:border-white/18 hover:bg-white/10 hover:shadow-md sm:w-56">
                       <CardContent className="p-0">
                         <div className="relative h-20">
-                          <Image src={n.img} alt={n.title} fill className="rounded-t-lg object-cover ring-1 ring-inset ring-white/10" />
+                          <Image
+                        src={n.img}
+                        alt={n.title}
+                        fill
+                        className={`rounded-t-lg object-cover ring-1 ring-inset ring-white/10 ${
+                          n.href === "/news/muhammad-yunus-meeting-2026" ? "object-top" : ""
+                        }`}
+                      />
                         </div>
                         <div className="p-2">
                           <p className="mb-1 text-xs text-zinc-400">{n.date}</p>

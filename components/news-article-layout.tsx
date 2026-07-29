@@ -26,6 +26,7 @@ type NewsArticleLayoutProps = {
     readTime: string
     category: string
     image: string
+    imagePosition?: string
     content: string
     tags: string[]
   }
@@ -44,7 +45,14 @@ export function NewsArticleLayout({
 
       <section className="relative">
         <div className="relative h-[22rem] overflow-hidden sm:h-[28rem] md:h-[32rem]">
-          <Image src={article.image} alt={article.title} fill className="object-cover" priority />
+          <Image
+            src={article.image}
+            alt={article.title}
+            fill
+            className="object-cover"
+            style={{ objectPosition: article.imagePosition }}
+            priority
+          />
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
         </div>
