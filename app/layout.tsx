@@ -6,6 +6,7 @@ import "./globals.css"
 import UnderConstructionNotice from "@/components/under-construction-notice"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.bornpe.com"),
   title: "Born International",
   description: "Global Investment Platform - Born International",
   generator: "v0.dev",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://borninternational.com',
+    url: 'https://www.bornpe.com',
     title: 'Born International',
     description: 'Global Investment Platform - Born International',
     siteName: 'Born International',

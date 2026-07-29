@@ -26,7 +26,7 @@ export function ResponsibleInvestmentBlurb({
   const isDark = theme === "dark"
 
   return (
-    <div>
+    <div id="responsible-investment">
       <h4 className={`font-medium mb-4 ${isDark ? "text-white" : "text-slate-950"}`}>{content.title}</h4>
       <p className={`text-sm leading-6 ${isDark ? "text-slate-400" : "text-slate-600"}`}>{content.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">

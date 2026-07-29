@@ -423,7 +423,7 @@ export default function BusinessNewPage() {
             Let us guide you through every step of your market entry journey.
           </p>
           <button
-            onClick={() => router.push("/#contact")}
+            onClick={() => router.push("/contact")}
             className="group inline-flex items-center gap-3 bg-white/95 px-8 py-4 font-semibold text-slate-950 transition-all duration-300 hover:bg-amber-500 hover:text-white"
           >
             Get Started Today
@@ -439,7 +439,7 @@ export default function BusinessNewPage() {
       <footer className="border-t border-slate-800 py-8 text-center text-slate-500">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
           <p className="text-sm">
-            © 2025 BORN International. All rights reserved.
+            © 2026 BORN International. All rights reserved.
           </p>
         </div>
       </footer>

@@ -409,24 +409,16 @@ export default function MotherFundPage() {
               <h4 className="font-medium mb-4">The Fund</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
-                    About the fund
-                  </a>
+                  <a href="/portfolio" className="hover:text-white">About the fund</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Investment strategy
-                  </a>
+                  <a href="/portfolio#our-edge" className="hover:text-white">Investment strategy</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Returns
-                  </a>
+                  <a href="/portfolio#portfolio-companies" className="hover:text-white">Returns</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Holdings
-                  </a>
+                  <a href="/portfolio#portfolio-companies" className="hover:text-white">Holdings</a>
                 </li>
               </ul>
             </div>
@@ -437,19 +429,13 @@ export default function MotherFundPage() {
               <h4 className="font-medium mb-4">About Born International</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Organization
-                  </a>
+                  <a href="/global" className="hover:text-white">Organization</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Careers
-                  </a>
+                  <a href="mailto:azmatjan@bornpe.com?subject=Career%20Enquiry" className="hover:text-white">Careers</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Contact
-                  </a>
+                  <a href="/contact" className="hover:text-white">Contact</a>
                 </li>
                 <li>
                   <Link href="/news" className="hover:text-white">
@@ -463,15 +449,9 @@ export default function MotherFundPage() {
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
-                Terms of Use
-              </a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
-                Accessibility
-              </a>
+              <span className="text-slate-400 hover:text-white text-sm">Privacy Policy</span>
+              <span className="text-slate-400 hover:text-white text-sm">Terms of Use</span>
+              <span className="text-slate-400 hover:text-white text-sm">Accessibility</span>
             </div>
           </div>
         </div>

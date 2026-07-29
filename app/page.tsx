@@ -1,55 +1,14 @@
 "use client"
-import { useState, useEffect } from "react"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { HomeSectionBackground } from "@/components/home-section-background"
+import { ContactSection } from "@/components/contact-section"
 
-// 客户端检测hook
-function useIsClient() {
-  const [isClient, setIsClient] = useState(false)
-  
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-  
-  return isClient
-}
-
-function useCountUp(end: number, duration = 2000, suffix = "") {
-  const [count, setCount] = useState(0)
-  const isClient = useIsClient()
-
-  useEffect(() => {
-    if (!isClient) return
-    
-    let startTime: number
-    let animationFrame: number
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime
-      const progress = Math.min((currentTime - startTime) / duration, 1)
-
-      setCount(Math.floor(progress * end))
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate)
-      }
-    }
-
-    animationFrame = requestAnimationFrame(animate)
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame)
-      }
-    }
-  }, [end, duration, isClient])
-
-  // Return just the count number, don't concatenate suffix here
-  return { count, suffix }
+function useCountUp(end: number, _duration = 2000, suffix = "") {
+  return { count: end, suffix }
 }
 
 function formatNumber(num: number): string {
@@ -731,6 +690,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ContactSection />
+
       {/* Footer */}
       <footer className="border-t border-white/10 bg-slate-900/90 pb-[max(4rem,env(safe-area-inset-bottom,0px))] pt-12 text-white backdrop-blur-md sm:py-16">
         <div className="mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
@@ -754,22 +715,22 @@ export default function HomePage() {
               <h4 className="font-medium mb-4">{content.theFund}</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio" className="hover:text-white">
                     {content.aboutTheFund}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio#our-edge" className="hover:text-white">
                     {content.investmentStrategy}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio#portfolio-companies" className="hover:text-white">
                     {content.returns}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/portfolio#portfolio-companies" className="hover:text-white">
                     {content.holdings}
                   </a>
                 </li>
@@ -780,22 +741,22 @@ export default function HomePage() {
               <h4 className="font-medium mb-4">{content.responsibleInvestment}</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#responsible-investment" className="hover:text-white">
                     {content.ourApproach}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#responsible-investment" className="hover:text-white">
                     {content.climate}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#responsible-investment" className="hover:text-white">
                     {content.ownership}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#responsible-investment" className="hover:text-white">
                     {content.exclusions}
                   </a>
                 </li>
@@ -806,24 +767,24 @@ export default function HomePage() {
               <h4 className="font-medium mb-4">{content.aboutNbim}</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/global" className="hover:text-white">
                     {content.organization}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="mailto:azmatjan@bornpe.com?subject=Career%20Enquiry" className="hover:text-white">
                     {content.careers}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/contact" className="hover:text-white">
                     {content.contact}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/news" className="hover:text-white">
                     {content.press}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -832,15 +793,15 @@ export default function HomePage() {
           <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm">© 2026 Born International. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
+              <span className="text-slate-500 text-sm">
                 {content.privacyPolicy}
-              </a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
+              </span>
+              <span className="text-slate-500 text-sm">
                 {content.termsOfUse}
-              </a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm">
+              </span>
+              <span className="text-slate-500 text-sm">
                 {content.accessibility}
-              </a>
+              </span>
             </div>
           </div>
         </div>
