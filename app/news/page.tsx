@@ -37,7 +37,7 @@ const newsArticles = [
     title_ru: "Born International Signs Tripartite Strategic Cooperation Agreement at SPIEF 2026",
     excerpt_en: "Born International, the Institute of Experimental Medicine and the Center for Artificial Intelligence for SCO+ Countries establish a long-term cooperation framework.",
     excerpt_ru: "Born International, the Institute of Experimental Medicine and the Center for Artificial Intelligence for SCO+ Countries establish a long-term cooperation framework.",
-    image: "/news/spief-2026-strategic-cooperation/image1.jpg",
+    image: "/news/spief-2026-strategic-cooperation/image3.jpg",
     category_en: "Company News",
     category_ru: "Company News",
     readTime: "6 min read",

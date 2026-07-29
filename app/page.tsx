@@ -665,6 +665,7 @@ export default function HomePage() {
               {/* Dynamic items from /news; duplicated for seamless loop */}
               {[
                 { href: "/news/apec-healthcare-digitalization-forum-2026", img: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg", date: "July 18, 2026", title: "APEC Healthcare Digitalization Forum", desc: "Cross-border commercialization opportunities for China's digital health technologies." },
+                { href: "/news/spief-2026-strategic-cooperation", img: "/news/spief-2026-strategic-cooperation/image3.jpg", date: "June 19, 2026", title: "Strategic Cooperation at SPIEF 2026", desc: "Born International signs a tripartite agreement advancing AI, life sciences and healthcare innovation." },
                 { href: "/news/muhammad-yunus-meeting-2026", img: "/news/muhammad-yunus-meeting-2026/image1.jpg", date: "May 19, 2026", title: "Muhammad Yunus Meets Dr. Li Wencheng", desc: "Localized medical technology, biopharmaceuticals and inclusive healthcare." },
                 { href: "/news/hong-kong-health-week-2026", img: "/news/hong-kong-health-week-2026/image1.png", date: "May 11, 2026", title: "Hong Kong International Healthcare Week", desc: "Healthcare innovation, global market access and China-Russia medical cooperation." },
                 { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
@@ -674,6 +675,7 @@ export default function HomePage() {
               ]
                 .concat([
                   { href: "/news/apec-healthcare-digitalization-forum-2026", img: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg", date: "July 18, 2026", title: "APEC Healthcare Digitalization Forum", desc: "Cross-border commercialization opportunities for China's digital health technologies." },
+                { href: "/news/spief-2026-strategic-cooperation", img: "/news/spief-2026-strategic-cooperation/image3.jpg", date: "June 19, 2026", title: "Strategic Cooperation at SPIEF 2026", desc: "Born International signs a tripartite agreement advancing AI, life sciences and healthcare innovation." },
                   { href: "/news/muhammad-yunus-meeting-2026", img: "/news/muhammad-yunus-meeting-2026/image1.jpg", date: "May 19, 2026", title: "Muhammad Yunus Meets Dr. Li Wencheng", desc: "Localized medical technology, biopharmaceuticals and inclusive healthcare." },
                   { href: "/news/hong-kong-health-week-2026", img: "/news/hong-kong-health-week-2026/image1.png", date: "May 11, 2026", title: "Hong Kong International Healthcare Week", desc: "Healthcare innovation, global market access and China-Russia medical cooperation." },
                   { href: "/news/brics-municipal-forum-2025", img: "/news/brics-municipal-forum-2025/image1.jpeg", date: "November 21, 2025", title: "BRICS International Municipal Forum", desc: "Dr. Li Wencheng signs cooperation MOUs on behalf of SCO Business Council." },
@@ -695,6 +697,8 @@ export default function HomePage() {
                               objectPosition:
                                 n.href === "/news/apec-healthcare-digitalization-forum-2026"
                                   ? "32% center"
+                                  : n.href === "/news/spief-2026-strategic-cooperation"
+                                    ? "center 38%"
                                   : n.href === "/news/muhammad-yunus-meeting-2026"
                                     ? "center 14%"
                                     : undefined,
