@@ -618,7 +618,7 @@ export default function HomePage() {
                   src="/news/muhammad-yunus-meeting-2026/image1.jpg" 
                   alt="Dr. Li Wencheng meets Professor Muhammad Yunus in Dhaka" 
                   fill 
-                  className="rounded-lg object-cover object-top ring-1 ring-white/10" 
+                  className="rounded-lg object-cover object-center ring-1 ring-white/10" 
                 />
               </div>
               <div className="min-w-0 flex-1">
@@ -687,9 +687,11 @@ export default function HomePage() {
                         src={n.img}
                         alt={n.title}
                         fill
-                        className={`rounded-t-lg object-cover ring-1 ring-inset ring-white/10 ${
-                          n.href === "/news/muhammad-yunus-meeting-2026" ? "object-top" : ""
-                        }`}
+                        className="rounded-t-lg object-cover ring-1 ring-inset ring-white/10"
+                        style={{
+                          objectPosition:
+                            n.href === "/news/muhammad-yunus-meeting-2026" ? "center 14%" : undefined,
+                        }}
                       />
                         </div>
                         <div className="p-2">
