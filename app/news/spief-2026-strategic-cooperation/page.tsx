@@ -13,7 +13,8 @@ const articleData = {
   author: "Born International Editorial Team",
   readTime: "6 min read",
   category: "Company News",
-  image: "/news/spief-2026-strategic-cooperation/image1.jpg",
+  image: "/news/spief-2026-strategic-cooperation/image3.jpg",
+  imagePosition: "center 38%",
   content: `
 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
   <p class="text-lg leading-relaxed text-slate-700 font-medium">St. Petersburg, June 3-6, 2026 - During the 29th St. Petersburg International Economic Forum, Born International signed a strategic cooperation agreement with Russia's Institute of Experimental Medicine and the Center for Artificial Intelligence for SCO+ Countries. The agreement establishes a long-term framework for collaboration in artificial intelligence, life sciences, biomedical research, pharmaceutical development and healthcare innovation.</p>
@@ -36,9 +37,16 @@ const articleData = {
 
 <div class="my-8">
   <div class="relative w-full h-64 md:h-80 rounded-lg overflow-hidden">
-    <img src="/news/spief-2026-strategic-cooperation/image3.jpg" alt="SPIEF 2026 forum participants in St. Petersburg" class="w-full h-full object-cover" />
+    <img src="/news/spief-2026-strategic-cooperation/image1.png" alt="SPIEF 2026 plenary session in St. Petersburg" class="w-full h-full object-cover object-center" />
   </div>
   <p class="text-sm text-slate-500 mt-2 text-center">SPIEF 2026 brought together government, research and business leaders from around the world.</p>
+</div>
+
+<div class="my-8">
+  <div class="relative w-full h-64 md:h-80 rounded-lg overflow-hidden">
+    <img src="/news/spief-2026-strategic-cooperation/image5.jpg" alt="Russian President Vladimir Putin addresses the SPIEF 2026 plenary session" class="w-full h-full object-cover object-center" />
+  </div>
+  <p class="text-sm text-slate-500 mt-2 text-center">Russian President Vladimir Putin addresses a plenary session during SPIEF 2026 in St. Petersburg.</p>
 </div>
 
 <h2>From research collaboration to real-world healthcare applications</h2>
@@ -50,21 +58,14 @@ const articleData = {
 
 <div class="my-8">
   <div class="relative w-full h-80 md:h-[32rem] rounded-lg overflow-hidden">
-    <img src="/news/spief-2026-strategic-cooperation/image4.jpg" alt="Dr. Li Wencheng and partner representatives after signing the SPIEF 2026 agreement" class="w-full h-full object-cover object-center" />
+    <img src="/news/spief-2026-strategic-cooperation/image4.jpg" alt="SPIEF 2026 plenary session in St. Petersburg" class="w-full h-full object-cover object-center" />
   </div>
-  <p class="text-sm text-slate-500 mt-2 text-center">The partners exchange views after completing the signing ceremony.</p>
+  <p class="text-sm text-slate-500 mt-2 text-center">SPIEF 2026 brought together government, research and business leaders from around the world.</p>
 </div>
-
 <h2>Building on cooperation with the Institute of Experimental Medicine</h2>
 <p>Founded in 1890, the Institute of Experimental Medicine is one of Russia's longest-established and most influential life-science and medical research institutions. Its work spans neuroscience, immunology, biomedicine, pharmacology and clinical research.</p>
 <p>The SPIEF agreement builds on Born International's continuing engagement with the institute and creates a broader platform for combining Russian scientific expertise with Chinese industrial capabilities, investment resources and international market access.</p>
 
-<div class="my-8">
-  <div class="relative w-full h-72 md:h-96 rounded-lg overflow-hidden">
-    <img src="/news/spief-2026-strategic-cooperation/image5.jpg" alt="Institute of Experimental Medicine in St. Petersburg" class="w-full h-full object-cover" />
-  </div>
-  <p class="text-sm text-slate-500 mt-2 text-center">The Institute of Experimental Medicine in St. Petersburg, established in 1890.</p>
-</div>
 
 <h2>Born International's role in cross-border innovation</h2>
 <p>Born International will continue using its international operating network to connect governments, research institutes, technology platforms, industrial capital and companies. The company will support project development, resource coordination and the cross-border transfer of suitable innovations between China, Russia and other SCO markets.</p>
