@@ -21,8 +21,8 @@ export function SiteHeader({
     <header
       className={
         isDark
-          ? "sticky top-0 z-20 border-b border-slate-800 bg-slate-900/90 backdrop-blur-sm shadow-md"
-          : "sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm shadow-sm"
+          ? "sticky top-0 z-20 border-b border-slate-800 bg-slate-900 shadow-md sm:bg-slate-900/90 sm:backdrop-blur-sm"
+          : "sticky top-0 z-20 border-b border-slate-200 bg-white shadow-sm sm:bg-white/95 sm:backdrop-blur-sm"
       }
     >
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
