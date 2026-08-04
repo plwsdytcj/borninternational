@@ -13,6 +13,7 @@ import { useEffect, useState } from "react"
 // Function to map article IDs to their page paths
 function getArticlePathFromId(id: number): string {
   const articlePathMap: Record<number, string> = {
+    17: "/news/ranepa-emba-china-study-tour-2026",
     16: "/news/spief-2026-strategic-cooperation",
     15: "/news/apec-healthcare-digitalization-forum-2026",
     14: "/news/muhammad-yunus-meeting-2026",
@@ -30,6 +31,20 @@ function getArticlePathFromId(id: number): string {
 }
 
 const newsArticles = [
+  {
+    id: 17,
+    date: "July 21, 2026",
+    title_en: "Born International Organizes RANEPA EMBA China Study Tour Across Shanghai, Hangzhou and Wuzhen",
+    title_ru: "Born International Organizes RANEPA EMBA China Study Tour Across Shanghai, Hangzhou and Wuzhen",
+    excerpt_en:
+      "An 18-member delegation of Russian business leaders explored finance, advanced manufacturing, robotics and cultural innovation during a six-day programme.",
+    excerpt_ru:
+      "An 18-member delegation of Russian business leaders explored finance, advanced manufacturing, robotics and cultural innovation during a six-day programme.",
+    image: "/news/ranepa-emba-china-study-tour-2026/cover.jpg",
+    category_en: "Company News",
+    category_ru: "Company News",
+    readTime: "7 min read",
+  },
   {
     id: 16,
     date: "June 19, 2026",

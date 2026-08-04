@@ -654,18 +654,17 @@ export default function HomePage() {
             <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row sm:gap-5 md:gap-8 md:p-6">
               <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
                 <Image 
-                  src="/news/apec-healthcare-digitalization-forum-2026/image1.jpg" 
-                  alt="Dr. Li Wencheng speaks at the APEC healthcare digitalization forum" 
+                  src="/news/ranepa-emba-china-study-tour-2026/cover.jpg"
+                  alt="RANEPA EMBA China study tour across Shanghai, Hangzhou and Wuzhen"
                   fill 
                   className="rounded-lg object-cover ring-1 ring-white/10" 
-                  style={{ objectPosition: "32% center" }}
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="mb-1 text-xs text-zinc-400">July 18, 2026</p>
-                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum on New Cross-Border Opportunities</h3>
-                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">A commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.</p>
-                <Link href="/news/apec-healthcare-digitalization-forum-2026">
+                <p className="mb-1 text-xs text-zinc-400">July 21, 2026</p>
+                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">Born International Organizes RANEPA EMBA China Study Tour</h3>
+                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">Eighteen Russian business leaders explored finance, advanced manufacturing, robotics and cultural innovation across three Chinese cities.</p>
+                <Link href="/news/ranepa-emba-china-study-tour-2026">
                   <Button variant="ghost" className="h-auto p-0 text-xs text-cyan-300 hover:bg-transparent hover:text-cyan-200">
                     {content.readMore}
                     <ExternalLink className="ml-1 h-3 w-3" />
@@ -678,17 +677,18 @@ export default function HomePage() {
             <div className="flex min-h-[140px] flex-col items-stretch gap-4 rounded-xl border border-white/10 bg-white/[0.07] p-4 shadow-sm backdrop-blur-md transition-shadow hover:border-white/16 hover:bg-white/[0.09] hover:shadow-md sm:flex-row-reverse sm:gap-5 md:gap-8 md:p-6">
               <div className="relative h-48 w-full flex-shrink-0 self-center sm:h-32 sm:w-32 md:h-44 md:w-44">
                 <Image 
-                  src="/news/muhammad-yunus-meeting-2026/image1.jpg" 
-                  alt="Dr. Li Wencheng meets Professor Muhammad Yunus in Dhaka" 
+                  src="/news/apec-healthcare-digitalization-forum-2026/image1.jpg"
+                  alt="Dr. Li Wencheng speaks at the APEC healthcare digitalization forum"
                   fill 
                   className="rounded-lg object-cover ring-1 ring-white/10" 
+                  style={{ objectPosition: "32% center" }}
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="mb-1 text-xs text-zinc-400">May 19, 2026</p>
-                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">Nobel Peace Prize Laureate Muhammad Yunus Meets Born International Founder Dr. Li Wencheng</h3>
-                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">Talks in Dhaka focus on localized medical technology, biopharmaceutical cooperation and inclusive healthcare.</p>
-                <Link href="/news/muhammad-yunus-meeting-2026">
+                <p className="mb-1 text-xs text-zinc-400">July 18, 2026</p>
+                <h3 className="mb-2 line-clamp-2 text-base font-medium text-white/95">Dr. Li Wencheng Speaks at APEC Healthcare Digitalization Forum</h3>
+                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-zinc-300/95">A commercialization framework for bringing China's digital health technologies to Russia, Central Asia and emerging APEC markets.</p>
+                <Link href="/news/apec-healthcare-digitalization-forum-2026">
                   <Button variant="ghost" className="h-auto p-0 text-xs text-cyan-300 hover:bg-transparent hover:text-cyan-200">
                     {content.readMore}
                     <ExternalLink className="ml-1 h-3 w-3" />
@@ -703,6 +703,7 @@ export default function HomePage() {
             <div className="flex animate-scroll space-x-3 pb-1 [-webkit-overflow-scrolling:touch]">
               {/* Dynamic items from /news; duplicated for seamless loop */}
               {[
+                { href: "/news/ranepa-emba-china-study-tour-2026", img: "/news/ranepa-emba-china-study-tour-2026/cover.jpg", date: "July 21, 2026", title: "RANEPA EMBA China Study Tour", desc: "Eighteen Russian business leaders visit Shanghai, Hangzhou and Wuzhen." },
                 { href: "/news/apec-healthcare-digitalization-forum-2026", img: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg", date: "July 18, 2026", title: "APEC Healthcare Digitalization Forum", desc: "Cross-border commercialization opportunities for China's digital health technologies." },
                 { href: "/news/spief-2026-strategic-cooperation", img: "/news/spief-2026-strategic-cooperation/image3.jpg", date: "June 19, 2026", title: "Strategic Cooperation at SPIEF 2026", desc: "Born International signs a tripartite agreement advancing AI, life sciences and healthcare innovation." },
                 { href: "/news/muhammad-yunus-meeting-2026", img: "/news/muhammad-yunus-meeting-2026/image1.jpg", date: "May 19, 2026", title: "Muhammad Yunus Meets Dr. Li Wencheng", desc: "Localized medical technology, biopharmaceuticals and inclusive healthcare." },
@@ -713,6 +714,7 @@ export default function HomePage() {
                 { href: "/news/murmansk-governor-meeting-2025", img: "/news/murmansk-governor-meeting-2025/image1.jpeg", date: "November 2, 2025", title: "Murmansk Governor Meeting", desc: "Arctic, NSR logistics and sector cooperation." },
               ]
                 .concat([
+                  { href: "/news/ranepa-emba-china-study-tour-2026", img: "/news/ranepa-emba-china-study-tour-2026/cover.jpg", date: "July 21, 2026", title: "RANEPA EMBA China Study Tour", desc: "Eighteen Russian business leaders visit Shanghai, Hangzhou and Wuzhen." },
                   { href: "/news/apec-healthcare-digitalization-forum-2026", img: "/news/apec-healthcare-digitalization-forum-2026/image1.jpg", date: "July 18, 2026", title: "APEC Healthcare Digitalization Forum", desc: "Cross-border commercialization opportunities for China's digital health technologies." },
                 { href: "/news/spief-2026-strategic-cooperation", img: "/news/spief-2026-strategic-cooperation/image3.jpg", date: "June 19, 2026", title: "Strategic Cooperation at SPIEF 2026", desc: "Born International signs a tripartite agreement advancing AI, life sciences and healthcare innovation." },
                   { href: "/news/muhammad-yunus-meeting-2026", img: "/news/muhammad-yunus-meeting-2026/image1.jpg", date: "May 19, 2026", title: "Muhammad Yunus Meets Dr. Li Wencheng", desc: "Localized medical technology, biopharmaceuticals and inclusive healthcare." },

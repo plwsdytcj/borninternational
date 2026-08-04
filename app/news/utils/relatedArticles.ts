@@ -24,6 +24,15 @@ export interface RelatedArticleConfig {
 // Articles database restricted to real pages under /app/news
 export const allArticles: Article[] = [
   {
+    id: "ranepa-emba-china-study-tour-2026",
+    title: "Born International Organizes RANEPA EMBA China Study Tour Across Shanghai, Hangzhou and Wuzhen",
+    excerpt: "An 18-member delegation of Russian business leaders explored finance, advanced manufacturing, robotics and cultural innovation during a six-day programme.",
+    image: "/news/ranepa-emba-china-study-tour-2026/cover.jpg",
+    date: "July 21, 2026",
+    category: "Company News",
+    tags: ["RANEPA", "EMBA", "China-Russia Cooperation", "Business Delegation", "Shanghai", "Hangzhou", "Wuzhen", "Advanced Manufacturing"],
+  },
+  {
     id: "spief-2026-strategic-cooperation",
     title: "Born International Signs Tripartite Strategic Cooperation Agreement at SPIEF 2026",
     excerpt: "Born International, the Institute of Experimental Medicine and the Center for Artificial Intelligence for SCO+ Countries establish a long-term cooperation framework.",
@@ -362,6 +371,7 @@ export function getSmartRelatedArticles(
 export function getArticlePath(articleId: string): string {
   // Map article IDs to their actual page paths
   const articlePathMap: Record<string, string> = {
+    "ranepa-emba-china-study-tour-2026": "/news/ranepa-emba-china-study-tour-2026",
     "spief-2026-strategic-cooperation": "/news/spief-2026-strategic-cooperation",
     "apec-healthcare-digitalization-forum-2026": "/news/apec-healthcare-digitalization-forum-2026",
     "muhammad-yunus-meeting-2026": "/news/muhammad-yunus-meeting-2026",
