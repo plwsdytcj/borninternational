@@ -282,14 +282,9 @@ export default function BusinessNewPage() {
           <div className="space-y-12 md:space-y-16">
             {[
               {
-                name: "Guojie Wang",
-                role: "Co-Founder of Born International",
-                bio: "Guojie Wang is a co-founder of Born International. He works with the founding team to shape the company’s cross-border strategy, partner network, and long-term development.",
-              },
-              {
                 name: "Dr. Wencheng Li",
-                role: "Founder of Born International · Founding Partner of Born Capital",
-                bio: "Dr. Li is an international high-tech investor with a PhD in Chemical Engineering from East China University of Science and Technology. He has invested in more than 100 technology startups across quantum computing, artificial intelligence, and new energy, and founded Born International to help Chinese companies enter global markets through local partners, policy access, and execution teams.",
+                role: "Founder & Chairman of Born International · Member of the SCO Business Council",
+                bio: "Dr. Wencheng Li is the founder and chairman of Born International, a cross-border operating platform that helps Chinese technology and healthcare companies enter Russia, the CIS, Central Asia, and other international markets through policy access, local partnerships, regulatory support, and on-the-ground execution. Within the Shanghai Cooperation Organization ecosystem, he serves as a member of the SCO Business Council; Deputy Head of the United Business Cooperation Center under the SCO Business Council Secretariat for the Northwestern Federal District of the Russian Federation (St. Petersburg); Chinese Partner of the SCO+ Regional Center for Industrial Cooperation; and Vice Chairman in St. Petersburg of the SCO Industrialists Committee. He has represented the SCO Business Council at major international forums, including signing cooperation memoranda at the 2025 International Municipal BRICS Forum, and has led practical China–Russia initiatives in technology localization, industrial cooperation, and healthcare commercialization. Dr. Li holds a PhD in Chemical Engineering from East China University of Science and Technology, is an alumnus of Tsinghua University’s PBC School of Finance and Zhejiang University’s School of Management, and serves as an Adjunct Professor at Hohai University. As a founding partner of Born Capital, he has invested in more than 100 high-tech startups across quantum computing, artificial intelligence, new energy, and related frontier sectors.",
               },
               {
                 name: "Yuqing Jiang (Taiwan, China)",
