@@ -134,109 +134,109 @@ export default function PortfolioPage() {
   const teamMembers = [
     {
       name: "Xueshu Tang",
-      title: language === "en" ? "Chairman of Qingdao HYLIR Investment Group" : "青岛海利尔投资集团董事长",
+      title: language === "en" ? "Chairman of Qingdao HYLIR Investment Group" : "Председатель Qingdao HYLIR Investment Group",
       description:
         language === "en"
           ? "Chairman of Qingdao HYLIR Investment Group and HYLIR (Chengdu) Headquarters Base Development Co., Ltd. Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association."
-          : "青岛海利尔投资集团董事长、海利尔（成都）总部基地发展有限公司董事长。四川省企业联合会、企业家协会副会长。",
+          : "Председатель Qingdao HYLIR Investment Group и HYLIR (Chengdu) Headquarters Base Development Co., Ltd. Вице-президент Федерации предприятий и Ассоциации предпринимателей провинции Сычуань.",
               image: "/investment-team/唐学书_profile.jpg",
       fullBio:
         language === "en"
           ? "Tang Xueshu, female, Han nationality, was born in September 1952. She is a member of the Communist Party of China with a bachelor's degree. She currently serves as the Chairman of Qingdao HYLIR Investment Group and HYLIR (Chengdu) Headquarters Base Development Co., Ltd. She was the first Director of the Low-Power Wireless Communication Committee of China Communications Industry Association. Now, she also holds the positions of Vice President of Sichuan Provincial Enterprise Confederation and Entrepreneurs Association, Vice President of Sichuan Provincial Rural Development Federation, Standing Director of China Enterprise Culture Research Association, and Vice President of Qingdao Economic Association."
-          : "唐学书，女，汉族，1952年9月出生，中共党员，本科学历。现任青岛海利尔投资集团董事长、海利尔（成都）总部基地发展有限公司董事长。曾任中国通信工业协会低功耗无线通信委员会首届主任。现任四川省企业联合会、企业家协会副会长，四川省乡村发展联合会副会长，中国企业文化建设协会常务理事，青岛市经济学会副会长等职务。",
+          : "Тан Сюэшу возглавляет Qingdao HYLIR Investment Group и HYLIR (Chengdu) Headquarters Base Development Co., Ltd. Ранее она была первым директором Комитета по маломощной беспроводной связи Китайской ассоциации индустрии связи. Также занимает руководящие должности в предпринимательских, сельскохозяйственных и экономических ассоциациях провинции Сычуань и города Циндао.",
       hasModal: true,
     },
     {
       name: "Chong Li",
-      title: language === "en" ? "Founder of Dianliang Capital" : "点亮资本创始人",
+      title: language === "en" ? "Founder of Dianliang Capital" : "Основатель Dianliang Capital",
       description:
         language === "en"
           ? "Technology entrepreneur and renowned investor in the tech innovation sector. Vice President of the Finance Association, Tsinghua University."
-          : "科技企业家，科技创新领域知名投资人。清华大学经济管理学院金融协会副会长。",
+          : "Технологический предприниматель и известный инвестор в инновации. Вице-президент Финансовой ассоциации Школы экономики и менеджмента Университета Цинхуа.",
               image: "/investment-team/李翀_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Founder of Dianliang Capital | Technology Entrepreneur | Expert in Technological Innovation and Applications | Renowned Investor in the Tech Innovation Sector\n\nVice President of the Finance Association, School of Economics and Management, Tsinghua University.\n\nWith long-term experience in technology-focused investments, he excels in forward-looking research in hard technology, optoelectronics, data technologies, robotics, and artificial intelligence. Known for sharp intuition on emerging technologies and business models, he combines industry trends with cutting-edge innovations to identify disruptive investment opportunities.\n\nEntrepreneurial Experience:\n• 1994: Co-founded Henan Huihuang Technology Co., Ltd., which went public in September 2009 (Stock Code: 002296.SZ).\n• 2009–2011: Co-invested and co-founded Shanghai PPLive Media (PPTV), serving as Executive Director. By the end of 2013, PPTV was acquired by Suning and Lenovo Hony Capital for USD 480 million, generating a 1,000x return on investment.\n\nMajor Investment Achievements:\n• Jedee Technology – Angel investor in a smart in-vehicle cockpit developer and service provider. Today, Jedee has become the largest in-car software provider and car owner service platform in China's automotive industry.\n• Bubi Blockchain – Angel investor in one of China's earliest blockchain technology companies, now a core technology provider for the national blockchain infrastructure 'BSN Xinghuo Chain Network.'\n• Lingou Microelectronics – Angel investor in a motion control chip and solutions provider. In July 2022, Lingou was acquired by the listed company Jingfeng Mingyuan at a valuation of RMB 580 million.\n• Boton Optoelectronics – Angel investor in China's first domestically commercialized RF ion source company. Its ion source core equipment now plays an irreplaceable role in national communications, satellites, semiconductors, and superconductors.\n• Hongjing Optics – Angel investor in an optical lens and solutions provider. Today, Hongjing has become a global leader in specialized optoelectronic imaging and video solutions, and successfully went public on ChiNext on March 18, 2025.\n• Junduo Robotics – Angel investor in a dexterous robotic hand company. Now the leading domestic enterprise in electric grippers, it is disrupting traditional mechanical grippers and overtaking incumbents in robotic end-effector solutions.\n• Kunwei Force Sensing – Angel investor in a six-dimensional force sensor provider. Today, Kunwei is the No.1 company by market share in China's six-dimensional force sensing sector.\n• Boson Quantum – Angel investor in China's first coherent optical quantum computing company. In April 2024, the company released the world's leading 550-qubit coherent optical quantum computer, the first commercialized quantum computer in China. It delivers computing power 1,000x higher than traditional computers for specialized problems and has broad applications in AI, communications, finance, and pharmaceuticals."
-          : "点亮资本创始人 | 科技企业家 | 技术创新与应用专家 | 科技创新领域知名投资人\n\n清华大学经济管理学院金融协会副会长。\n\n在科技投资领域拥有长期经验，擅长硬科技、光电、数据技术、机器人和人工智能的前瞻性研究。以对新兴技术和商业模式的敏锐直觉而闻名，他将行业趋势与前沿创新相结合，识别颠覆性投资机会。\n\n创业经历：\n• 1994年：联合创立河南辉煌科技股份有限公司，2009年9月上市（股票代码：002296.SZ）。\n• 2009-2011年：联合投资并联合创立上海聚力传媒（PPTV），担任执行董事。2013年底，PPTV被苏宁和联想弘毅资本以4.8亿美元收购，实现1000倍投资回报。\n\n主要投资成就：\n• 极豆科技 – 智能车载座舱开发和服务提供商的天使投资人。如今，极豆已成为中国汽车行业最大的车载软件提供商和车主服务平台。\n• 布比区块链 – 中国最早区块链技术公司之一的天使投资人，现为国家区块链基础设施'BSN星火链网'的核心技术提供商。\n• 凌鸥创芯 – 运动控制芯片和解决方案提供商的天使投资人。2022年7月，凌鸥被上市公司晶丰明源以5.8亿元估值收购。\n• 博顿光电 – 中国首家国产化商用射频离子源公司的天使投资人。其离子源核心设备现已在国家通信、卫星、半导体和超导体领域发挥不可替代的作用。\n• 弘景光电 – 光学镜头和解决方案提供商的天使投资人。如今，弘景已成为专业光电成像和视频解决方案的全球领导者，并于2025年3月18日成功在创业板上市。\n• 钧舵机器人 – 灵巧机械手公司的天使投资人。现为国内电动夹爪领先企业，正在颠覆传统机械夹爪，在机器人末端执行器解决方案方面超越现有企业。\n• 坤维力觉 – 六维力传感器提供商的天使投资人。如今，坤维是中国六维力传感领域市场份额第一的公司。\n• 玻色量子 – 中国首家相干光量子计算公司的天使投资人。2024年4月，公司发布了世界领先的550量子比特相干光量子计算机，这是中国首台商用量子计算机。它在专业问题上提供比传统计算机高1000倍的计算能力，在AI、通信、金融和制药领域有广泛应用。",
+          : "Основатель Dianliang Capital | Технологический предприниматель | Эксперт по технологическим инновациям | Инвестор\n\nВице-президент Финансовой ассоциации Школы экономики и менеджмента Университета Цинхуа.\n\nОбладает многолетним опытом инвестиций в hard tech, оптоэлектронику, технологии данных, робототехнику и искусственный интеллект. Среди заметных проектов — Huihuang Technology, PPTV, Jedee Technology, Bubi Blockchain, Lingou Microelectronics, Boton Optoelectronics, Hongjing Optics, Junduo Robotics, Kunwei Force Sensing и Boson Quantum.",
       hasModal: true,
     },
     {
       name: "Feng Guo",
-      title: language === "en" ? "Guo Feng, Ph.D. in Engineering | Partner at Dianliang Capital" : "郭峰博士 | 点亮资本合伙人",
+      title: language === "en" ? "Guo Feng, Ph.D. in Engineering | Partner at Dianliang Capital" : "Доктор технических наук Го Фэн | Партнер Dianliang Capital",
       description:
         language === "en"
           ? "Former Professor at Xidian University, Vice Dean of the School of Telecommunications Engineering, and Director of the State Key Laboratory of Integrated Services Networks"
-          : "曾任西安电子科技大学教授、电信工程学院副院长、综合业务网理论及关键技术国家重点实验室主任",
+          : "Бывший профессор Сианьского университета электронной науки и технологий, заместитель декана Школы телекоммуникационной инженерии и директор государственной ключевой лаборатории интегрированных сетей.",
               image: "/investment-team/郭峰_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Guo Feng, Ph.D. in Engineering | Partner at Dianliang Capital\n\nFormer Professor at Xidian University, Vice Dean of the School of Telecommunications Engineering, and Director of the State Key Laboratory of Integrated Services Networks. Previously held senior executive positions at NTT (Japan), Cisco (USA), and China Electronics Corporation (CEC).\n\nIn recent years, he has focused on early-stage investments in AI and robotics, IoT and smart manufacturing, semiconductors, blockchain and quantum computing, as well as new energy and digital assets. He also serves as an entrepreneurial mentor at several leading domestic innovation and investment institutions, including the Peking University Industry Research Institute, Tsinghua Tongfang Incubator, and the International University Innovation Alliance.\n\nDr. Guo is recognized as a pioneer and researcher in early-stage internet, WiFi and optical networks, quantum computing, blockchain, and emerging digital industries in China."
-          : "郭峰博士 | 点亮资本合伙人\n\n曾任西安电子科技大学教授、电信工程学院副院长、综合业务网理论及关键技术国家重点实验室主任。曾在日本NTT、美国思科、中国电子集团等知名企业担任高级管理职务。\n\n近年来专注于AI和机器人、物联网和智能制造、半导体、区块链和量子计算、新能源和数字资产等领域的早期投资。同时担任北京大学产业技术研究院、清华同方孵化器、国际大学创新联盟等多家国内知名创新投资机构的创业导师。\n\n郭峰博士被公认为中国早期互联网、WiFi和光网络、量子计算、区块链和新兴数字产业的先驱者和研究者。",
+          : "Доктор Го Фэн — партнер Dianliang Capital. Ранее он был профессором и заместителем декана Сианьского университета электронной науки и технологий, руководил государственной ключевой лабораторией и занимал руководящие должности в NTT, Cisco и China Electronics Corporation. Сегодня он специализируется на ранних инвестициях в ИИ, робототехнику, IoT, интеллектуальное производство, полупроводники, блокчейн, квантовые вычисления и новую энергетику.",
       hasModal: true,
     },
     {
       name: "Dongmin Chen",
-      title: language === "en" ? "Dr./Professor - Thousand Talents Program Scholar" : "博士/教授",
+      title: language === "en" ? "Dr./Professor - Thousand Talents Program Scholar" : "Доктор / профессор — участник программы «Тысяча талантов»",
       description:
         language === "en"
           ? "National 'Thousand Talents Program' scholar, former professor at Peking University's School of International Studies, former deputy director of Science and Technology Development Department"
-          : '国家"千人计划"学者，北京大学前沿交叉学科研究院教授、科技开发部部长、产业技术研究院院长。',
+          : "Участник национальной программы «Тысяча талантов», бывший профессор Пекинского университета и руководитель подразделений технологического развития и промышленных исследований.",
               image: "/investment-team/陈东敏_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. Chen Dongmin is a distinguished national 'Thousand Talents Program' scholar with extensive experience in academia and technology development. He previously served as a professor at Peking University's School of International Studies and held key leadership positions including deputy director of the Science and Technology Development Department and director of the Industrial Technology Research Institute. His expertise spans international collaboration, technology transfer, and strategic research development."
-          : '陈东敏博士是杰出的国家"千人计划"学者，在学术界和技术发展方面拥有丰富经验。他曾担任北京大学前沿交叉学科研究院教授，并担任科技开发部部长、产业技术研究院院长等重要领导职务。他的专业领域涵盖国际合作、技术转移和战略研究发展。',
+          : "Доктор Чэнь Дунмин — участник национальной программы «Тысяча талантов» с большим опытом в академической и технологической сферах. В Пекинском университете он занимал профессорские и руководящие должности. Его экспертиза охватывает международное сотрудничество, трансфер технологий и стратегические исследования.",
       hasModal: true,
     },
     {
       name: "Hao Chu",
-      title: language === "en" ? "Founding Partner" : "创始合伙人",
+      title: language === "en" ? "Founding Partner" : "Партнер-основатель",
       description:
         language === "en"
           ? "Founding Partner of Boen Capital and Dianke Boen Partners, with extensive investment experience in Internet, education, consumer upgrades, and IoT sectors"
-          : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。",
+          : "Партнер-основатель Born Capital и партнер Dianke Born с большим опытом инвестиций в интернет, образование, потребительские технологии и IoT.",
               image: "/investment-team/褚浩_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors including Internet, education, consumer upgrades, and IoT. Has a proven track record in identifying and nurturing high-growth technology companies."
-          : "伯恩资本创始合伙人、点克伯恩合伙人、投资经验丰富，擅长互联网、教育、消费升级、物联网等领域。在识别和培育高增长科技公司方面拥有丰富的成功经验。",
+          : "Партнер-основатель Born Capital и партнер Dianke Born. Обладает опытом инвестиций в интернет, образование, потребительские технологии и IoT, а также успешным опытом поиска и развития быстрорастущих технологических компаний.",
       hasModal: true,
     },
     {
       name: "Wencheng Li",
-      title: language === "en" ? "PhD/Founding Partner" : "博士/创始合伙人",
+      title: language === "en" ? "PhD/Founding Partner" : "PhD / Партнер-основатель",
       description:
         language === "en"
           ? "International high-tech investor and Founding Partner of Born Capital. PhD in Chemical Engineering from East China University of Science and Technology. Adjunct Professor at HoHai University."
-          : "国际高科技投资者，Born Capital创始合伙人。华东理工大学化学工程博士。河海大学兼职教授。",
+          : "Международный инвестор в высокие технологии и партнер-основатель Born Capital. Доктор химической инженерии Восточно-Китайского университета науки и технологий, приглашенный профессор Университета Хохай.",
               image: "/investment-team/李文成_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. LI Wencheng is an international high-tech investor. He holds a Ph.D. in Chemical Engineering from East China University of Science and Technology. He is also an alumnus of Tsinghua University's PBCSF and Zhejiang University's School of Management. Dr. Li now serves as an Adjunct Professor at HoHai University. Dr. Li is the Founding Partner of Born Capital, where he has invested in over 100 high-tech startups, with a focus on areas such as quantum computing, artificial intelligence, and new energy. He is also the founder of Born International, which helps Chinese companies enter Russia, the CIS, the Middle East, and Southeast Asia through local partners, policy access, and execution teams."
-          : "李文科博士是国际高科技投资者。他拥有华东理工大学化学工程博士学位。他也是清华大学五道口金融学院和浙江大学管理学院的校友。李博士现任河海大学兼职教授。李博士是Born Capital的创始合伙人，已投资超过100家高科技初创企业，专注于量子计算、人工智能和新能源等领域。他也是Born International的创始人，该平台致力于连接中国企业与全球市场，特别是在俄罗斯、中东和东南亚等地区。",
+          : "Доктор Ли Вэньчэн — международный инвестор в высокие технологии. Он получил степень PhD по химической инженерии в Восточно-Китайском университете науки и технологий, обучался в Университете Цинхуа и Чжэцзянском университете и является приглашенным профессором Университета Хохай. Как партнер-основатель Born Capital он инвестировал более чем в 100 технологических стартапов в сферах квантовых вычислений, ИИ и новой энергетики. Он также основал Born International для выхода китайских компаний на рынки России, СНГ, Ближнего Востока и Юго-Восточной Азии.",
       hasModal: true,
     },
     {
       name: "Weixin Lao",
-      title: language === "en" ? "Dr./Professor - Investment Partner" : "博士/教授",
+      title: language === "en" ? "Dr./Professor - Investment Partner" : "Доктор / профессор — инвестиционный партнер",
       description:
         language === "en"
           ? "Partner at Dianliang Borun Capital and Professor at Hong Kong Chinese University, with 25 years of experience in high-tech industries and risk investment"
-          : "点亮伯恩资本合伙人。香港中文大学兼任教授。具25年中、港、美地区高科技行业及风险投资的经验。",
+          : "Партнер Dianliang Born Capital и приглашенный профессор Китайского университета Гонконга с 25-летним опытом в высоких технологиях и венчурных инвестициях в Китае, Гонконге и США.",
               image: "/investment-team/劳维信_personal_page.jpg",
       fullBio:
         language === "en"
           ? "Dr. Lao Weixin is a distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University. With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, he brings invaluable expertise in cross-border investments and technology sector analysis."
-          : "劳维信博士是点亮伯恩资本的杰出投资合伙人，同时担任香港中文大学兼任教授。他在中国、香港和美国地区拥有25年高科技行业及风险投资的丰富经验，在跨境投资和技术行业分析方面具有宝贵的专业知识。",
+          : "Доктор Лао Вэйсинь — инвестиционный партнер Dianliang Born Capital и приглашенный профессор Китайского университета Гонконга. Его 25-летний опыт в высоких технологиях и венчурных инвестициях в Китае, Гонконге и США включает трансграничные сделки и анализ технологических отраслей.",
       hasModal: true,
     },
     {
-      name: language === "en" ? "More Team Members" : "更多团队成员",
-      title: language === "en" ? "View All" : "查看全部",
+      name: language === "en" ? "More Team Members" : "Другие члены команды",
+      title: language === "en" ? "View All" : "Посмотреть всех",
       description:
         language === "en"
           ? "Discover more talented professionals in our investment team"
-          : "了解我们投资团队中更多优秀的专业人士",
+          : "Познакомьтесь с другими специалистами нашей инвестиционной команды",
       image: "/placeholder-user.jpg",
       isMoreButton: true,
     },
@@ -356,7 +356,7 @@ export default function PortfolioPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-16 text-center">
             <h2 className="heading-serif mb-4 text-3xl font-light tracking-tight text-white/95 sm:text-4xl lg:text-5xl">
-              {language === "en" ? "Portfolio Companies" : "投资组合公司"}
+              {language === "en" ? "Portfolio Companies" : "Портфельные компании"}
             </h2>
           </div>
 
@@ -411,45 +411,45 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-slate-950/35" aria-hidden />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
           <h2 className="heading-serif mb-12 text-center text-3xl font-light text-white/95 sm:text-4xl">
-            {language === "en" ? "Our Edge" : "我们的优势"}
+            {language === "en" ? "Our Edge" : "Наши преимущества"}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: language === "en" ? "Team & Track Record" : "团队与业绩",
+                title: language === "en" ? "Team & Track Record" : "Команда и результаты",
                 body:
                   language === "en"
                     ? "Decade-long experience in early-stage technology investing, with a proven track record of backing and scaling category-defining companies."
-                    : "早期科技投资数十年经验，经实践检验的投资与培育定义品类企业的能力。",
+                    : "Многолетний опыт ранних технологических инвестиций и подтвержденная способность поддерживать компании, формирующие новые категории.",
                 href: "/portfolio#investment-team-section",
-                cta: language === "en" ? "View more details→" : "了解更多→",
+                cta: language === "en" ? "View more details→" : "Подробнее→",
               },
               {
-                title: language === "en" ? "AI-Driven Investment" : "AI驱动投资",
+                title: language === "en" ? "AI-Driven Investment" : "Инвестиции на основе ИИ",
                 body:
                   language === "en"
                     ? "Deep focus on AI, powered by a proprietary, end-to-end AI investment management system that enhances speed, precision, and scalability."
-                    : "深耕人工智能，依托端到端专有AI投资管理体系，提升速度、精准度与规模。",
+                    : "Глубокая специализация на ИИ и собственная сквозная система управления инвестициями повышают скорость, точность и масштабируемость.",
                 href: "/ai-company",
-                cta: language === "en" ? "View more details→" : "了解更多→",
+                cta: language === "en" ? "View more details→" : "Подробнее→",
               },
               {
-                title: language === "en" ? "Investment + Global Expansion" : "投资与全球拓展",
+                title: language === "en" ? "Investment + Global Expansion" : "Инвестиции и глобальная экспансия",
                 body:
                   language === "en"
                     ? "From capital to market entry, we enable companies to scale into Russia and beyond—unlocking growth through a dual-engine model of investment and international expansion."
-                    : "从资本到市场进入，助力企业拓展至俄罗斯及其他地区——投资与国际化双引擎释放增长。",
+                    : "От капитала до выхода на рынок: помогаем компаниям масштабироваться в России и за ее пределами, объединяя инвестиции и международное развитие.",
                 href: "/business-new",
-                cta: language === "en" ? "View more details→" : "了解更多→",
+                cta: language === "en" ? "View more details→" : "Подробнее→",
               },
               {
-                title: language === "en" ? "Proprietary Deal Flow" : "专有项目渠道",
+                title: language === "en" ? "Proprietary Deal Flow" : "Собственный поток сделок",
                 body:
                   language === "en"
                     ? "Privileged access to top-tier research, industry experts, and institutional networks—ensuring a consistent pipeline of high-quality opportunities."
-                    : "对接顶级研究、行业专家与机构网络，持续获得高质量投资机会。",
+                    : "Доступ к ведущим исследованиям, отраслевым экспертам и институциональным сетям обеспечивает стабильный поток качественных возможностей.",
                 href: "/portfolio#portfolio-companies",
-                cta: language === "en" ? "View more details→" : "了解更多→",
+                cta: language === "en" ? "View more details→" : "Подробнее→",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-xl border border-slate-700/80 bg-slate-950/55 p-6 shadow-sm backdrop-blur-sm">
@@ -1120,22 +1120,22 @@ export default function PortfolioPage() {
       <section className="py-24 md:py-32 relative bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black" />
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="heading-serif text-3xl font-light mb-4">{language === "en" ? "Fundraising" : "募资"}</h2>
+          <h2 className="heading-serif text-3xl font-light mb-4">{language === "en" ? "Fundraising" : "Привлечение капитала"}</h2>
           <p className="text-slate-300 leading-relaxed mb-2">
             {language === "en"
               ? "Our new technology-focused fund is currently in formation."
-              : "我们新的科技主题基金正在筹备中。"}
+              : "Наш новый технологический фонд находится на стадии формирования."}
           </p>
           <p className="text-slate-400 text-sm">
             {language === "en"
               ? "For partnership and investment opportunities, please feel free to contact us."
-              : "合作与投资欢迎与我们联系。"}
+              : "Свяжитесь с нами по вопросам партнерства и инвестиционных возможностей."}
           </p>
           <Link
             href="/contact"
             className="mt-6 inline-flex border border-slate-600 px-5 py-3 text-sm font-medium text-white transition hover:border-cyan-400 hover:text-cyan-300"
           >
-            {language === "en" ? "Contact our team" : "联系我们"}
+            {language === "en" ? "Contact our team" : "Связаться с нашей командой"}
           </Link>
         </div>
       </section>

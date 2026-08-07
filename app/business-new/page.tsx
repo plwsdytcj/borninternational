@@ -282,6 +282,16 @@ export default function BusinessNewPage() {
           <div className="space-y-12 md:space-y-16">
             {[
               {
+                name: "Guojie Wang",
+                role: "Co-Founder of Born International",
+                bio: "Guojie Wang is a co-founder of Born International. He works with the founding team to shape the company’s cross-border strategy, partner network, and long-term development.",
+              },
+              {
+                name: "Dr. Wencheng Li",
+                role: "Founder of Born International · Founding Partner of Born Capital",
+                bio: "Dr. Li is an international high-tech investor with a PhD in Chemical Engineering from East China University of Science and Technology. He has invested in more than 100 technology startups across quantum computing, artificial intelligence, and new energy, and founded Born International to help Chinese companies enter global markets through local partners, policy access, and execution teams.",
+              },
+              {
                 name: "Yuqing Jiang (Taiwan, China)",
                 role: "Head of Overseas Expansion Services",
                 bio: "Council Member and Expert Advisor for the CIS Region at the China Business Advertising Association Brand Globalization Committee; Specially Appointed Mentor at the Cross-Border Expansion Research Institute of Shanghai Jiao Tong University. With extensive experience in corporate strategic management and hands-on expertise in brand globalization, Mr. Jiang has supported numerous leading enterprises, including iFLYTEK, in expanding into the Russian market.",

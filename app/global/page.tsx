@@ -85,7 +85,7 @@ export default function GlobalPage() {
       backToHome: "Вернуться на главную",
       founderSection: "Руководство",
       founderName: "Доктор Ли Вэньчэн",
-      founderTitle: "博士/创始合伙人",
+      founderTitle: "PhD / Партнер-основатель",
       founderDescription:
         "Доктор Ли Вэньчэн — основатель Born Capital и Born International. Он инвестирует в китайский hard tech и выстраивает трансграничные маршруты, локальные связи и операционные команды, необходимые для вывода таких компаний на зарубежные рынки.",
       eurasianRegion: "Коридор Россия и СНГ",

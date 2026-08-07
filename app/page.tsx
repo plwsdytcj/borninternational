@@ -19,16 +19,17 @@ function useIsClient() {
   return isClient
 }
 
-function useCountUp(end: number, duration = 2000, suffix = "") {
-  const [count, setCount] = useState(0)
+function useCountUp(end: number, duration = 2000, suffix = "", restartToken = 0) {
+  const start = Math.round(end * 0.7)
+  const [count, setCount] = useState(start)
   const isClient = useIsClient()
 
   useEffect(() => {
     if (!isClient) return
 
-    let startTime = 0
+    setCount(start)
+    let startTime: number
     let animationFrame: number
-    let startDelay: number
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (prefersReducedMotion) {
@@ -36,56 +37,26 @@ function useCountUp(end: number, duration = 2000, suffix = "") {
       return
     }
 
-    const easeInOut = (progress: number) =>
-      progress < 0.5
-        ? 4 * progress * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2
     const easeOut = (progress: number) => 1 - Math.pow(1 - progress, 3)
-    const interpolate = (from: number, to: number, progress: number) =>
-      Math.round(from + (to - from) * progress)
-
-    const initialHold = 1000
-    const fallDuration = 950
-    const lowerValue = Math.max(1, Math.round(end * 0.72))
-    const regrowDuration = Math.round(duration * 0.72)
-    const topHold = 1100
-    const cycleDuration = fallDuration + regrowDuration + topHold
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime
-      const elapsed = currentTime - startTime
+      const progress = Math.min((currentTime - startTime) / duration, 1)
+      const easedProgress = easeOut(progress)
 
-      if (elapsed < duration) {
-        setCount(interpolate(0, end, easeOut(elapsed / duration)))
-      } else if (elapsed < duration + initialHold) {
-        setCount(end)
-      } else {
-        const cycleElapsed = (elapsed - duration - initialHold) % cycleDuration
+      setCount(Math.round(start + (end - start) * easedProgress))
 
-        if (cycleElapsed < fallDuration) {
-          setCount(interpolate(end, lowerValue, easeInOut(cycleElapsed / fallDuration)))
-        } else if (cycleElapsed < fallDuration + regrowDuration) {
-          const regrowElapsed = cycleElapsed - fallDuration
-          setCount(interpolate(lowerValue, end, easeOut(regrowElapsed / regrowDuration)))
-        } else {
-          setCount(end)
-        }
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate)
       }
-
-      animationFrame = requestAnimationFrame(animate)
     }
 
-    // Let the hero finish painting before the count begins, so visitors see it move.
-    startDelay = window.setTimeout(() => {
-      setCount(0)
-      animationFrame = requestAnimationFrame(animate)
-    }, 450)
+    animationFrame = requestAnimationFrame(animate)
 
     return () => {
-      window.clearTimeout(startDelay)
       if (animationFrame) cancelAnimationFrame(animationFrame)
     }
-  }, [end, duration, isClient])
+  }, [end, duration, isClient, restartToken, start])
 
   // Return just the count number, don't concatenate suffix here
   return { count, suffix }
@@ -98,9 +69,45 @@ function formatNumber(num: number): string {
 
 export default function HomePage() {
   const language: "en" | "ru" = "en"
-  const portfolioCount = useCountUp(125, 7000, "+")
-  const fundScale = useCountUp(280000000, 7000)
-  const techGlobalization = useCountUp(100, 7000, "+")
+  const [counterRun, setCounterRun] = useState(0)
+  const portfolioCount = useCountUp(125, 7000, "+", counterRun)
+  const fundScale = useCountUp(280000000, 7000, "", counterRun)
+  const techGlobalization = useCountUp(100, 7000, "+", counterRun)
+
+  useEffect(() => {
+    let scrolling = false
+    let idleTimer: ReturnType<typeof setTimeout> | undefined
+
+    const handleScroll = () => {
+      if (!scrolling) {
+        scrolling = true
+        setCounterRun((run) => run + 1)
+      }
+
+      if (idleTimer) clearTimeout(idleTimer)
+      idleTimer = setTimeout(() => {
+        scrolling = false
+      }, 350)
+    }
+
+    const handleNavigationKey = (event: KeyboardEvent) => {
+      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) {
+        handleScroll()
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("wheel", handleScroll, { passive: true })
+    window.addEventListener("touchmove", handleScroll, { passive: true })
+    window.addEventListener("keydown", handleNavigationKey)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("wheel", handleScroll)
+      window.removeEventListener("touchmove", handleScroll)
+      window.removeEventListener("keydown", handleNavigationKey)
+      if (idleTimer) clearTimeout(idleTimer)
+    }
+  }, [])
 
   const languageContent = {
     en: {
