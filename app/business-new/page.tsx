@@ -283,8 +283,8 @@ export default function BusinessNewPage() {
             {[
               {
                 name: "Dr. Wencheng Li",
-                role: "Founder & Chairman of Born International",
-                bio: "Dr. Wencheng Li serves as Vice Chairman in St. Petersburg of the Shanghai Cooperation Organization Industrialists Committee and as Chinese Partner of the SCO+ Regional Center for Industrial Cooperation. His work focuses on advancing practical China–Russia cooperation in technology localization, industrial development, and healthcare commercialization. Dr. Li holds a PhD in Chemical Engineering from East China University of Science and Technology, is an alumnus of Tsinghua University’s PBC School of Finance, and serves as an Adjunct Professor at Hohai University. As a technology investor, he has backed more than 100 high-tech startups, with a focus on quantum computing, artificial intelligence, new energy, and other frontier sectors.",
+                role: "Founder & Chairman of Born International · Strategy & Public Relations",
+                bio: "Dr. Wencheng Li is Co-Chair of the Industrial Cooperation Center of the SCO Industrialists Committee and a fund partner within the BORN ecosystem. He works within a fund platform managing nearly RMB 1 billion and has participated in close to 100 investments, with a focus on early-stage advanced materials, artificial intelligence, quantum computing, and other frontier technologies. Drawing on officially authorized institutional channels, he supports internationally expanding companies with senior-level resource coordination, policy engagement, and strategic guidance.",
               },
               {
                 name: "Yuqing Jiang (Taiwan, China)",
