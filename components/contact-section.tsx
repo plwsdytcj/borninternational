@@ -36,13 +36,13 @@ const offices = [
     city: "St. Petersburg",
     country: "Russia",
     entity: "BORN International · St. Petersburg Office",
-    address: "Detailed office address to be added",
+    address: "199178. СПб, 10 линия В.О д.59.(Маркусь). офис 425",
   },
   {
     city: "Moscow",
     country: "Russia",
     entity: "BORN International · Moscow Office",
-    address: "Detailed office address to be added",
+    address: "Ул.Профсоюзная 56,Офис 1203,г.Москва.",
   },
   {
     city: "Athens",
