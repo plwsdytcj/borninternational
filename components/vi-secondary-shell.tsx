@@ -27,6 +27,7 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/portfolio", label: "Investment" },
   { href: "/business-new", label: "Global Expansion" },
+  { href: "/china-access", label: "China Access" },
   { href: "/ai-company", label: "AI Company" },
   { href: "/global", label: "Technology" },
   { href: "/news", label: "News" },

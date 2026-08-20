@@ -49,6 +49,12 @@ export function SiteFooter({
               Global Expansion
             </Link>
             <Link
+              href="/china-access"
+              className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}
+            >
+              China Access
+            </Link>
+            <Link
               href="/ai-company"
               className={isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-950"}
             >
