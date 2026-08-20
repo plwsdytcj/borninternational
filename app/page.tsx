@@ -130,9 +130,15 @@ export default function HomePage() {
         "Focused on technology, we have invested in 100+ companies, with multiple achieving exceptional, multi-fold growth.",
       learnMoreInvestments: "Explore our investments →",
       globalInvestment: "Global Expansion",
+      globalExpansionDirection: "China → Global",
       globalInvestmentDescription:
         "Enabling leading companies to scale globally. We support market entry and operations in Russia and the European Union—achieving exponential returns with capital-efficient strategies.",
       exploreGlobalExpansion: "Explore our global expansion →",
+      chinaAccessTitle: "China Access",
+      chinaAccessDirection: "Global → China",
+      chinaAccessDescription:
+        "Direct access to China's suppliers, technologies and industrial partners—backed by our investment ecosystem and China-side execution team.",
+      exploreChinaAccess: "Explore China Access →",
       aiCompanyTitle: "AI Company",
       aiCompanySubtitle: "Driving efficiency. Reducing costs.",
       aiCompanyDescription:
@@ -206,9 +212,15 @@ export default function HomePage() {
         "Фокусируясь на технологиях, мы инвестировали в 100+ компаний, многие из которых достигли исключительного многократного роста.",
       learnMoreInvestments: "Посмотреть наши инвестиции →",
       globalInvestment: "Глобальная экспансия",
+      globalExpansionDirection: "Китай → мир",
       globalInvestmentDescription:
         "Помогаем ведущим компаниям масштабироваться глобально. Мы поддерживаем выход на рынки России и Евросоюза — обеспечивая экспоненциальную доходность при капиталоэффективных стратегиях.",
       exploreGlobalExpansion: "Посмотреть глобальную экспансию →",
+      chinaAccessTitle: "China Access",
+      chinaAccessDirection: "Мир → Китай",
+      chinaAccessDescription:
+        "Прямой доступ к китайским поставщикам, технологиям и промышленным партнёрам при поддержке нашей инвестиционной экосистемы и команды исполнения в Китае.",
+      exploreChinaAccess: "Открыть China Access →",
       aiCompanyTitle: "AI-компания",
       aiCompanySubtitle: "Повышение эффективности. Снижение затрат.",
       aiCompanyDescription:
@@ -577,6 +589,9 @@ export default function HomePage() {
               <h2 className="heading-serif w-full break-words text-[clamp(1.875rem,8vw,2.75rem)] font-light leading-[1.08] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
                 {content.globalInvestment}
               </h2>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-100 sm:text-base">
+                {content.globalExpansionDirection}
+              </p>
               <p className="text-[0.9375rem] leading-relaxed text-white/95 sm:text-base md:text-lg">{content.globalInvestmentDescription}</p>
               <Link
                 href="/business-new"
@@ -591,9 +606,44 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
-
+      {/* China Access — mirror of Global Expansion: Global → China */}
+      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+        <div className="absolute inset-0">
+          <HomeSectionBackground
+            mobileSrc="/china-access/hero-factory.jpg"
+            desktopSrc="/china-access/hero-factory.jpg"
+            className="object-cover object-center lg:object-[58%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/72 to-slate-950/18 max-lg:bg-slate-950/58" aria-hidden />
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+          <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
+          <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
+            Born
+          </span>
+        </div>
+        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+          <div className="flex w-full max-w-2xl flex-col rounded-2xl border border-white/10 bg-slate-950/88 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.45)] sm:p-7 lg:max-w-[min(37rem,46vw)] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
+            <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
+              {content.chinaAccessTitle}
+            </h2>
+            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-amber-300 [text-shadow:0_1px_8px_rgba(0,0,0,0.9)] sm:text-base">
+              {content.chinaAccessDirection}
+            </p>
+            <p className="mt-5 max-w-xl break-words text-[0.9375rem] leading-relaxed text-white/95 [text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)] sm:text-base md:text-lg">
+              {content.chinaAccessDescription}
+            </p>
+            <Link
+              href="/china-access"
+              className="group mt-5 inline-flex min-h-[44px] items-center self-start bg-transparent py-2 text-base font-medium text-white transition-colors duration-500 hover:text-amber-200 md:text-lg"
+            >
+              <span className="border-b border-white/55 pb-0.5 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_18px_rgba(0,0,0,0.85)] transition-colors group-hover:border-amber-200/90">
+                {content.exploreChinaAccess}
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* AI Company — same pattern as Investment: full-bleed art, copy under baked-in title */}
       <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
@@ -859,6 +909,11 @@ export default function HomePage() {
                   <a href="/global" className="hover:text-white">
                     {content.organization}
                   </a>
+                </li>
+                <li>
+                  <Link href="/china-access" className="hover:text-white">
+                    China Access
+                  </Link>
                 </li>
                 <li>
                   <a href="mailto:azmatjan@bornpe.com?subject=Career%20Enquiry" className="hover:text-white">
