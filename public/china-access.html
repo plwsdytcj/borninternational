@@ -87,17 +87,17 @@ img{max-width:100%;display:block}
 .loader{
   position:fixed;inset:0;background:var(--black);z-index:10000;
   display:flex;align-items:center;justify-content:center;
-  transition:opacity .8s var(--ease),visibility .8s;
+  transition:opacity .7s var(--ease),visibility .7s;
 }
 .loader.hidden{opacity:0;visibility:hidden}
 .loader-text{
   font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4rem);
   letter-spacing:.3em;color:var(--white);opacity:0;
-  animation:loaderFade 2s var(--ease) forwards;
+  animation:loaderFade 1.4s var(--ease) forwards;
 }
 .loader-bar{
   position:absolute;bottom:0;left:0;height:2px;background:var(--gold);
-  width:0;animation:loaderBar 2s var(--ease) forwards;
+  width:0;animation:loaderBar 1.4s var(--ease) forwards;
 }
 @keyframes loaderFade{0%{opacity:0;letter-spacing:.5em}50%{opacity:1}100%{opacity:0;letter-spacing:.3em}}
 @keyframes loaderBar{0%{width:0}100%{width:100%}}
@@ -1883,7 +1883,7 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
 
 // ===== Loader =====
 window.addEventListener('load',()=>{
-  setTimeout(()=>{document.getElementById('loader').classList.add('hidden')},2000);
+  setTimeout(()=>{document.getElementById('loader').classList.add('hidden')},1100);
 });
 
 // ===== Automatic Day / Night Theme =====
