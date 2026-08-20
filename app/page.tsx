@@ -627,7 +627,7 @@ export default function HomePage() {
             <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
               {content.chinaAccessTitle}
             </h2>
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-amber-300 [text-shadow:0_1px_8px_rgba(0,0,0,0.9)] sm:text-base">
+            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.9)] sm:text-base">
               {content.chinaAccessDirection}
             </p>
             <p className="mt-5 max-w-xl break-words text-[0.9375rem] leading-relaxed text-white/95 [text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)] sm:text-base md:text-lg">
