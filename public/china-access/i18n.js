@@ -403,6 +403,7 @@
     "View resources →": "Посмотреть ресурсы →",
     "View project →": "Открыть проект →",
     "Close details": "Закрыть",
+    "Back to China Access": "Вернуться в China Access",
     "Resource and project details": "Подробная информация о ресурсах и проектах",
     "View Life Sciences and MedTech resources": "Посмотреть ресурсы в области биомедицины и медицинских технологий",
     "View Advanced Manufacturing and Robotics resources": "Посмотреть ресурсы в области передового производства и робототехники",
