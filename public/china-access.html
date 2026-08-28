@@ -399,20 +399,12 @@ section{position:relative;padding:8rem 3rem}
   position:absolute;inset:0;background:var(--black-3);
   transition:transform .6s var(--ease);
 }
-.industry-card-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.05);opacity:.72;transition:filter .6s var(--ease),opacity .6s var(--ease)}
+.industry-card-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(1.08) saturate(.86) contrast(1.02);opacity:.9;transition:filter .6s var(--ease),opacity .6s var(--ease)}
 .industry-card:hover .industry-card-bg{transform:scale(1.08)}
-.industry-card:hover .industry-card-bg img{filter:saturate(.95) contrast(1.03);opacity:.9}
+.industry-card:hover .industry-card-bg img{filter:brightness(1.13) saturate(1) contrast(1.01);opacity:.98}
 .industry-card::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(10,10,10,.98) 0%,rgba(10,10,10,.72) 48%,rgba(10,10,10,.16) 100%);
-}
-.industry-3d-icon{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateZ(0);
-  width:100px;height:100px;opacity:.15;transition:all .6s var(--ease);
-  z-index:1;
-}
-.industry-card:hover .industry-3d-icon{
-  opacity:.3;transform:translate(-50%,-50%) translateZ(60px) rotateY(30deg) scale(1.2);
+  background:linear-gradient(to top,rgba(10,10,10,.9) 0%,rgba(10,10,10,.52) 50%,rgba(10,10,10,.08) 100%);
 }
 .industry-content{
   position:absolute;bottom:0;left:0;right:0;padding:1.8rem;z-index:2;
@@ -667,6 +659,7 @@ html[data-theme="day"] .access-signal{background:#111;color:#fff;--white:#f8f8f8
 }
 .project-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.04);transition:transform .7s var(--ease),filter .7s var(--ease)}
 .project-card:hover .project-visual img{transform:scale(1.045);filter:saturate(.95) contrast(1.02)}
+.project-card[data-detail="carbon"] .project-visual img{object-position:center 23%}
 .project-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.62),transparent 65%);pointer-events:none}
 .project-visual-3d{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -717,7 +710,7 @@ html[data-theme="day"] .access-signal{background:#111;color:#fff;--white:#f8f8f8
 .detail-hero::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,6,6,.97) 0%,rgba(6,6,6,.78) 45%,rgba(6,6,6,.18) 100%),linear-gradient(to top,rgba(6,6,6,.8),transparent 54%)}
 .detail-hero::after{content:'';position:absolute;left:clamp(1.4rem,8vw,9rem);bottom:0;z-index:2;width:min(42vw,540px);height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left}
 .detail-panel.active .detail-hero::after{animation:detailLineIn .9s var(--ease) .5s forwards}
-.detail-hero-copy{position:relative;z-index:3;max-width:940px;opacity:0;transform:translate3d(-7vw,48px,0);filter:blur(10px)}
+.detail-hero-copy{position:relative;z-index:3;max-width:940px;color:#fff;opacity:0;transform:translate3d(-7vw,48px,0);filter:blur(10px)}
 .detail-panel.active .detail-hero-copy{animation:detailCopyIn .9s var(--ease) .18s both}
 .detail-kicker{display:block;margin-bottom:1.35rem;color:var(--gold);font-size:.72rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase}
 .detail-hero h2{max-width:15ch;font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6rem);letter-spacing:-.035em;line-height:.98;font-weight:600;margin-bottom:1.5rem;text-wrap:balance}
@@ -749,6 +742,7 @@ body.dialog-open{overflow:hidden}
 @keyframes detailCopyIn{to{opacity:1;transform:none;filter:blur(0)}}
 @keyframes detailLineIn{to{transform:scaleX(1)}}
 html[data-theme="day"] .resource-dialog,html[data-theme="day"] .dialog-shell,html[data-theme="day"] .detail-panel,html[data-theme="day"] .detail-body{background:#f3f5f6;color:#14191e}
+html[data-theme="day"] .detail-hero-copy,html[data-theme="day"] .detail-hero h2{color:#fff}
 html[data-theme="day"] .detail-nav{background:rgba(255,255,255,.92);border-bottom-color:rgba(18,30,42,.12)}
 html[data-theme="day"] .detail-brand,html[data-theme="day"] .dialog-close{color:#14191e}
 html[data-theme="day"] .detail-section{border-bottom-color:rgba(18,30,42,.12)}html[data-theme="day"] .detail-section:nth-child(even){background:#fff}
@@ -1132,6 +1126,8 @@ html[data-theme="day"] .hero .btn-outline{color:#17191c;border-color:rgba(23,25,
 html[data-theme="day"] .hero .btn-outline:hover{color:var(--gold);border-color:var(--gold);background:rgba(198,32,42,.05)}
 html[data-theme="day"] .hero-micro-item{color:#4e5660}
 html[data-theme="day"] .industry-card{color:#fff}
+html[data-theme="day"] .industry-card-bg img{filter:brightness(1.12) saturate(.9) contrast(1);opacity:.94}
+html[data-theme="day"] .industry-card::after{background:linear-gradient(to top,rgba(10,10,10,.88) 0%,rgba(10,10,10,.44) 50%,rgba(10,10,10,.04) 100%)}
 html[data-theme="day"] .industry-tags,
 html[data-theme="day"] .action-item-overlay p{color:rgba(255,255,255,.72)}
 html[data-theme="day"] .project-category,
@@ -1360,7 +1356,6 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
     <div class="industries-grid">
       <button class="industry-card reveal" type="button" data-detail="life-sciences" aria-label="View Life Sciences and MedTech resources">
         <div class="industry-card-bg"><img src="/news/apec-healthcare-digitalization-forum-2026/image4.jpg" alt="BORN healthcare team at the APEC medical technology forum in Beijing" loading="lazy"></div>
-        <div class="industry-3d-icon"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="#f4f4f4" stroke-width="1"/><path d="M35 50h30M50 35v30" stroke="#f4f4f4" stroke-width="1"/></svg></div>
         <div class="industry-content">
           <div class="industry-num">25<span>mapped resources</span></div>
           <h3 class="industry-name">Life Sciences & MedTech</h3>
@@ -1371,7 +1366,6 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
       </button>
       <button class="industry-card reveal" type="button" data-detail="manufacturing" aria-label="View Advanced Manufacturing and Robotics resources">
         <div class="industry-card-bg"><img src="/news/ranepa-emba-china-study-tour-2026/weihong-factory.jpg" alt="BORN delegation visiting a precision manufacturing facility in China" loading="lazy"></div>
-        <div class="industry-3d-icon"><svg viewBox="0 0 100 100"><rect x="25" y="30" width="50" height="40" fill="none" stroke="#f4f4f4" stroke-width="1"/><path d="M35 30V20h30v10" stroke="#f4f4f4" stroke-width="1"/></svg></div>
         <div class="industry-content">
           <div class="industry-num">15<span>mapped resources</span></div>
           <h3 class="industry-name">Advanced Manufacturing & Robotics</h3>
@@ -1382,7 +1376,6 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
       </button>
       <button class="industry-card reveal" type="button" data-detail="digital" aria-label="View AI and Digital Infrastructure resources">
         <div class="industry-card-bg"><img src="/news/ranepa-emba-china-study-tour-2026/innovation-platform-visit.png" alt="International delegation reviewing a Chinese digital innovation platform" loading="lazy"></div>
-        <div class="industry-3d-icon"><svg viewBox="0 0 100 100"><rect x="30" y="25" width="40" height="50" rx="4" fill="none" stroke="#f4f4f4" stroke-width="1"/><circle cx="50" cy="50" r="10" fill="none" stroke="#f4f4f4" stroke-width="1"/></svg></div>
         <div class="industry-content">
           <div class="industry-num">6<span>mapped resources</span></div>
           <h3 class="industry-name">AI & Digital Infrastructure</h3>
@@ -1393,7 +1386,6 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
       </button>
       <button class="industry-card reveal" type="button" data-detail="equipment" aria-label="View Industrial Equipment and Materials resources">
         <div class="industry-card-bg"><img src="/news/ranepa-emba-china-study-tour-2026/weihong-exchange.jpg" alt="BORN business delegation discussing industrial manufacturing capabilities" loading="lazy"></div>
-        <div class="industry-3d-icon"><svg viewBox="0 0 100 100"><path d="M20 70h60M30 70V40h40v30M40 55h20" fill="none" stroke="#f4f4f4" stroke-width="1"/></svg></div>
         <div class="industry-content">
           <div class="industry-num">3<span>mapped resources</span></div>
           <h3 class="industry-name">Industrial Equipment & Materials</h3>
@@ -1404,7 +1396,6 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
       </button>
       <button class="industry-card reveal" type="button" data-detail="energy" aria-label="View Energy and Low-Carbon resources">
         <div class="industry-card-bg"><img src="/news/spief-2026-strategic-cooperation/image3.jpg" alt="BORN International signing a strategic cooperation agreement at SPIEF" loading="lazy"></div>
-        <div class="industry-3d-icon"><svg viewBox="0 0 100 100"><path d="M30 70V40l20-15 20 15v30" fill="none" stroke="#f4f4f4" stroke-width="1"/><path d="M40 70V55h20v15" stroke="#f4f4f4" stroke-width="1"/></svg></div>
         <div class="industry-content">
           <div class="industry-num">1<span>core resource</span></div>
           <h3 class="industry-name">Energy & Low-Carbon</h3>
@@ -1415,7 +1406,6 @@ html[data-theme="night"] .action-item-visual img{filter:brightness(.82) saturate
       </button>
       <button class="industry-card reveal" type="button" data-detail="trade" aria-label="View Consumer, Trade and Services resources">
         <div class="industry-card-bg"><img src="/news/ranepa-emba-china-study-tour-2026/wensli-silk.jpg" alt="International business delegation visiting a Chinese consumer brand" loading="lazy"></div>
-        <div class="industry-3d-icon"><svg viewBox="0 0 100 100"><rect x="25" y="35" width="50" height="30" rx="3" fill="none" stroke="#f4f4f4" stroke-width="1"/><path d="M35 35V25h30v10" stroke="#f4f4f4" stroke-width="1"/></svg></div>
         <div class="industry-content">
           <div class="industry-num">12<span>mapped resources</span></div>
           <h3 class="industry-name">Consumer, Trade & Services</h3>
@@ -2162,6 +2152,9 @@ if(resourceDialog){
   const dialogShell=resourceDialog.querySelector('.dialog-shell');
   const progressBar=resourceDialog.querySelector('.detail-progress span');
   let detailObserver;
+  let detailTrigger=null;
+  let pageScrollPosition=0;
+  let restorePagePosition=true;
   const updateDetailProgress=()=>{
     const distance=dialogShell.scrollHeight-dialogShell.clientHeight;
     const progress=distance>0?dialogShell.scrollTop/distance:0;
@@ -2184,9 +2177,12 @@ if(resourceDialog){
     },{root:dialogShell,threshold:.18,rootMargin:'0px 0px -8% 0px'});
     motionBlocks.forEach(block=>detailObserver.observe(block));
   };
-  const openDetail=(key)=>{
+  const openDetail=(key,trigger)=>{
     const panel=detailPanels.find(item=>item.dataset.detailPanel===key);
     if(!panel)return;
+    detailTrigger=trigger;
+    pageScrollPosition=window.scrollY;
+    restorePagePosition=true;
     detailPanels.forEach(item=>item.classList.toggle('active',item===panel));
     dialogShell.scrollTop=0;
     progressBar.style.transform='scaleX(0)';
@@ -2195,18 +2191,35 @@ if(resourceDialog){
     requestAnimationFrame(()=>prepareDetailMotion(panel));
     closeButton.focus();
   };
-  document.querySelectorAll('[data-detail]').forEach(card=>card.addEventListener('click',()=>openDetail(card.dataset.detail)));
-  closeButton.addEventListener('click',()=>resourceDialog.close());
+  document.querySelectorAll('[data-detail]').forEach(card=>card.addEventListener('click',()=>openDetail(card.dataset.detail,card)));
+  closeButton.addEventListener('click',event=>{
+    event.preventDefault();
+    event.stopPropagation();
+    restorePagePosition=true;
+    resourceDialog.close('back');
+  });
   resourceDialog.addEventListener('click',event=>{
-    if(event.target===resourceDialog)resourceDialog.close();
+    if(event.target===resourceDialog){
+      restorePagePosition=true;
+      resourceDialog.close('back');
+    }
   });
   resourceDialog.addEventListener('close',()=>{
     document.body.classList.remove('dialog-open');
     if(detailObserver)detailObserver.disconnect();
     detailPanels.forEach(item=>item.classList.remove('active'));
+    if(restorePagePosition){
+      requestAnimationFrame(()=>{
+        window.scrollTo(0,pageScrollPosition);
+        if(detailTrigger)detailTrigger.focus({preventScroll:true});
+      });
+    }
   });
   dialogShell.addEventListener('scroll',updateDetailProgress,{passive:true});
-  resourceDialog.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>resourceDialog.close()));
+  resourceDialog.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{
+    restorePagePosition=false;
+    resourceDialog.close('continue');
+  }));
 }
 
 // ===== Custom Cursor =====

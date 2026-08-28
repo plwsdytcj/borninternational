@@ -14,7 +14,7 @@ export default function ZhongkangPage() {
     en: {
       companyName: "Chengdu Zhongkang Dacheng Environmental Protection Technology Co., Ltd.",
       backToPortfolio: "Back to Portfolio",
-      visitWebsite: "Visit Website",
+      visitWebsite: "Official website information pending confirmation",
       previousCompany: "Previous: Shenzhen Huazhi",
       nextCompany: "Next: China Carbon Zero",
       companyDescription:
@@ -26,7 +26,7 @@ export default function ZhongkangPage() {
     zh: {
       companyName: "Chengdu Zhongkang Dacheng Environmental Protection Technology Co., Ltd.",
       backToPortfolio: "返回投资组合",
-      visitWebsite: "进入官网",
+      visitWebsite: "官网信息待确认",
       previousCompany: "上一篇：华制智能",
       nextCompany: "下一篇：中国零碳科技集团",
       companyDescription:
@@ -60,7 +60,6 @@ export default function ZhongkangPage() {
       logoSrc={content.logo}
       logoAlt={`${content.companyName} logo`}
       visitWebsiteLabel={content.visitWebsite}
-      visitWebsiteHref="http://cdzkdc.com/"
       returnToListLabel={language === "zh" ? "返回列表" : "Return to List"}
       previousLabel={content.previousCompany}
       previousHref="/portfolio/shenzhen-huazhi-intelligent-manufacturing-technology-co-ltd"

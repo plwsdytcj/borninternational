@@ -89,9 +89,13 @@ export function PortfolioDetailLayout({
                     </a>
                   </Button>
                 ) : (
-                  <Button className="h-auto bg-amber-600 px-6 py-3 text-white hover:bg-amber-700">
+                  <Button
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                    className="h-auto cursor-not-allowed bg-slate-300 px-6 py-3 text-slate-600 opacity-100 hover:bg-slate-300 disabled:pointer-events-none disabled:opacity-100"
+                  >
                     {visitWebsiteLabel}
-                    <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 )}
 
