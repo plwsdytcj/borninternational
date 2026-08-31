@@ -217,7 +217,7 @@ export default function PortfolioPage() {
       hasModal: true,
     },
     {
-      name: "Weixin Lao",
+      name: "Wai Shun Lo",
       title: language === "en" ? "Dr./Professor - Investment Partner" : "Доктор / профессор — инвестиционный партнер",
       description:
         language === "en"
@@ -226,7 +226,7 @@ export default function PortfolioPage() {
               image: "/investment-team/劳维信_personal_page.jpg",
       fullBio:
         language === "en"
-          ? "Dr. Lao Weixin is a distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University. With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, he brings invaluable expertise in cross-border investments and technology sector analysis."
+          ? "Dr. Lo Wai Shun is a distinguished investment partner at Dianliang Borun Capital and serves as an adjunct professor at Hong Kong Chinese University. With 25 years of extensive experience in high-tech industries and risk investment across China, Hong Kong, and the United States, he brings invaluable expertise in cross-border investments and technology sector analysis."
           : "Доктор Лао Вэйсинь — инвестиционный партнер Dianliang Born Capital и приглашенный профессор Китайского университета Гонконга. Его 25-летний опыт в высоких технологиях и венчурных инвестициях в Китае, Гонконге и США включает трансграничные сделки и анализ технологических отраслей.",
       hasModal: true,
     },
@@ -1043,7 +1043,7 @@ export default function PortfolioPage() {
                         </div>
                       </div>
                     </div>
-                  ) : currentMember.name === "Weixin Lao" ? (
+                  ) : currentMember.name === "Wai Shun Lo" ? (
                     <div className="space-y-6">
                       {/* Header Section */}
                       <div className="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 p-6 rounded-r-lg">
