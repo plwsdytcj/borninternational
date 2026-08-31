@@ -9,6 +9,15 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/business",
+        destination: "/business-new",
+        permanent: true,
+      },
+    ]
+  },
   async rewrites() {
     return {
       beforeFiles: [
