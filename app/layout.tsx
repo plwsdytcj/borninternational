@@ -4,12 +4,31 @@ import { GeistMono } from "geist/font/mono"
 import { Manrope, IBM_Plex_Serif } from "next/font/google"
 import "./globals.css"
 import UnderConstructionNotice from "@/components/under-construction-notice"
+import { SITE_NAME, SITE_URL } from "@/lib/seo"
+
+const homeTitle = "Born International｜中国科技投资与俄罗斯市场进入平台"
+const homeDescription =
+  "Born International聚焦中国硬科技投资，并帮助中国企业进入俄罗斯及独联体市场，提供市场研究、政府与产业对接、本地公司设立、渠道开发及本地化运营。"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.bornpe.com"),
-  title: "Born International",
-  description: "Global Investment Platform - Born International",
-  generator: "v0.dev",
+  metadataBase: new URL(SITE_URL),
+  title: homeTitle,
+  description: homeDescription,
+  applicationName: SITE_NAME,
+  alternates: {
+    canonical: SITE_URL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -32,10 +51,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.bornpe.com',
-    title: 'Born International',
-    description: 'Global Investment Platform - Born International',
-    siteName: 'Born International',
+    url: SITE_URL,
+    title: homeTitle,
+    description: homeDescription,
+    siteName: SITE_NAME,
     images: [
       {
         url: '/og-image.png',
@@ -47,8 +66,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Born International',
-    description: 'Global Investment Platform - Born International',
+    title: homeTitle,
+    description: homeDescription,
     images: ['/og-image.png'],
   },
 }
@@ -72,6 +91,41 @@ const plexSerif = IBM_Plex_Serif({
   display: "swap",
   weight: ["300", "400", "500"],
 })
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/logo/born_logo_black.png`,
+  description: homeDescription,
+  areaServed: ["China", "Russia", "Commonwealth of Independent States", "Central Asia"],
+  knowsAbout: [
+    "China hard technology investment",
+    "Russia market entry",
+    "CIS market entry",
+    "Cross-border technology commercialization",
+    "Artificial intelligence",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "business enquiries",
+    email: "azmatjan@bornpe.com",
+    telephone: "+86-192-1133-7173",
+    areaServed: ["Russia", "Commonwealth of Independent States", "Central Asia"],
+  },
+}
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: `${SITE_URL}/`,
+  name: SITE_NAME,
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  inLanguage: ["en", "zh-CN", "ru"],
+}
 
 export default function RootLayout({
   children,
@@ -104,6 +158,14 @@ html {
         `}</style>
       </head>
       <body className={`${manrope.variable} ${plexSerif.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <UnderConstructionNotice />
         {children}
       </body>

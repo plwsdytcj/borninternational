@@ -3,6 +3,7 @@
 import { ViSecondaryShell } from "@/components/vi-secondary-shell"
 import { ArrowRight, Check } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 
 const phases = [
@@ -104,7 +105,7 @@ const challenges = [
   "Business Development"
 ]
 
-const caseHighlights = [
+const caseHighlights: Array<{ text: string; image: string; href?: string }> = [
   {
     text: "At the St. Petersburg International Economic Forum, our Russia market entry team facilitated trade negotiations resulting in billion-RMB-level orders.",
     image: "/business-new/media/image1.jpeg",
@@ -112,6 +113,7 @@ const caseHighlights = [
   {
     text: "Supported a leading Chinese geospatial technology company, UNRE Technology, in building a pipeline of 214 potential clients in Russia, with targeted engagement of key industry players such as Rusgeocom, EFT Group, and Technokauf. Delivered 30+ high-level technical demonstrations, advancing 5 clients into core negotiations, securing pilot orders, and initiating long-term partnership discussions.",
     image: "/business-new/media/image2.jpeg",
+    href: "/case-studies/geospatial-russia-market-entry",
   },
   {
     text: "On Russia’s Ozon platform, enabled iFLYTEK to achieve No.2 brand ranking in the electronic translator and dictionary category, and No.1 single-product revenue within 90 days.",
@@ -354,6 +356,15 @@ export default function BusinessNewPage() {
                 </div>
                 <div className="p-5">
                   <p className="text-sm leading-relaxed text-slate-300 sm:text-base">{item.text}</p>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-amber-400 transition hover:text-amber-300"
+                    >
+                      Read the full case study
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ) : null}
                 </div>
               </article>
             ))}
