@@ -5,7 +5,7 @@ const offices = [
   {
     city: "Hong Kong",
     country: "Hong Kong SAR, China",
-    entity: "BORN International · Hong Kong Office",
+    officeName: "Hong Kong Headquarters",
     address: "703, T2, South Seas Centre, 75 Mody Rd., Hong Kong",
     contact: "Wencheng Li, CEO",
     phone: "+852 8494 3701",
@@ -15,7 +15,7 @@ const offices = [
   {
     city: "Chengdu",
     country: "China",
-    entity: "Chengdu Borui Technology Co., Ltd. (成都柏锐科技有限公司)",
+    officeName: "Chengdu Office",
     address: "Room 12, 2/F, No. 71 Fuheyuan Heng Road, Jinniu District, Chengdu, Sichuan, China",
     contact: "Jiang Tongyao",
     phone: "+86 155 8653 3666",
@@ -24,7 +24,7 @@ const offices = [
   {
     city: "Shanghai",
     country: "China",
-    entity: "Shanghai Bolin Technology Development Co., Ltd. (上海伯嶙科技发展有限公司)",
+    officeName: "Shanghai Office",
     address:
       "Building 10, No. 860 Xinyang Highway, Lin-gang Special Area, China (Shanghai) Pilot Free Trade Zone, Shanghai, China",
     contact: "Azmatjan Rouzmamat",
@@ -35,19 +35,19 @@ const offices = [
   {
     city: "St. Petersburg",
     country: "Russia",
-    entity: "BORN International · St. Petersburg Office",
+    officeName: "St. Petersburg Office",
     address: "199178. СПб, 10 линия В.О д.59.(Маркусь). офис 425",
   },
   {
     city: "Moscow",
     country: "Russia",
-    entity: "BORN International · Moscow Office",
+    officeName: "Moscow Office",
     address: "Ул.Профсоюзная 56,Офис 1203,г.Москва.",
   },
   {
     city: "Athens",
     country: "Greece",
-    entity: "BORN International · Athens Office",
+    officeName: "Athens Office",
     address: "Detailed office address to be added",
   },
 ] as const
@@ -115,7 +115,7 @@ export function ContactSection() {
                 </div>
                 <h4 className="text-xl font-medium text-white">{office.city}</h4>
                 <p className="mt-1 text-sm text-slate-500">{office.country}</p>
-                <p className="mt-5 text-sm font-medium text-slate-200">{office.entity}</p>
+                <p className="mt-5 text-sm font-medium text-slate-200">{office.officeName}</p>
                 <address className="mt-2 not-italic text-sm leading-relaxed text-slate-400">{office.address}</address>
                 {"contact" in office ? <p className="mt-4 text-sm text-slate-500">{office.contact}</p> : null}
                 {"phone" in office ? (
