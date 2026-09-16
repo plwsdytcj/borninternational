@@ -10,7 +10,6 @@ const offices = [
     contact: "Wencheng Li, CEO",
     phone: "+852 8494 3701",
     phoneHref: "+85284943701",
-    email: "liwencheng@bornpe.com",
   },
   {
     city: "Chengdu",
@@ -30,7 +29,6 @@ const offices = [
     contact: "Azmatjan Rouzmamat",
     phone: "+86 192 1133 7173",
     phoneHref: "+8619211337173",
-    email: "azmatjan@bornpe.com",
   },
   {
     city: "St. Petersburg",
@@ -124,14 +122,6 @@ export function ContactSection() {
                     href={`tel:${office.phoneHref}`}
                   >
                     {office.phone}
-                  </a>
-                ) : null}
-                {"email" in office ? (
-                  <a
-                    className="mt-1 block break-all text-sm text-slate-300 transition hover:text-cyan-300"
-                    href={`mailto:${office.email}`}
-                  >
-                    {office.email}
                   </a>
                 ) : null}
               </article>
