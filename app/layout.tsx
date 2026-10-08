@@ -31,9 +31,30 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-born-pure-white-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-born-pure-white-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' },
+      {
+        url: '/favicon-born-only-black-v2-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/favicon-born-only-black-v2-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/favicon-born-only-white-v2-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/favicon-born-only-white-v2-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+        media: '(prefers-color-scheme: dark)',
+      },
     ],
     apple: [
       { url: '/apple-touch-icon-born-pure-white.png', sizes: '180x180', type: 'image/png' },
