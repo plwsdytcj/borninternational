@@ -52,8 +52,8 @@ const offices = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-8 border-t border-slate-800 bg-slate-950 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+    <section id="contact" className="motion-section scroll-mt-8 border-t border-slate-800 bg-slate-950 text-white">
+      <div className="motion-copy mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid gap-12 border-b border-slate-800 pb-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.24em] text-cyan-300/80">
