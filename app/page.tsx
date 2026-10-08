@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { HomeSectionBackground } from "@/components/home-section-background"
 import { ContactSection } from "@/components/contact-section"
+import { ScrollMotionController } from "@/components/scroll-motion-controller"
 
 // 客户端检测hook
 function useIsClient() {
@@ -69,45 +70,9 @@ function formatNumber(num: number): string {
 
 export default function HomePage() {
   const language: "en" | "ru" = "en"
-  const [counterRun, setCounterRun] = useState(0)
-  const portfolioCount = useCountUp(125, 7000, "+", counterRun)
-  const fundScale = useCountUp(280000000, 7000, "", counterRun)
-  const techGlobalization = useCountUp(100, 7000, "+", counterRun)
-
-  useEffect(() => {
-    let scrolling = false
-    let idleTimer: ReturnType<typeof setTimeout> | undefined
-
-    const handleScroll = () => {
-      if (!scrolling) {
-        scrolling = true
-        setCounterRun((run) => run + 1)
-      }
-
-      if (idleTimer) clearTimeout(idleTimer)
-      idleTimer = setTimeout(() => {
-        scrolling = false
-      }, 350)
-    }
-
-    const handleNavigationKey = (event: KeyboardEvent) => {
-      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) {
-        handleScroll()
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    window.addEventListener("wheel", handleScroll, { passive: true })
-    window.addEventListener("touchmove", handleScroll, { passive: true })
-    window.addEventListener("keydown", handleNavigationKey)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      window.removeEventListener("wheel", handleScroll)
-      window.removeEventListener("touchmove", handleScroll)
-      window.removeEventListener("keydown", handleNavigationKey)
-      if (idleTimer) clearTimeout(idleTimer)
-    }
-  }, [])
+  const portfolioCount = useCountUp(125, 1800, "+")
+  const fundScale = useCountUp(280000000, 1800)
+  const techGlobalization = useCountUp(100, 1800, "+")
 
   const languageContent = {
     en: {
@@ -280,6 +245,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen scroll-smooth bg-white pb-[env(safe-area-inset-bottom,0px)] snap-container">
+      <ScrollMotionController />
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
@@ -292,6 +258,17 @@ export default function HomePage() {
         .snap-section {
           transition: none;
           min-height: 100vh;
+        }
+
+        @media (min-width: 1024px) {
+          html {
+            scroll-snap-type: y proximity;
+          }
+
+          .snap-section {
+            scroll-snap-align: start;
+            scroll-snap-stop: normal;
+          }
         }
         
         /* 手机端优化 */
@@ -372,8 +349,8 @@ export default function HomePage() {
         }
       `}</style>
       {/* Hero Section */}
-      <main className="relative h-[100svh] min-h-[100svh] snap-section md:h-screen md:min-h-screen">
-        <div className="absolute inset-0">
+      <main className="motion-section motion-hero relative h-[100svh] min-h-[100svh] snap-section md:h-screen md:min-h-screen">
+        <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/born_cover_mobile.png"
             desktopSrc="/vi-reference/born_cover.png"
@@ -387,7 +364,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 h-full px-4 sm:px-5">
+        <div className="motion-copy relative z-10 h-full px-4 sm:px-5">
           {/* Top-left corner content */}
           <div className="absolute left-[max(1rem,env(safe-area-inset-left,0px))] top-[max(1rem,env(safe-area-inset-top,0px))] sm:left-8 sm:top-8">
             <Image
@@ -402,7 +379,7 @@ export default function HomePage() {
 
 
           {/* Hero stats: single column until md so phone / narrow widths never triple-stack huge figures */}
-          <div className="flex h-full min-h-0 flex-col items-center justify-end px-3 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-20 text-center sm:px-4 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
+          <div className="hero-frame flex h-full min-h-0 flex-col items-center justify-end px-3 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-20 text-center sm:px-4 sm:pb-14 sm:pt-24 md:pb-16 md:pt-28">
             <div className="mx-auto w-full min-w-0 max-w-5xl translate-y-1 px-2 sm:translate-y-2 sm:px-3 md:translate-y-4 md:px-2">
               <div className="w-full min-w-0">
                 {/* Glowing axis — hide connectors on very small screens to reduce visual noise */}
@@ -472,7 +449,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Desktop: three rows (labels / figures / captions) */}
-                <div className="mx-auto mt-3 hidden w-full min-w-0 max-w-5xl md:mt-4 md:block">
+                <div className="hero-stats-desktop mx-auto mt-3 hidden w-full min-w-0 max-w-5xl md:mt-4 md:block">
                   <div className="grid w-full grid-cols-3 gap-4">
                     <p className="heading-serif px-0.5 text-center text-base font-light leading-snug tracking-wide text-white/92">
                       {content.homeHeroLine1}
@@ -488,7 +465,7 @@ export default function HomePage() {
                   <div className="mx-auto mt-7 grid w-full min-w-0 grid-cols-3 gap-8">
                     <div className="min-w-0 text-center">
                       <h3
-                        className="break-words text-6xl font-black tabular-nums tracking-tight drop-shadow-lg lg:text-6xl"
+                        className="hero-stat-value break-words text-6xl font-black tabular-nums tracking-tight drop-shadow-lg lg:text-6xl"
                         style={{ color: "#f0f2ff" }}
                       >
                         {portfolioCount.count}
@@ -497,7 +474,7 @@ export default function HomePage() {
                     </div>
                     <div className="min-w-0 text-center">
                       <h3
-                        className="break-words text-5xl font-black tabular-nums leading-tight tracking-tight drop-shadow-lg lg:text-6xl"
+                        className="hero-stat-value hero-fund-value break-words text-5xl font-black tabular-nums leading-tight tracking-tight drop-shadow-lg lg:text-6xl"
                         style={{ color: "#ebeff2" }}
                       >
                         {formatNumber(fundScale.count)}
@@ -505,7 +482,7 @@ export default function HomePage() {
                     </div>
                     <div className="min-w-0 text-center">
                       <h3
-                        className="break-words text-6xl font-black tabular-nums tracking-tight drop-shadow-lg lg:text-6xl"
+                        className="hero-stat-value break-words text-6xl font-black tabular-nums tracking-tight drop-shadow-lg lg:text-6xl"
                         style={{ color: "#f2f2f2" }}
                       >
                         {techGlobalization.count}
@@ -533,21 +510,21 @@ export default function HomePage() {
       </main>
 
       {/* Investment */}
-      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
-        <div className="absolute inset-0">
+      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+        <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/fck/investment_removed_globe_mobile.png"
             desktopSrc="/vi-reference/fck/investment_removed_globe_2x_high_resolution.png"
             className="object-cover object-[center_38%] lg:object-center"
           />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="motion-rail pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
           <div className="flex flex-col rounded-2xl border border-transparent bg-transparent p-0 max-lg:border-white/10 max-lg:bg-slate-950/85 max-lg:p-4 sm:max-lg:p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
           <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {content.investmentInChina}
@@ -569,21 +546,21 @@ export default function HomePage() {
       </section>
 
       {/* Global Expansion — desktop: type on art; mobile: dark read panel for legibility */}
-      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
-        <div className="absolute inset-0">
+      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+        <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/fck/global_expansion_removed_mobile.png"
             desktopSrc="/vi-reference/fck/global_expansion_removed_2x_high_resolution.png"
             className="object-cover max-lg:object-center lg:object-[14%_center]"
           />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="motion-rail pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
           <div className="flex w-full justify-end max-lg:justify-stretch">
             <div className="flex w-full max-w-2xl flex-col items-end space-y-4 text-right max-lg:max-w-none max-lg:items-stretch max-lg:rounded-2xl max-lg:border max-lg:border-white/12 max-lg:bg-slate-950/88 max-lg:px-4 max-lg:py-6 max-lg:text-left max-lg:shadow-[0_12px_40px_rgba(0,0,0,0.45)] sm:max-lg:px-6 sm:max-lg:py-8 sm:max-w-3xl sm:space-y-6 md:space-y-8 lg:max-w-[min(36rem,42vw)] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:text-right lg:shadow-none [&_p]:break-words [&_p]:text-white lg:[&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)] max-lg:[&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.45)]">
               <h2 className="heading-serif w-full break-words text-[clamp(1.875rem,8vw,2.75rem)] font-light leading-[1.08] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
@@ -607,8 +584,8 @@ export default function HomePage() {
       </section>
 
       {/* China Access — mirror of Global Expansion: Global → China */}
-      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
-        <div className="absolute inset-0">
+      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+        <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/china-access/hero-factory.jpg"
             desktopSrc="/china-access/hero-factory.jpg"
@@ -616,13 +593,13 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/72 to-slate-950/18 max-lg:bg-slate-950/58" aria-hidden />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="motion-rail pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
           <div className="flex w-full max-w-2xl flex-col rounded-2xl border border-white/10 bg-slate-950/88 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.45)] sm:p-7 lg:max-w-[min(37rem,46vw)] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
             <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
               {content.chinaAccessTitle}
@@ -646,21 +623,21 @@ export default function HomePage() {
       </section>
 
       {/* AI Company — same pattern as Investment: full-bleed art, copy under baked-in title */}
-      <section className="relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
-        <div className="absolute inset-0">
+      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+        <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/fck/ai_company_removed_mobile.png"
             desktopSrc="/vi-reference/fck/ai_company_removed_2x_high_resolution.png"
             className="object-cover object-[center_35%] lg:object-center"
           />
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
+        <div className="motion-rail pointer-events-none absolute inset-y-0 left-0 z-20 flex w-[92px] max-lg:hidden lg:flex-col items-center justify-between border-r border-white/30 bg-gradient-to-b from-slate-950/94 via-slate-900/84 to-slate-950/94 py-8 shadow-[inset_-1px_0_0_rgba(255,255,255,0.18)]">
           <Image src="/logo/born_logo_white.png" alt="" width={70} height={24} className="h-5 w-auto opacity-95" />
           <span className="text-[11px] font-semibold tracking-[0.24em] text-white/85 uppercase" style={{ writingMode: "vertical-rl" }}>
             Born
           </span>
         </div>
-        <div className="relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
           <div className="flex flex-col rounded-2xl border border-transparent bg-transparent p-0 max-lg:border-white/10 max-lg:bg-slate-950/85 max-lg:p-4 sm:max-lg:p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
           <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {content.aiCompanyTitle}
@@ -683,15 +660,15 @@ export default function HomePage() {
 
       
       {/* News & Updates Section */}
-      <section className="relative overflow-hidden py-10 sm:py-12 md:py-20">
-        <div className="absolute inset-0">
+      <section className="motion-section motion-news relative overflow-hidden py-10 sm:py-12 md:py-20">
+        <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/blank_dark_ui_mobile.png"
             desktopSrc="/blank_dark_ui_2x_high_resolution.png"
             className="object-cover object-center"
           />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
+        <div className="motion-copy relative z-10 mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
           <div className="mb-6 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/12 bg-white/[0.06] px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md md:flex-row md:items-center md:gap-0 md:px-6 md:py-5">
             <h2 className="heading-serif text-3xl font-light text-white/95 md:text-4xl">{content.latestNews}</h2>
             <Link href="/news">
@@ -832,8 +809,8 @@ export default function HomePage() {
       <ContactSection />
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-slate-900/90 pb-[max(4rem,env(safe-area-inset-bottom,0px))] pt-12 text-white backdrop-blur-md sm:py-16">
-        <div className="mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
+      <footer className="motion-section border-t border-white/10 bg-slate-900/90 pb-[max(4rem,env(safe-area-inset-bottom,0px))] pt-12 text-white backdrop-blur-md sm:py-16">
+        <div className="motion-copy mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] sm:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
             <div>
               <div className="flex items-center mb-6">

@@ -139,6 +139,206 @@
   animation-play-state: paused;
 }
 
+/* Homepage chapter motion: directional, scroll-triggered, and progressive-enhancement safe. */
+.motion-section {
+  position: relative;
+  isolation: isolate;
+  perspective: 1400px;
+}
+
+.motion-visual,
+.motion-copy,
+.motion-rail {
+  transform: none;
+  opacity: 1;
+}
+
+html[data-scroll-motion="ready"] .motion-section {
+  --motion-y: 7vh;
+  --motion-tilt: 6deg;
+  overflow: clip;
+}
+
+html[data-scroll-motion="ready"] .motion-section[data-motion-direction="up"] {
+  --motion-y: -7vh;
+  --motion-tilt: -6deg;
+}
+
+html[data-scroll-motion="ready"] .motion-section .motion-visual {
+  transform: translate3d(0, calc(var(--motion-y) * 0.22), 0) scale(1.055);
+  filter: saturate(0.82) brightness(0.78);
+  transition:
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 850ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+html[data-scroll-motion="ready"] .motion-section .motion-copy {
+  transform: translate3d(0, var(--motion-y), 0) rotateX(var(--motion-tilt));
+  transform-origin: 50% 100%;
+  opacity: 0.18;
+  filter: blur(7px);
+  transition:
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 560ms ease-out,
+    filter 680ms ease-out;
+  will-change: transform, opacity;
+}
+
+html[data-scroll-motion="ready"] .motion-section[data-motion-direction="up"] .motion-copy {
+  transform-origin: 50% 0%;
+}
+
+html[data-scroll-motion="ready"] .motion-section .motion-rail {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1) 120ms;
+}
+
+html[data-scroll-motion="ready"] .motion-section::after {
+  position: absolute;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 4%, rgba(103, 232, 249, 0.2) 28%, rgba(236, 254, 255, 0.92) 50%, rgba(103, 232, 249, 0.2) 72%, transparent 96%);
+  box-shadow: 0 8px 28px rgba(34, 211, 238, 0.18);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 720ms cubic-bezier(0.16, 1, 0.3, 1) 80ms;
+}
+
+html[data-scroll-motion="ready"] .motion-section[data-motion-direction="up"]::after {
+  top: auto;
+  bottom: 0;
+  transform-origin: right;
+}
+
+html[data-scroll-motion="ready"] .motion-section[data-motion-visible="true"] .motion-visual,
+html[data-scroll-motion="ready"] .motion-section[data-motion-visible="true"] .motion-copy,
+html[data-scroll-motion="ready"] .motion-section[data-motion-visible="true"] .motion-rail {
+  transform: none;
+  opacity: 1;
+  filter: none;
+}
+
+html[data-scroll-motion="ready"] .motion-section[data-motion-visible="true"]::after {
+  transform: scaleX(1);
+}
+
+html[data-scroll-motion="ready"] .motion-hero .motion-copy {
+  transition-delay: 80ms;
+}
+
+html[data-scroll-motion="ready"] .motion-news[data-motion-visible="true"] .motion-copy > * {
+  animation: chapter-content-arrival 680ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html[data-scroll-motion="ready"] .motion-news[data-motion-visible="true"] .motion-copy > :nth-child(2) {
+  animation-delay: 90ms;
+}
+
+html[data-scroll-motion="ready"] .motion-news[data-motion-visible="true"] .motion-copy > :nth-child(3) {
+  animation-delay: 160ms;
+}
+
+@keyframes chapter-content-arrival {
+  from {
+    transform: translate3d(0, 26px, 0);
+    opacity: 0.2;
+    clip-path: inset(0 0 18% 0);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+    clip-path: inset(0);
+  }
+}
+
+@media (max-width: 767px) {
+  html[data-scroll-motion="ready"] .motion-section {
+    --motion-y: 4vh;
+    --motion-tilt: 3deg;
+    perspective: 900px;
+  }
+
+  html[data-scroll-motion="ready"] .motion-section .motion-copy {
+    filter: blur(3px);
+    transition-duration: 580ms;
+  }
+
+  html[data-scroll-motion="ready"] .motion-section .motion-visual {
+    transform: translate3d(0, calc(var(--motion-y) * 0.14), 0) scale(1.025);
+    transition-duration: 650ms;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .motion-hero .hero-frame {
+    padding-top: max(3.5rem, env(safe-area-inset-top));
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+  }
+
+  .motion-hero .hero-stats-desktop {
+    margin-top: 0.25rem;
+  }
+
+  .motion-hero .hero-stats-desktop > :first-child,
+  .motion-hero .hero-stats-desktop > :last-child {
+    gap: 0.75rem;
+  }
+
+  .motion-hero .hero-stats-desktop > :first-child p,
+  .motion-hero .hero-stats-desktop > :last-child p {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .motion-hero .hero-stats-desktop > :nth-child(2) {
+    margin-top: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .motion-hero .hero-stat-value {
+    font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+  }
+
+  .motion-hero .hero-fund-value {
+    font-size: clamp(1.25rem, 3.8vw, 2rem) !important;
+  }
+
+  .motion-hero .hero-stats-desktop > :last-child {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (pointer: coarse) {
+  .motion-news a,
+  #contact a,
+  footer a {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-section,
+  .motion-visual,
+  .motion-copy,
+  .motion-rail,
+  .motion-section::after {
+    animation: none !important;
+    transform: none !important;
+    transition-duration: 120ms !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
 /* Utility classes for text truncation */
 .line-clamp-3 {
   overflow: hidden;
