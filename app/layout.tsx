@@ -31,12 +31,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-born-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-born-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-born-sky-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-born-sky-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon.ico', sizes: 'any' },
     ],
     apple: [
-      { url: '/apple-touch-icon-born.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon-born-sky.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',
