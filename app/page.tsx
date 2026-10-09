@@ -278,6 +278,13 @@ export default function HomePage() {
             min-height: 100svh;
             padding: 0.5rem 0;
           }
+
+          /* Keep the opening hero immersive, but let the four story panels end
+             closer to their content on phones instead of forcing a full screen. */
+          .story-section {
+            min-height: clamp(36rem, 78svh, 44rem) !important;
+            padding: 1rem 0;
+          }
           
           /* 移动端触摸滚动优化 */
           .snap-container {
@@ -510,7 +517,7 @@ export default function HomePage() {
       </main>
 
       {/* Investment */}
-      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+      <section className="motion-section story-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/fck/investment_removed_globe_mobile.png"
@@ -524,7 +531,7 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(2rem,env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 md:px-8 md:pb-[max(5rem,env(safe-area-inset-bottom,0px))] md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
           <div className="flex flex-col rounded-2xl border border-transparent bg-transparent p-0 max-lg:border-white/10 max-lg:bg-slate-950/85 max-lg:p-4 sm:max-lg:p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
           <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {content.investmentInChina}
@@ -546,7 +553,7 @@ export default function HomePage() {
       </section>
 
       {/* Global Expansion — desktop: type on art; mobile: dark read panel for legibility */}
-      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+      <section className="motion-section story-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/fck/global_expansion_removed_mobile.png"
@@ -560,7 +567,7 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(2rem,env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 md:px-8 md:pb-[max(5rem,env(safe-area-inset-bottom,0px))] md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-14">
           <div className="flex w-full justify-end max-lg:justify-stretch">
             <div className="flex w-full max-w-2xl flex-col items-end space-y-4 text-right max-lg:max-w-none max-lg:items-stretch max-lg:rounded-2xl max-lg:border max-lg:border-white/12 max-lg:bg-slate-950/88 max-lg:px-4 max-lg:py-6 max-lg:text-left max-lg:shadow-[0_12px_40px_rgba(0,0,0,0.45)] sm:max-lg:px-6 sm:max-lg:py-8 sm:max-w-3xl sm:space-y-6 md:space-y-8 lg:max-w-[min(36rem,42vw)] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:text-right lg:shadow-none [&_p]:break-words [&_p]:text-white lg:[&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_2px_24px_rgba(0,0,0,0.75)] max-lg:[&_p]:[text-shadow:0_1px_2px_rgba(0,0,0,0.45)]">
               <h2 className="heading-serif w-full break-words text-[clamp(1.875rem,8vw,2.75rem)] font-light leading-[1.08] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
@@ -584,7 +591,7 @@ export default function HomePage() {
       </section>
 
       {/* China Access — mirror of Global Expansion: Global → China */}
-      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+      <section className="motion-section story-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/china-access/hero-factory.jpg"
@@ -599,7 +606,7 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(2rem,env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 md:px-8 md:pb-[max(5rem,env(safe-area-inset-bottom,0px))] md:pt-12 lg:pl-[calc(5.75rem+0.5rem)] lg:pr-10">
           <div className="flex w-full max-w-2xl flex-col rounded-2xl border border-white/10 bg-slate-950/88 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.45)] sm:p-7 lg:max-w-[min(37rem,46vw)] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
             <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
               {content.chinaAccessTitle}
@@ -623,7 +630,7 @@ export default function HomePage() {
       </section>
 
       {/* AI Company — same pattern as Investment: full-bleed art, copy under baked-in title */}
-      <section className="motion-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
+      <section className="motion-section story-section relative flex min-h-[100svh] snap-section items-start py-8 sm:py-10 md:min-h-screen md:py-0">
         <div className="motion-visual absolute inset-0">
           <HomeSectionBackground
             mobileSrc="/vi-reference/fck/ai_company_removed_mobile.png"
@@ -637,7 +644,7 @@ export default function HomePage() {
             Born
           </span>
         </div>
-        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(5rem,env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-12 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
+        <div className="motion-copy relative z-10 mx-auto flex w-full min-w-0 max-w-7xl flex-col px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(2rem,env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 md:px-8 md:pb-[max(5rem,env(safe-area-inset-bottom,0px))] md:pt-12 lg:pl-[calc(5.75rem+0.25rem)] lg:pr-10">
           <div className="flex flex-col rounded-2xl border border-transparent bg-transparent p-0 max-lg:border-white/10 max-lg:bg-slate-950/85 max-lg:p-4 sm:max-lg:p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
           <h2 className="heading-serif max-w-full break-words text-[clamp(1.875rem,8.5vw,2.75rem)] font-light leading-[1.06] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             {content.aiCompanyTitle}
