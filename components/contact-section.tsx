@@ -7,18 +7,12 @@ const offices = [
     country: "Hong Kong SAR, China",
     officeName: "Hong Kong Headquarters",
     address: "703, T2, South Seas Centre, 75 Mody Rd., Hong Kong",
-    contact: "Wencheng Li, CEO",
-    phone: "+852 8494 3701",
-    phoneHref: "+85284943701",
   },
   {
     city: "Chengdu",
     country: "China",
     officeName: "Chengdu Office",
     address: "Room 12, 2/F, No. 71 Fuheyuan Heng Road, Jinniu District, Chengdu, Sichuan, China",
-    contact: "Jiang Tongyao",
-    phone: "+86 155 8653 3666",
-    phoneHref: "+8615586533666",
   },
   {
     city: "Shanghai",
@@ -26,9 +20,6 @@ const offices = [
     officeName: "Shanghai Office",
     address:
       "Building 10, No. 860 Xinyang Highway, Lin-gang Special Area, China (Shanghai) Pilot Free Trade Zone, Shanghai, China",
-    contact: "Azmatjan Rouzmamat",
-    phone: "+86 192 1133 7173",
-    phoneHref: "+8619211337173",
   },
   {
     city: "St. Petersburg",
@@ -115,15 +106,6 @@ export function ContactSection() {
                 <p className="mt-1 text-sm text-slate-500">{office.country}</p>
                 <p className="mt-5 text-sm font-medium text-slate-200">{office.officeName}</p>
                 <address className="mt-2 not-italic text-sm leading-relaxed text-slate-400">{office.address}</address>
-                {"contact" in office ? <p className="mt-4 text-sm text-slate-500">{office.contact}</p> : null}
-                {"phone" in office ? (
-                  <a
-                    className="mt-2 block text-sm text-slate-300 transition hover:text-cyan-300"
-                    href={`tel:${office.phoneHref}`}
-                  >
-                    {office.phone}
-                  </a>
-                ) : null}
               </article>
             ))}
           </div>
