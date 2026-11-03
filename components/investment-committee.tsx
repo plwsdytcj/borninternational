@@ -10,12 +10,6 @@ const committeeMembers = [
     description: "资深投资专家，在科技投资领域拥有丰富经验",
   },
   {
-    name: "褚浩",
-    title: "投资委员会成员",
-    image: "/investment-team/褚浩.jpg",
-    description: "专注于新兴技术和创新企业投资",
-  },
-  {
     name: "唐学书",
     title: "投资委员会成员",
     image: "/investment-team/唐学书.jpg",
