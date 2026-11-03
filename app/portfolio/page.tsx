@@ -189,20 +189,6 @@ export default function PortfolioPage() {
       hasModal: true,
     },
     {
-      name: "Hao Chu",
-      title: language === "en" ? "Founding Partner" : "Партнер-основатель",
-      description:
-        language === "en"
-          ? "Founding Partner of Boen Capital and Dianke Boen Partners, with extensive investment experience in Internet, education, consumer upgrades, and IoT sectors"
-          : "Партнер-основатель Born Capital и партнер Dianke Born с большим опытом инвестиций в интернет, образование, потребительские технологии и IoT.",
-              image: "/investment-team/褚浩_personal_page.jpg",
-      fullBio:
-        language === "en"
-          ? "Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors including Internet, education, consumer upgrades, and IoT. Has a proven track record in identifying and nurturing high-growth technology companies."
-          : "Партнер-основатель Born Capital и партнер Dianke Born. Обладает опытом инвестиций в интернет, образование, потребительские технологии и IoT, а также успешным опытом поиска и развития быстрорастущих технологических компаний.",
-      hasModal: true,
-    },
-    {
       name: "Wencheng Li",
       title: language === "en" ? "PhD/Founding Partner" : "PhD / Партнер-основатель",
       description:
@@ -901,63 +887,6 @@ export default function PortfolioPage() {
                             <li className="flex items-start">
                               <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                               <span>Strategic research development</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  ) : currentMember.name === "Hao Chu" ? (
-                    <div className="space-y-6">
-                      {/* Header Section */}
-                      <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
-                        <h3 className="text-2xl font-semibold text-slate-900 mb-4">Investment Partner Profile</h3>
-                        <p className="text-lg leading-relaxed text-slate-700">
-                          Founding Partner | Multi-Sector Investment Expert | Technology & Consumer Specialist | Growth Company Mentor
-                        </p>
-                      </div>
-
-                      {/* Investment Focus */}
-                      <div>
-                        <h4 className="text-lg font-semibold text-slate-900 mb-3">Investment Focus</h4>
-                        <div className="grid gap-3">
-                          {[
-                            "Internet and digital technology",
-                            "Education technology and services",
-                            "Consumer upgrades and lifestyle",
-                            "Internet of Things (IoT) solutions"
-                          ].map((sector, index) => (
-                            <div key={index} className="flex items-start">
-                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                              <p className="text-slate-700">{sector}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Professional Experience */}
-                      <div>
-                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Professional Experience</h4>
-                        <p className="text-slate-700 mb-4">
-                          Founding Partner of Boen Capital and Dianke Boen Partners with extensive investment experience across multiple sectors. Has a proven track record in identifying and nurturing high-growth technology companies.
-                        </p>
-                      </div>
-
-                      {/* Key Achievements */}
-                      <div>
-                        <h4 className="text-lg font-semibold text-slate-900 mb-3 border-b border-slate-200 pb-2">Key Achievements</h4>
-                        <div className="bg-teal-50 p-6 rounded-lg">
-                          <ul className="space-y-2">
-                            <li className="flex items-start">
-                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                              <span>Successfully identified and invested in numerous high-growth companies</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                              <span>Established strong portfolio management practices</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                              <span>Mentored and supported portfolio companies through growth phases</span>
                             </li>
                           </ul>
                         </div>
