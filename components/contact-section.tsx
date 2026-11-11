@@ -1,6 +1,7 @@
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 import Image from "next/image"
 import { GlobalOfficesFan, type Office } from "@/components/global-offices-fan"
+import { GlobalOfficesMap } from "@/components/global-offices-map"
 
 const offices: Office[] = [
   {
@@ -104,24 +105,10 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="hidden border-l border-t border-slate-800 sm:grid sm:grid-cols-2 xl:grid-cols-3">
-            {offices.map((office, index) => (
-              <article
-                key={office.city}
-                className="min-h-64 border-b border-r border-slate-800 p-6 transition-colors hover:bg-slate-900/70"
-              >
-                <div className="mb-7 flex items-start justify-between gap-4">
-                  <span className="text-sm font-medium text-cyan-300">{String(index + 1).padStart(2, "0")}</span>
-                  <MapPin className="h-4 w-4 text-slate-600" aria-hidden />
-                </div>
-                <h4 className="text-xl font-medium text-white">{office.city}</h4>
-                <p className="mt-1 text-sm text-slate-500">{office.country}</p>
-                <p className="mt-5 text-sm font-medium text-slate-200">{office.role}</p>
-                <address className="mt-2 not-italic text-sm leading-relaxed text-slate-400">{office.address}</address>
-              </article>
-            ))}
+          <div className="hidden lg:block">
+            <GlobalOfficesMap />
           </div>
-          <div className="sm:hidden">
+          <div className="lg:hidden">
             <GlobalOfficesFan offices={offices} />
           </div>
         </div>
