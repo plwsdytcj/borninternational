@@ -1,45 +1,57 @@
 import { Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
+import { GlobalOfficesFan, type Office } from "@/components/global-offices-fan"
 
-const offices = [
+const offices: Office[] = [
   {
     city: "Hong Kong",
+    cityCn: "香港",
     country: "Hong Kong SAR, China",
-    officeName: "Hong Kong Headquarters",
+    role: "Hong Kong Headquarters",
     address: "703, T2, South Seas Centre, 75 Mody Rd., Hong Kong",
+    timezone: "UTC+8",
   },
   {
     city: "Chengdu",
+    cityCn: "成都",
     country: "China",
-    officeName: "Chengdu Office",
+    role: "Chengdu Office",
     address: "Room 12, 2/F, No. 71 Fuheyuan Heng Road, Jinniu District, Chengdu, Sichuan, China",
+    timezone: "UTC+8",
   },
   {
     city: "Shanghai",
+    cityCn: "上海",
     country: "China",
-    officeName: "Shanghai Office",
-    address:
-      "Building 10, No. 860 Xinyang Highway, Lin-gang Special Area, China (Shanghai) Pilot Free Trade Zone, Shanghai, China",
+    role: "Shanghai Office",
+    address: "Building 10, No. 860 Xinyang Highway, Lin-gang Special Area, China (Shanghai) Pilot Free Trade Zone, Shanghai, China",
+    timezone: "UTC+8",
   },
   {
     city: "St. Petersburg",
+    cityCn: "圣彼得堡",
     country: "Russia",
-    officeName: "St. Petersburg Office",
+    role: "St. Petersburg Office",
     address: "199178. СПб, 10 линия В.О д.59.(Маркусь). офис 425",
+    timezone: "UTC+3",
   },
   {
     city: "Moscow",
+    cityCn: "莫斯科",
     country: "Russia",
-    officeName: "Moscow Office",
+    role: "Moscow Office",
     address: "Ул.Профсоюзная 56,Офис 1203,г.Москва.",
+    timezone: "UTC+3",
   },
   {
     city: "Athens",
+    cityCn: "雅典",
     country: "Greece",
-    officeName: "Athens Office",
+    role: "Athens Office",
     address: "Detailed office address to be added",
+    timezone: "UTC+2",
   },
-] as const
+]
 
 export function ContactSection() {
   return (
@@ -92,7 +104,7 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="grid border-l border-t border-slate-800 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="hidden border-l border-t border-slate-800 sm:grid sm:grid-cols-2 xl:grid-cols-3">
             {offices.map((office, index) => (
               <article
                 key={office.city}
@@ -104,10 +116,13 @@ export function ContactSection() {
                 </div>
                 <h4 className="text-xl font-medium text-white">{office.city}</h4>
                 <p className="mt-1 text-sm text-slate-500">{office.country}</p>
-                <p className="mt-5 text-sm font-medium text-slate-200">{office.officeName}</p>
+                <p className="mt-5 text-sm font-medium text-slate-200">{office.role}</p>
                 <address className="mt-2 not-italic text-sm leading-relaxed text-slate-400">{office.address}</address>
               </article>
             ))}
+          </div>
+          <div className="sm:hidden">
+            <GlobalOfficesFan offices={offices} />
           </div>
         </div>
 
