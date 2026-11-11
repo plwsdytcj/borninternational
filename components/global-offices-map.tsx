@@ -464,15 +464,6 @@ export function GlobalOfficesMap() {
 
   return (
     <div className="go-map">
-      {/* 板块标题：如果站点已有标题，删掉这一块，只保留下面 wrapRef 的容器 */}
-      <div className="mb-6">
-        <p className="m-0 text-[11px] uppercase tracking-[0.24em] text-slate-500">Office network</p>
-        <h2 className="mt-2 mb-2 font-serif text-[40px] font-normal leading-tight text-white">Global offices</h2>
-        <p className="m-0 max-w-[44em] text-[13px] leading-relaxed text-slate-400">
-          Real map basemaps, chosen automatically for the visitor&apos;s network. Select a city to fly there.
-        </p>
-      </div>
-
       <div ref={wrapRef} className="relative w-full">
         {/* 地图层：始终贴住主卡位置 */}
         <div
