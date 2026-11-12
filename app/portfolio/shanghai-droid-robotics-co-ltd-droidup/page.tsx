@@ -16,7 +16,7 @@ export default function DroidRoboticsPage() {
       backToPortfolio: "Back to Portfolio",
       visitWebsite: "Visit Website",
       previousCompany: "Previous: Token Cloud",
-      nextCompany: "Next: Shenzhen Huazhi",
+      nextCompany: "Next: China Carbon Zero",
       companyDescription:
         "Shanghai Droid Robotics Co., Ltd. (DroidUp) is an innovative enterprise focused on the research and development, production, and sales of general-purpose humanoid robots. The company possesses internationally advanced multi-modal AI limb bionic technology and is dedicated to providing world-leading embodied intelligence solutions for applications in sectors such as science education, industrial manufacturing, commercial services, and health rehabilitation through its highly efficient humanoid robots.",
       technicalAchievements:
