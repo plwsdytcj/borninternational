@@ -304,11 +304,6 @@ export default function BusinessNewPage() {
                 bio: "Lecturer at the National Research University Higher School of Economics (HSE), Russia. Ms. Zhang previously served at the Beijing Municipal Commission of Commerce and later as International Director at the International Technology Transfer Network (ITTN), where she supported over 100 foreign startups in entering the Chinese market. She specializes in international cooperation, startup incubation, and technology transfer.",
               },
               {
-                name: "Pavel Golosov (Russia)",
-                role: "Expert Service Advisor",
-                bio: "Dean of the Faculty of Social Sciences and Scientific Director of the Artificial Intelligence Research Center at the Russian Presidential Academy of National Economy and Public Administration (RANEPA). Member of the Expert Advisory Council on Constitutional Legislation and State Building of the Federation Council of the Russian Federation. Founder of the international university award in artificial intelligence and big data, “Gravitation”.",
-              },
-              {
                 name: "Pengfei Qi",
                 role: "Business Representative",
                 bio: "Resident Representative in Russia at Born International. Mr. Qi has been involved in hosting multiple high-level China-Russia government delegations and, on behalf of the Guangdong CIS International Science and Technology Cooperation Alliance, signed a bilateral cooperation agreement with the Ryazan Regional Government of Russia. He has played a key role in advancing initiatives such as the “Bilateral Enterprise Localization Support Program” and the “Hongqi Automobile Introduction Project in Ryazan”.",
