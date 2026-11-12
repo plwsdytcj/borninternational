@@ -289,6 +289,11 @@ export default function BusinessNewPage() {
                 bio: "Dr. Wencheng Li is Co-Chair of the Industrial Cooperation Center of the SCO Industrialists Committee and a fund partner within the BORN ecosystem. He works within a fund platform managing nearly RMB 1 billion and has participated in close to 100 investments, with a focus on early-stage advanced materials, artificial intelligence, quantum computing, and other frontier technologies. Drawing on officially authorized institutional channels, he supports internationally expanding companies with senior-level resource coordination, policy engagement, and strategic guidance.",
               },
               {
+                name: "Azmatjan Rouzmamat",
+                role: "Regional Manager · Russia & Central Asia",
+                bio: "Azmatjan Rouzmamat leads BORN International’s business development and cross-border project cooperation in Russia and Central Asia. His work focuses on connecting industrial resources and advancing commercial collaboration between Chinese companies and markets in Russia, the CIS, and Central Asia.\n\nHe brings substantial hands-on experience in cross-border business development, international trade, and project coordination. Across medical technology, medical devices, industrial equipment, energy, and related fields, he supports Chinese companies in entering overseas markets, building local partner channels, and moving projects through implementation.\n\nFluent in English, Uzbek, and Kazakh, with working Chinese for business communication, he helps bridge language and cultural differences to enable effective cooperation between Chinese companies and clients and partners across Eurasia.",
+              },
+              {
                 name: "Yuqing Jiang (Taiwan, China)",
                 role: "Head of Overseas Expansion Services",
                 bio: "Council Member and Expert Advisor for the CIS Region at the China Business Advertising Association Brand Globalization Committee; Specially Appointed Mentor at the Cross-Border Expansion Research Institute of Shanghai Jiao Tong University. With extensive experience in corporate strategic management and hands-on expertise in brand globalization, Mr. Jiang has supported numerous leading enterprises, including iFLYTEK, in expanding into the Russian market.",
