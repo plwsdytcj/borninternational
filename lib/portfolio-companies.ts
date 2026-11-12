@@ -14,7 +14,7 @@ export function getPortfolioCompanies(language: "en" | "ru"): PortfolioCompany[]
     {
       slug: "boson-quantum",
       featured: true,
-      returnMultiple: "50.00x",
+      returnMultiple: "120.00x",
       name: language === "en" ? "BOSON Quantum" : "BOSON Quantum",
       sector: language === "en" ? "Quantum Computing" : "Квантовые вычисления",
       description:
@@ -70,31 +70,6 @@ export function getPortfolioCompanies(language: "en" | "ru"): PortfolioCompany[]
           ? "Digital identity authentication for finance, government and hospitality; ID/passport chip verification and TMFA device security."
           : "Цифровая идентификация для финансового сектора, госуслуг и гостиниц; проверка чипов удостоверений и паспортов, а также защита устройств TMFA.",
       logo: "/company-logos/token-cloud-shanghai-technology-co-ltd-logo.png",
-      logoStyle: "object-contain",
-    },
-    {
-      slug: "shenzhen-huazhi-intelligent-manufacturing-technology-co-ltd",
-      name: language === "en" ? "Shenzhen Huazhi Intelligent Manufacturing Technology Co., LTD." : "Shenzhen Huazhi Intelligent Manufacturing Technology Co., LTD.",
-      sector: language === "en" ? "Industrial Internet" : "Промышленный интернет",
-      description:
-        language === "en"
-          ? "'Huazhi Cloud' for equipment interconnection, collaboration, ops control and data intelligence; national standards participant."
-          : "Платформа Huazhi Cloud объединяет оборудование, совместную работу, операционное управление и аналитику данных; компания участвует в разработке национальных стандартов.",
-      logo: "/company-logos/shenzhen-huazhi-intelligent-manufacturing-technology-co-ltd-logo.jpeg",
-      logoStyle: "object-contain",
-    },
-    {
-      slug: "chengdu-zhongkang-dacheng-environmental-protection-technology-co-ltd",
-      name:
-        language === "en"
-          ? "Chengdu Zhongkang Dacheng Environmental Protection Technology Co., Ltd."
-          : "Chengdu Zhongkang Dacheng Environmental Protection Technology Co., Ltd.",
-      sector: language === "en" ? "IoT + Retail" : "Интернет вещей и ритейл",
-      description:
-        language === "en"
-          ? "IoT + tobacco-industry digitalization; smart retail, smoking cabins, age-verification, logistics; 10,000+ devices deployed."
-          : "IoT и цифровизация табачной отрасли: умный ритейл, курительные кабины, проверка возраста и логистика; развернуто более 10 000 устройств.",
-      logo: "/company-logos/chengdu-zhongkang-dacheng-environmental-protection-technology-co-ltd-logo.png",
       logoStyle: "object-contain",
     },
     {
