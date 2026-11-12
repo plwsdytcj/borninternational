@@ -8,6 +8,7 @@ import Link from "next/link"
 import { HomeSectionBackground } from "@/components/home-section-background"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollMotionController } from "@/components/scroll-motion-controller"
+import PartnersWall from "@/components/PartnersWall"
 
 // 客户端检测hook
 function useIsClient() {
@@ -666,6 +667,9 @@ export default function HomePage() {
       </section>
 
       
+      {/* Partners & Clients logo wall — after core services, before News */}
+      <PartnersWall />
+
       {/* News & Updates Section */}
       <section className="motion-section motion-news relative overflow-hidden py-10 sm:py-12 md:py-20">
         <div className="motion-visual absolute inset-0">
