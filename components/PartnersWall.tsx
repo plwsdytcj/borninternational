@@ -114,14 +114,6 @@ export default function PartnersWall({ logoBase = LOGO_BASE_DEFAULT }: { logoBas
       <div className="pw-head">
         <p className="pw-kicker">Trusted by</p>
         <h2>Partners &amp; Clients</h2>
-        <p className="pw-sub">
-          过往团队服务与合作的客户及机构——覆盖中国大陆、俄罗斯与欧洲的科技制造、品牌消费、科研院校与医疗企业。
-        </p>
-        <div className="pw-stats">
-          <span>30+ 合作机构</span>
-          <span>中国大陆 · 俄罗斯 · 欧洲</span>
-          <span>学研机构 · 大型央企与上市公司</span>
-        </div>
       </div>
 
       <div className="pw-stage">
@@ -137,12 +129,6 @@ export default function PartnersWall({ logoBase = LOGO_BASE_DEFAULT }: { logoBas
             );
             return (
               <div className="pw-lane" key={i}>
-                <div className="pw-tag">
-                  <div>
-                    <b>{row.tag[0]}</b>
-                    <i>{row.tag[1]}</i>
-                  </div>
-                </div>
                 <div className={`pw-row ${row.dir === 'right' ? 'pw-right' : ''}`} style={{ ['--dur' as string]: row.dur }}>
                   <div className="pw-track">
                     <div className="pw-grp">{group}</div>
@@ -166,17 +152,11 @@ const PW_CSS = `
 .pw-head{max-width:1180px;margin:0 auto 8px;padding:0 40px}
 .pw-kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#64748b;margin:0}
 .pw h2{font-family:Georgia,"Songti SC",serif;font-weight:400;font-size:40px;line-height:1.15;margin:10px 0 12px;color:#e2e8f0}
-.pw-sub{color:#94a3b8;font-size:13px;margin:0;max-width:44em;line-height:1.65}
-.pw-stats{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.pw-stats span{font-size:11.5px;color:#a5f3fc;border:1px solid rgba(103,232,249,.25);border-radius:999px;padding:5px 13px;background:rgba(103,232,249,.06)}
 
 .pw-stage{max-width:1280px;margin:44px auto 0;padding:0 40px;perspective:1500px}
 /* 静态透视：立体感保留。不要改成跟随鼠标的动态 transform（会破坏远端行 hover） */
 .pw-wall{transform:rotateX(5deg);transform-style:preserve-3d;transform-origin:50% 40%}
-.pw-lane{display:flex;align-items:stretch;gap:16px;margin-bottom:26px}
-.pw-tag{flex:none;width:132px;display:flex;align-items:center;font-size:11px;line-height:1.5;letter-spacing:.08em;color:#64748b;border-right:1px solid #16233a;padding-right:14px}
-.pw-tag b{display:block;color:#cbd5e1;font-weight:500;font-size:12px}
-.pw-tag i{display:block;font-style:normal;font-size:10px;margin-top:3px}
+.pw-lane{display:flex;align-items:stretch;margin-bottom:26px}
 
 .pw-row{flex:1;overflow:hidden;position:relative;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);
@@ -201,7 +181,6 @@ const PW_CSS = `
 .pw-logo:hover img{filter:none;opacity:1}
 
 @media (max-width:900px){
-  .pw-tag{display:none}
   .pw-lane{margin-bottom:16px}
   .pw-logo{height:56px;padding:0 15px}
   .pw-logo img{height:34px;max-width:140px}
