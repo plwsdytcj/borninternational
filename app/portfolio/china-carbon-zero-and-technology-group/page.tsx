@@ -15,7 +15,7 @@ export default function CarbonZeroPage() {
       companyName: "China Carbon Zero and Technology Group",
       backToPortfolio: "Back to Portfolio",
       visitWebsite: "Visit Website",
-      previousCompany: "Previous: Chengdu Zhongkang",
+      previousCompany: "Previous: Shanghai Droid Robotics",
       nextCompany: "Next: BOSON Quantum",
       companyDescription:
         "China Carbon Zero and Technology Group, established in Beijing in 2015, is a leading comprehensive service provider in China specializing in carbon asset development and trading. Its founding team possesses extensive experience in the carbon asset field, offering full-spectrum carbon management, carbon trading, and carbon neutrality solutions for enterprises and governments.",
