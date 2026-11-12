@@ -304,6 +304,11 @@ export default function BusinessNewPage() {
                 bio: "Lecturer at the National Research University Higher School of Economics (HSE), Russia. Ms. Zhang previously served at the Beijing Municipal Commission of Commerce and later as International Director at the International Technology Transfer Network (ITTN), where she supported over 100 foreign startups in entering the Chinese market. She specializes in international cooperation, startup incubation, and technology transfer.",
               },
               {
+                name: "Nikolai Sorokin (Russia)",
+                role: "Key Partner in Russia · CEO of a Leading Nuclear Medicine Group",
+                bio: "Mr. Sorokin is a Russian entrepreneur in the nuclear medicine sector and Chief Executive Officer of a leading Russian nuclear medicine group. He has long been engaged in the nuclear medicine and biopharmaceutical industries, with extensive experience in industry operations, industrial resource integration, and international business cooperation.\n\nAs a key partner of BORN International in the Russian market, Mr. Sorokin leverages his deep industry base in Russia’s nuclear medicine and biopharmaceutical fields to advance practical cooperation between China and Russia in nuclear medicine, biopharmaceuticals, and related medical technologies — facilitating high-level business communication, industrial resource matching, and project collaboration between enterprises of both countries, and committed to expanding cooperation opportunities and building long-term partnerships in the bilateral medical technology industry.",
+              },
+              {
                 name: "Azmatjan Rouzmamat",
                 role: "Regional Manager · Russia & Central Asia",
                 bio: "Azmatjan Rouzmamat leads BORN International’s business development and cross-border project cooperation in Russia and Central Asia. His work focuses on connecting industrial resources and advancing commercial collaboration between Chinese companies and markets in Russia, the CIS, and Central Asia.\n\nHe brings substantial hands-on experience in cross-border business development, international trade, and project coordination. Across medical technology, medical devices, industrial equipment, energy, and related fields, he supports Chinese companies in entering overseas markets, building local partner channels, and moving projects through implementation.\n\nFluent in English, Uzbek, and Kazakh, with working Chinese for business communication, he helps bridge language and cultural differences to enable effective cooperation between Chinese companies and clients and partners across Eurasia.",
@@ -312,11 +317,6 @@ export default function BusinessNewPage() {
                 name: "Pengfei Qi",
                 role: "Business Representative",
                 bio: "Resident Representative in Russia at Born International. Mr. Qi has been involved in hosting multiple high-level China-Russia government delegations and, on behalf of the Guangdong CIS International Science and Technology Cooperation Alliance, signed a bilateral cooperation agreement with the Ryazan Regional Government of Russia. He has played a key role in advancing initiatives such as the “Bilateral Enterprise Localization Support Program” and the “Hongqi Automobile Introduction Project in Ryazan”.",
-              },
-              {
-                name: "Nikolai Sorokin (Russia)",
-                role: "Key Partner in Russia · CEO of a Leading Nuclear Medicine Group",
-                bio: "Mr. Sorokin is a Russian entrepreneur in the nuclear medicine sector and Chief Executive Officer of a leading Russian nuclear medicine group. He has long been engaged in the nuclear medicine and biopharmaceutical industries, with extensive experience in industry operations, industrial resource integration, and international business cooperation.\n\nAs a key partner of BORN International in the Russian market, Mr. Sorokin leverages his deep industry base in Russia’s nuclear medicine and biopharmaceutical fields to advance practical cooperation between China and Russia in nuclear medicine, biopharmaceuticals, and related medical technologies — facilitating high-level business communication, industrial resource matching, and project collaboration between enterprises of both countries, and committed to expanding cooperation opportunities and building long-term partnerships in the bilateral medical technology industry.",
               },
               {
                 name: "Dr. Dan Wang",
